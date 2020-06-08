@@ -12,7 +12,6 @@ const Container = styled.header`
 const Logo = styled(Link)`
   color: black;
   text-decoration: none;
-  
 `;
 
 const Header = ({ siteTitle }) => (
