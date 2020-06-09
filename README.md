@@ -105,38 +105,38 @@ A link component with underline effect on mouse hover
 ```
 const YourComponent = () => (
   <Container>
-  <CustomLink to="/" displayText="Learn More" linkColor="#FFF" />
+    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" />
   </Container>
 )
 ```
-###### ❕required properties:
+###### ❕Required properties:
 * to: the url on the link component
 * displayText: text on the link  
-###### optional property:
+###### Optional properties:
 * linkColor: the color of the text and the underline, default color is black `#000000`
 
 ## 💻 Banner
 Opening part for every page
 #### How to use it?
-1. import it
+1. import it  
 `import Banner from ""../components/banner.js`
 2. create the component
 ```
 const YourComponent = () => (
     <Container>
-    <Banner 
-    title="Smartchain:" 
-    subtitle="The next evolution of distributed technology"
-    description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
-    link="/"
-    linkText="What is Smartchain?"
-    linkColor="#8EB4D0" />
+      <Banner 
+        title="Smartchain:" 
+        subtitle="The next evolution of distributed technology"
+        description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
+        link="/"
+        linkText="What is Smartchain?"
+        linkColor="#8EB4D0" />
     </Container>
 )
 ```
-###### ❕required properties:
+###### ❕Required properties:
 * title: big title on the banner (styled.h1 element), color is `#07528b`
-###### optional property:
+###### Optional properties:
 * subtitle : styled.h2 element, default is empty text, color is `#07528b`
 * description: styled.p element, default is empty text, color is `#3f9ce5`
 * link: link url on the banner, default is empty text
