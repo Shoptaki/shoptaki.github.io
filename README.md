@@ -100,7 +100,9 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 A link component with underline effect on mouse hover
 #### How to use it?
 1. import it
-```import CustomLink from "../components/customlink.js"```
+```
+import CustomLink from "../components/customlink.js"
+```
 2. create the component  
 ```
 const YourComponent = () => (
@@ -119,7 +121,9 @@ const YourComponent = () => (
 Opening part for every page
 #### How to use it?
 1. import it  
-```import Banner from ""../components/banner.js```
+```
+import Banner from ""../components/banner.js
+```
 2. create the component
 ```
 const YourComponent = () => (
