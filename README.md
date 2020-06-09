@@ -101,10 +101,10 @@ A link component with underline effect on mouse hover
 #### How to use it?
 1. import it
 `import CustomLink from "../components/customlink.js"`
-2. create the component\
+2. create the component\\
 ❕required properties:
 * to: the url on the link component
-* displayText: text on the link\
+* displayText: text on the link\\
 optional property:
 * linkColor: the color of the text and the underline, default color is black `#000000`
 <!-- AUTO-GENERATED-CONTENT:END -->
