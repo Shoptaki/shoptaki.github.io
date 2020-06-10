@@ -2,35 +2,47 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import CustomLink from "./customlink"
-// import Image from "./image"
+import Image from "./image"
 import graphics from "../images/banner-graphics.svg"
+import mobileGraphics from "../images/banner-graphics-mobile.svg"
+// import theme from "../theme/GlobalStyles.js"
+
+const imageUrl = window.innerWidth >= 650 ? graphics : mobileGraphics
+const direction = window.innerWidth >= 650 ? "row" : "column"
 
 const Container = styled.div`
-  padding: 0 0 1.45rem;
-  background-image: url(${graphics});
+  padding: 0 0 0 0;
+  display: flex;
+  background-image: url(${imageUrl});
+  flex-direction: ${direction};
+
   /* Full height */
-  height: 700px;
+  height: 45rem;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1600px;
+  width: 100%;
   display: inline-block;
   pagebreakafter: always;
 `
+
+const textLeft = window.innerWidth >= 650 ? "5.5rem" : "3rem"
+const textWidth = window.innerWidth >= 650 ? "70%" : "100%"
 const TextContainer = styled.div`
-  position: relative;
-  padding: 0 8rem 1.45rem;
-  width: 70%;
-  display: inline-block;
+  float: left;
+  width: ${textWidth};
+  flexdirection: column;
+  flex: 1;
+
+  padding: 0 8rem 0 ${textLeft};
 `
 //to hold globe in home page
+const imageWidth = window.innerWidth >= 650 ? "30%" : "100%"
 const ImageContainer = styled.div`
   position: relative;
-  width: 10%;
-  display: inline-block;
+  width: ${imageWidth};
 `
 const LinkContainer = styled.div`
-  position: relative;
   width: 100%;
   display: inline-block;
 `
@@ -40,16 +52,19 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 40px;
   color: #07528b;
+  flexwrap: wrap;
 `
 const Subtitle = styled.h2`
   font-size: 30px;
   color: #07528b;
+  flexwrap: wrap;
 `
 const Description = styled.p`
   margin-top: 5rem;
   max-width: 500px;
   font-size: 25px;
   color: #3f9ce5;
+  flexwrap: wrap;
 `
 const Arrow = ({ linkColor }) => (
   <svg
@@ -86,7 +101,7 @@ const Banner = ({
         <div
           style={{
             position: `relative`,
-            width: `13%`,
+            // width: `13%`,
             display: `inline-block`,
             paddingTop: `10px`,
           }}
@@ -105,7 +120,9 @@ const Banner = ({
         </div>
       </LinkContainer>
     </TextContainer>
-    <ImageContainer>{/* <Image /> */}</ImageContainer>
+    <ImageContainer>
+      <Image />
+    </ImageContainer>
   </Container>
 )
 

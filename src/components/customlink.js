@@ -10,7 +10,7 @@ const Label = styled.a`
   text-decoration: none;
   &::before {
     content: "";
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 2px;
     bottom: 0;
