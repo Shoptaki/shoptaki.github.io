@@ -111,9 +111,9 @@ import CustomLink from "../components/customlink.js"
 2. create the component  
 ```
 const YourComponent = () => (
-  <Container>
+  <YourContainer>
     <CustomLink to="/" displayText="Learn More" linkColor="#FFF" />
-  </Container>
+  </YourContainer>
 )
 ```
 ###### ❕Required properties:
@@ -132,7 +132,7 @@ import Banner from ""../components/banner.js
 2. create the component
 ```
 const YourComponent = () => (
-    <Container>
+    <YourContainer>
       <Banner 
         title="Smartchain:" 
         subtitle="The next evolution of distributed technology"
@@ -140,7 +140,7 @@ const YourComponent = () => (
         link="/"
         linkText="What is Smartchain?"
         linkColor="#8EB4D0" />
-    </Container>
+    </YourContainer>
 )
 ```
 ###### ❕Required properties:
