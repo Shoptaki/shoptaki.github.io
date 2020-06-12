@@ -96,7 +96,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
-## 🔗 CustomLink Component
+## 🔗 CustomLink Component: now with little arrow!
 A link component with underline effect on mouse hover
 #### How to use it?
 1. import it
@@ -115,7 +115,7 @@ const YourComponent = () => (
 * to: the url on the link component
 * displayText: text on the link  
 ###### Optional properties:
-* linkColor: the color of the text and the underline, default color is black `#000000`
+* linkColor: the color of the text, the underline and the arrow! default color is black `#000000`
 
 ## 💻 Banner
 Opening part for every page
