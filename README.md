@@ -96,6 +96,8 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
+# Reusable components  
+
 ## 🔗 CustomLink Component: now with little arrow!
 A link component with underline effect on mouse hover
 #### How to use it?
