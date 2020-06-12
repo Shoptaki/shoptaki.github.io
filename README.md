@@ -157,7 +157,7 @@ a colored underline of title, with gradient color
 #### How to use it?
 1. import it  
 ```
-import TitleLiner from ""../components/titleliner
+import TitleLiner from "../components/titleliner"
 ```
 2. create the component
 ```
@@ -165,13 +165,14 @@ const YourComponent = () => (
     <Container>
       <TitleLiner 
         color="orange" 
-        size="350"
+        size="350" />
     </Container>
 )
 ```
 ###### ❕Required properties:
-* `color`: only two available values for color: `orange` and `blue`, input as string, default is blue gradient
+No required properties
 ###### Optional properties:
+* `color`: only two available values for color: `orange` and `blue`, input as string, default is blue gradient
 * `size` : default value is `300`, please resize around this value, otherwise it might not be in the proper size
 
 <!-- AUTO-GENERATED-CONTENT:END -->
