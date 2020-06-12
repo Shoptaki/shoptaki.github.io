@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { GlobalStyles } from "../theme/GlobalStyles"
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowBack, IoIosArrowForward, IoMdArrowDropright } from 'react-icons/io';
+import CustomLink from "./customlink"
+import { SwitchTransition, CSSTransition } from "react-transition-group";
+import "./styles.css";
 
 // const ImageSlider = styled.div`
 //   display: flex;
@@ -50,28 +53,37 @@ const Container = styled.div`
   width: 85%;
   display: flex;
   flex-direction: 'row';
-  alignItems: 'center',
-  justifyContent: 'center',
+  overflow: hidden;
+  box-shadow: 0.2rem 0.2rem 0.5rem #999999;
 `;
 
 const TextContainer = styled.div`
   width: 40%;
   height: 50%;
   position: relative;
-  padding-left: 3em;
-
+  padding-left: 3rem;
+  padding-top: 1.5rem;
 `
 const ImageContainer = styled.div`
   width: 40%;
-  padding: 3em;
-  margin-left: 2em;
+  padding: 3rem;
+  margin-left: 2rem;
+  overflow: hidden;
 
   @media (max-width: ${GlobalStyles.tablet}) {
     width: 100%;
   }
-`;
+`
+const Arrow = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+`
 
-function Carousel() {
+
+
+function Carousel(props) {
   const [index, setIndex] = useState(0)
   const data = useStaticQuery(
     graphql`
@@ -109,33 +121,50 @@ function Carousel() {
   const handlePrevious = () =>
     index === 0 ? setIndex(length) : setIndex(index - 1)
 
-  const fileNode  = data.allFile.nodes[index]
+  // var autoSlider = setInterval(handleNext, 3000)
+  // clearInterval(autoSlider)
+
+  const imageNode  = data.allFile.nodes[index]
   const textNode  = data.allSlide.nodes[index]
 
   console.log(index)
   console.log(length)
 
-  // console.log({slideItems})
+  var autoPlay;
+
   return (
-    <div>
       <Container>
-        <TextContainer key={textNode.id}>
-          <h1 style={{fontSize: 40}}>{textNode.name} </h1>
-          <p style={{fontSize: 24}}>{textNode.type}</p>
-        </TextContainer>
-        <ImageContainer>
-          <Img
-            fluid={fileNode.childImageSharp.fluid}
-            key={fileNode.id}
-            alt={fileNode.name.replace(/-/g, " ").substring(2)}
-          />
-        </ImageContainer>
+        <Arrow onClick={() => handlePrevious()}> <IoIosArrowBack fill="#999999"/> </Arrow>
+
+        <SwitchTransition mode="out-in">
+          <CSSTransition key={index} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
+            <TextContainer key={textNode.id}>
+              <h1 style={{fontSize: 40}}>{textNode.name} </h1>
+              <p style={{fontSize: 24}}>{textNode.type}</p>
+              <CustomLink
+                to={props.link}
+                displayText={props.linkText}
+                linkColor={props.linkColor}
+              />
+            </TextContainer>
+          </CSSTransition>
+        </SwitchTransition>
+
+        <SwitchTransition mode="out-in">
+          <CSSTransition key={index}  addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
+            <ImageContainer>
+              <Img
+                fluid={imageNode.childImageSharp.fluid}
+                key={imageNode.id}
+                alt={imageNode.name.replace(/-/g, " ").substring(2)}
+              />
+            </ImageContainer>
+          </CSSTransition>
+        </SwitchTransition>
+
+        <Arrow onClick={() => handleNext()} onLoad={autoPlay= setInterval(handleNext, 5000)} > <IoIosArrowForward fill="#999999"/></Arrow>
+
       </Container>
-      <div>
-        <button onClick={() => handlePrevious()}><IoIosArrowBack /> </button>
-        <button onClick={() => handleNext()}><IoIosArrowForward /></button>
-      </div>
-    </div>
-  )
+      )
 }
 export default Carousel
