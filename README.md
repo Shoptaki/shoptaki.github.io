@@ -112,10 +112,10 @@ const YourComponent = () => (
 )
 ```
 ###### ❕Required properties:
-* to: the url on the link component
-* displayText: text on the link  
+* `to`: the url on the link component
+* `displayText`: text on the link  
 ###### Optional properties:
-* linkColor: the color of the text, the underline and the arrow! default color is black `#000000`
+* `linkColor`: the color of the text, the underline and the arrow! default color is black `#000000`
 
 ## 💻 Banner
 Opening part for every page
@@ -139,12 +139,12 @@ const YourComponent = () => (
 )
 ```
 ###### ❕Required properties:
-* title: big title on the banner (styled.h1 element), color is `#07528b`
+* `title`: big title on the banner (styled.h1 element), color is `#07528b`
 ###### Optional properties:
-* subtitle : styled.h2 element, default is empty text, color is `#07528b`
-* description: styled.p element, default is empty text, color is `#3f9ce5`
-* link: link url on the banner, default is empty text
-* linkText: text of the link on the banner, default is empty text
-* linkColor: the color of the text and the underline, default color is black `#000000`
+* `subtitle` : styled.h2 element, default is empty text, color is `#07528b`
+* `description`: styled.p element, default is empty text, color is `#3f9ce5`
+* `link`: link url on the banner, default is empty text
+* `linkText`: text of the link on the banner, default is empty text
+* `linkColor`: the color of the text and the underline, default color is black `#000000`
 
 <!-- AUTO-GENERATED-CONTENT:END -->
