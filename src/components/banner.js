@@ -7,7 +7,7 @@ import graphics from "../images/banner-graphics.svg"
 import mobileGraphics from "../images/banner-graphics-mobile.svg"
 // import theme from "../theme/GlobalStyles.js"
 
-const imageUrl = window.innerWidth >= 650 ? graphics : mobileGraphics
+const imageUrl = window.innerWidth >= 1200 ? graphics : mobileGraphics
 const direction = window.innerWidth >= 650 ? "row" : "column"
 
 const Container = styled.div`
@@ -26,7 +26,7 @@ const Container = styled.div`
   pagebreakafter: always;
 `
 
-const textLeft = window.innerWidth >= 650 ? "5.5rem" : "3rem"
+const textLeft = window.innerWidth >= 650 ? "7rem" : "4rem"
 const textWidth = window.innerWidth >= 650 ? "70%" : "100%"
 const TextContainer = styled.div`
   float: left;
@@ -41,10 +41,6 @@ const imageWidth = window.innerWidth >= 650 ? "30%" : "100%"
 const ImageContainer = styled.div`
   position: relative;
   width: ${imageWidth};
-`
-const LinkContainer = styled.div`
-  width: 100%;
-  display: inline-block;
 `
 
 const Title = styled.h1`
@@ -66,22 +62,6 @@ const Description = styled.p`
   color: #3f9ce5;
   flexwrap: wrap;
 `
-const Arrow = ({ linkColor }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="15"
-    height="15"
-    viewBox="0 2 11 27"
-  >
-    <path
-      id="arrow"
-      data-name="arrow"
-      d="M13,0,26,11H0Z"
-      transform="translate(11) rotate(90)"
-      fill={linkColor}
-    />
-  </svg>
-)
 
 const Banner = ({
   title,
@@ -97,41 +77,13 @@ const Banner = ({
       <Subtitle>{subtitle}</Subtitle>
       <Description>{description}</Description>
 
-      <LinkContainer>
-        <div
-          style={{
-            position: `relative`,
-            // width: `13%`,
-            display: `inline-block`,
-            paddingTop: `10px`,
-          }}
-        >
-          <CustomLink to={link} displayText={linkText} linkColor={linkColor} />
-        </div>
-        <div
-          style={{
-            position: `absolute`,
-            width: `10px`,
-            display: `inline-block`,
-            paddingTop: `11px`,
-          }}
-        >
-          <Arrow linkColor={linkColor} />
-        </div>
-      </LinkContainer>
+      <CustomLink to={link} displayText={linkText} linkColor={linkColor} />
     </TextContainer>
     <ImageContainer>
       <Image />
     </ImageContainer>
   </Container>
 )
-
-Arrow.propTypes = {
-  linkColor: PropTypes.string,
-}
-Arrow.defaultProps = {
-  linkColor: `#8eb4d0`,
-}
 
 Banner.propTypes = {
   title: PropTypes.string.isRequired,

@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
+import CustomLink from "../components/customlink"
 
 const IndexPage = () => (
   <Layout>
