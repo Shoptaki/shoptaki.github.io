@@ -129,10 +129,11 @@ Opening part for every page
 ```
 import Banner from ""../components/banner.js
 ```
-2. create the component
+2. create the component, put directly under Layout
 ```
-const YourComponent = () => (
-    <YourContainer>
+index.js
+
+    <Layout>
       <Banner 
         title="Smartchain:" 
         subtitle="The next evolution of distributed technology"
@@ -140,8 +141,8 @@ const YourComponent = () => (
         link="/"
         linkText="What is Smartchain?"
         linkColor="#8EB4D0" />
-    </YourContainer>
-)
+    </Layout>
+
 ```
 ###### ❕Required properties:
 * `title`: big title on the banner (styled.h1 element), color is `#07528b`
