@@ -14,7 +14,10 @@ details,
 figcaption,
 figure,
 footer,
+<<<<<<< HEAD
 header,
+=======
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
 main,
 menu,
 nav,
@@ -47,6 +50,10 @@ a:active,
 a:hover {
   outline-width: 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
@@ -60,6 +67,38 @@ strong {
 dfn {
   font-style: italic;
 }
+<<<<<<< HEAD
+=======
+header {
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.MenuDivider {
+  display: block;
+}
+
+.HamburgerMenu {
+  display: none;
+}
+
+.HomeLogo {
+    height: 60px;
+    width: 70px;
+}
+
+@media screen and (max-width: 800px) {
+  .MenuDivider {
+    display: none;
+  }
+
+  .HamburgerMenu {
+    display: block;
+  }
+}
+
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -619,4 +658,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea

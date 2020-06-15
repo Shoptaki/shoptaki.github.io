@@ -9,14 +9,26 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+<<<<<<< HEAD
+=======
+import Header from "./header"
+
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
 
 import { GlobalStyles } from "../theme/GlobalStyles"
 
 const Container = styled.div`
   margin: 0;
+<<<<<<< HEAD
   max-width: 960px;
   padding: 0 1.0875rem 1.45rem;
 `;
+=======
+  width: 100%;
+  //max-width: 960px;
+  padding: 0 0 0;
+`
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,6 +44,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
+<<<<<<< HEAD
+=======
+      <Header siteTitle={data.site.siteMetadata.title} />
+>>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
       <Container>
         <main>{children}</main>
       </Container>
