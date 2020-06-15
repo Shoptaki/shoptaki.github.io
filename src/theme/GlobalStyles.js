@@ -1,5 +1,22 @@
 import { createGlobalStyle } from "styled-components";
 import MyriadProRegular from "../static/fonts/myriad-pro/MYRIADPRO-REGULAR.woff"
+import MyriadProLight from "../static/fonts/myriad-pro/MyriadPro-Light.woff"
+
+export const theme = {
+    logoOrange: '#EC6908',
+    logoYellow: '#FEE300',
+    logoDarkBlue: '#084DA1',
+    logoLightBlue: '#0E99D3',
+
+    fontDarkBlue: '#1071BB',
+    fontLightBlue: '#3F9CE5',
+    fontBlueGray: '#8EB4D0',
+
+    mobile: "768px",
+    tablet: "992px",
+    desktop: "1200px",
+    largeDesktop: "1440px"
+}
 
 export const GlobalStyles = createGlobalStyle`
     @font-face {
@@ -8,7 +25,6 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: normal;
         src: url(${MyriadProRegular}) format('woff');
     }
-    
     
     @font-face {
         font-family: 'Myriad Pro Condensed';
@@ -30,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Myriad Pro Light';
         font-style: normal;
         font-weight: normal;
-        src: local('Myriad Pro Light'), url('MyriadPro-Light.woff') format('woff');
+        src: local('Myriad Pro Light'), url(${MyriadProLight}) format('woff');
     }
     
     
