@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
+import Carousel from "../components/carousel"
+import { theme } from "../theme/GlobalStyles"
 
 const IndexPage = () => (
   <Layout>
@@ -19,15 +21,16 @@ const IndexPage = () => (
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/"
       linkText="What is Smartchain?"
-      linkColor="#8EB4D0"
+      linkColor={theme.fontBlueGray}
     />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       Divider here! above is banner part
     </div>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
+    <Carousel
+      link="/"
+      linkText="Read More"
+      linkColor={theme.fontGray}
+      style={{display: 'flex', alignItems: 'center'}}/>
   </Layout>
 )
 
