@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import logoimage from "../images/logo_vertical.png";
 import arrowimage from "../images/downarrow.png";
-import hamburgerimage from "../images/icons8-menu-50.png"
+import hamburgerimage from "../images/icons8-menu-50.png";
+import phonelogo from "../images/logo_vertical phone.png";
 import Popup from "reactjs-popup";
 import './layout.css';
 import { zoomIn } from "react-animations";
@@ -50,13 +51,12 @@ const Header = () => (
             to="/"
             style={{color:"black", height: 60, width: 70}}>
             <img className={"HomeLogo"} src={logoimage}/>
-
           </Link>
         </HomeButton>
       </HomeDiv>
       <MenuDiv className="MenuDivider" style={{width: 1500}}>
         <Popup contentStyle={{width: 110, border: "none"}} trigger={
-          <button style={{border: "none", fontSize: 15, backgroundColor: "white", height: 25}}>
+          <button style={{border: "none", fontSize: 15, backgroundColor: "white", height: 25, outline: "none"}}>
             About Us
             <img src={arrowimage} style={{height: 30, width: 30, verticalAlign: "top"}}/>
           </button>

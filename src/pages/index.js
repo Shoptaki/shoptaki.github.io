@@ -8,7 +8,6 @@ import Header from "../components/header"
 
 const IndexPage = () => (
   <Layout>
-    <Header></Header>
     <SEO title="Home" />
     <h1>Home</h1>
     <p>Welcome to your new Gatsby site.</p>
