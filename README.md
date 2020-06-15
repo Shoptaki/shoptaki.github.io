@@ -101,7 +101,9 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 </h1>
 Here's description for components we can reuse in different pages.
 
-## 🔗 CustomLink Component
+
+## 🔗 CustomLink Component: now with little arrow!
+
 A link component with underline effect on mouse hover
 #### How to use it?
 1. import it
@@ -120,7 +122,9 @@ const YourComponent = () => (
 * `to`: the url on the link component
 * `displayText`: text on the link  
 ###### Optional properties:
-* `linkColor`: the color of the text and the underline, default color is black `#000000`
+
+* `linkColor`: the color of the text, the underline and the arrow! default color is black `#000000`
+
 
 ## 💻 Banner
 Opening part for every page
@@ -129,17 +133,11 @@ Opening part for every page
 ```
 import Banner from ""../components/banner.js
 ```
-2. create the component
+2. create the component, put directly under Layout
 ```
+
 const YourComponent = () => (
     <YourContainer>
-      <Banner 
-        title="Smartchain:" 
-        subtitle="The next evolution of distributed technology"
-        description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
-        link="/"
-        linkText="What is Smartchain?"
-        linkColor="#8EB4D0" />
     </YourContainer>
 )
 ```
@@ -174,5 +172,6 @@ No required properties
 ###### Optional properties:
 * `color`: only two available values for color: `orange` and `blue`, input as string, default is blue gradient
 * `size` : default value is `300`, please resize around this value, otherwise it might not be in the proper size
+
 
 <!-- AUTO-GENERATED-CONTENT:END -->
