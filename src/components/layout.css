@@ -113,6 +113,30 @@ sub {
 sup {
   top: -0.5em;
 }
+
+.MenuDivider {
+  display: block;
+}
+
+.HamburgerMenu {
+  display: none;
+}
+
+.HomeLogo {
+  height: 60px;
+  width: 70px;
+}
+
+@media screen and (max-width: 800px) {
+  .MenuDivider {
+    display: none;
+  }
+
+  .HamburgerMenu {
+    display: block;
+  }
+}
+
 img {
   border-style: none;
 }
