@@ -7,59 +7,90 @@ import graphics from "../images/banner-graphics.svg"
 import mobileGraphics from "../images/banner-graphics-mobile.svg"
 // import theme from "../theme/GlobalStyles.js"
 
-const imageUrl = window.innerWidth >= 1200 ? graphics : mobileGraphics
-const direction = window.innerWidth >= 650 ? "row" : "column"
-
 const Container = styled.div`
   padding: 0 0 0 0;
   display: flex;
-  background-image: url(${imageUrl});
-  flex-direction: ${direction};
+  background-image: url(${graphics});
+  flex-direction: row;
 
   /* Full height */
-  height: 45rem;
+  height: 48rem;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   display: inline-block;
   pagebreakafter: always;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  @media (max-width: 992px) {
+    background-image: url(${mobileGraphics});
+    flex-direction: column;
+    text-align: center;
+    height: 40rem;
+  }
 `
 
-const textLeft = window.innerWidth >= 650 ? "7rem" : "4rem"
-const textWidth = window.innerWidth >= 650 ? "70%" : "100%"
 const TextContainer = styled.div`
   float: left;
-  width: ${textWidth};
   flexdirection: column;
   flex: 1;
+  padding: 0 8rem 0 8rem;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 
-  padding: 0 8rem 0 ${textLeft};
+  @media (max-width: 992px) {
+    padding: 0 3rem 0 4rem;
+    width: 100%;
+    text-align: center;
+  }
 `
 //to hold globe in home page
-const imageWidth = window.innerWidth >= 650 ? "30%" : "100%"
 const ImageContainer = styled.div`
+  float: right;
   position: relative;
-  width: ${imageWidth};
+  margin-top: 10rem;
+  width: 30%;
+
+  @media (max-width: 992px) {
+    width: 0;
+    margin-top: 10rem;
+  }
 `
 
 const Title = styled.h1`
   margin-top: 8rem;
+  max-width: 10rem;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 3rem;
   color: #07528b;
+  display: inline-block;
   flexwrap: wrap;
+
+  @media (max-width: 992px) {
+    margin-top: 4rem;
+    width: 100%;
+    padding-right: 3rem;
+    text-align: center;
+  }
 `
 const Subtitle = styled.h2`
-  font-size: 30px;
+  font-size: 2rem;
+  max-width: 20rem;
   color: #07528b;
+  display: inline-block;
   flexwrap: wrap;
 `
 const Description = styled.p`
   margin-top: 5rem;
-  max-width: 500px;
-  font-size: 25px;
+  max-width: 20rem;
+  font-size: 1.3rem;
   color: #3f9ce5;
+  display: inline-block;
   flexwrap: wrap;
 `
 
@@ -73,10 +104,15 @@ const Banner = ({
 }) => (
   <Container>
     <TextContainer>
-      <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
-      <Description>{description}</Description>
-
+      <div>
+        <Title>{title}</Title>
+      </div>
+      <div>
+        <Subtitle>{subtitle}</Subtitle>
+      </div>
+      <div>
+        <Description>{description}</Description>
+      </div>
       <CustomLink to={link} displayText={linkText} linkColor={linkColor} />
     </TextContainer>
     <ImageContainer>

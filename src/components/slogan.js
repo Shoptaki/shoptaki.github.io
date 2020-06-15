@@ -6,27 +6,45 @@ import TitleLiner from "./titleliner"
 const Container = styled.div`
   margin: auto;
   text-align: center;
+  flex: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 `
 
 const Title = styled.h1`
   font-style: italic;
+  font-size: 1.5rem;
+  flexwrap: wrap;
 `
 
 const Description = styled.p`
-  margin: auto;
-  text-align: center;
-  width: 30rem;
+  max-width: 30rem;
   font-size: 1.2rem;
-  word-break: break-all;
   white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  flexwrap: wrap;
+
+  @media (max-width: 992px) {
+    font-size: 1rem;
+  }
 `
 
 const Slogan = ({ title, description, color }) => (
   <Container>
-    <Title>{title}</Title>
+    <center>
+      <Title>{title}</Title>
+    </center>
     <TitleLiner color={color} />
-    <p marginTop="2rem"> </p>
-    <Description>{description}</Description>
+    <p style={{ marginTop: `2rem` }}> </p>
+    <center>
+      <Description>{description}</Description>
+    </center>
   </Container>
 )
 

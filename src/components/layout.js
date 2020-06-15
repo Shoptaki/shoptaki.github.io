@@ -14,9 +14,12 @@ import { GlobalStyles } from "../theme/GlobalStyles"
 
 const Container = styled.div`
   margin: 0;
-  width: 100%;
-  //max-width: 960px;
+  max-width: 1400px;
   padding: 0 0 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 `
 
 const Layout = ({ children }) => {
