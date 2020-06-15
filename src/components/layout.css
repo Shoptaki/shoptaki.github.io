@@ -14,7 +14,6 @@ details,
 figcaption,
 figure,
 footer,
-header,
 main,
 menu,
 nav,
@@ -47,6 +46,7 @@ a:active,
 a:hover {
   outline-width: 0;
 }
+
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
@@ -60,6 +60,35 @@ strong {
 dfn {
   font-style: italic;
 }
+header {
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.MenuDivider {
+  display: block;
+}
+
+.HamburgerMenu {
+  display: none;
+}
+
+.HomeLogo {
+    height: 60px;
+    width: 70px;
+}
+
+@media screen and (max-width: 800px) {
+  .MenuDivider {
+    display: none;
+  }
+
+  .HamburgerMenu {
+    display: block;
+  }
+}
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -84,6 +113,30 @@ sub {
 sup {
   top: -0.5em;
 }
+
+.MenuDivider {
+  display: block;
+}
+
+.HamburgerMenu {
+  display: none;
+}
+
+.HomeLogo {
+  height: 60px;
+  width: 70px;
+}
+
+@media screen and (max-width: 800px) {
+  .MenuDivider {
+    display: none;
+  }
+
+  .HamburgerMenu {
+    display: block;
+  }
+}
+
 img {
   border-style: none;
 }
