@@ -19,9 +19,14 @@
     "gatsby-transformer-sharp": "^2.5.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+<<<<<<< HEAD
     "react-animejs": "^0.5.4",
+=======
+    "react-animations": "^1.0.0",
+>>>>>>> e04feefa9f795e679ce86c1c8ba496f49f1edc36
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "reactjs-popup": "^1.5.0",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {

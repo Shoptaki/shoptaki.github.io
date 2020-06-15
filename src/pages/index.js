@@ -6,6 +6,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
+import Header from "../components/header"
+
 
 const IndexPage = () => (
   <Layout>
