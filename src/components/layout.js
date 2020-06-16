@@ -12,6 +12,7 @@ import styled from "styled-components"
 import Footer from "./footer"
 import { GlobalStyles } from "../theme/GlobalStyles"
 import Recognize from "./recognize"
+import UpperBg from "./UpperBackground"
 
 const Container = styled.div`
   margin: 0;
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
       <Container>
         <main>{children}</main>
       </Container>
+      <UpperBg />
       <Recognize />
       <Footer />
     </>
