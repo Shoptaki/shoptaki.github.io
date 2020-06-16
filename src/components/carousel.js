@@ -9,28 +9,41 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 import "./styles.css";
 
 const Container = styled.div`
-  width: 85%;
   display: flex;
   flex-direction: 'row';
   overflow: hidden;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+  width: 50rem;
+  margin: auto;
+
+  @media (max-width: ${theme.mobile}) {
+    width: 100%;
+    flex-direction: column-reverse;
+    margin-left: 0rem;
+  }
 `;
 
 const TextContainer = styled.div`
-  width: 40%;
-  height: 50%;
+  width: 55%;
   position: relative;
   padding-left: 3rem;
-  padding-top: 1.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+
+  @media (max-width: ${theme.mobile}) {
+    width: 100%;
+    padding-right: 1rem;
 `
 const ImageContainer = styled.div`
-  width: 40%;
+  width: 45%;
   padding: 3rem;
-  margin-left: 2rem;
+  margin-left: 0.5rem;
   overflow: hidden;
 
-  @media (max-width: ${GlobalStyles.tablet}) {
-    width: 100%;
+  @media (max-width: ${theme.mobile}) {
+    width: 75%;
+    padding-bottom: 0rem;
+    margin-left: 15%;
   }
 `
 const Arrow = styled.span`
@@ -38,6 +51,10 @@ const Arrow = styled.span`
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+
+  @media (max-width: ${theme.mobile}) {
+    display: none;
+  }
 `
 
 
