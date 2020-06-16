@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { GlobalStyles, theme } from "../theme/GlobalStyles"
-import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import { IoIosArrowBack, IoIosArrowForward, IoMdArrowDropright } from 'react-icons/io';
+
+import { useStaticQuery, graphql } from 'gatsby'
+import { SwitchTransition, CSSTransition } from "react-transition-group"
+import { GlobalStyles, theme } from "../theme/GlobalStyles"
+
 import CustomLink from "./customlink"
-import { SwitchTransition, CSSTransition } from "react-transition-group";
-import "./styles.css";
+import "./styles.css"; // from React Transition Group
 
 const Container = styled.div`
   display: flex;
@@ -33,6 +34,7 @@ const TextContainer = styled.div`
   @media (max-width: ${theme.mobile}) {
     width: 100%;
     padding-right: 1rem;
+  }
 `
 const ImageContainer = styled.div`
   width: 45%;
@@ -56,9 +58,6 @@ const Arrow = styled.span`
     display: none;
   }
 `
-
-
-
 function Carousel(props) {
   const [index, setIndex] = useState(0)
   const data = useStaticQuery(
@@ -103,8 +102,8 @@ function Carousel(props) {
 
 
   return (
-      <Container>
-        <Arrow onClick={() => handlePrevious()}> <IoIosArrowBack fill="#999999"/> </Arrow>
+      <Container >
+        {/* <Arrow onClick={() => handlePrevious()}> <Back /> </Arrow> */}
 
         <SwitchTransition mode="out-in">
           <CSSTransition key={index} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
@@ -125,8 +124,9 @@ function Carousel(props) {
         <SwitchTransition mode="out-in">
           <CSSTransition key={index}  addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
 
-            <ImageContainer>
+            <ImageContainer >
               <Img
+                onLoad={setTimeout(handleNext, 5000)}
                 fluid={imageNode.childImageSharp.fluid}
                 key={imageNode.id}
                 alt={imageNode.name.replace(/-/g, " ").substring(2)}
@@ -136,7 +136,7 @@ function Carousel(props) {
           </CSSTransition>
         </SwitchTransition>
 
-        <Arrow onClick={() => handleNext()} onLoad={setTimeout(handleNext, 5000)} > <IoIosArrowForward fill="#999999"/></Arrow>
+        {/* <Arrow onClick={() => handleNext()}  > <Next /> </Arrow> */}
 
       </Container>
 
