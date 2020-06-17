@@ -96,8 +96,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
-<<<<<<< HEAD
-=======
 <h1 align="center">
   Reusable components
 </h1>
@@ -176,5 +174,4 @@ No required properties
 * `size` : default value is `300`, please resize around this value, otherwise it might not be in the proper size
 
 
->>>>>>> 76d916849e86f7aa1ca1b55f3a4baeab415539ea
 <!-- AUTO-GENERATED-CONTENT:END -->

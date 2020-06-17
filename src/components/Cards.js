@@ -4,8 +4,9 @@ import autonomous from "../../autonomous.png";
 import efficiency from "../../efficiency.png";
 import security from "../../security.png";
 
+
 const CardContainer = styled.div`
-  width: 13rem;
+  width: 20rem;
   text-align: center;
   padding: 5rem;
   text-shadow: 1.5px 1.5px #EAEAEA;
@@ -51,6 +52,7 @@ const Efficiency = (props) => (
     )
   
   const BigContainer = styled.div`
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   `;
