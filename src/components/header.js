@@ -9,7 +9,7 @@ import './layout.css';
 import { zoomIn } from "react-animations";
 import { keyframes } from "styled-components";
 
-const ZoomIn = styled.div`animation: 2s ${keyframes`${zoomIn}`}`
+const ZoomIn = styled.div`animation: 2s ${keyframes`${zoomIn}`};`
 
 const Container = styled.header`
   margin-bottom: 1.45rem;
@@ -36,7 +36,7 @@ const NavButton = styled(Link)`
   color: black;
   text-decoration: none;
   margin-left: 100px;
-  margin-right: 10px
+  margin-right: 10px;
 `;
 
 

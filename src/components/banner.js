@@ -5,7 +5,7 @@ import CustomLink from "./customlink"
 import Image from "./image"
 import graphics from "../images/banner-graphics.svg"
 import mobileGraphics from "../images/banner-graphics-mobile.svg"
-// import theme from "../theme/GlobalStyles.js"
+import { theme } from "../theme/GlobalStyles.js"
 
 const imageUrl = window.innerWidth >= 1200 ? graphics : mobileGraphics
 const direction = window.innerWidth >= 650 ? "row" : "column"
@@ -17,13 +17,14 @@ const Container = styled.div`
   flex-direction: ${direction};
 
   /* Full height */
+  max-height: 700px;
   height: 45rem;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   display: inline-block;
-  pagebreakafter: always;
+  page-break-after: always;
 `
 
 const textLeft = window.innerWidth >= 650 ? "7rem" : "4rem"
@@ -31,7 +32,7 @@ const textWidth = window.innerWidth >= 650 ? "70%" : "100%"
 const TextContainer = styled.div`
   float: left;
   width: ${textWidth};
-  flexdirection: column;
+  flex-direction: column;
   flex: 1;
 
   padding: 0 8rem 0 ${textLeft};
@@ -48,19 +49,19 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 40px;
   color: #07528b;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 `
 const Subtitle = styled.h2`
   font-size: 30px;
   color: #07528b;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 `
 const Description = styled.p`
   margin-top: 5rem;
   max-width: 500px;
   font-size: 25px;
   color: #3f9ce5;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 `
 
 const Banner = ({
@@ -77,7 +78,7 @@ const Banner = ({
       <Subtitle>{subtitle}</Subtitle>
       <Description>{description}</Description>
 
-      <CustomLink to={link} displayText={linkText} linkColor={linkColor} />
+      <CustomLink to={link} displayText={linkText} linkColor={linkColor} arrow />
     </TextContainer>
     <ImageContainer>
       <Image />
