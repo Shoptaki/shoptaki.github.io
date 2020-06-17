@@ -11,7 +11,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "./header"
 
-
 import { GlobalStyles } from "../theme/GlobalStyles"
 
 const Container = styled.div`
@@ -22,20 +21,29 @@ const Container = styled.div`
 `
 
 const Layout = ({ children }) => {
+  
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          menuLinks {
+            title
+            subLinks {
+              title
+              link
+            }
+          }
         }
       }
     }
   `)
+  
 
   return (
     <>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks}/>
       <Container>
         <main>{children}</main>
       </Container>
