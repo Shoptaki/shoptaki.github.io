@@ -10,7 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "./header"
+<<<<<<< HEAD
 import { theme } from "../theme/GlobalStyles"
+=======
+>>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
 
 import { GlobalStyles } from "../theme/GlobalStyles"
 
@@ -25,20 +28,29 @@ const Container = styled.div`
 `
 
 const Layout = ({ children }) => {
+  
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          menuLinks {
+            title
+            subLinks {
+              title
+              link
+            }
+          }
         }
       }
     }
   `)
+  
 
   return (
     <>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks}/>
       <Container>
         <main>{children}</main>
       </Container>
