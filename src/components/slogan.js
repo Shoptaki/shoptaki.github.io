@@ -4,8 +4,9 @@ import styled from "styled-components"
 import TitleLiner from "./titleliner"
 
 const Container = styled.div`
-  margin: auto;
+  background: #f8f8f8;
   text-align: center;
+  padding: 3rem 3rem;
   flex: 1;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,6 +14,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
+  font-weight: lighter;
   font-style: italic;
   font-size: 1.5rem;
   flexwrap: wrap;
@@ -41,7 +43,6 @@ const Slogan = ({ title, description, color }) => (
       <Title>{title}</Title>
     </center>
     <TitleLiner color={color} />
-    <p style={{ marginTop: `2rem` }}> </p>
     <center>
       <Description>{description}</Description>
     </center>

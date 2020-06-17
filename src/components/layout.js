@@ -10,13 +10,13 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "./header"
-
+import { theme } from "../theme/GlobalStyles"
 
 import { GlobalStyles } from "../theme/GlobalStyles"
 
 const Container = styled.div`
   margin: 0;
-  max-width: 1400px;
+  max-width: ${theme.largeDesktop};
   padding: 0 0 0;
   width: 100%;
   -webkit-box-sizing: border-box;
