@@ -4,17 +4,9 @@ import styled from "styled-components"
 import CustomLink from "./customlink"
 import Image from "./image"
 import graphics from "../images/banner-graphics.svg"
-<<<<<<< HEAD
 // import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import mobileGraphics from "../images/mobile-banner-graphics.svg"
 import { theme } from "../theme/GlobalStyles.js"
-=======
-import mobileGraphics from "../images/banner-graphics-mobile.svg"
-import { theme } from "../theme/GlobalStyles.js"
-
-const imageUrl = window.innerWidth >= 1200 ? graphics : mobileGraphics
-const direction = window.innerWidth >= 650 ? "row" : "column"
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
 
 const Container = styled.div`
   padding: 0 0 0 0;
@@ -23,21 +15,14 @@ const Container = styled.div`
   flex-direction: row;
 
   /* Full height */
-<<<<<<< HEAD
   height: 40rem;
   background-position: left bottom;
-=======
-  max-height: 700px;
-  height: 45rem;
-  background-position: left;
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
   background-repeat: no-repeat;
   // background-size: cover;
   background-size:100% auto;
 
   width: 100%;
   display: inline-block;
-<<<<<<< HEAD
   pagebreakafter: always;
 
   /* include padding into the layout */
@@ -50,19 +35,11 @@ const Container = styled.div`
     flex-direction: column;
     height: 35rem;
   }
-=======
-  page-break-after: always;
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
 `
 
 const TextContainer = styled.div`
   float: left;
-<<<<<<< HEAD
   flexdirection: column;
-=======
-  width: ${textWidth};
-  flex-direction: column;
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
   flex: 1;
   padding: 0 8rem 0 8rem;
   width: 60%;
@@ -94,7 +71,6 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 3rem;
   color: #07528b;
-<<<<<<< HEAD
   display: inline-block;
   flexwrap: wrap;
 
@@ -104,15 +80,11 @@ const Title = styled.h1`
     font-size: 2rem;
     padding-right: 3rem;
   }
-=======
-  flex-wrap: wrap;
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
 `
 const Subtitle = styled.h2`
   font-size: 2rem;
   max-width: 22rem;
   color: #07528b;
-<<<<<<< HEAD
   display: inline-block;
 
   overflow-wrap: break-word;
@@ -145,16 +117,6 @@ const Description = styled.p`
   @media (max-width: ${theme.mobile}) {
     margin-top: 3rem;
   }
-=======
-  flex-wrap: wrap;
-`
-const Description = styled.p`
-  margin-top: 5rem;
-  max-width: 500px;
-  font-size: 25px;
-  color: #3f9ce5;
-  flex-wrap: wrap;
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
 `
 
 const Banner = ({
@@ -167,28 +129,18 @@ const Banner = ({
 }) => (
   <Container>
     <TextContainer>
-<<<<<<< HEAD
-      <div>
-        <Title>{title}</Title>
-      </div>
-      <div>
-        <Subtitle>{subtitle}</Subtitle>
-      </div>
-      <div>
-        <Description>{description}</Description>
-      </div>
-      <CustomLink to={link} displayText={linkText} linkColor={linkColor} />
-=======
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
       <Description>{description}</Description>
 
-      <CustomLink to={link} displayText={linkText} linkColor={linkColor} arrow />
->>>>>>> 4629390bfa23b68a4beb6776df366b5cc676345e
+      <CustomLink
+        to={link}
+        displayText={linkText}
+        linkColor={linkColor}
+        arrow
+      />
     </TextContainer>
-    <ImageContainer>
-      <Image />
-    </ImageContainer>
+    <ImageContainer>{/* <Image /> */}</ImageContainer>
   </Container>
 )
 
