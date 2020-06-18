@@ -89,10 +89,10 @@ const Subtitle = styled.h2`
 
   overflow-wrap: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  // -webkit-hyphens: auto;
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  // hyphens: auto;
   flexwrap: wrap;
   @media (max-width: ${theme.mobile}) {
     font-size: 1.5rem;
@@ -108,10 +108,10 @@ const Description = styled.p`
   /* wrap text */
   overflow-wrap: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  // -webkit-hyphens: auto;
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  //hyphens: auto;
   flexwrap: wrap;
 
   @media (max-width: ${theme.mobile}) {
