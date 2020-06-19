@@ -31,9 +31,7 @@ const IndexPage = () => (
       color="orange"
     />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
 
     <Carousel
       link="/"

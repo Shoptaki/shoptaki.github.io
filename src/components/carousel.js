@@ -9,17 +9,26 @@ import { GlobalStyles, theme } from "../theme/GlobalStyles"
 import CustomLink from "./customlink"
 import "./styles.css"; // from React Transition Group
 
+
 const Container = styled.div`
+  overflow: hidden;
   display: flex;
   flex-direction: 'row';
-  overflow: hidden;
+  position: relative;
+  @media (max-width: ${theme.mobile}) {
+    flex-direction: column-reverse;
+  }
+`
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: 'row';
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
   margin: auto;
 
   @media (max-width: ${theme.mobile}) {
     width: 100%;
-    flex-direction: column-reverse;
     margin-left: 0rem;
   }
 `;
@@ -48,16 +57,73 @@ const ImageContainer = styled.div`
     margin-left: 15%;
   }
 `
-const Arrow = styled.span`
+const CarouselLeft = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  position: relative;
+  right: 2rem;
 
   @media (max-width: ${theme.mobile}) {
     display: none;
   }
 `
+const CarouselRight = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 2rem;
+
+  @media (max-width: ${theme.mobile}) {
+    display: none;
+  }
+`
+const NextArrow = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 196 192">
+    <defs>
+      <filter id="Ellipse_4" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse">
+        <feOffset dy="3" input="SourceAlpha"/>
+        <feGaussianBlur stdDeviation="10" result="blur"/>
+        <feFlood flood-opacity="0.161"/>
+        <feComposite operator="in" in2="blur"/>
+        <feComposite in="SourceGraphic"/>
+      </filter>
+    </defs>
+    <g id="Component_12_1" data-name="Component 12 – 1" transform="translate(30 27)">
+      <g id="Component_13_1" data-name="Component 13 – 1">
+        <g transform="matrix(1, 0, 0, 1, -30, -27)" filter="url(#Ellipse_4)">
+          <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="68" cy="66" rx="68" ry="66" transform="translate(30 27)" fill="#fff"/>
+        </g>
+        <path id="Path_30" data-name="Path 30" d="M1598.086,1941.2h20.082l18.4,25.988-18.4,26.908h-20.082l18.845-26.908Z" transform="translate(-1545 -1901.012)" fill="#0f7aaf"/>
+      </g>
+    </g>
+  </svg>
+
+)
+
+const BackArrow = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 196 192">
+    <defs>
+      <filter id="Ellipse_4" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse">
+        <feOffset dy="3" input="SourceAlpha"/>
+        <feGaussianBlur stdDeviation="10" result="blur"/>
+        <feFlood flood-opacity="0.161"/>
+        <feComposite operator="in" in2="blur"/>
+        <feComposite in="SourceGraphic"/>
+      </filter>
+    </defs>
+    <g id="Component_11_1" data-name="Component 11 – 1" transform="translate(30 27)">
+      <g id="Group_20" data-name="Group 20" transform="translate(136 132) rotate(180)">
+        <g transform="matrix(-1, 0, 0, -1, 166, 159)" filter="url(#Ellipse_4)">
+          <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="68" cy="66" rx="68" ry="66" transform="translate(166 159) rotate(180)" fill="#fff"/>
+        </g>
+        <path id="Path_30" data-name="Path 30" d="M1598.086,1941.2h20.082l18.4,25.988-18.4,26.908h-20.082l18.845-26.908Z" transform="translate(-1545 -1901.012)" fill="#0f7aaf"/>
+      </g>
+    </g>
+  </svg>
+)
+
 function Carousel(props) {
   const [index, setIndex] = useState(0)
   const data = useStaticQuery(
@@ -102,47 +168,54 @@ function Carousel(props) {
 
 
   return (
-      <Container >
-        {/* <Arrow onClick={() => handlePrevious()}> <Back /> </Arrow> */}
+      <Box >
+        <CarouselLeft onClick={() => handlePrevious()}> <BackArrow /> </CarouselLeft>
 
-        <SwitchTransition mode="out-in">
-          <CSSTransition key={index} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
+        <Container >
 
-            <TextContainer key={textNode.id}>
-              <h1 style={{fontSize: 40}}>{textNode.name} </h1>
-              <p style={{fontSize: 24}}>{textNode.type}</p>
-              <CustomLink
-                to={props.link}
-                displayText={props.linkText}
-                linkColor={props.linkColor}
-              />
-            </TextContainer>
+          <SwitchTransition mode="out-in">
+            <CSSTransition key={index} addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
 
-          </CSSTransition>
-        </SwitchTransition>
+              <TextContainer key={textNode.id}>
+                <h1 style={{fontSize: 40}}>{textNode.name} </h1>
+                <p style={{fontSize: 24}}>{textNode.type}</p>
+                <CustomLink
+                  to={props.link}
+                  displayText={props.linkText}
+                  linkColor={props.linkColor}
+                />
+              </TextContainer>
 
-        <SwitchTransition mode="out-in">
-          <CSSTransition key={index}  addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
+            </CSSTransition>
+          </SwitchTransition>
 
-            <ImageContainer >
-              <Img
-                onLoad={setTimeout(handleNext, 5000)}
-                fluid={imageNode.childImageSharp.fluid}
-                key={imageNode.id}
-                alt={imageNode.name.replace(/-/g, " ").substring(2)}
-              />
-            </ImageContainer>
+          <SwitchTransition mode="out-in">
+            <CSSTransition key={index}  addEndListener={(node, done) => node.addEventListener("transitionend", done, false)} classNames="fade">
 
-          </CSSTransition>
-        </SwitchTransition>
+              <ImageContainer >
+                <Img
+                  onLoad={setTimeout(handleNext, 5000)}
+                  fluid={imageNode.childImageSharp.fluid}
+                  key={imageNode.id}
+                  alt={imageNode.name.replace(/-/g, " ").substring(2)}
+                />
+              </ImageContainer>
 
-        {/* <Arrow onClick={() => handleNext()}  > <Next /> </Arrow> */}
+            </CSSTransition>
+          </SwitchTransition>
 
-      </Container>
+        </Container>
+
+        <CarouselRight onClick={() => handleNext()}  > <NextArrow /></CarouselRight>
+
+      </Box>
 
 
-      )
 
 
-}
-export default Carousel
+
+          )
+
+
+          }
+          export default Carousel

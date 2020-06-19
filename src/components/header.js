@@ -1,9 +1,9 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import logoimage from "../images/logo_vertical.png";
-import arrowimage from "../images/downarrow.png";
-import hamburgerimage from "../images/icons8-menu-50.png";
+// import logoimage from "../images/logo_vertical.png";
+// import arrowimage from "../images/downarrow.png";
+// import hamburgerimage from "../images/icons8-menu-50.png";
 import Popup from "reactjs-popup";
 import './layout.css';
 import { zoomIn } from "react-animations";
@@ -17,7 +17,7 @@ const Container = styled.header`
 `;
 
 const MenuDiv = styled.div`
-  text-align: right;  
+  text-align: right;
   margin-top: 20px;
   `
 const HomeDiv = styled.div`
@@ -49,7 +49,7 @@ const Header = () => (
           <Link
             to="/"
             style={{color:"black", height: 60, width: 70}}>
-            <img className={"HomeLogo"} src={logoimage}/>
+            <img className={"HomeLogo"} src={"null"}/>
           </Link>
         </HomeButton>
       </HomeDiv>
@@ -57,7 +57,7 @@ const Header = () => (
         <Popup contentStyle={{width: 110, border: "none"}} trigger={
           <button style={{border: "none", fontSize: 15, backgroundColor: "white", height: 25, outline: "none"}}>
             About Us
-            <img src={arrowimage} style={{height: 30, width: 30, verticalAlign: "top"}}/>
+            <img src={"null"} style={{height: 30, width: 30, verticalAlign: "top"}}/>
           </button>
         } position="bottom center">
           <ZoomIn>
@@ -90,7 +90,7 @@ const Header = () => (
       <MenuDiv className={"HamburgerMenu"}>
         <Popup contentStyle={{width: 110, border: "none"}} trigger={
           <button style={{border: "none", fontSize: 15, backgroundColor: "white"}}>
-            <img src={hamburgerimage} style={{height: 30, width: 30, verticalAlign: "top"}}/>
+            <img src={"null"} style={{height: 30, width: 30, verticalAlign: "top"}}/>
           </button>
         } position="bottom center">
           <ZoomIn>
@@ -111,5 +111,3 @@ const Header = () => (
 )
 
 export default Header
-
-
