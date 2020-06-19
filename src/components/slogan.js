@@ -6,6 +6,7 @@ import TitleLiner from "./titleliner"
 const Container = styled.div`
   background: #f8f8f8;
   text-align: center;
+  width: 100%;
   padding: 3rem 3rem;
   flex: 1;
   -webkit-box-sizing: border-box;
@@ -17,7 +18,7 @@ const Title = styled.h1`
   font-weight: lighter;
   font-style: italic;
   font-size: 1.5rem;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 `
 
 const Description = styled.p`
@@ -30,7 +31,7 @@ const Description = styled.p`
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 
   @media (max-width: 992px) {
     font-size: 1rem;

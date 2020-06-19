@@ -16,7 +16,7 @@ import { GlobalStyles } from "../theme/GlobalStyles"
 
 const Container = styled.div`
   margin: 0;
-  max-width: ${theme.largeDesktop};
+  /* max-width: ${theme.largeDesktop}; */
   padding: 0 0 0;
   width: 100%;
   -webkit-box-sizing: border-box;
