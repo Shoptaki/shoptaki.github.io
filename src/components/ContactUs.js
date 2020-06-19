@@ -4,7 +4,6 @@ import CustomLink from "./customlink"
 import {theme} from "../theme/GlobalStyles.js"
 
 const Contactcontainer= styled.div`
-    margin-top: 250%;
     left:0;
     right:0;
     position: relative;
