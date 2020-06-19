@@ -15,7 +15,7 @@ const IndexPage = () => (
     <p>Now go build something great.</p> */}
     {/* put banner here */}
     <Banner
-      title="Smartchain: "
+      title="Smartchain:"
       subtitle="The next evolution of distributed technology"
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"

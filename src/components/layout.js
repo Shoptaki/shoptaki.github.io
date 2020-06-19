@@ -10,18 +10,21 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "./header"
+import { theme } from "../theme/GlobalStyles"
 
 import { GlobalStyles } from "../theme/GlobalStyles"
 
 const Container = styled.div`
   margin: 0;
-  width: 100%;
-  //max-width: 960px;
+  max-width: ${theme.largeDesktop};
   padding: 0 0 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 `
 
 const Layout = ({ children }) => {
-  
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -38,12 +41,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  
 
   return (
     <>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks}/>
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        menuLinks={data.site.siteMetadata.menuLinks}
+      />
       <Container>
         <main>{children}</main>
       </Container>
