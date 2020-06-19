@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const LinkContainer = styled.div`
   width: 100%;
@@ -8,12 +9,12 @@ const LinkContainer = styled.div`
 `
 
 // link hover effect
-const Label = styled.a`
+const Label = styled(Link)`
   padding: 5px;
   position: relative;
   color: ${props => props.linkColor || "#000000"};
   text-decoration: none;
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -21,13 +22,14 @@ const Label = styled.a`
     bottom: 0;
     left: 0;
     background-color: ${props => props.linkColor || "#000000"};
-    visibility: hidden;
     transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
+    transform-origin: 100% 50%;
+    transition: transform 0.5s ease-in-out 0s;
   }
-  &:hover::before {
-    visibility: visible;
+  &:hover::after {
+    
     transform: scaleX(1);
+    transform-origin: 0% 0%;
   }
 `
 const Arrow = ({ linkColor }) => (
@@ -47,16 +49,18 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-const CustomLink = ({ to, displayText, linkColor }) => (
+const CustomLink = ({ to, displayText, linkColor, arrow }) => (
   <LinkContainer>
     <div style={{ display: `inline-block` }}>
-      <Label href={to} linkColor={linkColor}>
+      <Label to={to} linkColor={linkColor}>
         {displayText}
       </Label>
     </div>
-    <div style={{ display: `inline-block` }}>
-      <Arrow linkColor={linkColor} />
-    </div>
+    {arrow ?
+      <div style={{ display: `inline-block` }}>
+        <Arrow linkColor={linkColor} />
+      </div> : null
+    }
   </LinkContainer>
 )
 
@@ -64,7 +68,7 @@ Arrow.propTypes = {
   linkColor: PropTypes.string,
 }
 Arrow.defaultProps = {
-  linkColor: `#8eb4d0`,
+  linkColor: 'black',
 }
 
 CustomLink.propTypes = {
@@ -74,7 +78,8 @@ CustomLink.propTypes = {
 }
 
 CustomLink.defaultProps = {
-  linkColor: ``,
+  linkColor: 'black',
 }
 
 export default CustomLink
+
