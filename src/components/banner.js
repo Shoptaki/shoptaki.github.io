@@ -2,7 +2,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import CustomLink from "./customlink"
-import Image from "./image"
 import graphics from "../images/banner-graphics.svg"
 // import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import mobileGraphics from "../images/mobile-banner-graphics.svg"
@@ -18,16 +17,16 @@ const Container = styled.div`
   height: 40rem;
   background-position: left bottom;
   background-repeat: no-repeat;
-  // background-size: cover;
-  background-size:100% auto;
+  
+  background-size: 100% auto;
 
   width: 100%;
   display: inline-block;
-  pagebreakafter: always;
+  page-break-after: always;
 
   /* include padding into the layout */
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;¥
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 
   @media (max-width: ${theme.mobile}) {
@@ -39,10 +38,10 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   float: left;
-  flexdirection: column;
+  flex-direction: column;
   flex: 1;
   padding: 0 8rem 0 8rem;
-  width: 60%;
+  width: 50%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -72,7 +71,7 @@ const Title = styled.h1`
   font-size: 3rem;
   color: #07528b;
   display: inline-block;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 
   @media (max-width: ${theme.mobile}) {
     margin-top: 4rem;
@@ -89,11 +88,7 @@ const Subtitle = styled.h2`
 
   overflow-wrap: break-word;
   word-wrap: break-word;
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  // hyphens: auto;
-  flexwrap: wrap;
+  flex-wrap: wrap;
   @media (max-width: ${theme.mobile}) {
     font-size: 1.5rem;
   }
@@ -108,11 +103,7 @@ const Description = styled.p`
   /* wrap text */
   overflow-wrap: break-word;
   word-wrap: break-word;
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  //hyphens: auto;
-  flexwrap: wrap;
+  flex-wrap: wrap;
 
   @media (max-width: ${theme.mobile}) {
     margin-top: 3rem;
