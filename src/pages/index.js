@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
 
+import Carousel from "./components/carousel"
+import { theme } from "../theme/GlobalStyles.js"
 
 const IndexPage = () => (
   <Layout>
@@ -19,14 +21,21 @@ const IndexPage = () => (
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"
       linkText="What is Smartchain?"
-      linkColor="#8EB4D0"
+      linkColor={theme.fontBlueGray}
     />
     <Slogan
       title="Take Control. Work Smarter. Enjoy Success. "
       description="We provide a source of collaborative AI solutions for users to make smarter choices and simplify global interactions."
       color="orange"
     />
-   
+
+    <Carousel
+      link="/"
+      linkText="Read More"
+      linkColor={theme.fontGray}
+    />
+
+    <Link to="/page-2/">Go to page 2</Link> <br />
   </Layout>
 )
 
