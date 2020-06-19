@@ -3,6 +3,43 @@ module.exports = {
     title: `Shoptaki`,
     description: `At Shoptaki, we are committed to bringing the best distributed AI solutions to simplify global transactions.`,
     author: `Asnee Fernando`,
+
+    menuLinks: [
+      {
+        title: "About Us",
+        subLinks: [
+          {
+            title: "Our Mission",
+            link: "/our-mission"
+          }
+        ]
+      },
+      {
+        title: "Smartchain",
+        subLinks: [
+          {
+            title: "Why Smartchain?",
+            link: "/why-smartchain"
+          }
+        ]
+      },
+      {
+        title: "Our Solution",
+        subLinks: [
+          {
+            title: "Use Cases",
+            link: "/use-cases"
+          },
+          {
+            title: "Products",
+            link: "/products"
+          }
+        ]
+      }, 
+      
+
+    ],
+
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
