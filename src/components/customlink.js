@@ -27,7 +27,7 @@ const Label = styled(Link)`
     transition: transform 0.5s ease-in-out 0s;
   }
   &:hover::after {
-    //visibility: visible;
+    
     transform: scaleX(1);
     transform-origin: 0% 0%;
   }
@@ -82,3 +82,4 @@ CustomLink.defaultProps = {
 }
 
 export default CustomLink
+
