@@ -14,7 +14,7 @@ const Label = styled(Link)`
   position: relative;
   color: ${props => props.linkColor || "#000000"};
   text-decoration: none;
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -22,13 +22,14 @@ const Label = styled(Link)`
     bottom: 0;
     left: 0;
     background-color: ${props => props.linkColor || "#000000"};
-    visibility: hidden;
     transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
+    transform-origin: 100% 50%;
+    transition: transform 0.5s ease-in-out 0s;
   }
-  &:hover::before {
-    visibility: visible;
+  &:hover::after {
+    
     transform: scaleX(1);
+    transform-origin: 0% 0%;
   }
 `
 const Arrow = ({ linkColor }) => (
@@ -81,3 +82,4 @@ CustomLink.defaultProps = {
 }
 
 export default CustomLink
+
