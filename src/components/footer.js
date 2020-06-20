@@ -15,16 +15,17 @@ const Mainfooter = styled.div`
     left:0;
     bottom:0;
     right:0;
-    margin-top: 200%;
     overflow:hidden;
 `
 const Title= styled.div`
     margin-bottom:0.3em;
-    margin-top:1em;
+    margin-top:0.5em;
     color:white;
     font-size:25px;
     @media (max-width: ${theme.mobile}){
         margin-bottom:0.5em;
+        font-size:23px;
+        margin-top:1em;
     }
 `
 
@@ -32,9 +33,9 @@ const Container= styled.div`
     width:100%;
     padding-left:30px;
     padding-right:20px;
-    padding-bottom:20px;
+    padding-bottom:10px;
     padding-top: 20px;
-    background-color: black;  
+    background-color: black; 
  `
 const Row=styled.div`
     display: flex;
@@ -45,10 +46,11 @@ const Row=styled.div`
     } 
 `
 const Box=styled.div`
-    margin: 10px;
+    margin-left: 45px;
+    margin-top: 25px;
     padding: 5px;
     font-size: 20px;
-    flex-basis:30%;  
+    flex-basis:17%;  
     @media (max-width: ${theme.mobile}){
         margin: 0px;
         padding: 0px;
@@ -63,7 +65,6 @@ const ListUnstyled=styled.ul`
     margin: 0%;
     padding: 0%;
     font-size: 30px;
-    margin-bottom: 0;
     @media (max-width: ${theme.mobile}){
         font-size: 40px;
         line-height: 0.5em;
@@ -72,7 +73,7 @@ const ListUnstyled=styled.ul`
 const List =styled(Link)`
     color: grey;
     font-size: 18px;
-    line-height: 1.8em;
+    line-height: 1em;
     text-decoration:underline;
     text-decoration-color: black;
     &:hover{
@@ -87,40 +88,45 @@ const Icon=styled.div`
     flex-direction:row;
 `
 const Iconbox =styled.div`
-    margin: 10px;
+    margin-left: 45px;
     padding: 5px;
-    flex-basis:3%;  
+    margin-top: 2em;
     @media (max-width: ${theme.mobile}){
         padding: 0px;
         margin-left: 0;
         font-size: 20px;
-        margin-top: 1em;
-        flex-basis:10%; 
-        margin-bottom: 1em;
+        margin-top: 1.5em;
+        flex-basis:1.5em; 
+        margin-bottom: 0.6em;
 }
 `
 
 const Social =styled.img`
-    width:110%;
+    width:45px;
+    margin-top:-1em;
+    margin-right:-2em;
     &:hover{
         opacity: 0.6;
     }
     @media (max-width: ${theme.mobile}){
-        width:80%; 
+        width:40px; 
+        margin-right:15px;
+        margin-top:0;
     }
 `
 
 const FooterBottom =styled.div`
     color:grey;
-    margin:10px;
+    margin-left: 45px;
     padding: 5px;
     line-height: 0em;
-    margin-top: 60px;
+    margin-top: 65px;
+    margin-bottom:15px;;
     @media (max-width: ${theme.mobile}){
         margin: 0px;
         padding: 0px;
         font-size: 15px;
-        margin-top: 20%;
+        margin-top: 6em;
     }
 `
 const FooterLinks=[

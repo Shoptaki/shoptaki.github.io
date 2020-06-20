@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const UpBg = styled.div`
     margin-top: 100%;
+    margin-bottom: 200%;
     left:0;
     right:0;
     position: sticky;

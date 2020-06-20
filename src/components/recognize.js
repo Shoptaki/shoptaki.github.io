@@ -6,10 +6,11 @@ import styled from "styled-components"
 import {theme} from "../theme/GlobalStyles.js"
 
 const Recog = styled.div`
-    margin-top: 200%;
+    
     left:0;
     right:0;
-    position: sticky;
+    position: relative;
+    margin-bottom:0;
     overflow:hidden;
 `
 const RecogContainer= styled.div`
@@ -19,10 +20,11 @@ const RecogContainer= styled.div`
     position: sticky;
     padding-top: 25%; 
     background: linear-gradient( -7deg, #F8F8F8 0%, #F8F8F8 70% ,white 71%);
+    margin-bottom:0;
     @media (max-width: ${theme.mobile}){
         background:#F8F8F8;
-        height:480px;
-        background: linear-gradient( -7deg, #F8F8F8 0%, #F8F8F8 70% ,white 80%);
+        height:150%;
+        background: linear-gradient( -7deg, #F8F8F8 0%, #F8F8F8 80% ,white 90%);
     }
 `
 
@@ -32,11 +34,11 @@ const Subcontainer= styled.div`
     width: 260%;
     margin-left: -10%;
     margin-top: -27%; 
-    margin-bottom: 1em;
+    margin-bottom: 10%;
     background: linear-gradient( -3.5deg, #F8F8F8 0%, #F8F8F8 68%,#93D4EF 90%); 
     transform: rotate(-6deg);
     @media (max-width: ${theme.mobile}){
-    background: linear-gradient( -5deg, #F8F8F8 0%, #F8F8F8 68%,#93D4EF 90%); 
+    background: linear-gradient( -5deg, #F8F8F8 0%, #F8F8F8 70%,#93D4EF 90%); 
     } 
  `
 const RecogTitle=styled.div`
@@ -46,10 +48,6 @@ const RecogTitle=styled.div`
     font-weight:100;
     font-size: 27px;
     margin-bottom: 0.5em;
-    margin-top:6.5em;
-    @media (max-width: ${theme.mobile}){
-        margin-top:1.2em;
-    } 
 `
 const RecogImageBox=styled.div`
 
@@ -60,6 +58,7 @@ const RecogImageBox=styled.div`
     @media (max-width: ${theme.mobile}){
          display: flex;
          flex-direction: column;
+         align-items: center;
     } 
     
 `
@@ -86,7 +85,7 @@ const RecogImage3=styled.img`
     @media (max-width: ${theme.mobile}){
         width: 60%;
         margin-top: -10%;
-        margin-left: 5%;
+        margin-bottom:5%;
     }
     
 `
