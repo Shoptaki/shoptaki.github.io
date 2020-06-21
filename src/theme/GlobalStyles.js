@@ -13,6 +13,7 @@ export const theme = {
     fontDarkBlue: '#1071BB',
     fontLightBlue: '#3F9CE5',
     fontBlueGray: '#8EB4D0',
+    fontGray: '#707070',
 
     mobile: "768px",
     tablet: "992px",
@@ -35,7 +36,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: normal;
         src: url(${MyriadProLight}) format('woff');
     }
-    
+
 
     @font-face {
         font-family: 'Myriad Pro Semibold';
@@ -43,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: normal;
         src: url(${MyriadProSemiBold}) format('woff');
     }
-    
+
 
     @font-face {
         font-family: 'Myriad Pro Bold';
@@ -56,6 +57,6 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Myriad Pro Regular', sans-serif;
         margin: 0;
         padding: 0;
-        
+
     }
 `;
