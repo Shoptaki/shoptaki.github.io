@@ -11,14 +11,14 @@ const Mainfooter = styled.div`
     align-items: center;
     top:100%;
     font-size:.889rem;
-    position:sticky;
+    position: sticky;
     left:0;
     bottom:0;
     right:0;
-    margin-top: 200%;
+    
     overflow:hidden;
 `
-const Title= styled.div`
+const Title = styled.div`
     margin-bottom:0.3em;
     margin-top:1em;
     color:white;
