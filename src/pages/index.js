@@ -4,8 +4,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
+
 import Recognize from "../components/recognize"
 import Carousel from "../components/carousel"
+import CardAndHeader from "../components/cardAndHeader"
+
+
 import { theme } from "../theme/GlobalStyles.js"
 
 const IndexPage = () => (
@@ -29,12 +33,12 @@ const IndexPage = () => (
       color="orange"
     />
 
-    <Carousel
-      link="/"
-      linkText="Read More"
-      linkColor={theme.fontGray}
-    />
-    <Recognize />
+  
+
+  <CardAndHeader />
+  <Recognize />
+
+    
   </Layout>
 )
 

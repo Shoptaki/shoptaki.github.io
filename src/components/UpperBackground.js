@@ -28,12 +28,14 @@ const SubUpperBg= styled.div`
     transform: rotate(6deg);
  `
 
-function UpperBg () {
+const UpperBg = () => {
     return (
        
        <UpBg> 
             <UpperBgcontainer>
-                <SubUpperBg></SubUpperBg>
+                <SubUpperBg>
+            
+                </SubUpperBg>
             </UpperBgcontainer>
         </UpBg>
     )

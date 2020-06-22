@@ -18,6 +18,7 @@ const Container = styled.div`
   background-position: left bottom;
   background-repeat: no-repeat;
   
+  background-color: white;
   background-size: 100% auto;
 
   width: 100%;
