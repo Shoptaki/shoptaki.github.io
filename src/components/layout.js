@@ -9,14 +9,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import Header from "./header"
+import { GlobalStyles} from "../theme/GlobalStyles"
 import { theme } from "../theme/GlobalStyles"
-
-import { GlobalStyles } from "../theme/GlobalStyles"
+import Recognize from "./recognize"
+import UpperBg from "./UpperBackground"
+import Contact from "./ContactUs"
+import Header from "./header"
+import Footer from "./footer"
 
 const Container = styled.div`
   margin: 0;
-  max-width: ${theme.largeDesktop};
+  /* max-width: ${theme.largeDesktop}; */
   padding: 0 0 0;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -52,6 +55,10 @@ const Layout = ({ children }) => {
       <Container>
         <main>{children}</main>
       </Container>
+      <UpperBg />
+      <Recognize />
+      <Contact />
+      <Footer />
     </>
   )
 }
