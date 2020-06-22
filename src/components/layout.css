@@ -83,13 +83,34 @@ header {
     width: 70px;
 }
 
-@media screen and (max-width: 800px) {
+.ContactLink {
+  border: solid;
+  borderColor: blue;
+  borderRadius: 10;
+  padding: 10px;
+}
+.ContactLink:hover {
+  border-color: purple;
+  background-color: lightblue;
+}
+
+.AboutPopup {
+
+}
+
+@media screen and (max-width: 1024px) {
   .MenuDivider {
     display: none;
   }
 
   .HamburgerMenu {
     display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HamburgerMenu {
+    margin-left: 200px;
   }
 }
 
