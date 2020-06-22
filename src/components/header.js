@@ -1,9 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-// import logoimage from "../images/logo_vertical.png";
-// import arrowimage from "../images/downarrow.png";
-// import hamburgerimage from "../images/icons8-menu-50.png";
 import Popup from "reactjs-popup";
 import './layout.css';
 import { zoomIn } from "react-animations";
