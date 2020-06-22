@@ -79,6 +79,32 @@ const CarouselRight = styled.span`
     display: none;
   }
 `
+const Dot = styled.span`
+  cursor: pointer;
+  height: 0.50rem;
+  width: 0.50rem;
+  margin: 0 0.4rem;
+  background-color: ${props => (props.active ? '#0E99D3' : "#fff")};
+  border: 0.05rem solid ${theme.logoLightBlue} !important;
+  ${'' /* color: ${theme.logoLightBlue}; */}
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+`;
+
+const DotContainer = styled.div`
+  display: flex;
+  position: absolute;
+  top: 90%;
+  justify-content: center;
+  width: 100%;
+
+  @media (max-width: ${theme.tablet}) {
+    display: none;
+  }
+`;
+
 const NextArrow = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 196 192">
     <defs>
@@ -126,6 +152,7 @@ const BackArrow = () => (
 
 function Carousel(props) {
   const [index, setIndex] = useState(0)
+
   const data = useStaticQuery(
     graphql`
       query {
@@ -156,20 +183,40 @@ function Carousel(props) {
   const imageNode  = data.allFile.nodes[index]
   const textNode  = data.allSlide.nodes[index]
 
+  const defaultState = data.allSlide.nodes.map((node, index) => (index === 0 ? true : false));
+  const [isActive, setIsActive] = useState(defaultState);
+
   //Minus 1 for array offset from 0
   const length = data.allSlide.nodes.length - 1
 
-  const handleNext = () =>
-    index === length ? setIndex(0) : setIndex(index + 1)
+  const changeActive = (node) =>
+    isActive.map((active, index) => (index === node ? true : false))
 
-  const handlePrevious = () =>
-    index === 0 ? setIndex(length) : setIndex(index - 1)
+  const handleNext = (node) => (
+    setIsActive(changeActive(node)),
+    index === length ? setIndex(0) : setIndex(index + 1),
+    console.log("index: " + index),
+    console.log("active: " + isActive)
+  )
 
+  const handlePrevious = (node) => (
+    setIsActive(changeActive(node)),
+    index === 0 ? setIndex(length) : setIndex(index - 1),
+    console.log("index: " + index),
+    console.log("active: " + isActive)
+  )
+
+  const dotButtons = data.allSlide.nodes.map((node, index ) => (
+      <Dot
+        active={isActive[index]}
+        key={index}
+      ></Dot>
+    ));
 
 
   return (
       <Box >
-        <CarouselLeft onClick={() => handlePrevious()}> <BackArrow /> </CarouselLeft>
+        <CarouselLeft onClick={() => handlePrevious(index)}> <BackArrow /> </CarouselLeft>
 
         <Container >
 
@@ -194,7 +241,7 @@ function Carousel(props) {
 
               <ImageContainer >
                 <Img
-                  onLoad={setTimeout(handleNext, 5000)}
+
                   fluid={imageNode.childImageSharp.fluid}
                   key={imageNode.id}
                   alt={imageNode.name.replace(/-/g, " ").substring(2)}
@@ -204,9 +251,11 @@ function Carousel(props) {
             </CSSTransition>
           </SwitchTransition>
 
+          <DotContainer>{dotButtons}</DotContainer>
+
         </Container>
 
-        <CarouselRight onClick={() => handleNext()}  > <NextArrow /></CarouselRight>
+        <CarouselRight onClick={() => handleNext(index)}  > <NextArrow /></CarouselRight>
 
       </Box>
 
