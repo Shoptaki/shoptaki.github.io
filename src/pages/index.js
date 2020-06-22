@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
-import { Link } from "gatsby"
+import Header from "../components/header"
 import CardAndHeader from "../components/cardAndHeader"
 
 import Carousel from "../components/carousel"
@@ -14,7 +15,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Banner
-      title="Smartchain:"
+      title="Smartchain: "
       subtitle="The next evolution of distributed technology"
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"

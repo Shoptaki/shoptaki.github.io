@@ -6,19 +6,21 @@ import styled from "styled-components"
 import {theme} from "../theme/GlobalStyles.js"
 
 const Recog = styled.div`
-    margin-top: 200%;
     left:0;
     right:0;
     position: sticky;
     overflow:hidden;
+    
 `
 const RecogContainer= styled.div`
     background:#F8F8F8;
     height:220px;
     width:100%;
+    margin-bottom: 4rem;
     position: sticky;
     padding-top: 25%; 
     background: linear-gradient( -7deg, #F8F8F8 0%, #F8F8F8 70% ,white 71%);
+
     @media (max-width: ${theme.mobile}){
         background:#F8F8F8;
         height:480px;

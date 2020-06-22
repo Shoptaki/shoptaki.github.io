@@ -15,12 +15,20 @@ A link component with underline effect on mouse hover
 import CustomLink from "../components/customlink"
 ```
 
-2. create the component
+2. create the component: without arrow
 
 ```
 const YourComponent = () => (
   <YourContainer>
     <CustomLink to="/" displayText="Learn More" linkColor="#FFF" />
+  </YourContainer>
+)
+```
+3. You can choose to have an arrow
+```
+const YourComponent = () => (
+  <YourContainer>
+    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" arrow/>
   </YourContainer>
 )
 ```
@@ -33,6 +41,7 @@ const YourComponent = () => (
 ###### Optional properties:
 
 - `linkColor`: the color of the text, the underline and the arrow! default color is black `#000000`
+- `arrow`: don't need to pass specific value for it, just add `arrow`, then arrow svg will show on the right of your link component
 
 ## 💻 Banner
 
