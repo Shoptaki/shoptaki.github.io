@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
 
-import Carousel from "./components/carousel"
+import Carousel from "../components/carousel"
 import { theme } from "../theme/GlobalStyles.js"
 
 const IndexPage = () => (
@@ -35,7 +35,7 @@ const IndexPage = () => (
       linkColor={theme.fontGray}
     />
 
-    <Link to="/page-2/">Go to page 2</Link> <br />
+    
   </Layout>
 )
 

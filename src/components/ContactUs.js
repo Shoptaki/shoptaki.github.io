@@ -6,7 +6,7 @@ import {theme} from "../theme/GlobalStyles.js"
 const Contactcontainer= styled.div`
     left:0;
     right:0;
-    position: relative;
+    position: sticky;
     width: 100%;
     height:350px;
     background: linear-gradient( to right,#BFE6F7,#1DA7E3 45%,#BFE6F7); 
@@ -19,7 +19,7 @@ const ContactTitle = styled.div`
     font-weight:100;
     font-size: 27px;
     margin-bottom: 0.5em;
-    margin-top:3em;
+    margin-top:4em;
     @media (max-width: ${theme.mobile}){
         text-align:center; 
     } 

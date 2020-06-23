@@ -84,33 +84,34 @@ const List =styled(Link)`
 
 const Icon=styled.div`
     height: 10px;
+    margin-left: 15px;
+    margin-bottom: 5em; 
     display: flex;
     flex-direction:row;
 `
 const Iconbox =styled.div`
-    margin-left: 45px;
+    margin-left: 30px;
     padding: 5px;
     margin-top: 2em;
     @media (max-width: ${theme.mobile}){
         padding: 0px;
-        margin-left: 0;
+        margin-left: -13px;;
         font-size: 20px;
         margin-top: 1.5em;
-        flex-basis:1.5em; 
         margin-bottom: 0.6em;
 }
 `
 
 const Social =styled.img`
-    width:45px;
+    width:50px;
     margin-top:-1em;
-    margin-right:-2em;
+    margin-bottom: 1.5em;
     &:hover{
         opacity: 0.6;
     }
     @media (max-width: ${theme.mobile}){
         width:40px; 
-        margin-right:15px;
+        margin-right:30px;
         margin-top:0;
     }
 `
@@ -121,7 +122,8 @@ const FooterBottom =styled.div`
     padding: 5px;
     line-height: 0em;
     margin-top: 65px;
-    margin-bottom:15px;;
+    margin-bottom:15px;
+    font-size: 15px;
     @media (max-width: ${theme.mobile}){
         margin: 0px;
         padding: 0px;
