@@ -27,8 +27,19 @@ const IndexPage = () => (
       description="We provide a source of collaborative AI solutions for users to make smarter choices and simplify global interactions."
       color="orange"
     />
+<<<<<<< HEAD
     <Carousel link="/" linkText="Read More" linkColor={theme.fontGray} />
     <CardAndHeader></CardAndHeader>
+=======
+
+    <Carousel
+      link="/"
+      linkText="Read More"
+      linkColor={theme.fontGray}
+    />
+
+    
+>>>>>>> 29aee2a1aa9effa731df1cae623175690cbe54a6
   </Layout>
 )
 

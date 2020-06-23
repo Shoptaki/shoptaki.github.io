@@ -2,6 +2,11 @@ import React from 'react';
 import styled from "styled-components"
 
 const UpBg = styled.div`
+<<<<<<< HEAD
+=======
+    margin-top: 100%;
+    margin-bottom: 200%;
+>>>>>>> 29aee2a1aa9effa731df1cae623175690cbe54a6
     left:0;
     right:0;
     position: sticky;
