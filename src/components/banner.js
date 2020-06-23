@@ -19,14 +19,6 @@ const Container = styled.div`
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
-<<<<<<< HEAD
-=======
-=======
-  
-  background-color: white;
-  background-size: 100% auto;
->>>>>>> 9c77be22ca8472bd9013eaf3e9d16a52e5b1eb02
->>>>>>> 7bebc7e724b5a547e606159414b9e6549965cd07
 
   width: 100%;
   display: inline-block;

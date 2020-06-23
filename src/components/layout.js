@@ -9,11 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { GlobalStyles} from "../theme/GlobalStyles"
+import { GlobalStyles } from "../theme/GlobalStyles"
 import { theme } from "../theme/GlobalStyles"
 import Contact from "./ContactUs"
 import Header from "./header"
 import Footer from "./footer"
+import Recognize from "./recognize"
 
 const Container = styled.div`
   margin: 0;
@@ -52,10 +53,10 @@ const Layout = ({ children }) => {
       />
       <Container>
         <main>{children}</main>
-        
       </Container>
+      <Recognize />
       <Contact />
-        <Footer />
+      <Footer />
     </>
   )
 }
