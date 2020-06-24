@@ -15,6 +15,7 @@ export const theme = {
     fontBlueGray: '#8EB4D0',
     fontGray: '#707070',
 
+    phone: "480px",
     mobile: "768px",
     tablet: "992px",
     desktop: "1200px",

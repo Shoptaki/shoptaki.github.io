@@ -1,20 +1,20 @@
-.fade-enter {
-  opacity: 0;
-  transform: translateX(-50%);
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  height: 0.50rem;
+  width: 0.50rem;
+  margin: 0 0.4rem;
+  border: 0.05rem solid #0E99D3 !important;
+  border-radius: 50%;
+  background-clip: inherit;
 }
-.fade-enter-active {
-  opacity: 1;
-  transform: translateX(0%);
+.carousel .carousel-indicators .active {
+  background-color: #0E99D3;
 }
-.fade-exit {
-  opacity: 1;
-  transform: translateX(0%);
-}
-.fade-exit-active {
-  opacity: 0;
-  transform: translateX(50%);
-}
-.fade-enter-active ,
-.fade-exit-active {
-  transition: opacity 400ms, transform 400ms;
+.carousel-item .carousel-caption {
+  color: #000;
+  position: relative;
+  right: 0;
+  left: 0;
+  text-align: left;
+  font-size : 1.7vw;
 }
