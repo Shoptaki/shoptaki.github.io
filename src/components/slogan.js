@@ -39,6 +39,7 @@ const Description = styled.p`
   }
 `;
 
+/*
 const TopSection = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="1300" viewBox="0 0 1921.363 1316.203">
     <defs>
@@ -60,12 +61,10 @@ const SVGContainer = styled.div`
   z-index: -1;
    
 `;
+*/
 
 const Slogan = ({ title, description, color }) => (
   <Container>
-    <SVGContainer>
-      <TopSection />
-    </SVGContainer>
     <center>
       <Title>{title}</Title>
     </center>
