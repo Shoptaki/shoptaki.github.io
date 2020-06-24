@@ -10,27 +10,19 @@ import CustomLink from "./customlink"
 import Carousel from 'react-bootstrap/Carousel'
 import "./styles.css"; // for bootstrap carousel customization
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: 'row';
-  position: relative;
-  @media (max-width: ${theme.mobile}) {
-    flex-direction: column-reverse;
-  }
-`
-
 const Box = styled.div`
   display: flex;
-  flex-direction: 'row';
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 70%;
   height: 30vw;
   margin: auto;
 
-  @media (max-width: ${theme.mobile}) {
+
+  @media (max-width: ${theme.phone}) {
     width: 100%;
     margin-left: 0rem;
-    flex-direction: column-reverse;
+    float: right;
+    height: auto;
   }
 `;
 const TextContainer = styled.div`
@@ -41,13 +33,15 @@ const TextContainer = styled.div`
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 
+
   @media (max-width: ${theme.tablet}) {
     padding-top: 2rem;
   }
 
-  @media (max-width: ${theme.mobile}) {
+  @media (max-width: ${theme.phone}) {
     width: 100%;
-    padding-right: 1rem;
+    padding: 3rem 3rem 0rem 3rem;
+
   }
 `
 const ImageContainer = styled.div`
@@ -56,10 +50,11 @@ const ImageContainer = styled.div`
   margin-left: 0.5rem;
   overflow: hidden;
 
-  @media (max-width: ${theme.mobile}) {
-    width: 75%;
-    padding-bottom: 0rem;
+  @media (max-width: ${theme.phone}) {
+    width: 70%;
+    padding: 0rem;
     margin-left: 15%;
+
   }
 `
 const Heading = styled.h3`
@@ -68,53 +63,16 @@ const Heading = styled.h3`
   @media (max-width: ${theme.tablet}) {
     padding-bottom: 1rem;
   }
-`
-const CarouselLeft = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  right: 2rem;
-
-  @media (max-width: ${theme.mobile}) {
-    display: none;
-  }
-`
-const CarouselRight = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  left: 2rem;
-
-  @media (max-width: ${theme.mobile}) {
-    display: none;
+  @media (max-width: ${theme.phone}) {
+    font-size: 2rem;
   }
 `
 
-const NextArrow = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 196 192">
-    <defs>
-      <filter id="Ellipse_4" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse">
-        <feOffset dy="3" input="SourceAlpha"/>
-        <feGaussianBlur stdDeviation="10" result="blur"/>
-        <feFlood flood-opacity="0.161"/>
-        <feComposite operator="in" in2="blur"/>
-        <feComposite in="SourceGraphic"/>
-      </filter>
-    </defs>
-    <g id="Component_12_1" data-name="Component 12 – 1" transform="translate(30 27)">
-      <g id="Component_13_1" data-name="Component 13 – 1">
-        <g transform="matrix(1, 0, 0, 1, -30, -27)" filter="url(#Ellipse_4)">
-          <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="68" cy="66" rx="68" ry="66" transform="translate(30 27)" fill="#fff"/>
-        </g>
-        <path id="Path_30" data-name="Path 30" d="M1598.086,1941.2h20.082l18.4,25.988-18.4,26.908h-20.082l18.845-26.908Z" transform="translate(-1545 -1901.012)" fill="#0f7aaf"/>
-      </g>
-    </g>
-  </svg>
-
-)
-
+const Subtext = styled.p`
+  @media (max-width: ${theme.phone}) {
+    font-size: 1rem;
+  }
+`
 const slides = [
   {
     name: "What We Offer",
@@ -167,13 +125,14 @@ function ControlledCarousel(props) {
           <TextContainer>
             <Carousel.Caption>
               <Heading>{slides[0].name}</Heading>
-              <p>{slides[0].type}</p>
-              <CustomLink
-                to={props.link1}
-                displayText={props.linkText}
-                linkColor={props.linkColor}
-                arrow
-              />
+              <Subtext>{slides[0].type}
+                <CustomLink
+                  to={props.link1}
+                  displayText={props.linkText}
+                  linkColor={props.linkColor}
+                  arrow
+                />
+              </Subtext>
             </Carousel.Caption>
           </TextContainer>
           <ImageContainer>
@@ -189,13 +148,14 @@ function ControlledCarousel(props) {
           <TextContainer>
             <Carousel.Caption>
               <Heading>{slides[1].name}</Heading>
-              <p>{slides[1].type}</p>
-              <CustomLink
-                to={props.link2}
-                displayText={props.linkText}
-                linkColor={props.linkColor}
-                arrow
-              />
+              <Subtext>{slides[1].type}
+                <CustomLink
+                  to={props.link2}
+                  displayText={props.linkText}
+                  linkColor={props.linkColor}
+                  arrow
+                />
+              </Subtext>
             </Carousel.Caption>
           </TextContainer>
           <ImageContainer>
@@ -211,13 +171,14 @@ function ControlledCarousel(props) {
           <TextContainer>
             <Carousel.Caption>
               <Heading>{slides[2].name}</Heading>
-              <p>{slides[2].type}</p>
-              <CustomLink
-                to={props.link3}
-                displayText={props.linkText}
-                linkColor={props.linkColor}
-                arrow
-              />
+              <Subtext>{slides[2].type}
+                <CustomLink
+                  to={props.link3}
+                  displayText={props.linkText}
+                  linkColor={props.linkColor}
+                  arrow
+                />
+              </Subtext>
             </Carousel.Caption>
           </TextContainer>
           <ImageContainer>
