@@ -2,11 +2,11 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import logoimage from "../images/logo_vertical.png";
-import hamburgerimage from "../images/icons8-menu-50.png";
 import Popup from "reactjs-popup";
 import './layout.css';
 import { fadeInDown } from "react-animations";
 import { keyframes } from "styled-components";
+import CustomLink from "./customlink"
 import links from "../../gatsby-config";
 
 const FadeIn = styled.div`animation: 2.5s ${keyframes`${fadeInDown}`};`
@@ -34,6 +34,7 @@ const productsLink = {
 const Container = styled.header`
   margin-bottom: 1.45rem;
   padding: 1.45rem 1.0875rem;
+  display: flex;
 `;
 
 const MenuDiv = styled.div`
@@ -62,7 +63,6 @@ const NavButton = styled(Link)`
 const Header = () => (
   <header>
     <Container>
-
       <HomeDiv>
         <HomeButton>
           <Link
@@ -73,109 +73,86 @@ const Header = () => (
         </HomeButton>
       </HomeDiv>
       <MenuDiv className="MenuDivider" style={{width: 1500}}>
-        <Popup className="AboutPopup"
-               contentStyle={{width: 110, border: "none", borderRadius: 10, padding: 10,
-                 boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 0px"}}
-               trigger={
-                 <button
-                   style={{
-                     border: "none",
-                     fontSize: 25,
-                     backgroundColor: "white",
-                     height: 25,
-                     outline: "none",
-                     fontWeight: "bold"}}>
-                   About Us
-                 </button>
-               }
-               position="bottom center">
-          <FadeIn>
-            <div style={{width: 110,
-              textAlign: "center",
-              border: "solid",
-              borderWidth: 2,
-              borderColor: "lightgray",
-              borderRadius: 5,
-              boxShadow: "rgba(0, 0, 0, 0.2) 5px 5px 5px"}}>
-              <Link
-                style={{color: "black", textDecoration: "none", fontWeight: "bold"}}
-                to={aboutLink.link}>{aboutLink.title}</Link>
+        <ul className= "ItemsList">
+          <li style={{textAlign: "left", width: 120}}
+               className="dropdown">
+            <button style={{fontSize: 25,
+              fontWeight: "bold",
+              background: "none",
+              border: "none"}}
+                    className="dropbtn">About Us</button>
+            <div style={{borderRadius: 10}} className="dropdown-content">
+              <CustomLink
+                to={aboutLink.link}
+                displayText={aboutLink.title}
+                linkColor="black"
+              />
             </div>
-          </FadeIn>
-        </Popup>
-        <NavButton>
-          <Link
-            to={smartchainLink.link}
-            style={{ color: "black", textDecoration: "none", fontSize: 25, fontWeight: "bold"}}
-          >
-            {smartchainLink.title}
-          </Link>
-        </NavButton>
+          </li>
 
-        <Popup
-          contentStyle={{width: 110,
-            border: "none",
-            borderRadius: 10,
-            padding: 10,
-            boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 0px"}}
-          trigger={
-            <button
-              style={{border: "none", fontSize: 25,
-                backgroundColor: "white", height: 25,
-                outline: "none", marginLeft: 100, fontWeight: "bold"}}>
-              Our Solution
-            </button>
-          } position="bottom center">
-          <FadeIn>
-            <div style={{textAlign: "center",
-              border: "solid",
-              borderColor: "lightgray",
-              borderWidth: 2,
-              borderBottom: "none",
-              borderTopRightRadius:5,
-              borderTopLeftRadius: 5}}>
+          <li style={{marginRight: 80}}>
+            <NavButton style={{fontsize: 25, fontweight: "bold"}}>
               <Link
-                style={{color: "black", textDecoration: "none", fontWeight: "bold"}}
-                to={usecaseLink.link}>{usecaseLink.title}
+                to={smartchainLink.link}
+                style={{ color: "black", textDecoration: "none", fontSize: 25, fontWeight: "bold"}}
+              >
+                {smartchainLink.title}
               </Link>
-            </div>
-            <div style={{textAlign: "center",
-              border: "solid",
-              borderColor: "lightgray",
-              borderWidth: 2,
-              borderTop: "none",
-              borderBottomLeftRadius: 5,
-              borderBottomRightRadius: 5,
-              boxShadow: "rgba(0, 0, 0, 0.2) 5px 5px 5px"}}>
-              <Link
-                style={{color: "black", textDecoration: "none", fontWeight: "bold"}}
-                to={productsLink.link}>{productsLink.title}
-              </Link>
-            </div>
-          </FadeIn>
-        </Popup>
+            </NavButton>
+          </li>
 
-        <NavButton>
-          <Link className="ContactLink"
-                style={{borderRadius: 10,
-                  textDecoration: "none",
-                  fontSize: 25,
-                  fontWeight: "bold",
-                  color: "black"}}
-                to="/contact-us"
-          >
-            Contact Us
-          </Link>
-        </NavButton>
+          <li style={{marginRight: 150}}>
+            <div style={{textAlign: "center", width: 170, position: "absolute"}}
+                 className="dropdown">
+              <button style={{fontSize: 25,
+                fontWeight: "bold",
+                background: "none",
+                border: "none"}}
+                      className="dropbtn">Our Solution</button>
+              <div style={{borderRadius: 10}} className="dropdown-content">
+                <CustomLink
+                  to={usecaseLink.link}
+                  displayText={usecaseLink.title}
+                  linkColor="black"
+                />
+                <CustomLink
+                  to={productsLink.link}
+                  displayText={productsLink.title}
+                  linkColor="black"
+                />
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <NavButton>
+              <Link className="ContactLink"
+                    style={{borderRadius: 10,
+                      textDecoration: "none",
+                      fontSize: 25,
+                      fontWeight: "bold",
+                      color: "black"}}
+                    to="/contact-us"
+              >
+                Contact Us
+              </Link>
+            </NavButton>
+          </li>
+        </ul>
       </MenuDiv>
+
       <MenuDiv className="HamburgerMenu">
         <Popup contentStyle={{width: 300,
           border: "none",
           borderRadius: 10,
           boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 0px"}}
                trigger={
-                 <button style={{border: "none", fontSize: 15, backgroundColor: "white"}}>
-                   <img src={hamburgerimage} style={{height: 30, width: 30, verticalAlign: "top"}}/>
+                 <button  className="HamburgerButton" style={{border: "none", fontSize: 15, backgroundColor: "white"}}>
+                   <svg viewBox="0 0 100 80" width="40" height="40">
+                     <rect width="100" height="20"></rect>
+                     <rect y="30" width="100" height="20"></rect>
+                     <rect y="60" width="100" height="20"></rect>
+                   </svg>
                  </button>
                } position="bottom right">
           <FadeIn>
