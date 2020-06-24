@@ -18,13 +18,9 @@ const Container = styled.div`
   height: 36rem;
   background-position: left bottom;
   background-repeat: no-repeat;
-<<<<<<< HEAD
-  background-size: cover;
-=======
   
   background-color: white;
   background-size: 100% auto;
->>>>>>> 9c77be22ca8472bd9013eaf3e9d16a52e5b1eb02
 
   width: 100%;
   display: inline-block;
@@ -54,17 +50,10 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   float: left;
-<<<<<<< HEAD
-  flexdirection: column;
-  // flex: 1;
-  padding: 0 6rem 0 8rem;
-  width: 60%;
-=======
   flex-direction: column;
   flex: 1;
   padding: 0 8rem 0 8rem;
   width: 50%;
->>>>>>> 9c77be22ca8472bd9013eaf3e9d16a52e5b1eb02
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -95,10 +84,7 @@ const Title = styled.h1`
   font-size: 3rem;
   color: #07528b;
   display: inline-block;
-<<<<<<< HEAD
-=======
   flex-wrap: wrap;
->>>>>>> 9c77be22ca8472bd9013eaf3e9d16a52e5b1eb02
 
   @media (max-width: ${theme.mobile}) {
     flexwrap: wrap;
@@ -115,18 +101,9 @@ const Subtitle = styled.h2`
   color: #07528b;
   display: inline-block;
 
-<<<<<<< HEAD
-  /* To add hyphens to break word at last*/
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  // hyphens: auto;
-
-=======
   overflow-wrap: break-word;
   word-wrap: break-word;
   flex-wrap: wrap;
->>>>>>> 9c77be22ca8472bd9013eaf3e9d16a52e5b1eb02
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -143,17 +120,10 @@ const Description = styled.p`
   color: #07528b;
   display: inline-block;
 
-<<<<<<< HEAD
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  //hyphens: auto;
-=======
   /* wrap text */
   overflow-wrap: break-word;
   word-wrap: break-word;
   flex-wrap: wrap;
->>>>>>> 9c77be22ca8472bd9013eaf3e9d16a52e5b1eb02
 
   @media (max-width: ${theme.mobile}) {
     max-width: 17rem;

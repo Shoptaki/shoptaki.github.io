@@ -38,9 +38,8 @@ const IndexPage = () => (
       linkColor={theme.fontGray}
     />
 
-    <Link to="/page-2/">Go to page 2</Link> <br />
 
-    <CardAndHeader></CardAndHeader>
+    <CardAndHeader />
   </Layout>
 )
 
