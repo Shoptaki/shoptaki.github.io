@@ -2,11 +2,10 @@ import React from 'react';
 import styled from "styled-components"
 
 const UpBg = styled.div`
-    margin-top: 100%;
     left:0;
     right:0;
     position: sticky;
-    overflow:hidden;
+    
     transform: rotateY(180deg);
 `
 const UpperBgcontainer= styled.div`
@@ -29,12 +28,14 @@ const SubUpperBg= styled.div`
     transform: rotate(6deg);
  `
 
-function UpperBg () {
+const UpperBg = () => {
     return (
        
        <UpBg> 
             <UpperBgcontainer>
-                <SubUpperBg></SubUpperBg>
+                <SubUpperBg>
+            
+                </SubUpperBg>
             </UpperBgcontainer>
         </UpBg>
     )

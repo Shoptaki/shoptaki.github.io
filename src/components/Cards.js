@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import autonomous from "../../autonomous.png";
-import efficiency from "../../efficiency.png";
-import security from "../../security.png";
+import autonomous from "../images/autonomous.png";
+import efficiency from "../images/efficiency.png";
+import security from "../images/security.png";
 import {theme} from "../theme/GlobalStyles.js"
 
 
@@ -15,14 +15,14 @@ const CardContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-width: 100%
+width: 100%;
 padding: flex;
-`
+`;
 
 const Autonomous = (props) => (
   <ImageContainer>
   <CardContainer>
-  <img src={autonomous} alt="autonomous image" />
+  <img src={autonomous} alt="Autonomous Data" />
     <h2>AUTONOMY</h2>
     <div>Continuously optimize data processes to meet individual 
       business needs and regulatory compliance.</div>
@@ -38,7 +38,7 @@ const Efficiency = (props) => (
     style={{
         paddingRight: '2rem'
     }}>
-    <img src={efficiency} alt="efficiency image" />
+    <img src={efficiency} alt="Effecient Validation" />
     </div>
     <h2>EFFICIENCY</h2>
     <div>Resolve virtually any user validation, analysis, 
@@ -50,7 +50,7 @@ const Efficiency = (props) => (
   const Security = (props) => (
     <div>
     <CardContainer>
-    <img src={security} alt="security image" />
+    <img src={security} alt="Quantum Security" />
       <h2>SECURITY</h2>
       <div>Ensure safe and future-proof data transactions 
         using quantum resistant cryptography.</div>
@@ -59,14 +59,15 @@ const Efficiency = (props) => (
     )
   
   const BigContainer = styled.div`
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  justifyContent: center;
-  alignContent: center;
-  @media (max-width: ${theme.mobile}){
-    flex-direction: column;
-} 
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    
+    @media (max-width: ${theme.mobile}){
+      flex-direction: column;
+  } 
   `;
 
   const Card = (props) => (
