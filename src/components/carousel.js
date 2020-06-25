@@ -23,10 +23,11 @@ const Container = styled.div`
 const Box = styled.div`
   display: flex;
   flex-direction: 'row';
+  background-color:white;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
   margin: auto;
-
+  margin-top:-23em;;
   @media (max-width: ${theme.mobile}) {
     width: 100%;
     margin-left: 0rem;
