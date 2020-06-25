@@ -19,63 +19,56 @@ width: 100%;
 padding: flex;
 `;
 
-const Autonomous = (props) => (
+const BigContainer = styled.div`
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  @media (max-width: ${theme.mobile}){
+    flex-direction: column;
+}
+`;
+
+const Autonomous = () => (
   <ImageContainer>
-  <CardContainer>
-  <img src={autonomous} alt="Autonomous Data" />
-    <h2>AUTONOMY</h2>
-    <div>Continuously optimize data processes to meet individual 
-      business needs and regulatory compliance.</div>
-  </CardContainer>
+    <CardContainer>
+      <img src={autonomous} alt="Autonomous Data" />
+      <h2>AUTONOMY</h2>
+      <p>Continuously optimize data processes to meet individual
+      business needs and regulatory compliance.</p>
+      </CardContainer>
   </ImageContainer>
   )
-  
 
-const Efficiency = (props) => (
-  <div>
+
+const Efficiency = () => (
   <CardContainer>
-    <div 
-    style={{
-        paddingRight: '2rem'
-    }}>
-    <img src={efficiency} alt="Effecient Validation" />
+    <div style={{ paddingRight: '2rem' }}>
+      <img src={efficiency} alt="Effecient Validation" />
     </div>
     <h2>EFFICIENCY</h2>
-    <div>Resolve virtually any user validation, analysis, 
-      or prediction task within fractions of a second.</div>
+    <p>Resolve virtually any user validation, analysis,
+      or prediction task within fractions of a second.</p>
   </CardContainer>
-  </div>
   )
 
-  const Security = (props) => (
-    <div>
-    <CardContainer>
+const Security = () => (
+  <CardContainer>
     <img src={security} alt="Quantum Security" />
-      <h2>SECURITY</h2>
-      <div>Ensure safe and future-proof data transactions 
-        using quantum resistant cryptography.</div>
-    </CardContainer>
-    </div>
-    )
-  
-  const BigContainer = styled.div`
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    
-    @media (max-width: ${theme.mobile}){
-      flex-direction: column;
-  } 
-  `;
+    <h2>SECURITY</h2>
+    <p>Ensure safe and future-proof data transactions
+      using quantum resistant cryptography.</p>
+  </CardContainer>
+)
 
-  const Card = (props) => (
-    <BigContainer>
-      <div><Autonomous></Autonomous></div><div><Efficiency></Efficiency></div><div><Security></Security></div>
-    </BigContainer>
-  )
+const Card = () => (
+  <BigContainer>
+    <div><Autonomous /></div>
+    <div><Efficiency /></div>
+    <div><Security /></div>
+  </BigContainer>
+)
 
-  export default Card
-
-
+export default Card
