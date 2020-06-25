@@ -2,9 +2,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import TitleLiner from "./titleliner"
+import upperbg from "../images/UpperBG.svg"
 
 const Container = styled.div`
-  background: #f8f8f8;
+  background-image: url(${upperbg});
+  height:40rem;
   text-align: center;
   width: 100%;
   padding: 3rem 3rem;
