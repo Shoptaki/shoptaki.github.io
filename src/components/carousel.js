@@ -17,12 +17,16 @@ const Box = styled.div`
   height: 30vw;
   margin: auto;
 
+  @media (max-width: ${theme.tablet}) {
+    height: 33vw;
+    width: 80%;
+  }
 
   @media (max-width: ${theme.phone}) {
     width: 100%;
     margin-left: 0rem;
     float: right;
-    height: auto;
+    height: 38rem;
   }
 `;
 const TextContainer = styled.div`
@@ -35,7 +39,7 @@ const TextContainer = styled.div`
 
 
   @media (max-width: ${theme.tablet}) {
-    padding-top: 2rem;
+    padding: 2rem 0rem 3.5rem 2rem;
   }
 
   @media (max-width: ${theme.phone}) {
@@ -46,13 +50,17 @@ const TextContainer = styled.div`
 `
 const ImageContainer = styled.div`
   width: 45%;
-  padding: 3rem;
+  padding: 4rem;
   margin-left: 0.5rem;
   overflow: hidden;
 
+  @media (max-width: ${theme.tablet}) {
+    padding: 6vw;
+  }
+
   @media (max-width: ${theme.phone}) {
     width: 70%;
-    padding: 0rem;
+    padding: 3rem 0rem 0rem;
     margin-left: 15%;
 
   }
@@ -61,7 +69,7 @@ const Heading = styled.h3`
   font-size : 3vw;
   padding-bottom: 2rem;
   @media (max-width: ${theme.tablet}) {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
   @media (max-width: ${theme.phone}) {
     font-size: 2rem;
@@ -69,10 +77,17 @@ const Heading = styled.h3`
 `
 
 const Subtext = styled.p`
+  @media (max-width: ${theme.tablet}) {
+    font-size: 2vw;
+  }
   @media (max-width: ${theme.phone}) {
     font-size: 1rem;
   }
 `
+const Link = styled.div`
+  padding-top: 0.5rem;
+`
+
 const slides = [
   {
     name: "What We Offer",
@@ -119,19 +134,21 @@ function ControlledCarousel(props) {
 
   return (
     <Box>
-      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} controls={false}>
+      <Carousel activeIndex={index} onSelect={handleSelect} controls={false}>
 
         <Carousel.Item>
           <TextContainer>
             <Carousel.Caption>
               <Heading>{slides[0].name}</Heading>
               <Subtext>{slides[0].type}
-                <CustomLink
-                  to={props.link1}
-                  displayText={props.linkText}
-                  linkColor={props.linkColor}
-                  arrow
-                />
+                <Link>
+                  <CustomLink
+                    to={props.link1}
+                    displayText={props.linkText}
+                    linkColor={props.linkColor}
+                    arrow
+                  />
+                </Link>
               </Subtext>
             </Carousel.Caption>
           </TextContainer>
@@ -149,12 +166,14 @@ function ControlledCarousel(props) {
             <Carousel.Caption>
               <Heading>{slides[1].name}</Heading>
               <Subtext>{slides[1].type}
-                <CustomLink
-                  to={props.link2}
-                  displayText={props.linkText}
-                  linkColor={props.linkColor}
-                  arrow
-                />
+                <Link>
+                  <CustomLink
+                    to={props.link2}
+                    displayText={props.linkText}
+                    linkColor={props.linkColor}
+                    arrow
+                  />
+                </Link>
               </Subtext>
             </Carousel.Caption>
           </TextContainer>
@@ -172,12 +191,14 @@ function ControlledCarousel(props) {
             <Carousel.Caption>
               <Heading>{slides[2].name}</Heading>
               <Subtext>{slides[2].type}
-                <CustomLink
-                  to={props.link3}
-                  displayText={props.linkText}
-                  linkColor={props.linkColor}
-                  arrow
-                />
+                <Link>
+                  <CustomLink
+                    to={props.link3}
+                    displayText={props.linkText}
+                    linkColor={props.linkColor}
+                    arrow
+                  />
+                </Link>
               </Subtext>
             </Carousel.Caption>
           </TextContainer>

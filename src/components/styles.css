@@ -1,7 +1,7 @@
 .carousel .carousel-indicators li {
   background-color: #fff;
-  height: 0.50rem;
-  width: 0.50rem;
+  height: 0.5vw;
+  width: 0.5vw;
   margin: 0 0.4rem;
   border: 0.05rem solid #0E99D3 !important;
   border-radius: 50%;
@@ -17,5 +17,15 @@
   left: 0;
   text-align: left;
   font-size : 1.7vw;
-  
+
+}
+@media (max-width: 480px) {
+  .carousel-item.active, .carousel-item-prev, .carousel-item-next {
+    display: flex !important;
+    flex-direction: column-reverse ;
+  }
+  .carousel .carousel-indicators li {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
 }
