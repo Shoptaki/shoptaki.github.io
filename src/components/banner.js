@@ -143,17 +143,10 @@ const Description = styled.p`
   color: #07528b;
   display: inline-block;
 
-<<<<<<< HEAD
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  //hyphens: auto;
-=======
   /* wrap text */
   overflow-wrap: break-word;
   word-wrap: break-word;
   flex-wrap: wrap;
->>>>>>> de5732e7db7beb6bca788b3a98006e0807b3771b
 
   @media (max-width: ${theme.mobile}) {
     max-width: 17rem;
