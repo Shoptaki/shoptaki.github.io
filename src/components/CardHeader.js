@@ -8,6 +8,7 @@ const HeaderTitle = styled.div`
     font-family: "Myriad Pro Light";
     font-size: 50px;
     margin-bottom: 0.75em;
+    margin-top: 10rem;
     @media (max-width: ${theme.mobile}){
         font-size: 35px;
 }
