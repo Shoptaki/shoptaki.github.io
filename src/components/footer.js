@@ -15,10 +15,6 @@ const Mainfooter = styled.div`
     left:0;
     bottom:0;
     right:0;
-<<<<<<< HEAD
-    
-=======
->>>>>>> 29aee2a1aa9effa731df1cae623175690cbe54a6
     overflow:hidden;
 `
 const Title = styled.div`
