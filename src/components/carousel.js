@@ -12,10 +12,16 @@ import "./styles.css"; // for bootstrap carousel customization
 
 const Box = styled.div`
   display: flex;
+<<<<<<< HEAD
+=======
+  flex-direction: 'row';
+  background-color:white;
+>>>>>>> 631bd7a06eca85ead2432a49199bc60aaee98748
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 70%;
   height: 30vw;
   margin: auto;
+<<<<<<< HEAD
 
   @media (max-width: ${theme.tablet}) {
     height: 33vw;
@@ -23,6 +29,10 @@ const Box = styled.div`
   }
 
   @media (max-width: ${theme.phone}) {
+=======
+  margin-top:-23em;;
+  @media (max-width: ${theme.mobile}) {
+>>>>>>> 631bd7a06eca85ead2432a49199bc60aaee98748
     width: 100%;
     margin-left: 0rem;
     float: right;
