@@ -28,7 +28,18 @@ const IndexPage = () => (
       color="orange"
     />
 
+<<<<<<< HEAD
     <Carousel link="/" linkText="Read More" linkColor={theme.fontGray} />
+=======
+    <Carousel
+      link="/"
+      linkText="Read More"
+      linkColor={theme.fontGray}
+    />
+
+
+    <CardAndHeader />
+>>>>>>> de5732e7db7beb6bca788b3a98006e0807b3771b
   </Layout>
 )
 
