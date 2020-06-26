@@ -14,6 +14,9 @@ const Label = styled(Link)`
   position: relative;
   color: ${props => props.linkColor || "#000000"};
   text-decoration: none;
+  &:hover {
+    color: ${props => props.linkColor || "#000000"};
+  }
   &::after {
     content: "";
     position: absolute;
@@ -21,6 +24,7 @@ const Label = styled(Link)`
     height: 2px;
     bottom: 0;
     left: 0;
+    color: ${props => props.linkColor || "#000000"};
     background-color: ${props => props.linkColor || "#000000"};
     transform: scaleX(0);
     transform-origin: 100% 50%;
