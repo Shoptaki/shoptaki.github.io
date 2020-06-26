@@ -1,59 +1,70 @@
 import React from "react"
 import styled from "styled-components"
-import autonomous from "../../autonomous.png";
-import efficiency from "../../efficiency.png";
-import security from "../../security.png";
+import autonomous from "../../resized autonomy.png";
+import efficiency from "../../transparent resized clock.png";
+import security from "../../resized security.png";
 import {theme} from "../theme/GlobalStyles.js"
 
 
 const CardContainer = styled.div`
-  width: 22rem;
+  width: 100%;
   text-align: center;
-  padding: 5rem;
-  text-shadow: 1.5px 1.5px #EAEAEA;
+  padding: 0.5rem;
+  text-shadow: 0.1rem 0.1rem #EAEAEA;
 
 `;
 
-const ImageContainer = styled.div`
-width: 100%
-padding: flex;
-`
+const TextContainer = styled.div`
+width: 100%;
+`;
+
+const TitleContainer = styled.div`
+width: 100%;
+`;
 
 const Autonomous = (props) => (
-  <ImageContainer>
+<div style={{
+          paddingLeft: 1
+      }}>
   <CardContainer>
+  <div>
   <img src={autonomous} alt="autonomous image" />
-    <h2>AUTONOMY</h2>
-    <div>Continuously optimize data processes to meet individual 
-      business needs and regulatory compliance.</div>
+
+    <TitleContainer><h2>AUTONOMY</h2></TitleContainer>
+    <TextContainer>Continuously optimize data processes to meet individual 
+      business needs and regulatory compliance.</TextContainer>
+    </div>
   </CardContainer>
-  </ImageContainer>
+  </div>
   )
   
 
 const Efficiency = (props) => (
   <div>
   <CardContainer>
-    <div 
-    style={{
-        paddingRight: '2rem'
-    }}>
+    <div>
+    <div>
     <img src={efficiency} alt="efficiency image" />
     </div>
-    <h2>EFFICIENCY</h2>
-    <div>Resolve virtually any user validation, analysis, 
-      or prediction task within fractions of a second.</div>
+    <TitleContainer><h2>EFFICIENCY</h2></TitleContainer>
+    <TextContainer>Resolve virtually any user validation, analysis, 
+      or prediction task within fractions of a second.</TextContainer>
+    </div>
   </CardContainer>
   </div>
   )
 
   const Security = (props) => (
-    <div>
+    <div style={{
+      paddingRight: 3
+    }}>
     <CardContainer>
+    <div>
     <img src={security} alt="security image" />
-      <h2>SECURITY</h2>
-      <div>Ensure safe and future-proof data transactions 
-        using quantum resistant cryptography.</div>
+      <TitleContainer><h2>SECURITY</h2></TitleContainer>
+      <TextContainer>Ensure safe and future-proof data transactions 
+        using quantum resistant cryptography.</TextContainer>
+      </div>
     </CardContainer>
     </div>
     )

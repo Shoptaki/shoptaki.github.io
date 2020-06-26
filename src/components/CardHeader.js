@@ -8,11 +8,14 @@ text-align: center;
 font-family: "Myriad Pro Light";
 font-size: 50px;
 margin-bottom: 0.75em;
+padding-top: 5rem;
 @media (max-width: ${theme.mobile}){
     font-size: 35px;
 }
 `
-
+const BarContainer = styled.div`
+margin-bottom: 2em;
+`
 
 const CardHeader = (props) => (
     <div>
@@ -23,7 +26,9 @@ const CardHeader = (props) => (
           justifyContent: 'center',
           paddingRight: 20
       }}>
+          <BarContainer>
         <img src={bar} alt="bar image" />
+        </BarContainer>
         </div>
         </div>
   )

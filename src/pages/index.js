@@ -4,13 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
-<<<<<<< HEAD
-import Header from "../components/header"
 import CardAndHeader from "../components/cardAndHeader"
-=======
->>>>>>> aec10c8af7bbfaedde7b24ef15d18ab31ad1c58a
 
-import Carousel from "./components/carousel"
+import Carousel from "../components/carousel"
 import { theme } from "../theme/GlobalStyles.js"
 
 const IndexPage = () => (
@@ -40,7 +36,6 @@ const IndexPage = () => (
       linkColor={theme.fontGray}
     />
 
-    <Link to="/page-2/">Go to page 2</Link> <br />
 
     <CardAndHeader></CardAndHeader>
   </Layout>
