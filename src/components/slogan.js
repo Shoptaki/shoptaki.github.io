@@ -5,8 +5,11 @@ import TitleLiner from "./titleliner"
 import upperbg from "../images/UpperBG.svg"
 
 const Container = styled.div`
+  position: absolute;
+  top: 43rem;
+  z-index: -1;
   background-image: url(${upperbg});
-  height:40rem;
+  height: 45rem;
   text-align: center;
   width: 100%;
   padding: 3rem 3rem;
