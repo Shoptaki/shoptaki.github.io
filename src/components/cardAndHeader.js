@@ -1,21 +1,21 @@
 import React from "react"
+import styled from "styled-components";
 import CardHeader from "../components/CardHeader"
 import Card from "../components/Cards"
 
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-
-const CardAndHeader = (props) => (
+const CardAndHeader = () => (
     <div>
-      <div>
-        <CardHeader></CardHeader>
-      </div>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }}>
-    <Card></Card>
-    </div>
+      <CardHeader />
+
+      <Container>
+        <Card />
+      </Container>
     </div>
 )
 
