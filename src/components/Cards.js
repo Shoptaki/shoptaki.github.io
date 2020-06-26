@@ -22,6 +22,17 @@ const TitleContainer = styled.div`
 width: 100%;
 `;
 
+const BigContainer = styled.div`
+max-width: 100%;
+display: flex;
+flex-direction: row;
+justifyContent: center;
+alignContent: center;
+@media (max-width: ${theme.mobile}){
+  flex-direction: column;
+} 
+`;
+
 const Autonomous = (props) => (
 <div style={{
           paddingLeft: 1
@@ -37,10 +48,9 @@ const Autonomous = (props) => (
   </CardContainer>
   </div>
   )
-  
 
-const Efficiency = (props) => (
-  <div>
+
+const Efficiency = () => (
   <CardContainer>
     <div>
     <div>
@@ -51,7 +61,6 @@ const Efficiency = (props) => (
       or prediction task within fractions of a second.</TextContainer>
     </div>
   </CardContainer>
-  </div>
   )
 
   const Security = (props) => (
@@ -68,17 +77,6 @@ const Efficiency = (props) => (
     </CardContainer>
     </div>
     )
-  
-  const BigContainer = styled.div`
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  justifyContent: center;
-  alignContent: center;
-  @media (max-width: ${theme.mobile}){
-    flex-direction: column;
-} 
-  `;
 
   const Card = (props) => (
     <BigContainer>
@@ -87,5 +85,3 @@ const Efficiency = (props) => (
   )
 
   export default Card
-
-

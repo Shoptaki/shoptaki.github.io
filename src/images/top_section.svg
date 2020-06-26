@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1921.363" height="1316.203" viewBox="0 0 1921.363 1316.203">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.523" y1="0.682" x2="0.464" y2="1.16" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f8f8f8"/>
+      <stop offset="1" stop-color="#0d97d2"/>
+    </linearGradient>
+  </defs>
+  <path id="Top_Section" data-name="Top Section" d="M19829.836,2072.518l-1921.363-498.157V756.315h1921.363Z" transform="translate(-17908.473 -756.315)" fill="url(#linear-gradient)"/>
+</svg>

@@ -1,13 +1,17 @@
 import React from "react"
+import { Link } from "gatsby";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
+
+import Header from "../components/header"
 import CardAndHeader from "../components/cardAndHeader"
 
-import Carousel from "../components/carousel"
+import ControlledCarousel from "../components/carousel"
 import { theme } from "../theme/GlobalStyles.js"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const IndexPage = () => (
   <Layout>
@@ -17,7 +21,7 @@ const IndexPage = () => (
     <p>Now go build something great.</p> */}
     {/* put banner here */}
     <Banner
-      title="Smartchain:"
+      title="Smartchain: "
       subtitle="The next evolution of distributed technology"
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"
@@ -30,14 +34,16 @@ const IndexPage = () => (
       color="orange"
     />
 
-    <Carousel
-      link="/"
+    <ControlledCarousel
+      link1="/products"
+      link2="/use-cases"
+      link3="/why-smartchain"
       linkText="Read More"
-      linkColor={theme.fontGray}
+      linkColor={theme.fontBlueGray}
     />
 
 
-    <CardAndHeader></CardAndHeader>
+    <CardAndHeader />
   </Layout>
 )
 
