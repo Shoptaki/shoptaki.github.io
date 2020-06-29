@@ -1,74 +1,87 @@
 import React from "react"
 import styled from "styled-components"
-import autonomous from "../images/autonomous.png";
-import efficiency from "../images/efficiency.png";
-import security from "../images/security.png";
+import autonomous from "../../resized autonomy.png";
+import efficiency from "../../transparent resized clock.png";
+import security from "../../resized security.png";
 import {theme} from "../theme/GlobalStyles.js"
 
 
 const CardContainer = styled.div`
-  width: 22rem;
+  width: 100%;
   text-align: center;
-  padding: 5rem;
-  text-shadow: 1.5px 1.5px #EAEAEA;
+  padding: 0.5rem;
+  text-shadow: 0.1rem 0.1rem #EAEAEA;
 
 `;
 
-const ImageContainer = styled.div`
+const TextContainer = styled.div`
 width: 100%;
-padding: flex;
+`;
+
+const TitleContainer = styled.div`
+width: 100%;
 `;
 
 const BigContainer = styled.div`
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-
-  @media (max-width: ${theme.mobile}){
-    flex-direction: column;
-}
+max-width: 100%;
+display: flex;
+flex-direction: row;
+justifyContent: center;
+alignContent: center;
+@media (max-width: ${theme.mobile}){
+  flex-direction: column;
+} 
 `;
 
-const Autonomous = () => (
-  <ImageContainer>
-    <CardContainer>
-      <img src={autonomous} alt="Autonomous Data" />
-      <h2>AUTONOMY</h2>
-      <p>Continuously optimize data processes to meet individual
-      business needs and regulatory compliance.</p>
-      </CardContainer>
-  </ImageContainer>
+const Autonomous = (props) => (
+<div style={{
+          paddingLeft: 1
+      }}>
+  <CardContainer>
+  <div>
+  <img src={autonomous} alt="autonomous image" />
+
+    <TitleContainer><h2>AUTONOMY</h2></TitleContainer>
+    <TextContainer>Continuously optimize data processes to meet individual 
+      business needs and regulatory compliance.</TextContainer>
+    </div>
+  </CardContainer>
+  </div>
   )
 
 
 const Efficiency = () => (
   <CardContainer>
-    <div style={{ paddingRight: '2rem' }}>
-      <img src={efficiency} alt="Effecient Validation" />
+    <div>
+    <div>
+    <img src={efficiency} alt="efficiency image" />
     </div>
-    <h2>EFFICIENCY</h2>
-    <p>Resolve virtually any user validation, analysis,
-      or prediction task within fractions of a second.</p>
+    <TitleContainer><h2>EFFICIENCY</h2></TitleContainer>
+    <TextContainer>Resolve virtually any user validation, analysis, 
+      or prediction task within fractions of a second.</TextContainer>
+    </div>
   </CardContainer>
   )
 
-const Security = () => (
-  <CardContainer>
-    <img src={security} alt="Quantum Security" />
-    <h2>SECURITY</h2>
-    <p>Ensure safe and future-proof data transactions
-      using quantum resistant cryptography.</p>
-  </CardContainer>
-)
+  const Security = (props) => (
+    <div style={{
+      paddingRight: 3
+    }}>
+    <CardContainer>
+    <div>
+    <img src={security} alt="security image" />
+      <TitleContainer><h2>SECURITY</h2></TitleContainer>
+      <TextContainer>Ensure safe and future-proof data transactions 
+        using quantum resistant cryptography.</TextContainer>
+      </div>
+    </CardContainer>
+    </div>
+    )
 
-const Card = () => (
-  <BigContainer>
-    <div><Autonomous /></div>
-    <div><Efficiency /></div>
-    <div><Security /></div>
-  </BigContainer>
-)
+  const Card = (props) => (
+    <BigContainer>
+      <div><Autonomous></Autonomous></div><div><Efficiency></Efficiency></div><div><Security></Security></div>
+    </BigContainer>
+  )
 
-export default Card
+  export default Card
