@@ -60,4 +60,11 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
 
     }
+
+    a:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+  
 `;
