@@ -18,7 +18,9 @@ const Box = styled.div`
   width: 70%;
   height: 30vw;
   margin: auto;
-  margin-top:-23em;;
+  
+  margin-top: 15rem;
+  background-color: #ffffff;
   @media (max-width: ${theme.mobile}) {
     width: 100%;
     margin-left: 0rem;

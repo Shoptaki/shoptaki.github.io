@@ -59,5 +59,10 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
 
+        a:hover, 
+        a:focus {
+            text-decoration: none;
+            
+        }
     }
 `;

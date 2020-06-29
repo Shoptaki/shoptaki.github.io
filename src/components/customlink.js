@@ -13,8 +13,8 @@ const Label = styled(Link)`
   padding: 5px;
   position: relative;
   color: ${props => props.linkColor || "#000000"};
-  text-decoration: none;
-  &::after {
+  
+  &&::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -26,8 +26,8 @@ const Label = styled(Link)`
     transform-origin: 100% 50%;
     transition: transform 0.5s ease-in-out 0s;
   }
-  &:hover::after {
-    
+  &&:hover::after {
+    color: 'black' !important;
     transform: scaleX(1);
     transform-origin: 0% 0%;
   }
@@ -68,7 +68,7 @@ Arrow.propTypes = {
   linkColor: PropTypes.string,
 }
 Arrow.defaultProps = {
-  linkColor: 'black',
+  linkColor: '',
 }
 
 CustomLink.propTypes = {
@@ -78,7 +78,7 @@ CustomLink.propTypes = {
 }
 
 CustomLink.defaultProps = {
-  linkColor: 'black',
+  linkColor: '',
 }
 
 export default CustomLink

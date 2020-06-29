@@ -15,17 +15,13 @@ const Mainfooter = styled.div`
     left:0;
     bottom:0;
     right:0;
-<<<<<<< HEAD
-    
-=======
->>>>>>> 985dd0df14dfa71f7d80a2357e898c1fa966fdb6
     overflow:hidden;
 `
 const Title = styled.div`
-    margin-bottom:0.3em;
+    margin-bottom: 1.5rem;
     margin-top:0.5em;
     color:white;
-    font-size:25px;
+    font-size: 1.2em;
     @media (max-width: ${theme.mobile}){
         margin-bottom:0.5em;
         font-size:23px;
@@ -40,15 +36,17 @@ const Container= styled.div`
     padding-bottom:10px;
     padding-top: 20px;
     background-color: black; 
- `
-const Row=styled.div`
+ `;
+ 
+const Row = styled.div`
     display: flex;
     flex-direction: row;
     @media (max-width: ${theme.mobile}){
         flex-direction: column;
         line-height: 1.5em
     } 
-`
+`;
+
 const Box=styled.div`
     margin-left: 45px;
     margin-top: 25px;
@@ -63,18 +61,20 @@ const Box=styled.div`
         margin-top: 0.5em;
     } 
     
-`
-const ListUnstyled=styled.ul`
+`;
+
+const ListUnstyled = styled.ul`
     list-style: none;
     margin: 0%;
     padding: 0%;
+    line-height: 0.5rem;
     font-size: 30px;
     @media (max-width: ${theme.mobile}){
         font-size: 40px;
         line-height: 0.5em;
     }
 `
-const List =styled(Link)`
+const List = styled(Link)`
     color: grey;
     font-size: 18px;
     line-height: 1em;
@@ -85,6 +85,10 @@ const List =styled(Link)`
         text-decoration-color: grey;
     }
 `
+const ListContainer = styled.li`
+    margin-top: 0;
+    padding: 0;
+`;
 
 const Icon=styled.div`
     height: 10px;
@@ -192,7 +196,9 @@ function Footer () {
                     {
                         column.subLinks.map(link=>
                             <ListUnstyled>
-                                <li ><List to={link.link}>{link.title}</List></li> 
+                                <ListContainer>
+                                    <List to={link.link}>{link.title}</List>
+                                </ListContainer> 
                             </ListUnstyled>
 
                         )
