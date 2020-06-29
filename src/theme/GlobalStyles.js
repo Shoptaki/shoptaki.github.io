@@ -65,4 +65,11 @@ export const GlobalStyles = createGlobalStyle`
             
         }
     }
+
+    a:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+  
 `;
