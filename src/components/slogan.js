@@ -6,7 +6,7 @@ import upperbg from "../images/UpperBG.svg"
 
 const Container = styled.div`
   position: absolute;
-  top: 43em;
+  top: 43rem;
   z-index: -1;
   background-image: url(${upperbg});
   height:43rem;
@@ -17,15 +17,23 @@ const Container = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
-`
+
+  @media (max-width: 768px) {
+    top: 55rem;
+  }
+`;
 
 const Title = styled.h1`
   margin-top: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-weight: lighter;
   font-style: italic;
   font-size: 2rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 
 const Description = styled.p`
@@ -40,8 +48,8 @@ const Description = styled.p`
   hyphens: auto;
   flex-wrap: wrap;
 
-  @media (max-width: 992px) {
-    font-size: 1rem;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
   }
 `;
 

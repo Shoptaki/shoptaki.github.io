@@ -15,28 +15,32 @@ const CardContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-width: 100%;
+
+margin: auto;
+width: 60%;
+
 `;
 
 const TitleContainer = styled.div`
-width: 100%;
+display: flex;
+margin: auto;
+width: 70%;
+flex-wrap: nowrap;
+justify-content: center;
 `;
 
 const BigContainer = styled.div`
-max-width: 100%;
-display: flex;
-flex-direction: row;
-justifyContent: center;
-alignContent: center;
-@media (max-width: ${theme.mobile}){
-  flex-direction: column;
-} 
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  @media (max-width: ${theme.mobile}){
+    flex-direction: column;
+  } 
 `;
 
 const Autonomous = (props) => (
-<div style={{
-          paddingLeft: 1
-      }}>
+<div>
   <CardContainer>
   <div>
   <img src={autonomous} alt="autonomous image" />
@@ -64,9 +68,7 @@ const Efficiency = () => (
   )
 
   const Security = (props) => (
-    <div style={{
-      paddingRight: 3
-    }}>
+    <div >
     <CardContainer>
     <div>
     <img src={security} alt="security image" />

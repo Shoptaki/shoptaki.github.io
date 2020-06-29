@@ -1,12 +1,9 @@
 import React from "react"
-import { Link } from "gatsby";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
-
-import Header from "../components/header"
 import CardAndHeader from "../components/cardAndHeader"
 
 import ControlledCarousel from "../components/carousel"

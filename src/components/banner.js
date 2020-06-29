@@ -31,7 +31,7 @@ const Container = styled.div`
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  /* for mobile phone only*/
+  /* for mobile phone only
   @media (max-width: 370px) {
     background-image: url(${mobileGraphics});
     background-size: cover;
@@ -39,13 +39,14 @@ const Container = styled.div`
     height: 35rem;
   }
 
-  /* for smaller tablets*/
-  @media (min-width: 371px) and (max-width: ${theme.mobile}) {
+  /* for smaller tablets */
+  @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     background-image: url(${tabletGraphics});
     padding-left: 5rem;
     height: 48.5rem;
   }
+
 `
 
 const TextContainer = styled.div`

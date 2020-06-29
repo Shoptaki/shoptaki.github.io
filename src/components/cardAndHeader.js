@@ -10,13 +10,12 @@ const Container = styled.div`
 `;
 
 const CardAndHeader = () => (
-    <div>
+    <>
       <CardHeader />
-
       <Container>
         <Card />
       </Container>
-    </div>
+    </>
 )
 
 export default CardAndHeader
