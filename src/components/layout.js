@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { GlobalStyles} from "../theme/GlobalStyles"
 import { theme } from "../theme/GlobalStyles"
-import Recognize from "./recognize"
+
 import Contact from "./ContactUs"
 import Header from "./header"
 import Footer from "./footer"
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         
       </Container>
-      <Recognize />
+      
       <Contact />
         <Footer />
     </>
