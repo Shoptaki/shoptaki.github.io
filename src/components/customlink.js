@@ -13,6 +13,7 @@ const Label = styled(Link)`
   padding: 5px;
   position: relative;
   color: ${props => props.linkColor || "#000000"};
+  font-size: ${props => props.fontSize};
   text-decoration: none;
   &::after {
     content: "";
@@ -27,7 +28,6 @@ const Label = styled(Link)`
     transition: transform 0.5s ease-in-out 0s;
   }
   &:hover::after {
-    
     transform: scaleX(1);
     transform-origin: 0% 0%;
   }
@@ -49,18 +49,18 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-const CustomLink = ({ to, displayText, linkColor, arrow }) => (
+const CustomLink = ({ to, displayText, linkColor, fontSize, arrow }) => (
   <LinkContainer>
     <div style={{ display: `inline-block` }}>
-      <Label to={to} linkColor={linkColor}>
+      <Label to={to} linkColor={linkColor} fontSize={fontSize}>
         {displayText}
       </Label>
     </div>
-    {arrow ?
+    {arrow ? (
       <div style={{ display: `inline-block` }}>
         <Arrow linkColor={linkColor} />
-      </div> : null
-    }
+      </div>
+    ) : null}
   </LinkContainer>
 )
 
@@ -68,18 +68,19 @@ Arrow.propTypes = {
   linkColor: PropTypes.string,
 }
 Arrow.defaultProps = {
-  linkColor: 'black',
+  linkColor: "black",
 }
 
 CustomLink.propTypes = {
   to: PropTypes.string.isRequired,
   displayText: PropTypes.string.isRequired,
   linkColor: PropTypes.string,
+  fontSize: PropTypes.string,
 }
 
 CustomLink.defaultProps = {
-  linkColor: 'black',
+  linkColor: "black",
+  fontSize: "16px",
 }
 
 export default CustomLink
-

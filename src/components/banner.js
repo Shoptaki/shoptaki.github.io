@@ -77,7 +77,7 @@ const ImageContainer = styled.div`
 const Title = styled.h1`
   margin-top: 3rem;
   max-width: 20rem;
-  //min-width: 18rem;
+  min-width: 18rem;
   font-weight: bold;
   font-size: 3rem;
   color: #07528b;
@@ -89,13 +89,14 @@ const Title = styled.h1`
     margin-top: 4rem;
     width: 100%;
     font-size: 2rem;
+    min-width: 1rem;
     padding-right: 3rem;
   }
 `
 const Subtitle = styled.h2`
   font-size: 2rem;
   max-width: 22rem;
-  //min-width: 18rem;
+  min-width: 18rem;
   color: #07528b;
   display: inline-block;
 
@@ -110,13 +111,14 @@ const Subtitle = styled.h2`
     word-wrap: break-word;
     flexwrap: wrap;
     max-width: 22rem;
+    min-width: 1rem;
     font-size: 1.5rem;
   }
 `
 const Description = styled.p`
   margin-top: 4.5rem;
   max-width: 20rem;
-  //min-width: 18rem;
+  min-width: 18rem;
   font-size: 1.3rem;
   color: #07528b;
   display: inline-block;
@@ -129,7 +131,7 @@ const Description = styled.p`
   @media (max-width: ${theme.mobile}) {
     max-width: 17rem;
     /* wrap text */
-
+    min-width: 1rem;
     margin-top: 3rem;
   }
 `
@@ -141,6 +143,7 @@ const Banner = ({
   link,
   linkText,
   linkColor,
+  linkSize,
 }) => (
   <Container>
     <TextContainer>
@@ -152,6 +155,7 @@ const Banner = ({
         to={link}
         displayText={linkText}
         linkColor={linkColor}
+        fontSize={linkSize}
         arrow
       />
     </TextContainer>
@@ -166,6 +170,7 @@ Banner.propTypes = {
   link: PropTypes.string,
   linkText: PropTypes.string,
   linkColor: PropTypes.string,
+  linkSize: PropTypes.string,
 }
 
 Banner.defaultProps = {
@@ -174,6 +179,7 @@ Banner.defaultProps = {
   link: ``,
   linkText: ``,
   linkColor: `#8eb4d0`,
+  linkSize: `16px`,
 }
 
 export default Banner

@@ -21,6 +21,7 @@ const IndexPage = () => (
       link="/why-smartchain"
       linkText="What is Smartchain?"
       linkColor={theme.fontBlueGray}
+      linkSize="20px"
     />
     <Slogan
       title="Take Control. Work Smarter. Enjoy Success. "
@@ -28,12 +29,7 @@ const IndexPage = () => (
       color="orange"
     />
 
-    <Carousel
-      link="/"
-      linkText="Read More"
-      linkColor={theme.fontGray}
-    />
-
+    <Carousel link="/" linkText="Read More" linkColor={theme.fontGray} />
 
     <CardAndHeader />
   </Layout>
