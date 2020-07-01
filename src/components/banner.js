@@ -18,13 +18,7 @@ const Container = styled.div`
   height: 36rem;
   background-position: left bottom;
   background-repeat: no-repeat;
-<<<<<<< HEAD
   background-size: cover;
-=======
-  
-  background-color: white;
-  background-size: 100% auto;
->>>>>>> de5732e7db7beb6bca788b3a98006e0807b3771b
 
   width: 100%;
   display: inline-block;
@@ -54,17 +48,10 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   float: left;
-<<<<<<< HEAD
   flexdirection: column;
   // flex: 1;
   padding: 0 6rem 0 8rem;
   width: 60%;
-=======
-  flex-direction: column;
-  flex: 1;
-  padding: 0 8rem 0 8rem;
-  width: 50%;
->>>>>>> de5732e7db7beb6bca788b3a98006e0807b3771b
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -90,15 +77,12 @@ const ImageContainer = styled.div`
 const Title = styled.h1`
   margin-top: 3rem;
   max-width: 20rem;
-  min-width: 18rem;
+  //min-width: 18rem;
   font-weight: bold;
   font-size: 3rem;
   color: #07528b;
   display: inline-block;
-<<<<<<< HEAD
-=======
   flex-wrap: wrap;
->>>>>>> de5732e7db7beb6bca788b3a98006e0807b3771b
 
   @media (max-width: ${theme.mobile}) {
     flexwrap: wrap;
@@ -111,22 +95,16 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-size: 2rem;
   max-width: 22rem;
-  min-width: 18rem;
+  //min-width: 18rem;
   color: #07528b;
   display: inline-block;
 
-<<<<<<< HEAD
   /* To add hyphens to break word at last*/
   // -webkit-hyphens: auto;
   // -ms-hyphens: auto;
   // -moz-hyphens: auto;
   // hyphens: auto;
 
-=======
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  flex-wrap: wrap;
->>>>>>> de5732e7db7beb6bca788b3a98006e0807b3771b
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -138,7 +116,7 @@ const Subtitle = styled.h2`
 const Description = styled.p`
   margin-top: 4.5rem;
   max-width: 20rem;
-  min-width: 18rem;
+  //min-width: 18rem;
   font-size: 1.3rem;
   color: #07528b;
   display: inline-block;
@@ -152,9 +130,6 @@ const Description = styled.p`
     max-width: 17rem;
     /* wrap text */
 
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    flexwrap: wrap;
     margin-top: 3rem;
   }
 `
