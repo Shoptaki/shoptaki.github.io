@@ -88,21 +88,6 @@ const Link = styled.div`
   padding-top: 0.5rem;
 `
 
-const slides = [
-  {
-    name: "What We Offer",
-    type: "Smartchain offers a hybrid infrastructure for public and private ledgers which allows for both centralized as well as decentralized models within its processes.",
-  },
-  {
-    name: "Our Potential",
-    type: "Smartchain can be integrated into existing cloud distributions and act as a bridge between densely connected  networks.",
-  },
-  {
-    name: "How It Works",
-    type: "Smartchain combines AI and DL technologies to securely facilitate digital transfers across multiple industries.",
-  },
-]
-
 function ControlledCarousel(props) {
   const [index, setIndex] = useState(0);
 
@@ -110,6 +95,23 @@ function ControlledCarousel(props) {
     setIndex(selectedIndex);
   };
 
+  // Text Object
+  const slides = [
+    {
+      name: "What We Offer",
+      type: "Smartchain offers a hybrid infrastructure for public and private ledgers which allows for both centralized as well as decentralized models within its processes.",
+    },
+    {
+      name: "Our Potential",
+      type: "Smartchain can be integrated into existing cloud distributions and act as a bridge between densely connected  networks.",
+    },
+    {
+      name: "How It Works",
+      type: "Smartchain combines AI and DL technologies to securely facilitate digital transfers across multiple industries.",
+    },
+  ]
+
+  // Image Query
   const data = useStaticQuery(
     graphql`
     query {
@@ -132,6 +134,7 @@ function ControlledCarousel(props) {
 
   const images  = data.allFile.nodes[index]
 
+  // todo: map to reduce repetitivity
   return (
     <Box>
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false}>
@@ -156,7 +159,7 @@ function ControlledCarousel(props) {
             <Img
               fluid={data.allFile.nodes[0].childImageSharp.fluid}
               key={data.allFile.nodes[0].id}
-              alt={data.allFile.nodes[0].name.replace(/-/g, " ").substring(2)}
+              alt={data.allFile.nodes[0].name}
             />
           </ImageContainer>
         </Carousel.Item>
