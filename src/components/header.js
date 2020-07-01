@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import logoimage from "../images/logo_vertical.png";
 import Popup from "reactjs-popup";
-import './layout.css';
+import './header.css';
 import { fadeInDown } from "react-animations";
 import { keyframes } from "styled-components";
 import CustomLink from "./customlink"
@@ -59,6 +59,8 @@ const NavButton = styled(Link)`
   margin-left: 100px;
   margin-right: 10px;
 `;
+
+
 
 const Header = () => (
   <header>
