@@ -5,10 +5,10 @@ import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
 import CardAndHeader from "../components/cardAndHeader"
-
 import ControlledCarousel from "../components/carousel"
 import { theme } from "../theme/GlobalStyles.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Recognize from "../components/recognize"
 
 const IndexPage = () => (
   <Layout>
@@ -41,6 +41,7 @@ const IndexPage = () => (
 
 
     <CardAndHeader />
+    <Recognize />
   </Layout>
 )
 
