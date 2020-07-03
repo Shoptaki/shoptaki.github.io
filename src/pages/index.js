@@ -10,7 +10,7 @@ import CardAndHeader from "../components/cardAndHeader"
 
 import Carousel from "../components/carousel"
 import { theme } from "../theme/GlobalStyles.js"
-
+import Recognize from "../components/recognize"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -40,6 +40,7 @@ const IndexPage = () => (
 
 
     <CardAndHeader />
+    <Recognize />
   </Layout>
 )
 
