@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Img from "gatsby-image"
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { GlobalStyles, theme } from "../theme/GlobalStyles"
+import { theme } from "../theme/GlobalStyles"
 
 import CustomLink from "./customlink"
 
@@ -14,19 +14,26 @@ const Box = styled.div`
   display: flex;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 70%;
-  height: 30vw;
   margin: auto;
+  margin-top: 15rem;
+  background-color: white;
+  height: 30vw;
+  justify-content: center;
 
   @media (max-width: ${theme.tablet}) {
     height: 33vw;
     width: 80%;
+    
   }
 
   @media (max-width: ${theme.phone}) {
     width: 100%;
     margin-left: 0rem;
+    margin-top: 18rem;
+    margin-bottom: 5rem;
     float: right;
     height: 38rem;
+    box-shadow: none;
   }
 `;
 const TextContainer = styled.div`

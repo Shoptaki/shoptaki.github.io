@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
         
       </Container>
       <Contact />
-        <Footer />
+      <Footer />
     </>
   )
 }

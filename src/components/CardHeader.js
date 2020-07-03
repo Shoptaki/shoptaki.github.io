@@ -7,11 +7,11 @@ const HeaderTitle = styled.div`
   text-align: center;
   font-family: "Myriad Pro Light";
   font-size: 50px;
-  margin-bottom: 0.75em;
+  
   margin-top: 10rem;
   @media (max-width: ${theme.mobile}){
       font-size: 35px;
-}
+  }
 `;
 
 const Line = styled.div`
@@ -19,6 +19,8 @@ const Line = styled.div`
   align-items: center;
   justify-content: center;
   padding-right: 20;
+  margin-bottom: 4rem;
+  
 `
 
 const CardHeader = () => (
@@ -29,5 +31,6 @@ const CardHeader = () => (
     </Line>
   </div>
 )
+
 
 export default CardHeader
