@@ -34,7 +34,8 @@ const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }
-`
+  
+`;
 
 const Description = styled.p`
   max-width: 30rem;

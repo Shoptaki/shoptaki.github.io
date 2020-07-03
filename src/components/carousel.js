@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Img from "gatsby-image"
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { GlobalStyles, theme } from "../theme/GlobalStyles"
+import { theme } from "../theme/GlobalStyles"
 
 import CustomLink from "./customlink"
 
