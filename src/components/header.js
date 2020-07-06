@@ -7,7 +7,6 @@ import { fadeInDown } from "react-animations";
 import { keyframes } from "styled-components";
 import CustomLink from "./customlink"
 import links from "../../gatsby-config";
-import Img from "gatsby-image"
 import {theme} from "../theme/GlobalStyles"
 // import { useStaticQuery, graphql } from 'gatsby'
 
@@ -34,8 +33,10 @@ const productsLink = {
 }
 
 const Container = styled.header`
-  margin-bottom: 1.45rem;
+  background-color: transparent;
+  
   padding: 1.45rem 1.0875rem;
+  padding-bottom: 0;
   display: flex;
 `
 const MenuDiv = styled.div`
@@ -112,7 +113,7 @@ const MobileContainer = styled.div`
   background-color: #fff;
   border-radius: 0.5rem;
   max-height: ${props => props.showMenu ? "50rem" : "0"};
-  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "transparent"};
+  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "0px"}; 
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   @media (max-width: ${theme.phone}) {

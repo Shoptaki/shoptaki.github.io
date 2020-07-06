@@ -10,6 +10,7 @@ import AboutUsCardsMobile from '../components/AboutUsCardsMobile';
 
 const WhySmartchain = () => (
     <Layout>
+     
         <SEO title="Why Smartchain?" />
    
         <WhySmartchainBanner />
