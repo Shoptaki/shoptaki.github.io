@@ -5,8 +5,11 @@ import TitleLiner from "./titleliner"
 import upperbg from "../images/UpperBG.svg"
 
 const Container = styled.div`
+  position: absolute;
+  top: 43rem;
+  z-index: -1;
   background-image: url(${upperbg});
-  height:40rem;
+  height:43rem;
   text-align: center;
   width: 100%;
   padding: 3rem 3rem;
@@ -14,14 +17,25 @@ const Container = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
-`
+
+  @media (max-width: 768px) {
+    top: 55rem;
+  }
+`;
 
 const Title = styled.h1`
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
   font-weight: lighter;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 2rem;
   flex-wrap: wrap;
-`
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+  
+`;
 
 const Description = styled.p`
   max-width: 30rem;
@@ -35,34 +49,10 @@ const Description = styled.p`
   hyphens: auto;
   flex-wrap: wrap;
 
-  @media (max-width: 992px) {
-    font-size: 1rem;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
   }
 `;
-
-/*
-const TopSection = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="1300" viewBox="0 0 1921.363 1316.203">
-    <defs>
-      <linearGradient id="linear-gradient" x1="0.523" y1="0.682" x2="0.464" y2="1.16" gradientUnits="objectBoundingBox">
-        <stop offset="0" stop-color="#f8f8f8"/>
-        <stop offset="1" stop-color="#0d97d2"/>
-      </linearGradient>
-    </defs>
-    <path id="Top_Section" data-name="Top Section" d="M19829.836,2072.518l-1921.363-498.157V756.315h1921.363Z" transform="translate(-17908.473 -756.315)" fill="url(#linear-gradient)"/>
-  </svg>
-)
-
-const SVGContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 30rem;
-  right: 0;
-  overflow-y: hidden;
-  z-index: -1;
-   
-`;
-*/
 
 const Slogan = ({ title, description, color }) => (
   <Container>
