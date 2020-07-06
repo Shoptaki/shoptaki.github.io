@@ -22,7 +22,7 @@ const TextContainer = styled.div`
   padding-right:5rem;
   padding-bottom:5rem;
   width: 100%;
-  height:100%;
+  height: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

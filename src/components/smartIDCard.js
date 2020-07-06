@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Img from "gatsby-image"
-import { useStaticQuery, graphql } from 'gatsby'
-import { SwitchTransition, CSSTransition } from "react-transition-group"
-import { GlobalStyles, theme } from "../theme/GlobalStyles"
-import CustomLink from "./customlink"
-import "./styles.css"; // from React Transition Group
-import TitleLiner from "./titleliner"
+import { theme } from "../theme/GlobalStyles"
 import productShow from "../images/ProductImage.svg";
 import greenIcon from "../images/greenicon.svg"
 import underlinerBlue from "../images/underliner-blue.svg"
@@ -18,7 +13,7 @@ const Box = styled.div`
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
   margin: auto;
-  marign-top:20em;
+  margin-top:20em;
   margin-bottom:10em;
 
   @media (max-width: ${theme.mobile}) {
