@@ -10,7 +10,6 @@ const WhySmartchain = () => (
         <SEO title="Why Smartchain?" />
     
     <AboutUsCards></AboutUsCards>
-
     <AboutUsCardsMobile></AboutUsCardsMobile>
    
     </Layout>

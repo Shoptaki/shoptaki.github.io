@@ -10,6 +10,9 @@ const CardContainer = styled.div`
   padding: 2.5em;
   margin: 3em;
   box-shadow: -.3em 0.5em 1em #EAEAEA;
+  @media (max-width: ${theme.mobile}){
+    display: none;
+  }
 `;
 
 const CloudImageContainer = styled.div`
@@ -17,6 +20,9 @@ width: 100%;
 min-width: 17em;
 padding-left: 2em;
 padding-right: 3em;
+@media (max-width: ${theme.mobile}){
+    display: none;
+  }
 `;
 
 const HeadImageContainer = styled.div`
@@ -24,6 +30,9 @@ width: 120%;
 min-width: 20em;
 padding-left: 3em;
 padding-right: 6em;
+@media (max-width: ${theme.mobile}){
+    display: none;
+  }
 `;
 
 const Line = styled.div`
@@ -43,9 +52,6 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-@media (max-width: ${theme.mobile}){
-  flex-direction: column;
-} 
 `;
 
 const AboutUsContainer = styled.div`

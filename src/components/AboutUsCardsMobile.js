@@ -9,21 +9,29 @@ const CardContainer = styled.div`
   padding: 2.5em;
   margin: 3em;
   box-shadow: -.3em 0.5em 1em #EAEAEA;
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  @media (min-width: ${theme.mobile}){
+    display: none;
+  }
 `;
 
 const TextContainer = styled.div`
-text-align: left;
+text-align: center;
 `;
 
 const CloudImageContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-width: 20em;
+width: 100%;
+max-width: 20em;
 `;
 
 const HeadImageContainer = styled.div`
-width: 30em;
+width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
