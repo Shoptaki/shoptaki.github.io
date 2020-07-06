@@ -113,7 +113,7 @@ const MobileContainer = styled.div`
   background-color: #fff;
   border-radius: 0.5rem;
   max-height: ${props => props.showMenu ? "50rem" : "0"};
-  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "transparent"};
+  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "0px"}; 
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   @media (max-width: ${theme.phone}) {

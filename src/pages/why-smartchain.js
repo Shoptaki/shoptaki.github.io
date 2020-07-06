@@ -7,6 +7,7 @@ import DifferentiateCard from "../components/differentiateCard"
 
 const WhySmartchain = () => (
     <Layout>
+     
         <SEO title="Why Smartchain?" />
         <WhySmartchainBanner />
         <DifferentiateCard />
