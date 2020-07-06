@@ -5,8 +5,8 @@ import CustomLink from "./customlink"
 import graphics from "../images/banner-graphics.svg"
 // import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import mobileGraphics from "../images/mobile-banner-graphics.svg"
-import tabletGraphics from "../images/tablet-banner-graphics.svg"
 import { theme } from "../theme/GlobalStyles.js"
+
 
 const Container = styled.div`
   padding: 0 0 0 0;
@@ -15,12 +15,11 @@ const Container = styled.div`
   flex-direction: row;
 
   /* Full height */
-  height: 36rem;
+  height: 48rem;
   background-position: left bottom;
   background-repeat: no-repeat;
-  
+  background-size: auto;
   background-color: white;
-  background-size: 100% auto;
 
   width: 100%;
   display: inline-block;
@@ -42,19 +41,19 @@ const Container = styled.div`
   /* for smaller tablets */
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
-    background-image: url(${tabletGraphics});
+    
     padding-left: 5rem;
-    height: 48.5rem;
+    
   }
 
 `
 
 const TextContainer = styled.div`
   float: left;
-  flex-direction: column;
-  flex: 1;
-  padding: 0 8rem 0 8rem;
-  width: 50%;
+  flex-flow: nowrap column;
+  /* flex: 1; */
+  padding: 0 6rem 0 8rem;
+  width: 60%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -84,14 +83,15 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 3rem;
   color: #07528b;
-  display: inline-block;
+  display: flex;
   flex-wrap: wrap;
 
   @media (max-width: ${theme.mobile}) {
-    flexwrap: wrap;
+    flex-wrap: wrap;
     margin-top: 4rem;
     width: 100%;
     font-size: 2rem;
+    min-width: 1rem;
     padding-right: 3rem;
   }
 `
@@ -100,16 +100,20 @@ const Subtitle = styled.h2`
   max-width: 22rem;
   min-width: 18rem;
   color: #07528b;
-  display: inline-block;
+ 
 
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  flex-wrap: wrap;
+  /* To add hyphens to break word at last*/
+  // -webkit-hyphens: auto;
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  // hyphens: auto;
+
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;
     word-wrap: break-word;
-    flexwrap: wrap;
+    flex-wrap: wrap;
     max-width: 22rem;
+    min-width: 1rem;
     font-size: 1.5rem;
   }
 `
@@ -129,10 +133,7 @@ const Description = styled.p`
   @media (max-width: ${theme.mobile}) {
     max-width: 17rem;
     /* wrap text */
-
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    flexwrap: wrap;
+    min-width: 1rem;
     margin-top: 3rem;
   }
 `
@@ -144,6 +145,7 @@ const Banner = ({
   link,
   linkText,
   linkColor,
+  linkSize,
 }) => (
   <Container>
     <TextContainer>
@@ -155,10 +157,11 @@ const Banner = ({
         to={link}
         displayText={linkText}
         linkColor={linkColor}
+        fontSize={linkSize}
         arrow
       />
     </TextContainer>
-    <ImageContainer>{/* <Image /> */}</ImageContainer>
+    
   </Container>
 )
 
@@ -169,6 +172,7 @@ Banner.propTypes = {
   link: PropTypes.string,
   linkText: PropTypes.string,
   linkColor: PropTypes.string,
+  linkSize: PropTypes.string,
 }
 
 Banner.defaultProps = {
@@ -177,6 +181,7 @@ Banner.defaultProps = {
   link: ``,
   linkText: ``,
   linkColor: `#8eb4d0`,
+  linkSize: `16px`,
 }
 
 export default Banner

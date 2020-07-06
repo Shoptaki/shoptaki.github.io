@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-import { BrowserRouter as Router} from "react-router-dom";
+//import { BrowserRouter as Router} from "react-router-dom";
 import SmartchainBanner from "./particleComponent";
 
 const Container = styled.div`
@@ -10,6 +10,7 @@ const Container = styled.div`
   margin-bottom:100%;
   width: 100%;
   page-break-after: always; 
+  
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     height: 48.5rem;
@@ -38,7 +39,7 @@ const Title = styled.h1`
   display: inline-block;
   flex-wrap: wrap;
   @media (max-width: ${theme.mobile}) {
-    flexwrap: wrap;
+    flex-wrap: wrap;
     margin-top: 10rem;
     width: 100%;
     font-size: 2rem;
@@ -58,7 +59,7 @@ const Subtitle = styled.h2`
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;
     word-wrap: break-word;
-    flexwrap: wrap;
+    flex-wrap: wrap;
     max-width: 22rem;
     font-size: 2rem;
     margin-top:1em;
@@ -83,14 +84,14 @@ const Description = styled.p`
     /* wrap text */
     overflow-wrap: break-word;
     word-wrap: break-word;
-    flexwrap: wrap;
+    flex-wrap: wrap;
     margin-top: 2rem;
   }
 `
 
 function WhySmartchainBanner() {
     return (
-      <Router>
+      
         <Container>
           <SmartchainBanner />
              <TextContainer> 
@@ -99,7 +100,7 @@ function WhySmartchainBanner() {
                 <Description>We are a system where collaborative AI meets quantum resistance security.</Description>      
              </TextContainer>
         </Container>
-      </Router>
+      
     );
   }
   

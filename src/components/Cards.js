@@ -21,14 +21,17 @@ const CardContainer = styled.div`
 const TextContainer = styled.div`
   margin: auto;
   width: 60%;
+  font-size: 1.2em;
 `;
 
 const TitleContainer = styled.div`
-display: flex;
-margin: auto;
-width: 70%;
-flex-wrap: nowrap;
-justify-content: center;
+  display: flex;
+  margin: auto;
+  width: 70%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 `;
 
 const BigContainer = styled.div`

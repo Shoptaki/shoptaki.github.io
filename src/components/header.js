@@ -7,7 +7,6 @@ import { fadeInDown } from "react-animations";
 import { keyframes } from "styled-components";
 import CustomLink from "./customlink"
 import links from "../../gatsby-config";
-import Img from "gatsby-image"
 import {theme} from "../theme/GlobalStyles"
 // import { useStaticQuery, graphql } from 'gatsby'
 
@@ -34,8 +33,10 @@ const productsLink = {
 }
 
 const Container = styled.header`
-  margin-bottom: 1.45rem;
+  background-color: transparent;
+  
   padding: 1.45rem 1.0875rem;
+  padding-bottom: 0;
   display: flex;
 `
 const MenuDiv = styled.div`
@@ -110,7 +111,8 @@ const HamburgerIcon = () => (
     <rect y="30" width="100" height="15" rx="15" ry="15"></rect>
     <rect y="60" width="100" height="15" rx="15" ry="15"></rect>
   </svg>
-)
+);
+
 const Header = () => (
       <Container>
         
