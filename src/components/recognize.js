@@ -3,7 +3,7 @@ import recog1 from "../images/recog1.svg"
 import recog2 from "../images/recog2.svg"
 import recog3 from "../images/recog3.svg"
 import styled from "styled-components"
-import {theme} from "../theme/GlobalStyles.js"
+import { theme } from "../theme/GlobalStyles.js"
 import RecogBorder from "../images/RecognizeBorder.svg"
 
 const Recog = styled.div`
@@ -13,21 +13,21 @@ const Recog = styled.div`
     background-size:cover;
     position: relative;
     max-height: 80rem;
-    padding-bottom:2em;
-    padding-top:6em;
-    margin-bottom:0em;
+    padding-bottom: 6em;
+    padding-top: 6em;
+    margin-bottom: 0em;
     
     
     @media (max-width: ${theme.mobile}){
-        margin-bottom:0em;
+        margin-bottom: 0em;
     }
 
 `
 
 const RecogContainer= styled.div`
     /* background:#F8F8F8; */
-    height:350px;
-    width:100%;
+    height: 350px;
+    width: 100%;
     margin-bottom: 4rem;
     position: sticky;
     /* padding-top: 25%; 
@@ -75,7 +75,6 @@ const RecogImageBox=styled.div`
 const SubRecogImagebox=styled.div`
    width:100%;
    text-align:center;
-   padding-bottom:0;
    margin-bottom:1%;
     @media (max-width: ${theme.mobile}){
         margin-bottom:1%;
@@ -113,7 +112,7 @@ const RecogImage3=styled.img`
         margin-left:-6%;
     }
     
-`
+`;
 
 function Recognize () {
     return (
@@ -133,6 +132,7 @@ function Recognize () {
                 </SubRecogImagebox>
                 </RecogImageBox>
             </RecogContainer>
+            
         </Recog>
     )
 }

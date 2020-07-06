@@ -18,7 +18,7 @@ TitleLiner.propTypes = {
 
 TitleLiner.defaultProps = {
   color: `blue`,
-  size: `300`,
+  size: `300px`,
 }
 
 export default TitleLiner

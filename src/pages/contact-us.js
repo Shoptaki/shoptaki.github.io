@@ -1,0 +1,91 @@
+import React from "react";
+import Layout from "../components/layout"
+import styled from "styled-components";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      industry: '',
+      company: '',
+      message: ''
+    }
+  }
+
+  render() {
+    return (
+      <Layout>
+      <div className="App">
+        <label htmlFor="Contact Us" style={{fontWeight: "bold", fontSize: 25}}> Contact Us </label>
+        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+
+          <div className="form-group">
+            <label htmlFor="name"> Name </label>
+            <input type="text" className="form-control" value={this.state.name}
+                   onChange={this.onNameChange.bind(this)} style={{width: 250}}/>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Email Address</label>
+            <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email}
+                   onChange={this.onEmailChange.bind(this)} style={{width: 250}}/>
+          </div>
+
+          <div className="mc-field-group">
+            <label htmlFor="industry" style={{width: 60}}>Industry</label>
+            <select name="industry" id="mce-INDUSTRY">
+              <option value=""></option>
+              <option value="banks">Banks/Financial institutes</option>
+              <option value="Government">Government</option>
+              <option value="Investors">Investors</option>
+              <option value="Freight forwarders">Freight Forwarders</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="company">Company</label>
+            <input type="company" className="form-control" aria-describedby="companyName" value={this.state.company}
+                   onChange={this.onCompanyChange.bind(this)} style={{width: 250}}/>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea className="form-control" rows="10" value={this.state.message}
+                      onChange={this.onMessageChange.bind(this)} style={{width: 250}}/>
+          </div>
+
+          <button type="submit" className="btn btn-primary"> Submit</button>
+        </form>
+
+      </div>
+      </Layout>
+    );
+  }
+
+  onNameChange(event) {
+    this.setState({ name: event.target.value })
+  }
+
+  onIndustryChange(event) {
+    this.setState({ name: event.target.value })
+  }
+
+  onEmailChange(event) {
+    this.setState({ email: event.target.value })
+  }
+
+  onCompanyChange(event) {
+    this.setState({ company: event.target.value })
+  }
+
+  onMessageChange(event) {
+    this.setState({ message: event.target.value })
+  }
+
+  handleSubmit(event) {
+  }
+}
+export default App;

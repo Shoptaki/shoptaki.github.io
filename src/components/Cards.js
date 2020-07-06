@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import autonomous from "../../resized autonomy.png";
-import efficiency from "../../transparent resized clock.png";
-import security from "../../resized security.png";
+import autonomous from "../images/resized autonomy.png";
+import efficiency from "../images/transparent resized clock.png";
+import security from "../images/resized security.png";
 import {theme} from "../theme/GlobalStyles.js"
 
 
@@ -12,34 +12,44 @@ const CardContainer = styled.div`
   padding: 0.5rem;
   text-shadow: 0.1rem 0.1rem #EAEAEA;
 
+  @media (max-width: ${theme.mobile}){
+    margin-bottom: 4rem;
+  } 
+
 `;
 
 const TextContainer = styled.div`
-width: 100%;
+  margin: auto;
+  width: 60%;
+  font-size: 1.2em;
 `;
 
 const TitleContainer = styled.div`
-width: 100%;
+  display: flex;
+  margin: auto;
+  width: 70%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 `;
 
 const BigContainer = styled.div`
-max-width: 100%;
-display: flex;
-flex-direction: row;
-justifyContent: center;
-alignContent: center;
-@media (max-width: ${theme.mobile}){
-  flex-direction: column;
-} 
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  @media (max-width: ${theme.mobile}){
+    flex-direction: column;
+    justify-content: space-between;
+  } 
 `;
 
 const Autonomous = (props) => (
-<div style={{
-          paddingLeft: 1
-      }}>
+  <div>
   <CardContainer>
   <div>
-  <img src={autonomous} alt="autonomous image" />
+  <img src={autonomous} alt="Autonomous Data" />
 
     <TitleContainer><h2>AUTONOMY</h2></TitleContainer>
     <TextContainer>Continuously optimize data processes to meet individual 
@@ -54,7 +64,7 @@ const Efficiency = () => (
   <CardContainer>
     <div>
     <div>
-    <img src={efficiency} alt="efficiency image" />
+    <img src={efficiency}  alt="Effecient Validation" />
     </div>
     <TitleContainer><h2>EFFICIENCY</h2></TitleContainer>
     <TextContainer>Resolve virtually any user validation, analysis, 
@@ -64,12 +74,10 @@ const Efficiency = () => (
   )
 
   const Security = (props) => (
-    <div style={{
-      paddingRight: 3
-    }}>
-    <CardContainer>
+    <div >
+    <CardContainer style={{"margin-right": "50px"}}>
     <div>
-    <img src={security} alt="security image" />
+    <img src={security} alt="Quantum Secure" />
       <TitleContainer><h2>SECURITY</h2></TitleContainer>
       <TextContainer>Ensure safe and future-proof data transactions 
         using quantum resistant cryptography.</TextContainer>

@@ -1,13 +1,14 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import logoimage from "../images/logo_vertical.png";
+import logoImage from "../images/logo_horizontal.png";
 import Popup from "reactjs-popup";
-import './layout.css';
 import { fadeInDown } from "react-animations";
 import { keyframes } from "styled-components";
 import CustomLink from "./customlink"
 import links from "../../gatsby-config";
+import {theme} from "../theme/GlobalStyles"
+// import { useStaticQuery, graphql } from 'gatsby'
 
 const FadeIn = styled.div`animation: 2.5s ${keyframes`${fadeInDown}`};`
 
@@ -32,171 +33,189 @@ const productsLink = {
 }
 
 const Container = styled.header`
-  margin-bottom: 1.45rem;
+  background-color: transparent;
+  
   padding: 1.45rem 1.0875rem;
+  padding-bottom: 0;
   display: flex;
-`;
-
+`
 const MenuDiv = styled.div`
   text-align: right;  
-  margin-top: 20px;
-  `
-const HomeDiv = styled.div`
-  text-align: left;
-  width: 10%;
-  position: absolute;
+  width: 100%;
+  @media (max-width: ${theme.tablet}) {
+    display: none;
+  }
 `
 const HomeButton = styled(Link)`
-  color: black;
-  text-decoration: none;
   margin-left: 10px;
   margin-right: 10px;
 `;
-
-const NavButton = styled(Link)`
+const Logo = styled.img`
+  width: 10rem;
+`
+const DropdownContent = styled.div`
+  display: none;
+  position: absolute;
+  top: 4rem;
+  font-size: 1rem;
+  font-weight: normal;
+  width: 8rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border-radius: 10px;
+`
+const Tab = styled.div`
+  display: inline-flex;
+  margin: 0rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  &:hover ${DropdownContent} {
+    display: block;
+  }
+`
+const ContactLink = styled(Link)`
+  border: solid;
+  border-color: ${theme.fontDarkBlue};
+  border-radius: 10px;
+  border-width: 2px;
+  padding: 10px;
+  color: #000;
+  &:hover {
+    background-color: ${theme.fontDarkBlue};
+    color: #fff;
+  }
+`
+const HamburgerDiv = styled.div`
+  text-align: right;  
+  width: 100%;
+  display: none;
+  @media (max-width: ${theme.tablet}) {
+    display: block;
+  }
+`
+const MobileLink = styled(Link)`
   color: black;
-  text-decoration: none;
-  margin-left: 100px;
-  margin-right: 10px;
-`;
-
-const Header = () => (
-  <header>
-    <Container>
-      <HomeDiv>
-        <HomeButton>
-          <Link
-            to="/"
-            style={{color:"black", height: 60, width: 70}}>
-            <img className={"HomeLogo"} src={logoimage}/>
-          </Link>
-        </HomeButton>
-      </HomeDiv>
-      <MenuDiv className="MenuDivider" style={{width: 1500}}>
-        <ul className= "ItemsList">
-          <li style={{textAlign: "left", width: 120}}
-               className="dropdown">
-            <button style={{fontSize: 25,
-              fontWeight: "bold",
-              background: "none",
-              border: "none"}}
-                    className="dropbtn">About Us</button>
-            <div style={{borderRadius: 10}} className="dropdown-content">
-              <CustomLink
-                to={aboutLink.link}
-                displayText={aboutLink.title}
-                linkColor="black"
-              />
-            </div>
-          </li>
-
-          <li style={{marginRight: 80}}>
-            <NavButton style={{fontsize: 25, fontweight: "bold"}}>
-              <Link
-                to={smartchainLink.link}
-                style={{ color: "black", textDecoration: "none", fontSize: 25, fontWeight: "bold"}}
-              >
-                {smartchainLink.title}
-              </Link>
-            </NavButton>
-          </li>
-
-          <li style={{marginRight: 150}}>
-            <div style={{textAlign: "center", width: 170, position: "absolute"}}
-                 className="dropdown">
-              <button style={{fontSize: 25,
-                fontWeight: "bold",
-                background: "none",
-                border: "none"}}
-                      className="dropbtn">Our Solution</button>
-              <div style={{borderRadius: 10}} className="dropdown-content">
-                <CustomLink
-                  to={usecaseLink.link}
-                  displayText={usecaseLink.title}
-                  linkColor="black"
-                />
-                <CustomLink
-                  to={productsLink.link}
-                  displayText={productsLink.title}
-                  linkColor="black"
-                />
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <NavButton>
-              <Link className="ContactLink"
-                    style={{borderRadius: 10,
-                      textDecoration: "none",
-                      fontSize: 25,
-                      fontWeight: "bold",
-                      color: "black"}}
-                    to="/contact-us"
-              >
-                Contact Us
-              </Link>
-            </NavButton>
-          </li>
-        </ul>
-      </MenuDiv>
-
-      <MenuDiv className="HamburgerMenu">
-        <Popup contentStyle={{width: 300,
-          border: "none",
-          borderRadius: 10,
-          boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 0px"}}
-               trigger={
-                 <button  className="HamburgerButton" style={{border: "none", fontSize: 15, backgroundColor: "white"}}>
-                   <svg viewBox="0 0 100 80" width="40" height="40">
-                     <rect width="100" height="20"></rect>
-                     <rect y="30" width="100" height="20"></rect>
-                     <rect y="60" width="100" height="20"></rect>
-                   </svg>
-                 </button>
-               } position="bottom right">
-          <FadeIn>
-            <div style={{textAlign: "center"}}>
-              <Link style={{color: "black", textDecoration: "none", fontSize: 20}}
-                    to="/">Home</Link>
-              <hr/>
-            </div>
-
-            <div style={{textAlign: "center"}}>
-              <Link style={{color: "black", textDecoration: "none", fontSize: 20}}
-                    to={aboutLink.link}>{aboutLink.title}</Link>
-              <hr/>
-            </div>
-
-            <div style={{textAlign: "center"}}>
-              <Link style={{color: "black", textDecoration: "none", fontSize: 20}}
-                    to={smartchainLink.link}>{smartchainLink.title}</Link>
-              <hr/>
-            </div>
-
-            <div style={{textAlign: "center"}}>
-              <Link style={{color: "black", textDecoration: "none", fontSize: 20}}
-                    to={usecaseLink.link}>{usecaseLink.title}</Link>
-              <hr/>
-            </div>
-
-            <div style={{textAlign: "center"}}>
-              <Link style={{color: "black", textDecoration: "none", fontSize: 20}}
-                    to={productsLink.link}>{productsLink.title}</Link>
-              <hr/>
-            </div>
-
-            <div style={{textAlign: "center"}}>
-              <Link style={{color: "black", textDecoration: "none", fontSize: 20}}
-                    to="contact-us">Contact Us</Link>
-              <hr/>
-            </div>
-          </FadeIn>
-        </Popup>
-      </MenuDiv>
-    </Container>
-  </header>
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 1rem;
+  &:last-child {
+    border-bottom: none;
+  }
+`
+const MobileContainer = styled.div`
+  width: 16rem;
+  position: absolute;
+  right: 1rem;
+  top: 4.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  max-height: ${props => props.showMenu ? "50rem" : "0"};
+  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "0px"}; 
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  @media (max-width: ${theme.phone}) {
+    left: 4%;
+    right: 4%;
+    width: auto;
+  }
+  
+`
+const Icon = styled.div`
+  cursor: pointer;
+  float: right;
+  padding-top: 0.5rem;
+`
+const HamburgerIcon = () => (
+  <svg viewBox="0 0 100 80" width="25" height="25">
+    <rect width="100" height="15" rx="15" ry="15"></rect>
+    <rect y="30" width="100" height="15" rx="15" ry="15"></rect>
+    <rect y="60" width="100" height="15" rx="15" ry="15"></rect>
+  </svg>
 )
+
+const Header = () => {
+    const [showMenu, setShowMenu] = useState(false);
+
+    const changeMenu = (showMenu) => (
+      setShowMenu(!showMenu)
+    )
+
+    return (
+      <Container>
+        
+        <HomeButton to="/">           
+            <Logo src={logoImage}/>
+        </HomeButton>
+        
+        <MenuDiv >  
+        
+            <Tab>
+                About Us
+                <DropdownContent>
+                  <CustomLink
+                    to={aboutLink.link}
+                    displayText={aboutLink.title}
+                    linkColor="black"
+                  />
+                </DropdownContent>
+            </Tab>
+
+            <Tab>
+                <Link
+                  to={smartchainLink.link}
+                  style={{ color: "black", textDecoration: "none"}}
+                >
+                  {smartchainLink.title}
+                </Link>
+            </Tab>
+
+            <Tab>
+                  Our Solution
+                  <DropdownContent>
+                    <CustomLink
+                      to={usecaseLink.link}
+                      displayText={usecaseLink.title}
+                      linkColor="black"
+                    />
+                    <CustomLink
+                      to={productsLink.link}
+                      displayText={productsLink.title}
+                      linkColor="black"
+                    />
+                  </DropdownContent>
+            </Tab>
+
+            <Tab>
+                <ContactLink to="/contact-us">
+                  Contact Us
+                </ContactLink>
+            </Tab>
+
+         
+        </MenuDiv>
+
+        <HamburgerDiv>
+                <Icon onClick={() => changeMenu(showMenu)}> 
+                  <HamburgerIcon /> 
+                </Icon>
+
+                <MobileContainer showMenu={showMenu}>
+                  <MobileLink to="/"> Home </MobileLink>
+                  <MobileLink to={aboutLink.link}> {aboutLink.title} </MobileLink>
+                  <MobileLink to={smartchainLink.link}> {smartchainLink.title} </MobileLink>
+                  <MobileLink to={usecaseLink.link}> {usecaseLink.title} </MobileLink>
+                  <MobileLink to={productsLink.link}> {productsLink.title} </MobileLink>
+                  <MobileLink to="contact-us"> Contact Us </MobileLink>
+                </MobileContainer>
+
+        </HamburgerDiv>
+
+      </Container>
+    )
+}
 
 export default Header
 

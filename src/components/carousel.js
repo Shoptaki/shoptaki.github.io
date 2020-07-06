@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Img from "gatsby-image"
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { GlobalStyles, theme } from "../theme/GlobalStyles"
+import { theme } from "../theme/GlobalStyles"
 
 import CustomLink from "./customlink"
 
@@ -12,31 +12,28 @@ import "./styles.css"; // for bootstrap carousel customization
 
 const Box = styled.div`
   display: flex;
-<<<<<<< HEAD
-=======
-  flex-direction: 'row';
-  background-color:white;
->>>>>>> 631bd7a06eca85ead2432a49199bc60aaee98748
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 70%;
-  height: 30vw;
   margin: auto;
-<<<<<<< HEAD
+  margin-top: 17rem;
+  background-color: white;
+  height: 30vw;
+  justify-content: center;
 
   @media (max-width: ${theme.tablet}) {
     height: 33vw;
     width: 80%;
+    
   }
 
   @media (max-width: ${theme.phone}) {
-=======
-  margin-top:-23em;;
-  @media (max-width: ${theme.mobile}) {
->>>>>>> 631bd7a06eca85ead2432a49199bc60aaee98748
     width: 100%;
     margin-left: 0rem;
+    margin-top: 18rem;
+    margin-bottom: 5rem;
     float: right;
     height: 38rem;
+    box-shadow: none;
   }
 `;
 const TextContainer = styled.div`
@@ -98,21 +95,6 @@ const Link = styled.div`
   padding-top: 0.5rem;
 `
 
-const slides = [
-  {
-    name: "What We Offer",
-    type: "Smartchain offers a hybrid infrastructure for public and private ledgers which allows for both centralized as well as decentralized models within its processes.",
-  },
-  {
-    name: "Our Potential",
-    type: "Smartchain can be integrated into existing cloud distributions and act as a bridge between densely connected  networks.",
-  },
-  {
-    name: "How It Works",
-    type: "Smartchain combines AI and DL technologies to securely facilitate digital transfers across multiple industries.",
-  },
-]
-
 function ControlledCarousel(props) {
   const [index, setIndex] = useState(0);
 
@@ -120,6 +102,23 @@ function ControlledCarousel(props) {
     setIndex(selectedIndex);
   };
 
+  // Text Object
+  const slides = [
+    {
+      name: "What We Offer",
+      type: "Smartchain offers a hybrid infrastructure for public and private ledgers which allows for both centralized as well as decentralized models within its processes.",
+    },
+    {
+      name: "Our Potential",
+      type: "Smartchain can be integrated into existing cloud distributions and act as a bridge between densely connected  networks.",
+    },
+    {
+      name: "How It Works",
+      type: "Smartchain combines AI and DL technologies to securely facilitate digital transfers across multiple industries.",
+    },
+  ]
+
+  // Image Query
   const data = useStaticQuery(
     graphql`
     query {
@@ -142,6 +141,7 @@ function ControlledCarousel(props) {
 
   const images  = data.allFile.nodes[index]
 
+  // todo: map to reduce repetitivity
   return (
     <Box>
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false}>
@@ -166,7 +166,7 @@ function ControlledCarousel(props) {
             <Img
               fluid={data.allFile.nodes[0].childImageSharp.fluid}
               key={data.allFile.nodes[0].id}
-              alt={data.allFile.nodes[0].name.replace(/-/g, " ").substring(2)}
+              alt={data.allFile.nodes[0].name}
             />
           </ImageContainer>
         </Carousel.Item>
