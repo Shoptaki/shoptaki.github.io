@@ -22,6 +22,8 @@ const Title = styled.div`
     padding: 2rem 0rem 1rem 0rem;
 `
 const MobileItem = styled.div`
+    display: flex;
+    justify-content: center;
     @media (min-width: ${theme.tablet}) {
         display: none;
     }
@@ -42,7 +44,7 @@ const DesktopText = styled.div`
 
 `
 const ImageContainer = styled.div`
-    width: 35%;
+    width: 6rem;
     float: left;
     padding: 2rem 1rem;
     @media (min-width: ${theme.tablet}) {
@@ -117,7 +119,7 @@ const DifferentiateCard = () => {
         </TextContainer>
     ));
     
-
+    
     return (
         <Box>
             <Title>
