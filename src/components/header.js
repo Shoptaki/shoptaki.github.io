@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logoImage from "../images/logo_horizontal.png";
 import Popup from "reactjs-popup";
@@ -7,7 +7,6 @@ import { fadeInDown } from "react-animations";
 import { keyframes } from "styled-components";
 import CustomLink from "./customlink"
 import links from "../../gatsby-config";
-import Img from "gatsby-image"
 import {theme} from "../theme/GlobalStyles"
 // import { useStaticQuery, graphql } from 'gatsby'
 
@@ -34,8 +33,10 @@ const productsLink = {
 }
 
 const Container = styled.header`
-  margin-bottom: 1.45rem;
+  background-color: transparent;
+  
   padding: 1.45rem 1.0875rem;
+  padding-bottom: 0;
   display: flex;
 `
 const MenuDiv = styled.div`
@@ -43,14 +44,6 @@ const MenuDiv = styled.div`
   width: 100%;
   @media (max-width: ${theme.tablet}) {
     display: none;
-  }
-`
-const HamburgerDiv = styled.div`
-  text-align: right;  
-  width: 100%;
-  display: none;
-  @media (max-width: ${theme.tablet}) {
-    display: block;
   }
 `
 const HomeButton = styled(Link)`
@@ -93,16 +86,47 @@ const ContactLink = styled(Link)`
     color: #fff;
   }
 `
+const HamburgerDiv = styled.div`
+  text-align: right;  
+  width: 100%;
+  display: none;
+  @media (max-width: ${theme.tablet}) {
+    display: block;
+  }
+`
 const MobileLink = styled(Link)`
   color: black;
   font-size: 1rem;
   display: flex;
   justify-content: center;
-  border-top: 0.05rem solid #999;
-  padding: 1rem 0rem;
-  &:first-child {
-    border-top: none;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 1rem;
+  &:last-child {
+    border-bottom: none;
   }
+`
+const MobileContainer = styled.div`
+  width: 16rem;
+  position: absolute;
+  right: 1rem;
+  top: 4.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  max-height: ${props => props.showMenu ? "50rem" : "0"};
+  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "0px"}; 
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  @media (max-width: ${theme.phone}) {
+    left: 4%;
+    right: 4%;
+    width: auto;
+  }
+  
+`
+const Icon = styled.div`
+  cursor: pointer;
+  float: right;
+  padding-top: 0.5rem;
 `
 const HamburgerIcon = () => (
   <svg viewBox="0 0 100 80" width="25" height="25">
@@ -111,7 +135,15 @@ const HamburgerIcon = () => (
     <rect y="60" width="100" height="15" rx="15" ry="15"></rect>
   </svg>
 )
-const Header = () => (
+
+const Header = () => {
+    const [showMenu, setShowMenu] = useState(false);
+
+    const changeMenu = (showMenu) => (
+      setShowMenu(!showMenu)
+    )
+
+    return (
       <Container>
         
         <HomeButton to="/">           
@@ -120,7 +152,6 @@ const Header = () => (
         
         <MenuDiv >  
         
-            
             <Tab>
                 About Us
                 <DropdownContent>
@@ -166,32 +197,25 @@ const Header = () => (
          
         </MenuDiv>
 
-        <HamburgerDiv >
-          <Popup contentStyle={{width: "15rem"}}
-                trigger={
-                  <span> <HamburgerIcon /> </span>
-                } 
-                position="bottom right" >
-            <FadeIn>
-              
-                <MobileLink to="/"> Home </MobileLink>
+        <HamburgerDiv>
+                <Icon onClick={() => changeMenu(showMenu)}> 
+                  <HamburgerIcon /> 
+                </Icon>
 
-                <MobileLink to={aboutLink.link}> {aboutLink.title} </MobileLink>
+                <MobileContainer showMenu={showMenu}>
+                  <MobileLink to="/"> Home </MobileLink>
+                  <MobileLink to={aboutLink.link}> {aboutLink.title} </MobileLink>
+                  <MobileLink to={smartchainLink.link}> {smartchainLink.title} </MobileLink>
+                  <MobileLink to={usecaseLink.link}> {usecaseLink.title} </MobileLink>
+                  <MobileLink to={productsLink.link}> {productsLink.title} </MobileLink>
+                  <MobileLink to="contact-us"> Contact Us </MobileLink>
+                </MobileContainer>
 
-                <MobileLink to={smartchainLink.link}> {smartchainLink.title} </MobileLink>
-              
-                <MobileLink to={usecaseLink.link}> {usecaseLink.title} </MobileLink>
-
-                <MobileLink to={productsLink.link}> {productsLink.title} </MobileLink>
-
-                <MobileLink to="contact-us"> Contact Us </MobileLink>
-
-            </FadeIn>
-          </Popup>
         </HamburgerDiv>
 
       </Container>
-)
+    )
+}
 
 export default Header
 
