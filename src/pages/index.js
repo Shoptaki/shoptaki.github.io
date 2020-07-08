@@ -23,7 +23,7 @@ const IndexPage = () => (
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"
       linkText="What is Smartchain?"
-      linkColor={theme.fontBlueGray}
+      linkColor={theme.fontDarkBlue}
     />
     <Slogan
       title="Take Control. Work Smarter. Enjoy Success. "
