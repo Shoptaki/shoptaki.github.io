@@ -6,10 +6,12 @@ function SmartchainBanner() {
     <div
       style={{
         position: "absolute",
-        top: 0,
+        top: '8rem',
         left: 0,
         width: "100%",
-        height: "100%"
+        height: "70%",
+        overflow: "hidden",
+      
       }}
     >
       <Particles
@@ -60,12 +62,12 @@ function SmartchainBanner() {
               enable: true,
               distance: 160,
               color: "#8EB4D0",
-              opacity: 0.4008530152163807,
+              opacity: 0.5208530152163807,
               width: 0.6413648243462091
             },
             move: {
               enable: true,
-              speed: 6,
+              speed: 3,
               direction: "none",
               random: false,
               straight: false,
@@ -107,7 +109,7 @@ function SmartchainBanner() {
               },
               repulse: {
                 distance: 100,
-                duration: 0.4
+                duration: 0.4,
               },
               push: {
                 particles_nb: 4
