@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
 
 import DifferentiateCard from "../components/differentiateCard"
+import FeatureCard from "../components/featureCard"
 
 import AboutUsCards from "../components/AboutUsCards"
 import AboutUsCardsMobile from '../components/AboutUsCardsMobile';
@@ -20,6 +21,7 @@ const WhySmartchain = () => (
 
         <WhySmartchainBanner />
         <DifferentiateCard />
+        <FeatureCard />
 
     </Layout>
 )
