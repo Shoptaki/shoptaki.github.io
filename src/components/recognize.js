@@ -13,22 +13,18 @@ const Recog = styled.div`
     background-size:cover;
     position: relative;
     max-height: 80rem;
-    padding-bottom: 6em;
-    padding-top: 6em;
+    padding: 6em 0em;
     margin-bottom: 0em;
     
-    
     @media (max-width: ${theme.mobile}){
-        margin-bottom: 0em;
+        padding-top: 0em;
     }
 
 `
 
 const RecogContainer= styled.div`
-    /* background:#F8F8F8; */
     height: 350px;
     width: 100%;
-    margin-bottom: 4rem;
     position: sticky;
     /* padding-top: 25%; 
     background: linear-gradient( -7deg, #F8F8F8 0%, #F8F8F8 70% ,white 71%); */
@@ -36,27 +32,22 @@ const RecogContainer= styled.div`
     margin-bottom:0em;
     margin-top:5em;
     @media (max-width: ${theme.mobile}){
-        padding-top:10em;
+        padding-top:5em;
         height:100%;
-        margin-top:-2.3em;
+        margin-top:-12em;
         margin-bottom:0em;
         padding-bottom:0em;
     }
 `
 
 const RecogTitle=styled.div`
-    color: black;
     text-align: center;
-    font-family: "Helvetica Neue";
     font-weight:140;
     font-size: 27px;
     margin-bottom: 2.5em;
     padding-top: 2.5em;
-    @media (max-width: ${theme.mobile}){
-        font-size: 33px;
-        padding-top: 9em;
-        font-weight:145;
-        text-align: center;
+    @media (max-width: ${theme.tablet}){
+        padding-top: 12em;
     }
 `
 const RecogImageBox=styled.div`
