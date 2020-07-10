@@ -14,12 +14,11 @@ const WhySmartchain = () => (
      
         <SEO title="Why Smartchain?" />
 
-    
-        <AboutUsCards></AboutUsCards>
-        <AboutUsCardsMobile></AboutUsCardsMobile>
-
-
         <WhySmartchainBanner />
+
+        <AboutUsCards />
+        <AboutUsCardsMobile />
+
         <DifferentiateCard />
         <FeatureCard />
 
