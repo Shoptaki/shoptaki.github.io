@@ -14,7 +14,6 @@ import { theme } from "../theme/GlobalStyles"
 import Contact from "./ContactUs"
 import Header from "./header"
 import Footer from "./footer"
-import Recognize from "./recognize"
 
 const Container = styled.div`
   margin: 0;
@@ -54,7 +53,6 @@ const Layout = ({ children }) => {
       <Container>
         <main>{children}</main>
       </Container>
-      <Recognize />
       <Contact />
       <Footer />
     </>
