@@ -44,36 +44,36 @@ const ButtonContainer=styled.div`
     } 
 `
 const ContactLink=[
-    {
-      title: "Contact Us",
-      link:"/contact-us",
-      color:"#2E50B9"
-    },
+  {
+    title: "Contact Us",
+    link:"/contact-us",
+    color:"#2E50B9"
+  },
 
 ]
 function Contact() {
-    
-    return (
-        <Contactcontainer>
-            <ContactTitle>Become part of the future.</ContactTitle>
-            <ButtonContainer>
-            <Button>
-                {
-                ContactLink.map(col=>
-                <CustomLink
-                    to={col.link}
-                    displayText={col.title}
-                    linkColor={col.color}
-                    arrow
-                />
-                    )
 
-                }
-        
-      </Button>
+  return (
+    <Contactcontainer>
+      <ContactTitle>Become part of the future.</ContactTitle>
+      <ButtonContainer>
+        <Button>
+          {
+            ContactLink.map(col=>
+              <CustomLink
+                to={col.link}
+                displayText={col.title}
+                linkColor={col.color}
+                arrow
+              />
+            )
+
+          }
+
+        </Button>
       </ButtonContainer>
-        </Contactcontainer>     
-               
-    )
-    }
+    </Contactcontainer>
+
+  )
+}
 export default Contact;
