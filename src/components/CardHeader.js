@@ -4,30 +4,33 @@ import styled from "styled-components"
 import {theme} from "../theme/GlobalStyles.js"
 
 const HeaderTitle = styled.div`
-    text-align: center;
-    font-family: "Myriad Pro Light";
-    font-size: 50px;
-    margin-bottom: 0.75em;
-    @media (max-width: ${theme.mobile}){
-        font-size: 35px;
-}
+  text-align: center;
+  font-family: "Myriad Pro Light";
+  font-size: 50px;
+  
+  margin-top: 10rem;
+  @media (max-width: ${theme.mobile}){
+      font-size: 35px;
+  }
 `;
 
+const Line = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20;
+  margin-bottom: 4rem;
+  
+`
 
-
-
-const CardHeader = (props) => (
-    <>
+const CardHeader = () => (
+  <div>
     <HeaderTitle>What do we promise?</HeaderTitle>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          paddingRight: 20
-      }}>
-       <TitleLiner color="orange" /> 
-        </div>
-    </>
-  )
+    <Line>
+      <TitleLiner color="orange" />
+    </Line>
+  </div>
+)
 
-  export default CardHeader
+
+export default CardHeader

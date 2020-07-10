@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styled from "styled-components"
 import CustomLink from "./customlink"
@@ -76,4 +77,8 @@ function Contact() {
 
   )
 }
+<<<<<<< HEAD
 export default Contact;
+=======
+export default Contact;
+>>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294

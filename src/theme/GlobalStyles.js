@@ -15,6 +15,7 @@ export const theme = {
     fontBlueGray: '#8EB4D0',
     fontGray: '#707070',
 
+    phone: "480px",
     mobile: "768px",
     tablet: "992px",
     desktop: "1200px",
@@ -58,5 +59,17 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
 
+        a:hover, 
+        a:focus {
+            text-decoration: none;
+            
+        }
     }
+
+    a:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+  
 `;

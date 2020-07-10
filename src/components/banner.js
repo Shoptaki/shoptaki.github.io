@@ -5,20 +5,24 @@ import CustomLink from "./customlink"
 import graphics from "../images/banner-graphics.svg"
 // import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import mobileGraphics from "../images/mobile-banner-graphics.svg"
-import tabletGraphics from "../images/tablet-banner-graphics.svg"
 import { theme } from "../theme/GlobalStyles.js"
 
+
 const Container = styled.div`
-  padding: 0 0 0 0;
   display: flex;
-  background-image: url(${graphics});
-  flex-direction: row;
+  background-image: url(${mobileGraphics});
+  flex-direction: column;
+  padding-left: 4rem;
 
   /* Full height */
-  height: 36rem;
+  height: 95vh;
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
+<<<<<<< HEAD
+=======
+  background-color: white;
+>>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
 
   width: 100%;
   display: inline-block;
@@ -29,36 +33,44 @@ const Container = styled.div`
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  /* for mobile phone only*/
-  @media (max-width: 370px) {
-    background-image: url(${mobileGraphics});
-    background-size: cover;
+  /* for smaller tablet sizes
+  @media (min-width: ${theme.phone}) {
     flex-direction: column;
-    height: 35rem;
   }
 
-  /* for smaller tablets*/
-  @media (min-width: 371px) and (max-width: ${theme.mobile}) {
-    flex-direction: column;
-    background-image: url(${tabletGraphics});
-    padding-left: 5rem;
-    height: 48.5rem;
+  /* for tablet and desktop */
+  @media (min-width: ${theme.mobile}) {
+    background-image: url(${graphics});
+    background-size: auto;
+    flex-direction: row;
+    height: 40rem;
+    padding: 2rem 0 0 3rem;
   }
+
 `
 
 const TextContainer = styled.div`
   float: left;
+<<<<<<< HEAD
   flexdirection: column;
   // flex: 1;
   padding: 0 6rem 0 8rem;
   width: 60%;
+=======
+  flex-flow: nowrap column;
+  /* flex: 1; */
+  padding: 2rem 3rem 0 2rem;
+  width: 100%;
+>>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  @media (max-width: ${theme.mobile}) {
-    padding: 0 3rem 0 4rem;
-    width: 100%;
+  @media (min-width: ${theme.mobile}) {
+    padding: 0 3rem 0 6rem;
+  }
+  @media (min-width: ${theme.tablet}) {
+    width: 60%;
   }
 `
 //to hold globe in home page
@@ -81,11 +93,11 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 3rem;
   color: #07528b;
-  display: inline-block;
+  display: flex;
   flex-wrap: wrap;
 
   @media (max-width: ${theme.mobile}) {
-    flexwrap: wrap;
+    flex-wrap: wrap;
     margin-top: 4rem;
     width: 100%;
     font-size: 2rem;
@@ -98,7 +110,7 @@ const Subtitle = styled.h2`
   max-width: 22rem;
   min-width: 18rem;
   color: #07528b;
-  display: inline-block;
+ 
 
   /* To add hyphens to break word at last*/
   // -webkit-hyphens: auto;
@@ -106,17 +118,26 @@ const Subtitle = styled.h2`
   // -moz-hyphens: auto;
   // hyphens: auto;
 
+<<<<<<< HEAD
+  /* To add hyphens to break word at last*/
+  // -webkit-hyphens: auto;
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  // hyphens: auto;
+
+=======
+>>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;
     word-wrap: break-word;
-    flexwrap: wrap;
+    flex-wrap: wrap;
     max-width: 22rem;
     min-width: 1rem;
     font-size: 1.5rem;
   }
 `
 const Description = styled.p`
-  margin-top: 4.5rem;
+  margin-top: 3rem;
   max-width: 20rem;
   min-width: 18rem;
   font-size: 1.3rem;
@@ -159,7 +180,7 @@ const Banner = ({
         arrow
       />
     </TextContainer>
-    <ImageContainer>{/* <Image /> */}</ImageContainer>
+    
   </Container>
 )
 
