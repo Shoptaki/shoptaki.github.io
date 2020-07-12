@@ -1,18 +1,49 @@
 import React from "react";
 import Layout from "../components/layout";
+import Recaptcha from "react-recaptcha";
+import { loadReCaptcha } from 'react-recaptcha-google';
 
 class App extends React.Component {
+  captchaDemo
+
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
     this.state = {
       name: '',
       email: '',
       industry: '',
       company: '',
-      message: ''
+      message: '',
+      isVerified: false
     }
   }
 
+  componentDidMount() {
+    loadReCaptcha();
+    if (this.captchaDemo) {
+      console.log("started, just a second...")
+      this.captchaDemo.reset();
+    }
+  }
+  onLoadRecaptcha() {
+    if (this.captchaDemo) {
+      this.captchaDemo.reset();
+    }
+  }
+
+  verifyCallback(response) {
+    if (response) {
+      this.setState({
+        isVerified: true
+      });
+    }
+  }
+recaptchaLoaded() {
+    console.log('Captcha Loaded');
+}
 
 render() {
     return (
@@ -58,9 +89,17 @@ render() {
           </div>
 
           <button className="captcha" style={{marginRight: 10, fontSize: 20}}>Captcha</button>
-          <button type="submit" className="btn btn-primary"> Submit</button>
-        </form>
+          <button onClick={this.handleSubmit} type="submit" className="btn btn-primary"> Submit</button>
 
+          <Recaptcha
+            sitekey="6Ld0ELAZAAAAACu7fyKy2htAhJQCCbH71rO1k7g1"
+            render="explicit"
+            onloadCallback={this.recaptchaLoaded}
+            verifyCallback={this.verifyCallback}
+          />
+
+          <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
+        </form>
       </div>
       </Layout>
     );
@@ -87,6 +126,11 @@ render() {
   }
 
   handleSubmit(event) {
+    if (this.state.isVerified) {
+    } else {
+      alert('Please verify first')
+    }
   }
+
 }
 export default App;
