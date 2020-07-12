@@ -5,15 +5,21 @@ import {theme} from "../theme/GlobalStyles.js"
 import cloudImage from "../../Cloud Image.png"
 import head from "../../Head Image.png"
 
+
+const AboutUsContainer = styled.div`
+  padding: 2em;
+  margin-top: 22em;
+  @media (max-width: ${theme.mobile}){
+    display: none;
+  }
+`;
 const CardContainer = styled.div`
   text-align: left;
   width: 45%;
   padding: 2.5em;
-  // margin: 3em;
-  box-shadow: -.3em 0.5em 1em #EAEAEA;
-  @media (max-width: ${theme.mobile}){
-    display: none;
-  }
+  background-color: #fff;
+  box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+  
 `;
 
 const CloudImageContainer = styled.div`
@@ -46,9 +52,6 @@ const RowContainer = styled.div`
   padding: 2rem 0;
 `;
 
-const AboutUsContainer = styled.div`
-  padding: 2em;
-`;
 const Text = styled.p`
   padding-top: 3rem;
 `

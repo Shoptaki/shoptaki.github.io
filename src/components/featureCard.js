@@ -1,14 +1,19 @@
 import React, {useState} from "react"
 import styled from "styled-components"
 import TitleLiner from "../components/titleliner"
+import RecogBorder from "../images/RecognizeBorder.svg"
 import {theme} from "../theme/GlobalStyles.js"
 
+const BgContainer = styled.div`
+    background-image: url(${RecogBorder});
+`
 const Container = styled.div`
     width: 80%;
     margin: auto;
     justify-content: center;
     text-align: center;
-    padding: 8rem 0rem;
+    padding: 6rem 0rem;
+   
 `
 const MobileDiv = styled.div`
     @media (min-width: ${theme.tablet}) {
@@ -29,6 +34,7 @@ const MobileCard = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: left;
     cursor: pointer;
     padding-left: 15%;
     &:hover {
@@ -37,6 +43,7 @@ const MobileCard = styled.div`
 `
 const DesktopCard = styled.div`
     box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+    background-color: #fff;
     text-align: left;
     padding: 2rem 2rem;
 `
@@ -102,7 +109,8 @@ const FeatureCard = () => {
         </DesktopCard>
     ))
     return (
-        <Container>
+        <BgContainer>
+            <Container>
                 <h4>What are our features?</h4>
                 
                 <MobileDiv>
@@ -116,8 +124,8 @@ const FeatureCard = () => {
                 <DesktopDiv>
                     {desktopCards}
                 </DesktopDiv>
-
-        </Container>
+             </Container>
+        </BgContainer>
     )
 
 }
