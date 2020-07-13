@@ -3,8 +3,6 @@ import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
 import REACT_APP_MAILCHIMP_URL from "../env"
-import styles from "../form-control.css";
-import "../form-control.css";
 import jsonp from "jsonp"
 
 
@@ -56,30 +54,31 @@ render() {
     return (
       <Layout>
       <div className="App" style={{textAlign: "center", alignItems: "center"}}>
-        <label htmlFor="Contact Us" style={{fontWeight: "bold", fontSize: 45, color: "blue"}}> Contact Us </label>
+        <label htmlFor="Contact Us" style={{fontWeight: "bold", fontSize: 45, color: "#3F9CE5"}}> Contact Us </label>
         <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
 
           <div className="form-group">
             <label htmlFor="name" style={{marginRight: 250}}> Name </label>
-            <input type="text" className={styles.formControl} value={this.state.name}
+            <input type="text" className="name-input" value={this.state.name}
                    style={{width: 300, display: "block", marginLeft: "auto", marginRight: "auto", borderRadius: 10}}
                    onChange={({ target }) => this.setState({ ['name']: target.value })}/>
           </div>
 
           <div className="form-group">
             <label htmlFor="exampleInputEmail1" style={{marginRight: 200}}>Email Address</label>
-            <input type="email" className={styles.formControl} aria-describedby="emailHelp" value={this.state.email}
+            <input type="email" className="email-input" aria-describedby="emailHelp" value={this.state.email}
                    onChange={({ target }) => this.setState({ ['email']: target.value })}
                    style={{width: 300, display: "block", marginLeft: "auto", marginRight: "auto", borderRadius: 10}}
             />
           </div>
 
           <div className="mc-field-group">
-            <label htmlFor="industry" style={{width: 60}}>Industry</label>
+            <label htmlFor="industry" style={{marginRight: 230}}>Industry</label>
+            <div></div>
             <select
               name="industry"
               id="mce-INDUSTRY"
-              style={{marginRight: 45, borderRadius: 7}}
+              style={{marginRight: "auto", marginLeft: "auto", borderRadius: 7, width: 300}}
               onChange={({ target }) => this.setState({ ['industry']: target.value })}>
               <option value=""></option>
               <option value="banks">Banks/Financial institutes</option>
@@ -103,6 +102,16 @@ render() {
                       onChange={({ target }) => this.setState({ ['message']: target.value })}
                       style={{width: 300, display: "block", marginLeft: "auto", marginRight: "auto", borderRadius: 10}}/>
           </div>
+
+          <div style={{marginLeft: 810}}>
+            <Recaptcha
+              sitekey="6Ld0ELAZAAAAACu7fyKy2htAhJQCCbH71rO1k7g1"
+              render="explicit"
+              onloadCallback={this.recaptchaLoaded}
+              verifyCallback={this.verifyCallback}
+            />
+          </div>
+
           <button style={{marginTop: 10}}
                   disabled={status === "sending" || status === "success"}
                   type="submit"
@@ -116,14 +125,6 @@ render() {
           </div>
 
         </form>
-        <div style={{marginLeft: 810}}>
-          <Recaptcha
-            sitekey="6Ld0ELAZAAAAACu7fyKy2htAhJQCCbH71rO1k7g1"
-            render="explicit"
-            onloadCallback={this.recaptchaLoaded}
-            verifyCallback={this.verifyCallback}
-          />
-        </div>
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
       </div>
 
