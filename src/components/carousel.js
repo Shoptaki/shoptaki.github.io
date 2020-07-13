@@ -15,7 +15,7 @@ const Box = styled.div`
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 70%;
   margin: auto;
-  margin-top: 17rem;
+  margin-top: 15rem;
   background-color: white;
   height: 30vw;
   justify-content: center;
