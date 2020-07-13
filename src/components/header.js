@@ -2,35 +2,8 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
 import logoImage from "../images/logo_horizontal.png";
-import Popup from "reactjs-popup";
-import { fadeInDown } from "react-animations";
-import { keyframes } from "styled-components";
 import CustomLink from "./customlink"
-import links from "../../gatsby-config";
 import {theme} from "../theme/GlobalStyles"
-// import { useStaticQuery, graphql } from 'gatsby'
-
-const FadeIn = styled.div`animation: 2.5s ${keyframes`${fadeInDown}`};`
-
-const aboutLink =  {
-  link: links.siteMetadata.menuLinks[0].subLinks[0].link,
-  title: links.siteMetadata.menuLinks[0].subLinks[0].title
-}
-
-const smartchainLink =  {
-  link: links.siteMetadata.menuLinks[1].subLinks[0].link,
-  title: links.siteMetadata.menuLinks[1].title
-}
-
-const usecaseLink = {
-  link: links.siteMetadata.menuLinks[2].subLinks[0].link,
-  title: links.siteMetadata.menuLinks[2].subLinks[0].title
-}
-
-const productsLink = {
-  link: links.siteMetadata.menuLinks[2].subLinks[1].link,
-  title: links.siteMetadata.menuLinks[2].subLinks[1].title
-}
 
 const Container = styled.header`
   background-color: transparent;
@@ -113,9 +86,12 @@ const MobileContainer = styled.div`
   background-color: #fff;
   border-radius: 0.5rem;
   max-height: ${props => props.showMenu ? "50rem" : "0"};
-  border: ${props => props.showMenu ? "1px solid #d6d6d6" : "0px"}; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out; 
+  
+
+  
   @media (max-width: ${theme.phone}) {
     left: 4%;
     right: 4%;
@@ -136,12 +112,32 @@ const HamburgerIcon = () => (
   </svg>
 )
 
-const Header = () => {
+const Header = ({siteTitle, menuLinks}) => {
     const [showMenu, setShowMenu] = useState(false);
 
     const changeMenu = (showMenu) => (
       setShowMenu(!showMenu)
     )
+    
+    const aboutLink =  {
+      link: menuLinks[0].subLinks[0].link,
+      title: menuLinks[0].subLinks[0].title
+    }
+    
+    const smartchainLink =  {
+      link: menuLinks[1].subLinks[0].link,
+      title: menuLinks[1].title
+    }
+    
+    const usecaseLink = {
+      link: menuLinks[2].subLinks[0].link,
+      title: menuLinks[2].subLinks[0].title
+    }
+    
+    const productsLink = {
+      link: menuLinks[2].subLinks[1].link,
+      title: menuLinks[2].subLinks[1].title
+    }
 
     return (
       <Container>
