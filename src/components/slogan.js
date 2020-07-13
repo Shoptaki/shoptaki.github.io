@@ -41,7 +41,7 @@ const Title = styled.h1`
 
 const Description = styled.p`
   margin-top: 1.5rem;
-  max-width: 30rem;
+  max-width: 40rem;
   font-size: 1.2rem;
   white-space: normal;
   overflow-wrap: break-word;

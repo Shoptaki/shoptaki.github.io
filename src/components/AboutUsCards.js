@@ -1,44 +1,41 @@
 import React from "react"
 import styled from "styled-components"
-import TitleLiner from "./titleliner"
+// import TitleLiner from "./titleliner"
 import {theme} from "../theme/GlobalStyles.js"
 import cloudImage from "../../Cloud Image.png"
 import head from "../../Head Image.png"
 
-const CardContainer = styled.div`
-  text-align: left;
-  padding: 2.5em;
-  margin: 3em;
-  box-shadow: -.3em 0.5em 1em #EAEAEA;
+
+const AboutUsContainer = styled.div`
+  padding: 2em;
+  margin-top: 22em;
   @media (max-width: ${theme.mobile}){
     display: none;
   }
 `;
+const CardContainer = styled.div`
+  text-align: left;
+  width: 45%;
+  padding: 2.5em;
+  background-color: #fff;
+  box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+  
+`;
 
 const CloudImageContainer = styled.div`
-width: 100%;
-min-width: 17em;
-padding-left: 2em;
-padding-right: 3em;
+width: 20rem;
+margin-left: 3em;
 @media (max-width: ${theme.mobile}){
     display: none;
   }
 `;
 
 const HeadImageContainer = styled.div`
-width: 120%;
-min-width: 20em;
-padding-left: 3em;
-padding-right: 6em;
+width: 20rem;
+margin-right: 3em;
 @media (max-width: ${theme.mobile}){
     display: none;
   }
-`;
-
-const Line = styled.div`
-  display: flex;
-  align-items: left;
-  justify-content: left;
 `;
 
 const HeaderTitle = styled.div`
@@ -47,78 +44,69 @@ const HeaderTitle = styled.div`
 `;
 
 const RowContainer = styled.div`
-max-width: 100%;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
 `;
 
-const AboutUsContainer = styled.div`
-padding: 2em;
+const Text = styled.p`
+  padding-top: 3rem;
+`
+const BlueLine = styled.div`
+    width: auto;
+    height: 4px;
+    background: rgb(8,77,161);
+    background: linear-gradient(90deg, ${theme.logoDarkBlue} 0%, ${theme.logoLightBlue} 54%, #fff 100%);
 `;
 
 const AdaptableCloud = (props) => (
     <CardContainer>
-        <div>
         <HeaderTitle>Adaptable Cloud Infrastructure</HeaderTitle>
-        <Line>
-            <TitleLiner color={'blue'} size = {400} />
-        </Line>
-        </div>
-        <div>Smartchain adapts to legacy systems and 
+        <BlueLine />
+        <Text>Smartchain adapts to legacy systems and 
         integrates into both cloud and physical computing 
         architecture.
-        </div>
+        </Text>
     </CardContainer>
 )
 
 const HowItWorks = (props) => (
   <CardContainer>
-        <div>
         <HeaderTitle>How It Works?</HeaderTitle>
-        <Line>
-            <TitleLiner color={'blue'} size = {400} />
-        </Line>
-        </div>
-        <div>Smartchain can route data more efficiently and 
+        <BlueLine />
+        <Text>Smartchain can route data more efficiently and 
         securely through smart cognitive packets, and it 
         employs collaborative AI to analyze data and 
         autonomize processes.
-        </div>
-    </CardContainer>
+        </Text>
+  </CardContainer>
 )
 
 const Card1 = (props) => (
-  <div>
     <RowContainer>
-  <div><AdaptableCloud></AdaptableCloud></div>
-  <div>
-  <CloudImageContainer>
-    <img src={cloudImage} alt="Cloud image" />
-    </CloudImageContainer>
-  </div>
-  </RowContainer>
-  </div>
+      <AdaptableCloud />
+      <CloudImageContainer>
+        <img src={cloudImage} alt="Cloud image" style={{maxWidth: "100%"}} />
+      </CloudImageContainer>
+    </RowContainer>
 )
 
 const Card2 = (props) => (
-  <div>
     <RowContainer>
-  <div>
-  <HeadImageContainer>
-    <img src={head} alt="Head image" />
-    </HeadImageContainer>
-  </div>
-  <div><HowItWorks></HowItWorks></div>
-  </RowContainer>
-  </div>
+      <HeadImageContainer>
+        <img src={head} alt="Head image" style={{maxWidth: "100%"}} />
+      </HeadImageContainer>
+      <HowItWorks />
+    </RowContainer>
 )
 
 const AboutUsCards = (props) => (
   <AboutUsContainer>
-  <div><Card1></Card1></div>
-  <div><Card2></Card2></div>
+    <Card1 />
+    <Card2 />
   </AboutUsContainer>
 )
 
