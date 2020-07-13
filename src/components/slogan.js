@@ -3,13 +3,14 @@ import React from "react"
 import styled from "styled-components"
 import TitleLiner from "./titleliner"
 import upperbg from "../images/UpperBG.svg"
+import { theme } from "../theme/GlobalStyles"
 
 const Container = styled.div`
   position: absolute;
   
   z-index: -1;
   background-image: url(${upperbg});
-  top: 52rem;
+  top: 100vh;
   text-align: center;
   width: 100%;
   padding: 3rem 3rem;
@@ -19,8 +20,8 @@ const Container = styled.div`
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
 
-  @media (max-width: 768px) {
-    top: 52rem;
+  @media (min-width: ${theme.mobile}) {
+    top: 44rem;
   }
 `;
 
@@ -40,7 +41,7 @@ const Title = styled.h1`
 
 const Description = styled.p`
   margin-top: 1.5rem;
-  max-width: 30rem;
+  max-width: 40rem;
   font-size: 1.2rem;
   white-space: normal;
   overflow-wrap: break-word;
