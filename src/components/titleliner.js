@@ -1,7 +1,5 @@
 import PropTypes from "prop-types"
 import React from "react"
-import underlinerBlue from "../images/underliner-blue.svg"
-import underlinerOrange from "../images/underliner-orange.svg"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
 
