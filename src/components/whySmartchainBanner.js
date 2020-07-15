@@ -7,7 +7,6 @@ import SmartchainBanner from "./particleComponent";
 const Container = styled.div`
   padding: 0 0 0 0;
   height: 36rem;
-  margin-bottom:100%;
   width: 100%;
   page-break-after: always; 
   
@@ -20,12 +19,15 @@ const Container = styled.div`
 const TextContainer = styled.div`
   padding-left:8rem;
   padding-right:5rem;
-  padding-bottom:5rem;
+  padding-bottom:5rem;  
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  @media (max-width: ${theme.mobile}) {
+    padding: 0 3rem;
+  }
 `
 
 const Title = styled.h1`
@@ -33,7 +35,6 @@ const Title = styled.h1`
   width: 100%;
   font-weight: bold;
   font-size: 2rem;
-  font-family: "Helvetica Neue";
   color: #8EB4D0;
 
   display: inline-block;
@@ -48,7 +49,6 @@ const Title = styled.h1`
 `
 const Subtitle = styled.h2`
   font-size: 2rem;
-  font-family: "Helvetica Neue";
   width: 100%;
   color: #3F9CE5;
 
@@ -67,7 +67,6 @@ const Subtitle = styled.h2`
 `
 const Description = styled.p`
   width: 100%;
-  font-family: "Helvetica Neue";
   font-weight: bold;
   font-size: 2rem;
   color: #1071BB;

@@ -21,6 +21,8 @@ const Container = styled.div`
   background-size: cover;
   background-color: white;
 
+  
+
   width: 100%;
   display: inline-block;
   page-break-after: always;
@@ -30,10 +32,6 @@ const Container = styled.div`
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  /* for smaller tablet sizes
-  @media (min-width: ${theme.phone}) {
-    flex-direction: column;
-  }
 
   /* for tablet and desktop */
   @media (min-width: ${theme.mobile}) {
@@ -55,6 +53,8 @@ const TextContainer = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
+  
 
   @media (min-width: ${theme.mobile}) {
     padding: 0 3rem 0 6rem;
@@ -103,10 +103,6 @@ const Subtitle = styled.h2`
  
 
   /* To add hyphens to break word at last*/
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  // hyphens: auto;
 
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;

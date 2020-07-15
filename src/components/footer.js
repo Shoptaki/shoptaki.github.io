@@ -182,7 +182,7 @@ function Footer () {
         <Container>        
         <Row> 
         {
-            FooterLinks.map(column=>
+            FooterLinks.map(column =>
                 <Box>
                     <Title>{column.title}</Title>
                     {
@@ -214,9 +214,9 @@ function Footer () {
 
         {/* Footer Bottom */}
         <FooterBottom>
-            <p>
-            <h7>&copy; {(new Date().getFullYear())} Shoptaki, All Rights Reserved</h7>
-            </p>
+            
+            <h6>&copy; {(new Date().getFullYear())} Shoptaki, All Rights Reserved</h6>
+            
         </FooterBottom>
         </Container>
         </Mainfooter >           

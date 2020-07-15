@@ -41,15 +41,10 @@ const Title = styled.h1`
 
 const Description = styled.p`
   margin-top: 1.5rem;
-  max-width: 30rem;
+  max-width: 40rem;
   font-size: 1.2rem;
   white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
@@ -61,9 +56,7 @@ const Slogan = ({ title, description, color }) => (
   <Container>
     <center>
       <Title>{title}</Title>
-    </center>
-    <TitleLiner color={color} />
-    <center>
+      <TitleLiner color={color} size={"26rem"}/>
       <Description>{description}</Description>
     </center>
   </Container>

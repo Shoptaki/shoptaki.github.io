@@ -72,3 +72,4 @@ yarn-error.log
 #VS Code
 .vscode/
 .idea
+.=2.8.0

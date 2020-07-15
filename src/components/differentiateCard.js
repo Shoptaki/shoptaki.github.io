@@ -20,6 +20,7 @@ const Box = styled.div`
 `
 const Title = styled.div`
     padding: 2rem 0rem 1rem 0rem;
+
 `
 const MobileItem = styled.div`
     display: flex;
@@ -102,18 +103,18 @@ const DifferentiateCard = () => {
       )
 
     // image[3] is desktopimg, image[0,1,2] is mobileimg
-    const images = data.allFile.nodes.map((image) => (
-        <ImageContainer>
+    const images = data.allFile.nodes.map((image, i) => (
+        <ImageContainer key={image.id} >
             <Img
                 fluid={image.childImageSharp.fluid}
-                key={image.id}
+                
                 alt={image.name}
             />
         </ImageContainer>
     ))
 
-    const text = textItems.map((item) => (
-        <TextContainer>
+    const text = textItems.map((item, i) => (
+        <TextContainer key={i} >
             <p>{item.title}</p>
             <p>{item.description}</p>
         </TextContainer>

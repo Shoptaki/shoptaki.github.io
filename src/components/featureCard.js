@@ -1,50 +1,67 @@
 import React, {useState} from "react"
 import styled from "styled-components"
 import TitleLiner from "../components/titleliner"
+import RecogBorder from "../images/RecognizeBorder.svg"
 import {theme} from "../theme/GlobalStyles.js"
 
+const BgContainer = styled.div`
+    background-image: url(${RecogBorder});
+`
 const Container = styled.div`
     width: 80%;
     margin: auto;
     justify-content: center;
     text-align: center;
-    padding: 8rem 0rem;
+    padding: 6rem 0rem;
+   
 `
+
+// Desktop Styles
+const DesktopDiv = styled.div`
+    display: none;
+    @media (min-width: ${theme.tablet}) {
+        display: block;
+    }
+`
+const GridDiv = styled.div`
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2rem;
+    padding-top: 2rem;
+`
+const DesktopCard = styled.div`
+    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+    background-color: #fff;
+    text-align: left;
+    padding: 2rem 2rem;
+`
+// Mobile Styles
 const MobileDiv = styled.div`
     @media (min-width: ${theme.tablet}) {
         display: none;
     }
 `
-const DesktopDiv = styled.div`
-    display: none;
-    @media (min-width: ${theme.tablet}) {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-column-gap: 2rem;
-        padding-top: 2rem;
-    }
-
-`
 const MobileCard = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: left;
     cursor: pointer;
     padding-left: 15%;
     &:hover {
         background-color: #ededed;
     }
 `
-const DesktopCard = styled.div`
-    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-    text-align: left;
-    padding: 2rem 2rem;
-`
 const Number = styled.p`
     font-size: 3rem;
     font-weight: bold;
     padding-right: 2rem;
     color: ${theme.fontDarkBlue};
+`
+const Box = styled.div`
+    background-color: #fff;
+    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+    padding: 2rem;
 `
 const TextBox = styled.div`
     box-shadow: 0.2rem 0.2rem 0.5rem #999999;
@@ -54,12 +71,6 @@ const TextBox = styled.div`
 `
 const Text = styled.p`
     padding: 1rem 2rem;
-`
-const BlueLine = styled.div`
-    width: auto;
-    height: 4px;
-    background: rgb(8,77,161);
-    background: linear-gradient(90deg, ${theme.logoDarkBlue} 0%, ${theme.logoLightBlue} 54%, #fff 100%);
 `
 const FeatureCard = () => {
     const text = [
@@ -97,27 +108,35 @@ const FeatureCard = () => {
     const desktopCards = text.map( (item, index) => (
         <DesktopCard>
             <h5>{item.title}</h5>
-            <BlueLine />
+            <TitleLiner color="blue" />
             <p style={{paddingTop: "2rem"}}>{item.description}</p>
         </DesktopCard>
     ))
     return (
-        <Container>
-                <h4>What are our features?</h4>
-                
+        <BgContainer>
+            <Container>
                 <MobileDiv>
-                    <TitleLiner color="blue" />
-                    {mobileNumbers}
-                    <TextBox>
-                        <Text>{mobileDescription}</Text>
-                    </TextBox>
+                    <Box>
+                        <h4>What are our features?</h4>
+                        <TitleLiner color="orange" size="16rem"/>
+                        {mobileNumbers}
+                        <TextBox>
+                            <Text>{mobileDescription}</Text>
+                        </TextBox>
+                    </Box>
                 </MobileDiv>
 
+                
                 <DesktopDiv>
-                    {desktopCards}
+                    <h4>What are our features?</h4>
+                    <TitleLiner color="orange" size="16rem"/>
+                    <GridDiv>
+                        {desktopCards}
+                    </GridDiv>
                 </DesktopDiv>
-
-        </Container>
+                
+             </Container>
+        </BgContainer>
     )
 
 }
