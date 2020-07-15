@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import TitleLiner from "./titleliner"
-import upperbg from "../images/UpperBG.svg"
+import TitleLiner from "./TitleLiner"
+import upperbg from "../images/upper_background.svg"
 import { theme } from "../theme/GlobalStyles"
 
 const Container = styled.div`
@@ -44,12 +44,7 @@ const Description = styled.p`
   max-width: 40rem;
   font-size: 1.2rem;
   white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  
   flex-wrap: wrap;
 
   @media (max-width: 768px) {

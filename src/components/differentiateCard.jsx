@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
-import TitleLiner from "../components/titleliner"
+import TitleLiner from "../components/TitleLiner"
 import {theme} from "../theme/GlobalStyles.js"
 
 const Box = styled.div`
@@ -102,18 +102,18 @@ const DifferentiateCard = () => {
       )
 
     // image[3] is desktopimg, image[0,1,2] is mobileimg
-    const images = data.allFile.nodes.map((image) => (
-        <ImageContainer>
+    const images = data.allFile.nodes.map((image, i) => (
+        <ImageContainer key={image.id} >
             <Img
                 fluid={image.childImageSharp.fluid}
-                key={image.id}
+                
                 alt={image.name}
             />
         </ImageContainer>
     ))
 
-    const text = textItems.map((item) => (
-        <TextContainer>
+    const text = textItems.map((item, i) => (
+        <TextContainer key={i} >
             <p>{item.title}</p>
             <p>{item.description}</p>
         </TextContainer>

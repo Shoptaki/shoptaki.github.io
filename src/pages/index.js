@@ -2,28 +2,30 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Banner from "../components/banner"
-import Slogan from "../components/slogan"
-import CardAndHeader from "../components/cardAndHeader"
+import Banner from "../components/HomepageBanner"
+
+import Slogan from "../components/Slogan.jsx"
+import Recognize from "../components/RecognizedSection.jsx"
+import Contact from "../components/ContactUsSection.jsx"
+import CardSection from "../components/CardSection.jsx"
+
 import ControlledCarousel from "../components/carousel"
+
 import { theme } from "../theme/GlobalStyles.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Recognize from "../components/recognize"
+
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p> */}
-    {/* put banner here */}
     <Banner
       title="Smartchain: "
       subtitle="The next evolution of distributed technology"
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"
       linkText="What is Smartchain?"
-      linkColor={theme.fontDarkBlue}
+      linkColor={theme.fontBlueGray}
+      linkSize="20px"
     />
     <Slogan
       title="Take Control. Work Smarter. Enjoy Success. "
@@ -40,9 +42,11 @@ const IndexPage = () => (
     />
 
 
-    <CardAndHeader />
+    <CardSection />
     <Recognize />
+    <Contact />
   </Layout>
+  
 )
 
 export default IndexPage
