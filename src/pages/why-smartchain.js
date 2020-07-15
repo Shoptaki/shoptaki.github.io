@@ -2,7 +2,9 @@ import React from 'react';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
-import Slogan from "../components/slogan"
+import Slogan from "../components/Slogan.jsx"
+
+import Contact from "../components/ContactUsSection.jsx"
 
 import DifferentiateCard from "../components/differentiateCard"
 import FeatureCard from "../components/featureCard"
@@ -30,6 +32,7 @@ const WhySmartchain = () => (
         <DifferentiateCard />
         <FeatureCard />
 
+        <Contact />
     </Layout>
 )
 

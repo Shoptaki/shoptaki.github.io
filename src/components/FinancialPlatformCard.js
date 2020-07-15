@@ -7,10 +7,10 @@ import { theme } from "../theme/GlobalStyles"
 import CustomLink from "./customlink"
 import "./styles.css"; // from React Transition Group
 
+import TitleLiner from "./TitleLiner"
 import productShow from "../images/ProductImage.svg";
 import greenIcon from "../images/greenicon.svg"
 import financialImage from "../images/financialimage.svg"
-import underlinerBlue from "../images/underliner-blue.svg"
 
 const Box = styled.div`
   display: flex;
@@ -46,9 +46,10 @@ const SmartTitle = styled.div`
     margin-top:3em;
     margin-bottom:0.5em;
 `
-const FinancialLiner = styled.img`
+const FinancialLiner = styled(TitleLiner)`
     width:300px;
-    margin-left: 1.3em;
+    margin-left: 0;
+    text-align: left;
 `
 const verticalBox=styled.div`
     display: flex;
@@ -99,7 +100,7 @@ function FinancialPlatformCard(props) {
         <Container >
           <verticalBox>
             <SmartTitle>Financial Platform</SmartTitle>
-            <FinancialLiner src={underlinerBlue}></FinancialLiner>
+            <FinancialLiner color="blue" size={"26rem"} />
             <SmartDescription1>Finance Smartchain ID allows for transactional communication to be secure by being decentralized.</SmartDescription1>
 <SmartDescription2>Smartchain tracks data across different ecosystems to prevent fraud and automate certain processes.  </SmartDescription2>
           <BenefitsTitle>Benefits</BenefitsTitle>

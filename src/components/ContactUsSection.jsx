@@ -1,17 +1,17 @@
 
 import React from 'react';
 import styled from "styled-components"
-import CustomLink from "./customlink"
+import CustomLink from "./CustomLink"
 import {theme} from "../theme/GlobalStyles.js"
 
-const Contactcontainer= styled.div`
+const ContactContainer= styled.div`
     left:0;
     right:0;
     position: sticky;
     width: 100%;
     height:350px;
     background: linear-gradient( to right,#BFE6F7,#1DA7E3 45%,#BFE6F7); 
-    overflow:hidden;
+    overflow: hidden;
 `
 const ContactTitle = styled.div`
     text-align:center;
@@ -43,37 +43,24 @@ const ButtonContainer=styled.div`
     @media (max-width: ${theme.mobile}){
         text-align:center; 
     } 
-`
-const ContactLink=[
-  {
-    title: "Contact Us",
-    link:"/contact-us",
-    color:"#2E50B9"
-  },
+`;
 
-]
 function Contact() {
 
   return (
-    <Contactcontainer>
+    <ContactContainer>
       <ContactTitle>Become part of the future.</ContactTitle>
       <ButtonContainer>
         <Button>
-          {
-            ContactLink.map(col=>
-              <CustomLink
-                to={col.link}
-                displayText={col.title}
-                linkColor={col.color}
-                arrow
-              />
-            )
-
-          }
-
+            <CustomLink
+              to={"/contact-us"}
+              displayText={"Contact Us"}
+              linkColor={"#2E50B9"}
+              arrow
+            />
         </Button>
       </ButtonContainer>
-    </Contactcontainer>
+    </ContactContainer>
 
   )
 }

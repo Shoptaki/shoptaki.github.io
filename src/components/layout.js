@@ -11,9 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { GlobalStyles } from "../theme/GlobalStyles"
 import { theme } from "../theme/GlobalStyles"
-import Contact from "./ContactUs"
-import Header from "./header"
-import Footer from "./footer"
+import Header from "./NavBar"
+import Footer from "./Footer.jsx"
 
 const Container = styled.div`
   margin: 0;
@@ -53,7 +52,6 @@ const Layout = ({ children }) => {
       <Container>
         <main>{children}</main>
       </Container>
-      <Contact />
       <Footer />
     </>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import TitleLiner from "./titleliner"
+import TitleLiner from "./TitleLiner"
 import {theme} from "../theme/GlobalStyles.js"
 import cloudImage from "../images/Cloud Image.png"
 import head from "../images/Head Image.png"

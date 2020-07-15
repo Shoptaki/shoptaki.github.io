@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
 import logoImage from "../images/logo_horizontal.png";
-import CustomLink from "./customlink"
+import CustomLink from "./CustomLink"
 import {theme} from "../theme/GlobalStyles"
 
 const Container = styled.header`
@@ -115,7 +115,7 @@ const HamburgerIcon = () => (
 const Header = ({siteTitle, menuLinks}) => {
     document.body.onclick = function() {
       if (showMenu) { setShowMenu(false) }
-    }
+    }//
 
     const [showMenu, setShowMenu] = useState(false);
 

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
 
-import TitleLiner from "../components/titleliner"
+import TitleLiner from "./TitleLiner"
 import {theme} from "../theme/GlobalStyles.js"
 
 const Box = styled.div`

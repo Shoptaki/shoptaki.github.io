@@ -1,7 +1,7 @@
 import React from "react"
-import recog1 from "../images/recog1.svg"
-import recog2 from "../images/recog2.svg"
-import recog3 from "../images/recog3.svg"
+import global_logo from "../images/homepage_global_logo.svg"
+import remtech_logo from "../images/homepage_remtech_logo.svg"
+import cc_logo from "../images/homepage_cc_logo.svg"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
 import RecogBorder from "../images/RecognizeBorder.svg"
@@ -25,12 +25,9 @@ const Recog = styled.div`
 const RecogContainer= styled.div`
     height: 350px;
     width: 100%;
-    position: sticky;
-    /* padding-top: 25%; 
-    background: linear-gradient( -7deg, #F8F8F8 0%, #F8F8F8 70% ,white 71%); */
-
     margin-bottom:0em;
     margin-top:5em;
+
     @media (max-width: ${theme.mobile}){
         padding-top:5em;
         height:100%;
@@ -40,7 +37,7 @@ const RecogContainer= styled.div`
     }
 `
 
-const RecogTitle=styled.div`
+const RecogTitle = styled.div`
     text-align: center;
     font-weight:140;
     font-size: 27px;
@@ -109,18 +106,17 @@ const RecogImage3=styled.img`
 function Recognize() {
     return (
        <Recog> 
-            {/* <Border src={RecogBorder}/> */}
             <RecogContainer>
                 <RecogTitle>Recognized By</RecogTitle>
                 <RecogImageBox>
                 <SubRecogImagebox>
-                    <RecogImage1 src={recog1}/>
+                    <RecogImage1 src={global_logo}/>
                 </SubRecogImagebox>
                 <SubRecogImagebox>
-                    <RecogImage2 src={recog2}/>
+                    <RecogImage2 src={remtech_logo}/>
                 </SubRecogImagebox>
                 <SubRecogImagebox>
-                    <RecogImage3 src={recog3}/>
+                    <RecogImage3 src={cc_logo}/>
                 </SubRecogImagebox>
                 </RecogImageBox>
             </RecogContainer>
