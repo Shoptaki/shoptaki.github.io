@@ -2,8 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
-//import REACT_APP_MAILCHIMP_URL from "../../.env"
-//import "../form-control.css";
 import jsonp from "jsonp"
 
 

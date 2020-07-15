@@ -30,7 +30,7 @@ const CardHeader = () => (
   <div>
     <HeaderTitle>What do we promise?</HeaderTitle>
     <Line>
-      <TitleLiner color="orange" />
+      <TitleLiner color="orange" size={"26rem"}/>
     </Line>
   </div>
 )
