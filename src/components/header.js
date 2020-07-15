@@ -161,7 +161,7 @@ const Header = ({siteTitle, menuLinks}) => {
 
             <Tab>
                 <CustomLink 
-                  link={smartchainLink.link}
+                  to={smartchainLink.link}
                   displayText={smartchainLink.title}
                   linkColor="black"
                 />
