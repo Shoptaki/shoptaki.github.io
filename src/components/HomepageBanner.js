@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import CustomLink from "./customlink"
+import CustomLink from "./CustomLink"
 import graphics from "../images/banner-graphics.svg"
 // import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import mobileGraphics from "../images/mobile-banner-graphics.svg"
@@ -100,9 +100,6 @@ const Subtitle = styled.h2`
   max-width: 22rem;
   min-width: 18rem;
   color: #07528b;
- 
-
-  /* To add hyphens to break word at last*/
 
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;

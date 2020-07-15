@@ -3,7 +3,6 @@ import React from "react"
 import SEO from "../components/seo"
 import Bubbles from "../components/bubble"
 import styled from "styled-components"
-import Header from "../components/header"
 import { useStaticQuery, graphql } from "gatsby"
 
 
@@ -12,9 +11,9 @@ const Container = styled.div`
   max-width: 1200px;
   max-height: 600px;
 `
-const IndexPage = () => (
+const UseCases = () => (
   <Container>
-    <SEO title="Use cases" />
+    <SEO title="Use Cases" />
       {/* <Header
         siteTitle={data.site.siteMetadata.title}
         menuLinks={data.site.siteMetadata.menuLinks}
@@ -23,4 +22,4 @@ const IndexPage = () => (
   </Container>
 )
 
-export default IndexPage
+export default UseCases

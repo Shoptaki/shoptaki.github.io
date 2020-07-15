@@ -3,8 +3,8 @@ import facebookicon from "../images/facebook.svg"
 import twittericon from "../images/twitter.svg"
 import linkedinicon from "../images/linkedin.svg"
 import styled from "styled-components"
-import {theme} from "../theme/GlobalStyles.js"
-import {Link} from "gatsby"
+import { theme } from "../theme/GlobalStyles.js"
+import { Link } from "gatsby"
 
 const Mainfooter = styled.div`
     color:white;
@@ -131,7 +131,7 @@ const FooterBottom =styled.div`
         margin-top: 6em;
     }
 `
-const FooterLinks=[
+const FooterLinks = [
         {
           title: "About Us",
           subLinks: [
@@ -186,7 +186,7 @@ function Footer () {
                 <Box>
                     <Title>{column.title}</Title>
                     {
-                        column.subLinks.map(link=>
+                        column.subLinks.map(link =>
                             <ListUnstyled>
                                 <li ><List to={link.link}>{link.title}</List></li> 
                             </ListUnstyled>
@@ -221,5 +221,6 @@ function Footer () {
         </Container>
         </Mainfooter >           
     )
-    }
+}
+
 export default Footer;
