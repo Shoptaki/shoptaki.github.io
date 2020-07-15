@@ -113,11 +113,17 @@ const HamburgerIcon = () => (
 )
 
 const Header = ({siteTitle, menuLinks}) => {
+    document.body.onclick = function() {
+      if (showMenu) { setShowMenu(false) }
+    }
+
     const [showMenu, setShowMenu] = useState(false);
 
-    const changeMenu = (showMenu) => (
+    const changeMenu = (showMenu, e) => {
       setShowMenu(!showMenu)
-    )
+      e.stopPropagation() 
+    }
+    
     
     const aboutLink =  {
       link: menuLinks[0].subLinks[0].link,
@@ -194,7 +200,7 @@ const Header = ({siteTitle, menuLinks}) => {
         </MenuDiv>
 
         <HamburgerDiv>
-                <Icon onClick={() => changeMenu(showMenu)}> 
+                <Icon onClick={(e) => changeMenu(showMenu, e)}> 
                   <HamburgerIcon /> 
                 </Icon>
 
@@ -204,7 +210,7 @@ const Header = ({siteTitle, menuLinks}) => {
                   <MobileLink to={smartchainLink.link}> {smartchainLink.title} </MobileLink>
                   <MobileLink to={usecaseLink.link}> {usecaseLink.title} </MobileLink>
                   <MobileLink to={productsLink.link}> {productsLink.title} </MobileLink>
-                  <MobileLink to="contact-us"> Contact Us </MobileLink>
+                  <MobileLink to="/contact-us"> Contact Us </MobileLink>
                 </MobileContainer>
 
         </HamburgerDiv>

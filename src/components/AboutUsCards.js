@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 // import TitleLiner from "./titleliner"
 import {theme} from "../theme/GlobalStyles.js"
-import cloudImage from "../../Cloud Image.png"
-import head from "../../Head Image.png"
+import cloudImage from "../images/Cloud Image.png"
+import head from "../images/Head Image.png"
 
 
 const AboutUsContainer = styled.div`
