@@ -4,11 +4,10 @@ import SEO from "../components/seo"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
 import Slogan from "../components/slogan"
 
-import DifferentiateCard from "../components/differentiateCard"
-import FeatureCard from "../components/featureCard"
+import DifferentiateCard from "../components/differentiateCard.jsx"
+import FeatureCard from "../components/featureCard.jsx"
 
-import AboutUsCards from "../components/AboutUsCards"
-import AboutUsCardsMobile from '../components/AboutUsCardsMobile'
+import AboutUsCards from "../components/AboutUsCards.jsx"
 
 
 const WhySmartchain = () => (
@@ -25,8 +24,6 @@ const WhySmartchain = () => (
         />
 
         <AboutUsCards />
-        <AboutUsCardsMobile />
-
         <DifferentiateCard />
         <FeatureCard />
 

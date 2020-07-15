@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
-
 import TitleLiner from "../components/titleliner"
 import {theme} from "../theme/GlobalStyles.js"
 
@@ -16,17 +14,11 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-
 `
 const Title = styled.div`
     padding: 2rem 0rem 1rem 0rem;
-`
-const MobileItem = styled.div`
-    display: flex;
-    justify-content: center;
-    @media (min-width: ${theme.tablet}) {
-        display: none;
-    }
+    font-family: "Myriad Pro Light";
+    font-size: 1.75em;
 `
 const DesktopImg = styled.div`
     display: none;
@@ -42,6 +34,13 @@ const DesktopText = styled.div`
         flex-direction: row;
     }    
 
+`
+const MobileItem = styled.div`
+    display: flex;
+    justify-content: center;
+    @media (min-width: ${theme.tablet}) {
+        display: none;
+    }
 `
 const ImageContainer = styled.div`
     width: 6rem;
@@ -81,6 +80,7 @@ const DifferentiateCard = () => {
         },
     ]
 
+    // image query
     const data = useStaticQuery(
         graphql`
         query {
