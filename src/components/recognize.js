@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 import recog1 from "../images/recog1.svg"
 import recog2 from "../images/recog2.svg"
 import recog3 from "../images/recog3.svg"
@@ -50,11 +50,12 @@ const RecogTitle=styled.div`
         padding-top: 12em;
     }
 `
-const RecogImageBox=styled.div`
-    display: flex;
-    flex-direction: row;
-    padding-bottom:3em;
-    @media (max-width: ${theme.mobile}){
+const RecogImageBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2em;
+ 
+  @media (max-width: ${theme.mobile}) {
          display: flex;
          flex-direction: column;
          text-align: center;

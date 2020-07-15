@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,17 +14,14 @@ import Recognize from "../components/recognize"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p> */}
-    {/* put banner here */}
     <Banner
       title="Smartchain: "
       subtitle="The next evolution of distributed technology"
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"
       linkText="What is Smartchain?"
-      linkColor={theme.fontDarkBlue}
+      linkColor={theme.fontBlueGray}
+      linkSize="20px"
     />
     <Slogan
       title="Take Control. Work Smarter. Enjoy Success. "

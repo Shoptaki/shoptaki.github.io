@@ -84,8 +84,11 @@ CustomLink.propTypes = {
 }
 
 CustomLink.defaultProps = {
+
   linkColor: "black",
   fontSize: "1rem",
+
+
 }
 
 export default CustomLink
