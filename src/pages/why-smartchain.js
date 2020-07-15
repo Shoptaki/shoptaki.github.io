@@ -15,7 +15,7 @@ const WhySmartchain = () => (
     <Layout>
      
         <SEO title="Why Smartchain?" />
-
+   
         <WhySmartchainBanner />
 
         <Slogan
@@ -29,7 +29,6 @@ const WhySmartchain = () => (
 
         <DifferentiateCard />
         <FeatureCard />
-
 
     </Layout>
 )
