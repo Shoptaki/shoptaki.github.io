@@ -19,9 +19,9 @@ const WhySmartchain = () => (
         <WhySmartchainBanner />
 
         <Slogan
-        title="What is Smartchain?"
-        description="Smartchain is a completely new type of technology. In the form of a multipurpose ecosystem, it revolutionizes concepts of blockchain with the help of collaborative artificial intelligence to bridge the gaps in effective management and implementation."
-        color="orange"
+            title="What is Smartchain?"
+            description="Smartchain is a completely new type of technology. In the form of a multipurpose ecosystem, it revolutionizes concepts of blockchain with the help of collaborative artificial intelligence to bridge the gaps in effective management and implementation."
+            color="orange"
         />
 
         <AboutUsCards />

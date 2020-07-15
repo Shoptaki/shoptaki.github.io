@@ -2,11 +2,9 @@ import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
-import REACT_APP_MAILCHIMP_URL from "../env"
-import styles from "../form-control.css";
-import "../form-control.css";
+//import REACT_APP_MAILCHIMP_URL from "../../.env"
+//import "../form-control.css";
 import jsonp from "jsonp"
-
 
 
 class Contact extends React.Component {
@@ -61,14 +59,14 @@ render() {
 
           <div className="form-group">
             <label htmlFor="name" style={{marginRight: 250}}> Name </label>
-            <input type="text" className={styles.formControl} value={this.state.name}
+            <input type="text" value={this.state.name}
                    style={{width: 300, display: "block", marginLeft: "auto", marginRight: "auto", borderRadius: 10}}
                    onChange={({ target }) => this.setState({ ['name']: target.value })}/>
           </div>
 
           <div className="form-group">
             <label htmlFor="exampleInputEmail1" style={{marginRight: 200}}>Email Address</label>
-            <input type="email" className={styles.formControl} aria-describedby="emailHelp" value={this.state.email}
+            <input type="email" aria-describedby="emailHelp" value={this.state.email}
                    onChange={({ target }) => this.setState({ ['email']: target.value })}
                    style={{width: 300, display: "block", marginLeft: "auto", marginRight: "auto", borderRadius: 10}}
             />
@@ -135,7 +133,7 @@ render() {
   handleSubmit(event) {
     if (this.state.isVerified) {
     } else {
-      alert('Please verify you are human')
+      alert('Please verify you are human.')
     }
     event.preventDefault();
     const values = `name=${encodeURIComponent(this.state['name'])}&` +
@@ -143,7 +141,7 @@ render() {
         `industry=${encodeURIComponent(this.state['industry'])}&` +
         `company=${encodeURIComponent(this.state['companyName'])}&` +
         `message=${encodeURIComponent(this.state['message'])}`
-    const path = `${REACT_APP_MAILCHIMP_URL}&${values}`;
+    const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;
     const email = this.state['email'];

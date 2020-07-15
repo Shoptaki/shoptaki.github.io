@@ -46,7 +46,7 @@ const RecogTitle=styled.div`
     font-size: 27px;
     margin-bottom: 2.5em;
     padding-top: 2.5em;
-    @media (max-width: ${theme.tablet}){
+    @media (max-width: ${theme.mobile}){
         padding-top: 12em;
     }
 `
@@ -105,7 +105,7 @@ const RecogImage3=styled.img`
     
 `;
 
-function Recognize () {
+function Recognize() {
     return (
        <Recog> 
             {/* <Border src={RecogBorder}/> */}

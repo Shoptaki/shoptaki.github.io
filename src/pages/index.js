@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Slogan from "../components/slogan"
-import CardAndHeader from "../components/cardAndHeader"
+import CardSection from "../components/CardSection.jsx"
 import ControlledCarousel from "../components/carousel"
 import { theme } from "../theme/GlobalStyles.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -40,7 +40,7 @@ const IndexPage = () => (
     />
 
 
-    <CardAndHeader />
+    <CardSection />
     <Recognize />
   </Layout>
 )

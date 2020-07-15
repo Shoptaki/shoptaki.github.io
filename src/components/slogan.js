@@ -44,12 +44,7 @@ const Description = styled.p`
   max-width: 40rem;
   font-size: 1.2rem;
   white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  
   flex-wrap: wrap;
 
   @media (max-width: 768px) {

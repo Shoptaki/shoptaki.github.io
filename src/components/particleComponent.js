@@ -9,8 +9,9 @@ function SmartchainBanner() {
         top: '8rem',
         left: 0,
         width: "100%",
-        height: "70%",
+        height: "100%",
         overflow: "hidden",
+        zIndex: -2,
       
       }}
     >
