@@ -1,138 +1,137 @@
-import React from "react";
-import styled from "styled-components";
-
-import {theme}  from "../theme/GlobalStyles"
-
-import "./styles.css"; // from React Transition Group
-
+import React from "react"
+import styled from "styled-components"
+import { theme } from "../theme/GlobalStyles"
+import "./styles.css" // from React Transition Group
 import underlinerBlue from "../images/underliner-blue.svg"
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import passportImage from "../images/passport.svg"
 import bankImage from "../images/bank.svg"
 
-const SmallCard =styled.div`
-   padding-left: 14%;
-   padding-right: 14%; 
-   margin-bottom:2em;
-   width :100%;
-   display: flex;
-   flex-direction: 'row';
-  
-   justify-content: space-between;
-   flex-basis:50%;  
-  
-  @media (max-width: ${theme.tablet}){
-    
-    flex-direction: 'column';
+const SmallCard = styled.div`
+  padding-left: 14%;
+  padding-right: 14%;
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-basis: 50%;
 
-    /* flex-basis:1%; */
-    margin-bottom:1em;
-    } 
+  @media (max-width: ${theme.tablet}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
-const SmallBox= styled.div`
-  background-color:white;
+const SmallBox = styled.div`
+  background-color: white;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  margin-top:20em;
-  margin-bottom:5em;
-  margin-left: 0rem;;
-  box-align:center;
-  width:20rem;
-  
+  margin-top: 5em;
+  margin-bottom: 5em;
+  margin-left: 0rem;
+  box-align: center;
+  width: 20rem;
+  @media (max-width: ${theme.tablet}) {
+    margin-bottom: 0em;
+  }
 `
 const SmallImage1 = styled.img`
-  width:31%;
-  margin-left:5rem;
-  margin-top:2rem;
+  width: 31%;
+  margin-left: 5rem;
+  margin-top: 2rem;
 `
 const SmallImage2 = styled.img`
-  width:31%;
-  margin-left:4.5rem;
-  margin-top:2rem;
+  width: 31%;
+  margin-left: 4.5rem;
+  margin-top: 2rem;
 `
 
 const Container = styled.div`
   overflow: hidden;
   display: flex;
-  flex-direction: 'row';
+  flex-direction: column;
   position: relative;
-  height:20rem;
-  width:16rem;
-  padding-right:0rem;
-  
+  height: 20rem;
+  width: 16rem;
+  padding-right: 0rem;
   @media (max-width: ${theme.mobile}) {
-       height:20em;
-    
-   }
+    height: 20em;
+  }
 `
 
-const VerticalBox=styled.div`
-    display: flex;
-    flex-direction: 'column';
-    padding-bottom: 0em;
-    padding-right:0rem;
+const VerticalBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0em;
+  padding-right: 0rem;
 `
 
 const SmartTitle1 = styled.div`
-    font-weight:bold;
-    font-size:25px;
-    margin-left:1em;
-    margin-top:3em;
-    margin-bottom:0.5em;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 1em;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
 `
 const SmartTitle2 = styled.div`
-    font-weight:bold;
-    font-size:25px;
-    margin-left:1em;
-    margin-top:2em;
-    margin-bottom:0.5em;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 1em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
 `
 
-const SmartLiner  = styled.div`
-    width: auto;
-    height: 4px;
-    margin-left: 1.4em;
-    background: rgb(8,77,161);
-    background: linear-gradient(90deg, ${theme.logoDarkBlue} 0%, ${theme.logoLightBlue} 54%, #fff 100%);
+const SmartLiner = styled.div`
+  width: auto;
+  height: 4px;
+  margin-left: 1.4em;
+  background: rgb(8, 77, 161);
+  background: linear-gradient(
+    90deg,
+    ${theme.logoDarkBlue} 0%,
+    ${theme.logoLightBlue} 54%,
+    #fff 100%
+  );
 `
 
-const SmartDescription1=styled.div`
-    margin-left:2.4em;
-    margin-right:0em;
-    font-size:10px;
-    
+const SmartDescription1 = styled.div`
+  margin-left: 2.4em;
+  margin-right: 0em;
+  font-size: 10px;
+  height: 8rem;
 `
 
 const HorizontalBox = styled.div`
-   display: flex;
-   flex-direction: 'row';
+  display: flex;
+  flex-direction: "row";
 `
-const Horizontal =styled.div`
-   display: flex;  
-   flex-direction: row;
-    @media (max-width: ${theme.mobile}) {
-       flex-direction: column-reverse;
-   }
+const Horizontal = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: ${theme.mobile}) {
+    flex-direction: column-reverse;
+  }
 `
 
 const Button = styled.button`
-    /* margin-bottom: 0.5em; */
-    /* margin-top:2em; */
-    position:relative;
-    background-color:white;
-    border:none;
-    border-radius: 5px;
-    height:45px;
-    font-size:18px;
-    font-weight:bold;
-    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-   
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0.2rem 0.2rem 0.5rem #999999;
 `
-const ButtonContainer=styled.div`
-    text-align:center;
-    @media (max-width: ${theme.mobile}){
-        text-align:center; 
-    } 
+const ButtonContainer = styled.div`
+  text-align: center;
+  position: absolute;
+  bottom: 2rem;
+  left: 6rem;
+  @media (max-width: ${theme.mobile}) {
+    text-align: center;
+  }
 `
 
 const LinkContainer = styled.div`
@@ -159,7 +158,6 @@ const LabelA = styled(AnchorLink)`
     transition: transform 0.5s ease-in-out 0s;
   }
   &:hover::after {
-    
     transform: scaleX(1);
     transform-origin: 0% 0%;
   }
@@ -181,66 +179,58 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-
 function SmallCards(props) {
-
   return (
     <SmallCard>
-      
-      <SmallBox >
-        <Container >
-          <VerticalBox>
-            <HorizontalBox>
+      <SmallBox>
+        <Container>
+          <HorizontalBox>
             <VerticalBox>
-            <SmartTitle1>SmartID</SmartTitle1>
-            <SmartLiner  src={underlinerBlue}></SmartLiner>
+              <SmartTitle1>SmartID</SmartTitle1>
+              <SmartLiner src={underlinerBlue}></SmartLiner>
             </VerticalBox>
-             <SmallImage1 src={passportImage}></SmallImage1>
-             
-            </HorizontalBox>
-            
-            <SmartDescription1>SmartID is a digital passport to authenticate users quickly while minimizing data hacks, identity theft and data redundancy.</SmartDescription1>
-             <ButtonContainer>
-            <Button>  
-                 <LinkContainer>
-                <LabelA href='#smartBox'>Learn More</LabelA>
-                <Arrow linkColor="#2E50B9" />
-                </LinkContainer>
-      </Button>
-      </ButtonContainer>
-          </VerticalBox>
-        
-        </Container>
-        
-      </SmallBox>
-      <SmallBox >
-        <Container >
-          <verticalBox>
-            <HorizontalBox>
-            <verticalBox>
-            <SmartTitle2>Financial Platform</SmartTitle2>
-            <SmartLiner  src={underlinerBlue}></SmartLiner>
-            </verticalBox>
-            <SmallImage2 src={bankImage}></SmallImage2>
-            </HorizontalBox>
-            <SmartDescription1>Financial institutions will be able to utilize the combination of Smartchain™ and SmartID to generate better A.I. business decisions to optimize efficiency.</SmartDescription1>
+            <SmallImage1 src={passportImage}></SmallImage1>
+          </HorizontalBox>
+
+          <SmartDescription1>
+            SmartID is a digital passport to authenticate users quickly while
+            minimizing data hacks, identity theft and data redundancy.
+          </SmartDescription1>
           <ButtonContainer>
-            <Button >
-               
-                <LinkContainer>
-                <LabelA href='#financialBox'>Learn More</LabelA>
+            <Button>
+              <LinkContainer>
+                <LabelA href="#smartBox">Learn More</LabelA>
                 <Arrow linkColor="#2E50B9" />
-                </LinkContainer>
-      </Button>
-      </ButtonContainer>
-          </verticalBox>
-        
+              </LinkContainer>
+            </Button>
+          </ButtonContainer>
         </Container>
-        
       </SmallBox>
-      
-      </SmallCard>
-      
-          )
-          }
-          export default SmallCards
+      <SmallBox>
+        <Container>
+          <HorizontalBox>
+            <VerticalBox>
+              <SmartTitle2>Financial Platform</SmartTitle2>
+              <SmartLiner src={underlinerBlue}></SmartLiner>
+            </VerticalBox>
+            <SmallImage2 src={bankImage}></SmallImage2>
+          </HorizontalBox>
+          <SmartDescription1>
+            Financial institutions will be able to utilize the combination of
+            Smartchain™ and SmartID to generate better A.I. business decisions
+            to optimize efficiency.
+          </SmartDescription1>
+          <ButtonContainer>
+            <Button>
+              <LinkContainer>
+                <LabelA href="#financialBox">Learn More</LabelA>
+                <Arrow linkColor="#2E50B9" />
+              </LinkContainer>
+            </Button>
+          </ButtonContainer>
+        </Container>
+      </SmallBox>
+    </SmallCard>
+  )
+}
+export default SmallCards
