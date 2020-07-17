@@ -15,12 +15,11 @@ const WhySmartchain = () => (
     <Layout>
      
         <SEO title="Why Smartchain?" />
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> ea9ad6d207e2c784b70d678d2cebc69081fd2f21
-        <WhySmartchainBanner />
+        <WhySmartchainBanner 
+        title = "We are not blockchain."
+        subtitle = "We are the future."
+        description = "We are a system where collaborative AI meets quantum resistance security."
+        />
 
         <Slogan
         title="What is Smartchain?"
@@ -35,12 +34,6 @@ const WhySmartchain = () => (
         <FeatureCard />
 
 
-<<<<<<< HEAD
-        <AboutUsCards></AboutUsCards>
-        <AboutUsCardsMobile></AboutUsCardsMobile>
-
-=======
->>>>>>> ea9ad6d207e2c784b70d678d2cebc69081fd2f21
     </Layout>
 )
 

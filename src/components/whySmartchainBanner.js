@@ -31,7 +31,7 @@ const TextContainer = styled.div`
 `
 
 const Title = styled.h1`
-  margin-top:12rem;
+  margin-top:10rem;
   width: 100%;
   font-weight: bold;
   font-size: 2rem;
@@ -72,6 +72,7 @@ const Description = styled.p`
   color: #1071BB;
   margin-top:-0.2em;
   line-height:1.5em;
+  margin-bottom: 3em;
 
   display: inline-block;
   /* wrap text */
@@ -88,20 +89,44 @@ const Description = styled.p`
   }
 `
 
-function WhySmartchainBanner() {
-    return (
-      
-        <Container>
+const RegularText = styled.p`
+  width: 100%;
+  font-size: 1.3rem;
+  color: #000000;
+  margin-top:-0.2em;
+  line-height:1.5em;
+
+  display: inline-block;
+  /* wrap text */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  @media (max-width: ${theme.mobile}) {
+    max-width: ${theme.mobile};
+    /* wrap text */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  `
+
+  const WhySmartchainBanner = ({
+    title,
+    subtitle,
+    description,
+    regulartext,
+  }) => (
+    <Container>
           <SmartchainBanner />
              <TextContainer> 
-                <Title>We are not blockchain.</Title>
-                <Subtitle>We are the future.</Subtitle>
-                <Description>We are a system where collaborative AI meets quantum resistance security.</Description>      
+                <Title>{title}</Title>
+                <Subtitle>{subtitle}</Subtitle>
+                <Description>{description}</Description>
+                <RegularText>{regulartext}</RegularText>      
              </TextContainer>
-        </Container>
-      
-    );
-  }
+    </Container>
+  )
   
 
   export default WhySmartchainBanner
