@@ -41,7 +41,7 @@ const DropdownContent = styled.div`
 const Tab = styled.div`
   display: inline-flex;
   margin: 0rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   &:hover ${DropdownContent} {
     display: block;
@@ -166,12 +166,11 @@ const Header = ({siteTitle, menuLinks}) => {
             </Tab>
 
             <Tab>
-                <Link
+                <CustomLink 
                   to={smartchainLink.link}
-                  style={{ color: "black", textDecoration: "none"}}
-                >
-                  {smartchainLink.title}
-                </Link>
+                  displayText={smartchainLink.title}
+                  linkColor="black"
+                />
             </Tab>
 
             <Tab>

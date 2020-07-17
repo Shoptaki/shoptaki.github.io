@@ -15,7 +15,10 @@ const Container = styled.div`
     padding: 6rem 0rem;
    
 `
-
+const Title = styled.h4`
+    font-family: "Myriad Pro Light";
+    font-size: 1.75em;
+`
 // Desktop Styles
 const DesktopDiv = styled.div`
     display: none;
@@ -117,7 +120,7 @@ const FeatureCard = () => {
             <Container>
                 <MobileDiv>
                     <Box>
-                        <h4>What are our features?</h4>
+                        <Title>What are our features?</Title>
                         <TitleLiner color="orange" size="16rem"/>
                         {mobileNumbers}
                         <TextBox>
@@ -128,7 +131,7 @@ const FeatureCard = () => {
 
                 
                 <DesktopDiv>
-                    <h4>What are our features?</h4>
+                    <Title>What are our features?</Title>
                     <TitleLiner color="orange" size="16rem"/>
                     <GridDiv>
                         {desktopCards}
