@@ -1,10 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
-
-import TitleLiner from "../components/titleliner"
+import TitleLiner from "../components/TitleLiner"
 import {theme} from "../theme/GlobalStyles.js"
 
 const Box = styled.div`
@@ -16,17 +14,11 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-
 `
 const Title = styled.div`
     padding: 2rem 0rem 1rem 0rem;
-`
-const MobileItem = styled.div`
-    display: flex;
-    justify-content: center;
-    @media (min-width: ${theme.tablet}) {
-        display: none;
-    }
+    font-family: "Myriad Pro Light";
+    font-size: 1.75em;
 `
 const DesktopImg = styled.div`
     display: none;
@@ -42,6 +34,13 @@ const DesktopText = styled.div`
         flex-direction: row;
     }    
 
+`
+const MobileItem = styled.div`
+    display: flex;
+    justify-content: center;
+    @media (min-width: ${theme.tablet}) {
+        display: none;
+    }
 `
 const ImageContainer = styled.div`
     width: 6rem;
@@ -81,6 +80,7 @@ const DifferentiateCard = () => {
         },
     ]
 
+    // image query
     const data = useStaticQuery(
         graphql`
         query {
@@ -102,18 +102,18 @@ const DifferentiateCard = () => {
       )
 
     // image[3] is desktopimg, image[0,1,2] is mobileimg
-    const images = data.allFile.nodes.map((image) => (
-        <ImageContainer>
+    const images = data.allFile.nodes.map((image, i) => (
+        <ImageContainer key={image.id} >
             <Img
                 fluid={image.childImageSharp.fluid}
-                key={image.id}
+                
                 alt={image.name}
             />
         </ImageContainer>
     ))
 
-    const text = textItems.map((item) => (
-        <TextContainer>
+    const text = textItems.map((item, i) => (
+        <TextContainer key={i} >
             <p>{item.title}</p>
             <p>{item.description}</p>
         </TextContainer>

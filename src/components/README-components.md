@@ -20,7 +20,7 @@ import CustomLink from "../components/customlink"
 ```
 const YourComponent = () => (
   <YourContainer>
-    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" />
+    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" fontSize="22px"/>
   </YourContainer>
 )
 ```
@@ -28,7 +28,7 @@ const YourComponent = () => (
 ```
 const YourComponent = () => (
   <YourContainer>
-    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" arrow/>
+    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" fontSize="22px" arrow/>
   </YourContainer>
 )
 ```
@@ -42,6 +42,7 @@ const YourComponent = () => (
 
 - `linkColor`: the color of the text, the underline and the arrow! default color is black `#000000`
 - `arrow`: don't need to pass specific value for it, just add `arrow`, then arrow svg will show on the right of your link component
+- `fontSize`: the font size of the link text, default size is `16px`
 
 ## 💻 Banner
 
@@ -68,6 +69,7 @@ const YourComponent = () => (
       link="/"
       linkText="What is Smartchain?"
       linkColor="#8EB4D0"
+      linkSize="22px"
     />
     </YourContainer>
 )
@@ -84,6 +86,7 @@ const YourComponent = () => (
 - `link`: link url on the banner, default is empty text
 - `linkText`: text of the link on the banner, default is empty text
 - `linkColor`: the color of the text and the underline, default color is black `#000000`
+- `linkSize`: the size of link text, default is `16px`
 
 ## ✏️ TitleLiner
 

@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import styled from "styled-components"
-import TitleLiner from "../components/titleliner"
+import TitleLiner from "./TitleLiner"
 import RecogBorder from "../images/RecognizeBorder.svg"
 import {theme} from "../theme/GlobalStyles.js"
 
@@ -15,20 +15,34 @@ const Container = styled.div`
     padding: 6rem 0rem;
    
 `
+const Title = styled.h4`
+    font-family: "Myriad Pro Light";
+    font-size: 1.75em;
+`
+// Desktop Styles
+const DesktopDiv = styled.div`
+    display: none;
+    @media (min-width: ${theme.tablet}) {
+        display: block;
+    }
+`
+const GridDiv = styled.div`
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2rem;
+    padding-top: 2rem;
+`
+const DesktopCard = styled.div`
+    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+    background-color: #fff;
+    text-align: left;
+    padding: 2rem 2rem;
+`
+// Mobile Styles
 const MobileDiv = styled.div`
     @media (min-width: ${theme.tablet}) {
         display: none;
     }
-`
-const DesktopDiv = styled.div`
-    display: none;
-    @media (min-width: ${theme.tablet}) {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-column-gap: 2rem;
-        padding-top: 2rem;
-    }
-
 `
 const MobileCard = styled.div`
     display: flex;
@@ -41,17 +55,16 @@ const MobileCard = styled.div`
         background-color: #ededed;
     }
 `
-const DesktopCard = styled.div`
-    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-    background-color: #fff;
-    text-align: left;
-    padding: 2rem 2rem;
-`
 const Number = styled.p`
     font-size: 3rem;
     font-weight: bold;
     padding-right: 2rem;
     color: ${theme.fontDarkBlue};
+`
+const Box = styled.div`
+    background-color: #fff;
+    box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+    padding: 2rem;
 `
 const TextBox = styled.div`
     box-shadow: 0.2rem 0.2rem 0.5rem #999999;
@@ -61,12 +74,6 @@ const TextBox = styled.div`
 `
 const Text = styled.p`
     padding: 1rem 2rem;
-`
-const BlueLine = styled.div`
-    width: auto;
-    height: 4px;
-    background: rgb(8,77,161);
-    background: linear-gradient(90deg, ${theme.logoDarkBlue} 0%, ${theme.logoLightBlue} 54%, #fff 100%);
 `
 const FeatureCard = () => {
     const text = [
@@ -104,26 +111,33 @@ const FeatureCard = () => {
     const desktopCards = text.map( (item, index) => (
         <DesktopCard>
             <h5>{item.title}</h5>
-            <BlueLine />
+            <TitleLiner color="blue" />
             <p style={{paddingTop: "2rem"}}>{item.description}</p>
         </DesktopCard>
     ))
     return (
         <BgContainer>
             <Container>
-                <h4>What are our features?</h4>
-                
                 <MobileDiv>
-                    <TitleLiner color="blue" />
-                    {mobileNumbers}
-                    <TextBox>
-                        <Text>{mobileDescription}</Text>
-                    </TextBox>
+                    <Box>
+                        <Title>What are our features?</Title>
+                        <TitleLiner color="orange" size="16rem"/>
+                        {mobileNumbers}
+                        <TextBox>
+                            <Text>{mobileDescription}</Text>
+                        </TextBox>
+                    </Box>
                 </MobileDiv>
 
+                
                 <DesktopDiv>
-                    {desktopCards}
+                    <Title>What are our features?</Title>
+                    <TitleLiner color="orange" size="16rem"/>
+                    <GridDiv>
+                        {desktopCards}
+                    </GridDiv>
                 </DesktopDiv>
+                
              </Container>
         </BgContainer>
     )

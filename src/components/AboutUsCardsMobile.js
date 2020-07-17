@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import TitleLiner from "./titleliner"
+import TitleLiner from "./TitleLiner"
 import {theme} from "../theme/GlobalStyles.js"
-import cloudImage from "../../Cloud Image.png"
-import head from "../../Head Image.png"
+import cloudImage from "../images/Cloud Image.png"
+import head from "../images/Head Image.png"
 
 const AboutUsContainer = styled.div`
   padding: 2em;
@@ -42,13 +42,7 @@ const HeaderTitle = styled.div`
   font-family: "Myriad Pro Light";
   font-size: 1.75em;
 `;
-const BlueLine = styled.div`
-    width: auto;
-    height: 4px;
-    margin-bottom: 1.5rem;
-    background: rgb(8,77,161);
-    background: linear-gradient(90deg, ${theme.logoDarkBlue} 0%, ${theme.logoLightBlue} 54%, #fff 100%);
-`;
+
 const AdaptableCloud = (props) => (
     <CardContainer>
         <CloudImageContainer>
@@ -56,7 +50,7 @@ const AdaptableCloud = (props) => (
         </CloudImageContainer>
         <TextContainer>
           <HeaderTitle>Adaptable Cloud Infrastructure</HeaderTitle>
-          <BlueLine />
+          <TitleLiner color="blue" />
           <p>Smartchain adapts to legacy systems and 
           integrates into both cloud and physical computing 
           architecture.
@@ -72,7 +66,7 @@ const HowItWorks = (props) => (
       </HeadImageContainer>
       <TextContainer>
         <HeaderTitle>How It Works?</HeaderTitle>
-        <BlueLine />
+        <TitleLiner color="blue" />
         <p>Smartchain can route data more efficiently and 
         securely through smart cognitive packets, and it 
         employs collaborative AI to analyze data and 

@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 import { theme } from "../theme/GlobalStyles"
 import productShow from "../images/ProductImage.svg";
 import greenIcon from "../images/greenicon.svg"
-import underlinerBlue from "../images/underliner-blue.svg"
 
 const Box = styled.div`
   display: flex;
@@ -98,7 +97,7 @@ function SmartIDCard(props) {
         <Container >
           <verticalBox>
             <SmartTitle>SmartID</SmartTitle>
-            <SmartLiner  src={underlinerBlue}></SmartLiner>
+            <SmartLiner  ></SmartLiner>
             <SmartDescription1><Boldword>SmartID is a digital passport</Boldword>to authenticate users quickly while minimizing data hacks, 
 identity theft and data redundancy.</SmartDescription1>
 <SmartDescription2>SmartID will be used to verify the identity of users across an assortment of platforms. </SmartDescription2>
