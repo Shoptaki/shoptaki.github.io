@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import styled from "styled-components"
 import TitleLiner from "./TitleLiner"
 import RecogBorder from "../images/RecognizeBorder.svg"
-import {theme} from "../theme/GlobalStyles.js"
+import { theme } from "../theme/GlobalStyles.js"
 
 const BgContainer = styled.div`
     background-image: url(${RecogBorder});

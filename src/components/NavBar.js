@@ -115,7 +115,7 @@ const HamburgerIcon = () => (
 const Header = ({siteTitle, menuLinks}) => {
     document.body.onclick = function() {
       if (showMenu) { setShowMenu(false) }
-    }//
+    }
 
     const [showMenu, setShowMenu] = useState(false);
 
