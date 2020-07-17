@@ -40,7 +40,6 @@ const DropdownContent = styled.div`
 const Tab = styled.div`
   display: inline-flex;
   margin: 0rem 2rem;
-  // padding: 2rem;
   font-size: 1rem;
   font-weight: bold;
   &:hover ${DropdownContent} {
@@ -110,6 +109,7 @@ const HamburgerIcon = () => (
 )
 
 const Header = ({siteTitle, menuLinks}) => {
+
     document.body.onclick = function() {
       if (showMenu) { setShowMenu(false) }
     }
@@ -118,7 +118,7 @@ const Header = ({siteTitle, menuLinks}) => {
 
     const changeMenu = (showMenu, e) => {
       setShowMenu(!showMenu)
-      e.stopPropagation() 
+      e.stopPropagation()
     }
     
     const aboutLink =  {
