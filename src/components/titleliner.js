@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
 
 const BlueLine = styled.div`
+    max-width: 26rem;
     width: ${props => props.size || "auto"};
     height: 4px;
     margin: auto;
@@ -11,6 +12,7 @@ const BlueLine = styled.div`
     background: linear-gradient(90deg, ${theme.logoDarkBlue} 0%, ${theme.logoLightBlue} 54%, #fff 100%);  
 `
 const OrangeLine = styled.div`
+    max-width: 26rem;
     width: ${props => props.size || "auto"};
     height: 4px;
     margin: auto;
