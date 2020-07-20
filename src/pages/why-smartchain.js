@@ -6,19 +6,21 @@ import Slogan from "../components/Slogan.jsx"
 
 import Contact from "../components/ContactUsSection.jsx"
 
-import DifferentiateCard from "../components/differentiateCard"
-import FeatureCard from "../components/featureCard"
+import DifferentiateCard from "../components/differentiateCard.jsx"
+import FeatureCard from "../components/featureCard.jsx"
 
-import AboutUsCards from "../components/AboutUsCards"
-import AboutUsCardsMobile from '../components/AboutUsCardsMobile'
+import AboutUsCards from "../components/AboutUsCards.jsx"
 
 
 const WhySmartchain = () => (
     <Layout>
      
         <SEO title="Why Smartchain?" />
-   
-        <WhySmartchainBanner />
+        <WhySmartchainBanner 
+        title = "We are not blockchain."
+        subtitle = "We are the future."
+        description = "We are a system where collaborative AI meets quantum resistance security."
+        />
 
         <Slogan
             title="What is Smartchain?"
@@ -27,8 +29,6 @@ const WhySmartchain = () => (
         />
 
         <AboutUsCards />
-        <AboutUsCardsMobile />
-
         <DifferentiateCard />
         <FeatureCard />
 

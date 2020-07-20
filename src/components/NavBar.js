@@ -7,7 +7,6 @@ import {theme} from "../theme/GlobalStyles"
 
 const Container = styled.header`
   background-color: transparent;
-  
   padding: 1.45rem 1.0875rem;
   padding-bottom: 0;
   display: flex;
@@ -29,7 +28,7 @@ const Logo = styled.img`
 const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  top: 4rem;
+  top: 3.7rem;
   font-size: 1rem;
   font-weight: normal;
   width: 8rem;
@@ -41,7 +40,7 @@ const DropdownContent = styled.div`
 const Tab = styled.div`
   display: inline-flex;
   margin: 0rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   &:hover ${DropdownContent} {
     display: block;
@@ -89,9 +88,6 @@ const MobileContainer = styled.div`
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   overflow: hidden;
   transition: max-height 0.5s ease-in-out; 
-  
-
-  
   @media (max-width: ${theme.phone}) {
     left: 4%;
     right: 4%;
@@ -113,33 +109,30 @@ const HamburgerIcon = () => (
 )
 
 const Header = ({siteTitle, menuLinks}) => {
+
     document.body.onclick = function() {
       if (showMenu) { setShowMenu(false) }
-    }//
+    }
 
     const [showMenu, setShowMenu] = useState(false);
 
     const changeMenu = (showMenu, e) => {
       setShowMenu(!showMenu)
-      e.stopPropagation() 
+      e.stopPropagation()
     }
-    
     
     const aboutLink =  {
       link: menuLinks[0].subLinks[0].link,
       title: menuLinks[0].subLinks[0].title
     }
-    
     const smartchainLink =  {
       link: menuLinks[1].subLinks[0].link,
       title: menuLinks[1].title
-    }
-    
+    }  
     const usecaseLink = {
       link: menuLinks[2].subLinks[0].link,
       title: menuLinks[2].subLinks[0].title
-    }
-    
+    } 
     const productsLink = {
       link: menuLinks[2].subLinks[1].link,
       title: menuLinks[2].subLinks[1].title
@@ -166,12 +159,11 @@ const Header = ({siteTitle, menuLinks}) => {
             </Tab>
 
             <Tab>
-                <Link
+                <CustomLink 
                   to={smartchainLink.link}
-                  style={{ color: "black", textDecoration: "none"}}
-                >
-                  {smartchainLink.title}
-                </Link>
+                  displayText={smartchainLink.title}
+                  linkColor="black"
+                />
             </Tab>
 
             <Tab>

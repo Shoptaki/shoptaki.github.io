@@ -6,11 +6,11 @@ import SmartchainBanner from "./particleComponent";
 
 const Container = styled.div`
   padding: 0 0 0 0;
-  height: 36rem;
-  margin-bottom:100%;
+  height: 50rem;
   width: 100%;
+  margin-bottom: 20rem;
   page-break-after: always; 
-  
+  overflow: hidden;
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     height: 48.5rem;
