@@ -37,7 +37,7 @@ const Container = styled.div`
     margin: auto;
     margin-top: 15rem;
     min-height: 30vw;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
     background-color: white;
 
     @media (max-width: ${theme.tablet}) {
@@ -52,7 +52,7 @@ const Container = styled.div`
         margin-bottom: 5rem;
         float: right;
         min-height: 38rem;
-        
+        padding-bottom: 0.5rem;
     };
 `;
 
@@ -127,6 +127,26 @@ const Subtext = styled.p`
   }
 `;
 
+const Dots = styled.li`
+  height: 15px;
+  width: 15px;
+  background-color: ${props => props.selected ? theme.fontLightBlue : "white"};
+  border-radius: 50%;
+  border: 1px solid gainsboro;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+
+  &:hover {
+      background-color: ${theme.fontLightBlue};
+  }
+
+  @media (max-width: ${theme.phone}) {
+    position: static;
+  }
+`;
+
+
 const slideData =
   [
     {
@@ -169,7 +189,31 @@ const RCarousel = () => {
 
     return (
         <Container>
-            <Carousel {...getConfigurableProps()}>
+            <Carousel {...getConfigurableProps()}
+                renderIndicator={(onClickHandler, isSelected, index, label) => {
+                    if (isSelected) {
+                        return (
+                            <Dots
+                                selected
+                                aria-label={`Selected: ${label} ${index + 1}`}
+                                title={`Selected: ${label} ${index + 1}`}
+                            />
+                        );
+                    }
+                    return (
+                        <Dots
+                            
+                            onClick={onClickHandler}
+                            value={index}
+                            key={index}
+                            
+                            tabIndex={0}
+                            title={`${label} ${index + 1}`}
+                            aria-label={`${label} ${index + 1}`}
+                        />
+                    );
+                }}
+            >
                 {slideData.map((slide, index) => 
                     <SlideContainer key={index}>
                         <TextContainer>
