@@ -1,4 +1,4 @@
-/*
+
 
 import React from "react";
 import Layout from "../components/layout";
@@ -180,4 +180,3 @@ class Contact extends React.Component {
 }
 export default Contact;
 
-*/
