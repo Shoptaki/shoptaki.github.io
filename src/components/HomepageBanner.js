@@ -3,8 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import CustomLink from "./CustomLink"
 import graphics from "../images/banner-graphics.svg"
-// import mobileGraphics from "../images/banner-graphics-mobile.svg"
-import mobileGraphics from "../images/mobile-banner-graphics.svg"
+import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import { theme } from "../theme/GlobalStyles.js"
 
 
