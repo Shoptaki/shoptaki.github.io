@@ -1,0 +1,26 @@
+/* mobile: "768px",
+    tablet: "992px", */
+
+#particle{
+    height: 36rem;
+    
+}
+@media only screen and (max-width: 992px) {
+    #particle{
+        height: 40rem;
+        
+    }
+  }
+@media only screen and (max-width: 800px) {
+    #particle{
+        height: 46rem;
+        
+    }
+  }
+@media only screen and (max-width: 768px) {
+    #particle{
+        height: 57rem;
+        
+    }
+  }
+

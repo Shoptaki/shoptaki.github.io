@@ -1,19 +1,31 @@
 import React from "react";
 import Particles from "react-particles-js";
+import styled from "styled-components"
+import { theme } from "../theme/GlobalStyles.js"
+import "./particalCSS.css"
+
+  
+
+const ParticalContainer= styled.div`
+        position: absolute;
+        top: 0;
+        left: 0;  
+        bottom:100rem;     
+        width: 100%;
+        /* height: 50rem; */
+        @media (max-width: ${theme.mobile}) {
+          /* height: 500rem; */
+       }
+`
+
 
 function SmartchainBanner() {
     return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%"
-      }}
-    >
-      <Particles
+    <ParticalContainer>
+     
+      <Particles id = "particle" 
         params={{
+      
           particles: {
             number: {
               value: 110,
@@ -121,10 +133,11 @@ function SmartchainBanner() {
         }}
       />
  
-    </div>
+    </ParticalContainer>
 
     );
 }
 
 export default SmartchainBanner
-    
+ 
+

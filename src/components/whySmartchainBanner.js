@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
 import { BrowserRouter as Router} from "react-router-dom";
 import SmartchainBanner from "./particleComponent";
+import ReactDOM from 'react-dom'; 
 
 const Container = styled.div`
   padding: 0 0 0 0;
@@ -10,6 +11,7 @@ const Container = styled.div`
   margin-bottom:100%;
   width: 100%;
   page-break-after: always; 
+  background-image: ${SmartchainBanner};
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     height: 48.5rem;
@@ -88,11 +90,26 @@ const Description = styled.p`
   }
 `
 
+// var DivSize = React.createClass({
+
+//   render: function() {
+//     let elHeight = document.getElementById('container').clientHeight
+//     return <div className="test">Size: <b>{elHeight}px</b> but it should be 18px after the render</div>;
+//   }
+// });
+
+// ReactDOM.render(
+//   <DivSize />,
+//   document.getElementById('container')
+// );
+
 function WhySmartchainBanner() {
     return (
       <Router>
         <Container>
-          <SmartchainBanner />
+        
+        <SmartchainBanner />
+        
              <TextContainer> 
                 <Title>We are not blockchain.</Title>
                 <Subtitle>We are the future.</Subtitle>
