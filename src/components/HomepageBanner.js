@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import CustomLink from "./CustomLink"
+import CustomLink from "./customlink.jsx"
 import graphics from "../images/banner-graphics.svg"
 import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import { theme } from "../theme/GlobalStyles.js"

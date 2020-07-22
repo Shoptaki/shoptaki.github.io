@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from "styled-components"
-import CustomLink from "./CustomLink"
+import CustomLink from "./customlink.jsx"
 import {theme} from "../theme/GlobalStyles.js"
 
 const ContactContainer= styled.div`

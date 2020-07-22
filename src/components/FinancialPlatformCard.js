@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from 'gatsby'
 import { theme } from "../theme/GlobalStyles"
 
-import CustomLink from "./customlink"
+import CustomLink from "./customlink.jsx"
 import "./styles.css"; // from React Transition Group
 
 import TitleLiner from "./TitleLiner"
