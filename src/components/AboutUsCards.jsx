@@ -81,7 +81,7 @@ const AdaptableCloud = () => (
         </Text>
     </CardContainer>
     <CloudImageContainer>
-      <img src={cloudImage} alt="Cloud image" style={{maxWidth: "100%"}} />
+      <img src={cloudImage} alt="Cloud Computing" style={{maxWidth: "100%"}} />
     </CloudImageContainer>
   </RowContainer>
 )
@@ -89,7 +89,7 @@ const AdaptableCloud = () => (
 const HowItWorks = () => (
   <RowContainer>
     <HeadImageContainer>
-          <img src={head} alt="Head image" style={{maxWidth: "100%"}} />
+          <img src={head} alt="Autonomous and Effecient Processing" style={{maxWidth: "100%"}} />
     </HeadImageContainer>
     <CardContainer>
           <HeaderTitle>How It Works?</HeaderTitle>

@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import styled from "styled-components"
 import TitleLiner from "./TitleLiner"
 import lowerbg from "../images/lower_background.svg"
-import {theme} from "../theme/GlobalStyles.js"
+import { theme } from "../theme/GlobalStyles.js"
 
 const BgContainer = styled.div`
     background-image: url(${lowerbg});

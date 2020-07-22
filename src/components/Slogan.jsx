@@ -56,7 +56,11 @@ const Slogan = ({ title, description, color }) => (
   <Container>
     <center>
       <Title>{title}</Title>
+<<<<<<< HEAD
       <TitleLiner color={color} size={"16rem"}/>
+=======
+      <TitleLiner color={color} size={"80vw"}/>
+>>>>>>> c34945c45f83c5b2f4132d771df2dd3bf7ee7c70
       <Description>{description}</Description>
     </center>
   </Container>
