@@ -9,6 +9,7 @@ import Recognize from "../components/RecognizedSection.jsx"
 import Contact from "../components/ContactUsSection.jsx"
 import CardSection from "../components/CardSection.jsx"
 
+import RCarousel from "../components/RCarousel"
 import ControlledCarousel from "../components/carousel"
 
 import { theme } from "../theme/GlobalStyles.js"
@@ -33,6 +34,7 @@ const IndexPage = () => (
       color="orange"
     />
 
+    {/*
     <ControlledCarousel
       link1="/products"
       link2="/use-cases"
@@ -40,8 +42,9 @@ const IndexPage = () => (
       linkText="Read More"
       linkColor={theme.fontBlueGray}
     />
-
-
+    */
+    }
+    <RCarousel />
     <CardSection />
     <Recognize />
     <Contact />

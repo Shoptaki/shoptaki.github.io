@@ -154,7 +154,7 @@ const Banner = ({
         arrow
       />
     </TextContainer>
-    
+    <ImageContainer />
   </Container>
 )
 
