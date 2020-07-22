@@ -72,7 +72,7 @@ const Description = styled.p`
   color: #1071BB;
   margin-top:-0.2em;
   line-height:1.5em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 
   display: inline-block;
   /* wrap text */
@@ -91,7 +91,7 @@ const Description = styled.p`
 
 const RegularText = styled.p`
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #000000;
   margin-top:-0.2em;
   line-height:1.5em;
