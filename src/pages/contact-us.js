@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c34945c45f83c5b2f4132d771df2dd3bf7ee7c70
 import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
@@ -10,7 +5,7 @@ import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
 import SmartchainBanner from "../components/particleComponent";
 import styled from "styled-components";
-import REACT_APP_MAILCHIMP_URL from "../env";
+//import REACT_APP_MAILCHIMP_URL from "../env";
 
 
 const Input = styled.input `
@@ -114,7 +109,7 @@ class Contact extends React.Component {
     const { status } = this.state;
     return (
       <Layout>
-        <SmartchainBanner/>
+        <SmartchainBanner />
         <div className="App" style={{textAlign: "center", alignItems: "center"}}>
           <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
           <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
@@ -206,7 +201,7 @@ class Contact extends React.Component {
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
     // const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
-    const path = `${REACT_APP_MAILCHIMP_URL}&${values}`;
+    const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;
@@ -234,13 +229,6 @@ class Contact extends React.Component {
     });
   }
 }
+
 export default Contact;
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> c34945c45f83c5b2f4132d771df2dd3bf7ee7c70

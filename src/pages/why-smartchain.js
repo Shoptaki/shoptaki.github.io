@@ -12,23 +12,16 @@ import FeatureCard from "../components/featureCard.jsx"
 import AboutUsCards from "../components/AboutUsCards.jsx"
 
 
+
 const WhySmartchain = () => (
     <Layout>
      
         <SEO title="Why Smartchain?" />
-<<<<<<< HEAD
-   
-        <WhySmartchainBanner 
-            title="We are not blockchain."
-            subtitle="We are the future."
-            description="We are a system where collaborative AI meets quantum resisitance security. "/>
-=======
         <WhySmartchainBanner 
         title = "We are not blockchain."
         subtitle = "We are the future."
         description = "We are a system where collaborative AI meets quantum resistance security."
         />
->>>>>>> c34945c45f83c5b2f4132d771df2dd3bf7ee7c70
 
         <Slogan
             title="What is Smartchain?"

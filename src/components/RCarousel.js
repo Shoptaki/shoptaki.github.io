@@ -40,6 +40,10 @@ const Container = styled.div`
     margin-bottom: 10rem;
     background-color: white;
 
+    .control-dots {
+        position: static;
+    }
+
     @media (max-width: ${theme.tablet}) {
         min-height: 33vw;
         width: 80%; 
@@ -127,6 +131,10 @@ const Subtext = styled.p`
   }
 `;
 
+const LinkContainer = styled.div`
+
+`;
+
 const Dots = styled.li`
   height: 15px;
   width: 15px;
@@ -142,7 +150,7 @@ const Dots = styled.li`
   }
 
   @media (max-width: ${theme.phone}) {
-    position: static;
+   position: static;
   }
 `;
 
@@ -220,11 +228,12 @@ const RCarousel = () => {
                             <Heading>{slide.name}</Heading>
                             <Subtext>{slide.type}</Subtext>
                             <CustomLink
-                                    to={slide.link}
-                                    displayText={"Read More"}
-                                    linkColor={theme.fontBlueGray}
-                                    arrow
-                                />
+                                to={slide.link}
+                                displayText={"Read More"}
+                                linkColor={theme.fontBlueGray}
+                                fontSize={"1.2rem"}
+                                arrow
+                                    />
                         </TextContainer>
                         <ImageContainer>
                             <Img
