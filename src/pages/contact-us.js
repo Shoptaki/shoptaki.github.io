@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> c34945c45f83c5b2f4132d771df2dd3bf7ee7c70
 import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
@@ -231,8 +236,11 @@ class Contact extends React.Component {
 }
 export default Contact;
 
+<<<<<<< HEAD
+=======
 
 
 
 
 
+>>>>>>> c34945c45f83c5b2f4132d771df2dd3bf7ee7c70

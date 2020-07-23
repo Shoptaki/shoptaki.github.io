@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
 import { theme } from "../theme/GlobalStyles"
 
-import CustomLink from "./CustomLink"
+import CustomLink from "./customlink.jsx"
 
 import Carousel from 'react-bootstrap/Carousel'
 import "./styles.css"; // for bootstrap carousel customization

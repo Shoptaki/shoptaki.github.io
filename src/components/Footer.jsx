@@ -1,7 +1,7 @@
 import React from 'react';
-import facebookicon from "../images/facebook.svg"
-import twittericon from "../images/twitter.svg"
-import linkedinicon from "../images/linkedin.svg"
+import facebookicon from "../images/footer_facebook.svg"
+import twittericon from "../images/footer_twitter.svg"
+import linkedinicon from "../images/footer_linkedin.svg"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
 import { Link } from "gatsby"
@@ -202,13 +202,15 @@ function Footer () {
         <Icon>
         <Iconbox>
             <a href="https://www.facebook.com/shoptaki/" target="blank">
-            <Social src={facebookicon}></Social></a>
+            <Social className="social" src={facebookicon}></Social></a>
         </Iconbox>
         <Iconbox>
-            <a href="https://twitter.com/shoptaki?lang=en"><Social className="social" src={twittericon}></Social></a>
+            <a href="https://twitter.com/shoptaki?lang=en">
+            <Social className="social" src={twittericon}></Social></a>
         </Iconbox>
         <Iconbox>
-            <a href="https://www.linkedin.com/company-beta/10899440?pathWildcard=10899440"><Social className="social" src={linkedinicon}></Social></a>
+            <a href="https://www.linkedin.com/company-beta/10899440?pathWildcard=10899440">
+            <Social className="social" src={linkedinicon}></Social></a>
         </Iconbox>
         </Icon>
 
