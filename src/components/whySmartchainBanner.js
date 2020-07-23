@@ -36,7 +36,6 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 2rem;
   color: #8EB4D0;
-
   display: inline-block;
   flex-wrap: wrap;
   @media (max-width: ${theme.mobile}) {
@@ -51,7 +50,6 @@ const Subtitle = styled.h2`
   font-size: 2rem;
   width: 100%;
   color: #3F9CE5;
-
   display: inline-block;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -73,7 +71,6 @@ const Description = styled.p`
   margin-top:-0.2em;
   line-height:1.5em;
   margin-bottom: 3em;
-
   display: inline-block;
   /* wrap text */
   overflow-wrap: break-word;
@@ -95,7 +92,6 @@ const RegularText = styled.p`
   color: #000000;
   margin-top:-0.2em;
   line-height:1.5em;
-
   display: inline-block;
   /* wrap text */
   overflow-wrap: break-word;
@@ -130,3 +126,4 @@ const RegularText = styled.p`
   
 
   export default WhySmartchainBanner
+

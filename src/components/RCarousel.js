@@ -40,6 +40,10 @@ const Container = styled.div`
     margin-bottom: 10rem;
     background-color: white;
 
+    .control-dots {
+        position: static;
+    }
+
     @media (max-width: ${theme.tablet}) {
         min-height: 33vw;
         width: 80%; 
@@ -146,7 +150,7 @@ const Dots = styled.li`
   }
 
   @media (max-width: ${theme.phone}) {
-    position: static;
+   position: static;
   }
 `;
 

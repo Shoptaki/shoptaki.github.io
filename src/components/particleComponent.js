@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Particles from "react-particles-js";
+import styled from "styled-components"
+import { theme } from "../theme/GlobalStyles.js"
+
+  
+
+const ParticalContainer= styled.div`
+    position: absolute;
+    top: 8rem;
+    left: 0;  
+    bottom:100rem;     
+    width: 100%;
+    z-index: -2;
+    /* height: 50rem; */
+    @media (max-width: ${theme.mobile}) {
+      /* height: 500rem; */
+      
+  }
+`;
+
 
 function SmartchainBanner() {
+    const [width, setWidth] = useState(window.innerWidth)
+
+    window.onresize = () => setWidth(window.innerWidth)
+
     return (
-    <div
-      style={{
-        position: "absolute",
-        top: '8rem',
-        left: 0,
-        width: "100%",
-        height: "100%",
-        overflow: "hidden",
-        zIndex: -2,
-      
-      }}
-    >
+    <ParticalContainer>
+     
       <Particles
+        height={width < theme.phone ? '48.5rem' : '36rem'}
         params={{
+      
           particles: {
             number: {
               value: 110,
@@ -124,10 +139,11 @@ function SmartchainBanner() {
         }}
       />
  
-    </div>
-
+    </ParticalContainer>
+      
     );
 }
 
 export default SmartchainBanner
-    
+ 
+
