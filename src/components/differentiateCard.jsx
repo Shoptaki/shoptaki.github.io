@@ -124,7 +124,7 @@ const DifferentiateCard = () => {
         <Box>
             <Title>
                 <h4>What Differentiates Smartchain?</h4>
-                <TitleLiner color="blue" />
+                <TitleLiner color="blue" size={"16rem"}/>
             </Title>
             
             <DesktopImg>{images[3]}</DesktopImg>

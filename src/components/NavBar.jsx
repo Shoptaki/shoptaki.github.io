@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
 import logoImage from "../images/logo_horizontal.png";
-import CustomLink from "./CustomLink"
+import CustomLink from "./customlink.jsx"
 import {theme} from "../theme/GlobalStyles"
 
 const Container = styled.header`
@@ -39,7 +39,7 @@ const DropdownContent = styled.div`
 `
 const Tab = styled.div`
   display: inline-flex;
-  margin: 0rem 2rem;
+  margin: 0rem 2.3rem;
   font-size: 1rem;
   font-weight: bold;
   &:hover ${DropdownContent} {
@@ -56,6 +56,7 @@ const ContactLink = styled(Link)`
   &:hover {
     background-color: ${theme.fontDarkBlue};
     color: #fff;
+    transition: all 0.2s ease-in-out ;
   }
 `
 const HamburgerDiv = styled.div`
@@ -110,15 +111,10 @@ const HamburgerIcon = () => (
 
 const Header = ({siteTitle, menuLinks}) => {
 
-    document.body.onclick = function() {
-      if (showMenu) { setShowMenu(false) }
-    }
-
     const [showMenu, setShowMenu] = useState(false);
 
-    const changeMenu = (showMenu, e) => {
+    const changeMenu = (showMenu) => {
       setShowMenu(!showMenu)
-      e.stopPropagation()
     }
     
     const aboutLink =  {
@@ -192,7 +188,7 @@ const Header = ({siteTitle, menuLinks}) => {
         </MenuDiv>
 
         <HamburgerDiv>
-                <Icon onClick={(e) => changeMenu(showMenu, e)}> 
+                <Icon onClick={(e) => changeMenu(showMenu)}> 
                   <HamburgerIcon /> 
                 </Icon>
 
