@@ -1,4 +1,3 @@
-/*
 
 import React from "react";
 import Layout from "../components/layout";
@@ -55,7 +54,7 @@ class Contact extends React.Component {
     const { status } = this.state;
     return (
       <Layout>
-        <SmartchainBanner/>
+        <SmartchainBanner />
         <div className="App" style={{textAlign: "center", alignItems: "center"}}>
           <label htmlFor="Contact Us" style={{fontWeight: "bold", fontSize: 45, color: "#3F9CE5"}}> Contact Us </label>
           <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
@@ -180,4 +179,3 @@ class Contact extends React.Component {
 }
 export default Contact;
 
-*/

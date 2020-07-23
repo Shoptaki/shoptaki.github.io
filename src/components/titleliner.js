@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
 
 const BlueLine = styled.div`
-    max-width: 26rem;
+    width: 100%;
     width: ${props => props.size || "auto"};
     height: 4px;
     margin: auto;

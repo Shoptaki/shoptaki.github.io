@@ -127,6 +127,10 @@ const Subtext = styled.p`
   }
 `;
 
+const LinkContainer = styled.div`
+
+`;
+
 const Dots = styled.li`
   height: 15px;
   width: 15px;
@@ -220,11 +224,12 @@ const RCarousel = () => {
                             <Heading>{slide.name}</Heading>
                             <Subtext>{slide.type}</Subtext>
                             <CustomLink
-                                    to={slide.link}
-                                    displayText={"Read More"}
-                                    linkColor={theme.fontBlueGray}
-                                    arrow
-                                />
+                                to={slide.link}
+                                displayText={"Read More"}
+                                linkColor={theme.fontBlueGray}
+                                fontSize={"1.2rem"}
+                                arrow
+                                    />
                         </TextContainer>
                         <ImageContainer>
                             <Img
