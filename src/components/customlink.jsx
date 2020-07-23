@@ -5,7 +5,8 @@ import { Link } from "gatsby"
 
 const LinkContainer = styled.div`
   width: 100%;
-  display: inline-block;
+  vertical-align: middle;
+  
 `
 
 // link hover effect
@@ -56,15 +57,15 @@ const Arrow = ({ linkColor }) => (
 
 const CustomLink = ({ to, displayText, linkColor, fontSize, arrow }) => (
   <LinkContainer>
-    <div style={{ display: `inline-block` }}>
+   
       <Label to={to} linkColor={linkColor} fontSize={fontSize}>
         {displayText}
       </Label>
-    </div>
+    
     {arrow ? (
-      <div style={{ display: `inline-block` }}>
+      
         <Arrow linkColor={linkColor} />
-      </div>
+      
     ) : null}
   </LinkContainer>
 )

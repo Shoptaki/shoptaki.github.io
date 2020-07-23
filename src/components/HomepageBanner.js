@@ -1,7 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import CustomLink from "./customlink.jsx"
+import CustomLink from "./CustomLink"
+import Globe from "./Globe"
 import graphics from "../images/banner-graphics.svg"
 import mobileGraphics from "../images/banner-graphics-mobile.svg"
 import { theme } from "../theme/GlobalStyles.js"
@@ -65,12 +66,13 @@ const TextContainer = styled.div`
 //to hold globe in home page
 const ImageContainer = styled.div`
   float: right;
-  position: relative;
   margin-top: 10rem;
-  width: 30%;
+  #canvas:focus {
+    outline: none;
+  }
 
   @media (max-width: ${theme.mobile}) {
-    width: 0;
+    
     margin-top: 10rem;
   }
 `
@@ -152,8 +154,11 @@ const Banner = ({
         fontSize={linkSize}
         arrow
       />
+
     </TextContainer>
-    <ImageContainer />
+    <ImageContainer>
+      <Globe id="globe" />
+    </ImageContainer>
   </Container>
 )
 

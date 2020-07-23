@@ -12,6 +12,7 @@ import FeatureCard from "../components/featureCard.jsx"
 import AboutUsCards from "../components/AboutUsCards.jsx"
 
 
+
 const WhySmartchain = () => (
     <Layout>
      
