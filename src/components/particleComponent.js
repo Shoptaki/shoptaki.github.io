@@ -34,7 +34,7 @@ function SmartchainBanner() {
       
           particles: {
             number: {
-              value: 110,
+              value: 150,
               density: {
                 enable: true,
                 value_area: 1803.4120608655228

@@ -5,18 +5,22 @@ import { theme } from "../theme/GlobalStyles"
 import productShow from "../images/ProductImage.svg";
 import greenIcon from "../images/greenicon.svg"
 
+
 const Box = styled.div`
   display: flex;
   flex-direction: "row";
   background-color: white;
+  box-align: center;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   margin-top: 5em;
-  margin-bottom: 20em;
+  margin-bottom: 10em;
   margin-left: 14%;
   margin-right: 14%;
   height: 52em;
   @media (max-width: ${theme.tablet}) {
     height: 78rem;
+    margin-left: 9%;
+    margin-right: 8%;
   }
 `
 
@@ -27,9 +31,9 @@ const Container = styled.div`
   position: relative;
   height: 60rem;
   padding-bottom: 3rem;
-  padding-right: 1rem;
   @media (max-width: ${theme.tablet}) {
     height: 90em;
+    width:25rem;
   }
 `
 
@@ -46,9 +50,18 @@ const SmartTitle = styled.div`
   margin-bottom: 0.5em;
 `
 
-const SmartLiner = styled.img`
-  width: 300px;
-  margin-left: 1.3em;
+const SmartIDLiner = styled.div`
+  width: 50%;
+  height: 4px;
+  margin-left: 2.4em;
+  margin-bottom:1.5em;
+  background: rgb(8, 77, 161);
+  background: linear-gradient(
+    90deg,
+    ${theme.logoDarkBlue} 0%,
+    ${theme.logoLightBlue} 54%,
+    #fff 100%
+  );
 `
 
 const SmartDescription1 = styled.div`
@@ -83,7 +96,7 @@ const ProductImage = styled.img`
   height: 30rem;
   width: 20rem;
   @media (max-width: ${theme.tablet}) {
-    margin-left: 0em;
+    margin-left: -1rem;
     margin-top: 2.5em;
     width: 27rem;
   }
@@ -103,6 +116,7 @@ const BenefitsDescriptions = styled.div`
   margin-right: 2.4em;
   @media (max-width: ${theme.tablet}) {
     margin-left: 2.5em;
+    margin-right: 2.4em;
   }
 `
 const AdditionalDescription = styled.div`
@@ -110,6 +124,7 @@ const AdditionalDescription = styled.div`
   @media (max-width: ${theme.tablet}) {
     margin-left: 2.5em;
     margin-top: 2.5em;
+    margin-right: 2.4em;
   }
 `
 const GreenIcon = styled.img`
@@ -129,7 +144,7 @@ function SmartIDCard(props) {
       <Container>
         <verticalBox>
           <SmartTitle>SmartID</SmartTitle>
-          <SmartLiner></SmartLiner>
+          <SmartIDLiner ></SmartIDLiner>
           <SmartDescription1>
             <Boldword>SmartID is a digital passport</Boldword>to authenticate
             users quickly while minimizing data hacks, identity theft and data

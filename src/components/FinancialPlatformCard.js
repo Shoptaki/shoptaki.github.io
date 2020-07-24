@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../theme/GlobalStyles"
 
-import TitleLiner from "./TitleLiner"
+
 import greenIcon from "../images/greenicon.svg"
 import financialImage from "../images/financialimage.svg"
 
@@ -11,25 +11,26 @@ const Box = styled.div`
   flex-direction: row;
   background-color: white;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  width: 50rem;
   margin: auto;
-  margin-top:20em;
+  margin-top:10em;
   margin-bottom:20em;
-
-  @media (max-width: ${theme.mobile}) {
-    width: 100%;
-    margin-left: 0rem;
+  margin-left: 14%;
+  margin-right: 14%;
+  @media (max-width: ${theme.tablet}) {
+    height: 73rem;
+    margin-left: 9%;
+    margin-right: 8%;
   }
 `;
+
 
 const Container = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: "row";
   position: relative;
-  height: 63rem;
+  height: 68rem;
   padding-bottom: 3rem;
-  padding-right: 1rem;
 `
 const verticalBox = styled.div`
   display: flex;
@@ -43,19 +44,29 @@ const SmartTitle = styled.div`
   margin-top: 3em;
   margin-bottom: 0.5em;
 `
-const FinancialLiner = styled(TitleLiner)`
-    width:300px;
-    margin-left: 0;
-    text-align: left;
-`;
+const FinancialLiner = styled.div`
+  width: 50%;
+  height: 4px;
+  margin-left: 2.4em;
+  margin-bottom:1.5em;
+  background: rgb(8, 77, 161);
+  background: linear-gradient(
+    90deg,
+    ${theme.logoDarkBlue} 0%,
+    ${theme.logoLightBlue} 54%,
+    #fff 100%
+  );
+`
 
 const SmartDescription1 = styled.div`
   margin-left: 2.4em;
   font-weight: bold;
+  margin-right: 2.4em;
 `
 const SmartDescription2 = styled.div`
   margin-left: 2.4em;
   margin-top: 1em;
+  margin-right: 2.4em;
 `
 const HorizontalBox = styled.div`
   display: flex;
@@ -70,9 +81,11 @@ const BenefitsTitle = styled.div`
 const BenefitsDescriptions = styled.div`
   margin-top: 0.5rem;
   margin-left: 2.5em;
+  margin-right: 2.4em;
 `
 const AdditionalDescription = styled.div`
   margin-top: 2.5em;
+  margin-right: 2.4em;
 `
 const GreenIcon = styled.img`
   margin-top: 2.5em;
