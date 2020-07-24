@@ -1,13 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-import TitleLiner from "./TitleLiner"
+import TitleLiner from "../components/TitleLiner"
 
 const UniversalBenefitsContainer = styled.div`
-padding: 2.5em;
+  padding: 2.5em;
   margin: 5em;
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+  @media (max-width: ${theme.mobile}){
+    margin: 0;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -24,46 +27,45 @@ flex-direction: row;
   }
 `;
 
-const InnerContainer = styled.div`
+const InnerContainer = styled.ul`
 text-align: left;
-padding-right: 3.5em;
+padding-right: 3em;
+margin-bottom: 0;
 `;
-
+const Pt = styled.li`
+list-style-position: outside;
+`
 const UniversalBenefits = (props) => (
     <UniversalBenefitsContainer>
         <TitleContainer>
-            <div>
-                Universal Benefits
-            </div>
-            <div>
+            Universal Benefits
             <TitleLiner color="blue" />
-            </div>
         </TitleContainer>
         <TextContainer>
             <InnerContainer>
-            <div>
-            - Data Centralization and Ownership Decentralization over multiple industries
-            </div>
-            <div>
-            - Real-time data streaming and analytics
-            </div>
-            <div>
-            - Distributed Learning over multiple nodes
-            </div>
-            <div>
-            - Collabortive Ai analazying and automating different types of tasks/proccess
-            </div>
+                <Pt>
+                Data Centralization and Ownership Decentralization over multiple industries
+                </Pt>
+                <Pt>
+                Real-time data streaming and analytics
+                </Pt>
+                <Pt>
+                Distributed Learning over multiple nodes
+                </Pt>
+                <Pt>
+                Collabortive Ai analazying and automating different types of tasks/proccess
+                </Pt>
             </InnerContainer>
             <InnerContainer>
-            <div>
-            - Real-time reporting and KPI measurements 
-            </div>
-            <div>
-            - Ubiquitous Machine Learning & Collaborative A.I.  solutions 
-            </div>
-            <div>
-            - Accessibility and connectivity with other Blockchain ecosystems
-            </div>
+                <Pt>
+                Real-time reporting and KPI measurements 
+                </Pt>
+                <Pt>
+                Ubiquitous Machine Learning & Collaborative A.I.  solutions 
+                </Pt>
+                <Pt>
+                Accessibility and connectivity with other Blockchain ecosystems
+                </Pt>
             </InnerContainer>
         </TextContainer>
     </UniversalBenefitsContainer>

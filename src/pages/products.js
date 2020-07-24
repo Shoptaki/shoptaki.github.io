@@ -11,8 +11,8 @@ const Products = () => (
         <SEO title="Why Smartchain?" />
         
         <WhySmartchainBanner 
-        description = "Pioneering the Data Singularity"
-        regulartext = "A secure and competitive global system for data"
+        subtitle = "Pioneering the Data Singularity"
+        description = "A secure and competitive global system for data"
         />
         <SmallCards />
         <SmartIDCard />
