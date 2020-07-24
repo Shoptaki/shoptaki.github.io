@@ -2,7 +2,27 @@ import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
 import TitleLiner from "../components/TitleLiner"
+import upperbg from "../images/upper_background.svg"
 
+const Container = styled.div`
+position: absolute;
+  
+z-index: -1;
+background-image: url(${upperbg});
+top: 100vh;
+text-align: center;
+width: 100%;
+padding: 3rem 3rem;
+height: 100%;
+
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box; 
+
+@media (min-width: ${theme.mobile}) {
+  top: 44rem;
+}
+`;
 const UniversalBenefitsContainer = styled.div`
   padding: 2.5em;
   margin: 5em;
@@ -36,6 +56,7 @@ const Pt = styled.li`
 list-style-position: outside;
 `
 const UniversalBenefits = (props) => (
+    <Container>
     <UniversalBenefitsContainer>
         <TitleContainer>
             Universal Benefits
@@ -69,6 +90,7 @@ const UniversalBenefits = (props) => (
             </InnerContainer>
         </TextContainer>
     </UniversalBenefitsContainer>
+    </Container>
 )
 
 export default UniversalBenefits

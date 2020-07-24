@@ -5,7 +5,7 @@ import SmartIDCard from "../components/smartIDCard"
 import FinancialPlatformCard from "../components/FinancialPlatformCard"
 import SmallCards from "../components/smallCards"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
-import UniversalBenefits from "../components/UniversalBenefits"
+import UniversalBenefits from "../components/UniversalBenefits.jsx"
 
 const Products = () => (
     <Layout>
