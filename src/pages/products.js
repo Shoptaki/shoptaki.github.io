@@ -5,15 +5,17 @@ import SmartIDCard from "../components/smartIDCard"
 import FinancialPlatformCard from "../components/FinancialPlatformCard"
 import SmallCards from "../components/smallCards"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
+import UniversalBenefits from "../components/UniversalBenefits"
 
 const Products = () => (
     <Layout>
         <SEO title="Why Smartchain?" />
         
         <WhySmartchainBanner 
-        subtitle = "Pioneering the Data Singularity"
+        title = "Pioneering the Data Singularity"
         description = "A secure and competitive global system for data"
         />
+        <UniversalBenefits/>
         <SmallCards />
         <SmartIDCard />
         <FinancialPlatformCard />
