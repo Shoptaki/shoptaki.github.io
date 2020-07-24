@@ -1,27 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
-import { useStaticQuery, graphql } from 'gatsby'
 import { theme } from "../theme/GlobalStyles"
 
-import CustomLink from "./customlink"
-import "./styles.css"; // from React Transition Group
-
-import TitleLiner from "./TitleLiner"
-import productShow from "../images/ProductImage.svg";
-import greenIcon from "../images/greenicon.svg"
-import financialImage from "../images/financialimage.svg"
+import TitleLiner from "../components/TitleLiner"
+import greenIcon from "../images/products_verified.svg"
+import financialImage from "../images/products_financial.png"
 
 const Box = styled.div`
   display: flex;
-  flex-direction: 'row';
-  background-color:white;
+  flex-direction: row;
+  background-color: white;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
-  margin: auto;
-  margin-top:20em;
-  margin-bottom:20em;
-
+  margin: 5rem auto;
   @media (max-width: ${theme.mobile}) {
     width: 100%;
     margin-left: 0rem;
@@ -31,101 +22,82 @@ const Box = styled.div`
 const Container = styled.div`
   overflow: hidden;
   display: flex;
-  flex-direction: 'row';
+  flex-direction: column;
   position: relative;
-  height:55rem;
+  height: 63rem;
+  padding: 3rem 3rem;
+`
+const Title = styled.div`
+  font-weight: bold;
+  font-size: 25px;
+`
+const Description = styled.div`
+  margin-top: 2rem;
+`
+const BenefitsTitle = styled.div`
+  margin-top: 2.5rem;
+  margin-left: 2em;
+  font-family: 'Myriad Pro Semibold';
   @media (max-width: ${theme.mobile}) {
-    flex-direction: column-reverse;
+    margin-left: 0rem;
   }
 `
-
-const SmartTitle = styled.div`
-    font-weight:bold;
-    font-size:25px;
-    margin-left:1.8em;
-    margin-top:3em;
-    margin-bottom:0.5em;
-`
-const FinancialLiner = styled(TitleLiner)`
-    width:300px;
-    margin-left: 0;
-    text-align: left;
-`
-const verticalBox=styled.div`
-    display: flex;
-    flex-direction: 'column';
-`
-const SmartDescription1=styled.div`
-    margin-left:2.4em;
-    font-weight:bold;
-`
-const SmartDescription2=styled.div`
-    margin-left:2.4em;
-    margin-top:1em;
-`
-const HorizontalBox = styled.div`
-   display: flex;
-   flex-direction: 'row';
-`
-
-const BenefitsTitle = styled.div`
-   margin-top:2rem;
-  margin-left:2.4em;
-`
 const BenefitsDescriptions = styled.div`
-    margin-top:0.5rem;
-    margin-left:2.7em;
-    font-size:16px;
-    line-height:15px;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  @media (max-width: ${theme.mobile}) {
+    margin-left: 0rem;
+  }
 `
 const AdditionalDescription = styled.div`
-    margin-top:1.5rem;
+  margin-top: 2.5em;
 `
 const GreenIcon = styled.img`
-    margin-top:1.5rem;
-    width:2.5%;
-    margin-left:2.4em;
-    margin-right:0.2rem;
+  width: 1.2rem;
+  margin-right: 0.2rem;
 `
 const FinancialImage = styled.img`
-   
-   margin-left:1.2em;
-   height:23rem;
-   width:45rem;
+  width: 100%;
+  margin-top: 2.5em;
 `
-function FinancialPlatformCard(props) {
-
+function FinancialPlatformCard() {
   return (
-      <Box >
-        <Container >
-          <verticalBox>
-            <SmartTitle>Financial Platform</SmartTitle>
-            <FinancialLiner color="blue" size={"26rem"} />
-            <SmartDescription1>Finance Smartchain ID allows for transactional communication to be secure by being decentralized.</SmartDescription1>
-<SmartDescription2>Smartchain tracks data across different ecosystems to prevent fraud and automate certain processes.  </SmartDescription2>
-          <BenefitsTitle>Benefits</BenefitsTitle>
-         <BenefitsDescriptions>-  Limit Volume of Data </BenefitsDescriptions>
-         <BenefitsDescriptions>-  Reduce Redundancy </BenefitsDescriptions>
-         <BenefitsDescriptions>-  Verify Validity of Users </BenefitsDescriptions>
-          <BenefitsDescriptions>-  Streamline transactions while automating KYC, AML, and regulation and compliance. </BenefitsDescriptions>
-        <BenefitsDescriptions>-  Embeds each transaction with the SmartID to track transaction origins, prevent money laundering, etc…
- </BenefitsDescriptions>
-        <HorizontalBox>
-        <GreenIcon src={greenIcon}></GreenIcon>
-        <AdditionalDescription>More secure than a traditional SSO (single sign on)</AdditionalDescription>
-        </HorizontalBox>
-
-       <FinancialImage src={financialImage}></FinancialImage>
-        
-          </verticalBox>
-          
-         
-
-        </Container>
-
+    <Box id="financialBox">
+      <Container>
      
+          <Title>
+            Financial Platform
+            <TitleLiner />
+          </Title>
+          
+          <Description>
+            <p>Finance Smartchain ID allows for transactional communication to be
+            secure by being decentralized.</p>
+            <p>Smartchain tracks data across different ecosystems to prevent fraud
+            and automate certain processes.</p>
+          </Description>
 
-      </Box>
-          )
-          }
-          export default FinancialPlatformCard
+          <BenefitsTitle>Benefits</BenefitsTitle>
+          <BenefitsDescriptions>
+            <li>Limit Volume of Data </li>
+            <li>Reduce Redundancy</li>
+            <li>Verify Validity of Users</li>
+            <li>Streamline transactions while automating KYC, AML, and regulation
+              and compliance.</li>
+            <li>Embeds each transaction with the SmartID to track transaction
+              origins, prevent money laundering, etc…</li>
+          </BenefitsDescriptions>
+
+          <AdditionalDescription>
+            <GreenIcon src={greenIcon}></GreenIcon>
+            More secure than a traditional SSO (single sign on)
+          </AdditionalDescription>
+
+          <FinancialImage src={financialImage} alt="financialPlatform"></FinancialImage>
+
+   
+      </Container>
+    </Box>
+  )
+}
+export default FinancialPlatformCard

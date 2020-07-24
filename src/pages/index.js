@@ -10,7 +10,6 @@ import Contact from "../components/ContactUsSection.jsx"
 import CardSection from "../components/CardSection.jsx"
 
 import RCarousel from "../components/RCarousel"
-import ControlledCarousel from "../components/carousel"
 
 import { theme } from "../theme/GlobalStyles.js"
 import 'bootstrap/dist/css/bootstrap.min.css'

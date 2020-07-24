@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { GlobalStyles } from "../theme/GlobalStyles"
 import { theme } from "../theme/GlobalStyles"
-import Header from "./NavBar"
+import Header from "./NavBar.jsx"
 import Footer from "./Footer.jsx"
 
 const Container = styled.div`

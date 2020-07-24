@@ -1,11 +1,11 @@
 import React, {useState} from "react"
 import styled from "styled-components"
 import TitleLiner from "./TitleLiner"
-import RecogBorder from "../images/RecognizeBorder.svg"
+import lowerbg from "../images/lower_background.svg"
 import { theme } from "../theme/GlobalStyles.js"
 
 const BgContainer = styled.div`
-    background-image: url(${RecogBorder});
+    background-image: url(${lowerbg});
 `
 const Container = styled.div`
     width: 80%;

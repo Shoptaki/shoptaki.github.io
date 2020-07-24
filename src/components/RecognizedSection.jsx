@@ -4,12 +4,12 @@ import remtech_logo from "../images/homepage_remtech_logo.svg"
 import cc_logo from "../images/homepage_cc_logo.svg"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-import RecogBorder from "../images/RecognizeBorder.svg"
+import lowerbg from "../images/lower_background.svg"
 
 const Recog = styled.div`
     left:0;
     right:0;
-    background-image: url(${RecogBorder});
+    background-image: url(${lowerbg});
     background-size:cover;
     position: relative;
     max-height: 80rem;
