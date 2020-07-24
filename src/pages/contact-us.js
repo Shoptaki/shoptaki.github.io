@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
@@ -236,3 +237,4 @@ export default Contact;
 
 
 
+*/
