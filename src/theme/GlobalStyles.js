@@ -54,6 +54,11 @@ export const GlobalStyles = createGlobalStyle`
         src: url(${MyriadProBold}) format('woff');
     }
 
+    * {
+        user-select: none;
+        outline: none;
+    }
+
     body {
         font-family: 'Myriad Pro Regular', sans-serif;
         margin: 0;

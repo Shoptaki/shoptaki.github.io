@@ -10,7 +10,8 @@ const Container = styled.div`
   
   z-index: -1;
   background-image: url(${upperbg});
-  top: 100vh;
+  background-size: cover;
+  top: 43rem;
   text-align: center;
   width: 100%;
   padding: 3rem 3rem;
@@ -20,8 +21,12 @@ const Container = styled.div`
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
 
-  @media (min-width: ${theme.mobile}) {
-    top: 44rem;
+  @media (max-width: ${theme.tablet}) {
+    top: 60rem;
+  }
+
+  @media (max-width: ${theme.mobile}) {
+    top: 110vw;
   }
 `;
 
@@ -33,7 +38,7 @@ const Title = styled.h1`
   font-size: 2rem;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.mobile}) {
     font-size: 1.5rem;
   }
 
@@ -47,7 +52,7 @@ const Description = styled.p`
   
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.mobile}) {
     font-size: 0.9rem;
   }
 `;

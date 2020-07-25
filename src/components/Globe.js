@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useState } from 'react';
 import { Canvas, extend, useFrame, useThree } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from "three";
@@ -7,23 +7,34 @@ import world_png from "../images/world_map.png";
 
 extend({ OrbitControls })
 
-function Sphere({back}) {
+
+
+const Sphere = ( {back, pointerOver, pointerOut } ) => {
   const texture = useMemo(() => new THREE.TextureLoader().load(world_png), [])
-  
+
+
   return (
-    <group>
-      <mesh visible position={[0, 0.25, 0]} castShadow >
+    
+      <mesh
+        
+        visible 
+        position={[0, 0.25, 0]} 
+        castShadow 
+        onClick={ pointerOver }
+        onPointerOver={ pointerOver }
+        
+      >
         <sphereBufferGeometry attach="geometry" args={[2.75, 32, 32]} />
         <meshBasicMaterial attach="material" transparent opacity={back ? 0.4 : 1} depthWrite={false} side={back ? THREE.BackSide : THREE.FrontSide}>
           <primitive attach="map" object={texture} />
         </meshBasicMaterial>
       </mesh>
-    </group>
+    
   );
 }
 
 
-const Controls = () => {
+const Controls = ({rotate}) => {
   const orbitRef = useRef()
   const { camera, gl } = useThree()
 
@@ -34,6 +45,7 @@ const Controls = () => {
       autoRotate
       enableZoom={false}
       enablePan={false}
+      enableRotate={rotate}
       maxPolarAngle={1.2 * Math.PI / 3}
       minPolarAngle={1.2 * Math.PI / 3}
       args={[camera, gl.domElement]}
@@ -58,16 +70,25 @@ function Light({ brightness, color }) {
 }
 
 const Globe = () => {
+  const [hovered, setHover] = useState(false)
+  
   const isBrowser = typeof window !== "undefined";
+  
+
+  const pointerOver = e => setHover(true);
+  const pointerOut = e => setHover(false)
+
+  document.body.addEventListener('mouseup', pointerOut)
  
+
   return (
     <>
       {isBrowser && (
-        <Canvas id="canvas" style={{width: window.innerWidth / 2, height: '36rem', position: 'absolute', top: '8rem', left: '50%'}} >
-          <Controls />
+        <Canvas id="canvas" style={{width: '100%', height: '100%'}} >
+          <Controls rotate={hovered}/>
           
           <Sphere />
-          <Sphere back />
+          <Sphere back  pointerOver={pointerOver} pointerOut={pointerOut} />
           <Light brightness={10} color={"white"} />
         </Canvas>
       )}
