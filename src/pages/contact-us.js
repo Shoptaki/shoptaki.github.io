@@ -5,15 +5,42 @@ import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
 import SmartchainBanner from "../components/particleComponent";
 import styled from "styled-components";
-//import REACT_APP_MAILCHIMP_URL from "../env";
+import REACT_APP_MAILCHIMP_URL from "../env";
+import {theme} from "../theme/GlobalStyles"
 
 
+
+const MainDiv = styled.div `
+   textAlign: center;
+   align-items: center; 
+   display: flex;
+   margin-left: 700px;
+   @media (max-width: 1400px) {
+    margin-left: 500px;
+  }
+   @media (max-width: ${theme.tablet}) {
+    margin-left: 400px;
+  }
+   @media (max-width: 800px) {
+    margin-left: 300px;
+  }
+  @media (max-width: 650px) {
+    margin-left: 200px;
+  }
+   @media (max-width: 376px) {
+    margin-left: 40px;
+  }
+`
 const Input = styled.input `
   width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
+   @media (max-width: 376px) {
+    width: 200px
+    margin-left: 0px
+  }
 `
 
 const Select = styled.select `
@@ -22,6 +49,10 @@ const Select = styled.select `
    border-radius: 10px;
    width: 300px;
    height: 30px;
+   @media (max-width: 376px) {
+    width: 200px
+    margin-left: 0px
+  }
 `
 
 const TextArea = styled.textarea `
@@ -34,6 +65,7 @@ const TextArea = styled.textarea `
 const Button = styled.button `
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 120px;
   background-color: #3F9CE5;
 `
 
@@ -41,6 +73,22 @@ const ContactLabel = styled.label `
   font-weight: bold; 
   font-size: 45px;
   color: #3F9CE5;
+  margin-left: 750px;
+   @media (max-width: 1400px) {
+    margin-left: 550px;
+  }
+  @media (max-width: ${theme.tablet}) {
+    margin-left: 450px;
+  }
+   @media (max-width: 800px) {
+    margin-left: 350px;
+  }
+  @media (max-width: 650px) {
+    margin-left: 250px;
+  }
+   @media (max-width: 375px) {
+    margin-left: 90px;
+  }
 `
 
 const NameLabel = styled.label `
@@ -110,8 +158,9 @@ class Contact extends React.Component {
     return (
       <Layout>
         <SmartchainBanner />
-        <div className="App" style={{textAlign: "center", alignItems: "center"}}>
-          <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
+        <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
+        <MainDiv className="App">
+
           <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
 
             <div className="form-group">
@@ -157,7 +206,7 @@ class Contact extends React.Component {
                         onChange={({ target }) => this.setState({ ['message']: target.value })}/>
             </div>
 
-            <div style={{marginLeft: 810}}>
+            <div>
               <Recaptcha
                 sitekey="6Ld0ELAZAAAAACu7fyKy2htAhJQCCbH71rO1k7g1"
                 render="explicit"
@@ -177,12 +226,12 @@ class Contact extends React.Component {
               {status === "success" && <p>Thank you for contacting!</p>}
               {status === "duplicate" && <p>Too many subscribe attempts for this email address</p>}
               {status === "empty" && <p>You must write an e-mail.</p>}
-              {status === "error" && <p>An unexpected internal error has occurred.</p>}
+              {status === "error" && <p>Enter a valid email address</p>}
             </div>
 
           </form>
           <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
-        </div>
+        </MainDiv>
 
       </Layout>
     );
@@ -201,7 +250,7 @@ class Contact extends React.Component {
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
     // const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
-    const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
+    const path = `${REACT_APP_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;
