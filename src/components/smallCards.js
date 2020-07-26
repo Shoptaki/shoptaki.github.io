@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
 import passportImage from "../images/passport.svg"
-import bankImage from "../images/bank.svg"
+import bankImage from "../images/bank.png"
 
 const SmallCard = styled.div`
   padding-left: 14%;
@@ -12,7 +12,7 @@ const SmallCard = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-basis: 50%;
+  flex-basis: 10%;
 
   @media (max-width: ${theme.tablet}) {
     display: flex;
@@ -29,20 +29,29 @@ const SmallBox = styled.div`
   margin-bottom: 5em;
   margin-left: 0rem;
   box-align: center;
-  width: 20rem;
+  width: 28rem;
+  height:28rem;
   @media (max-width: ${theme.tablet}) {
-    margin-bottom: 0em;
+    margin-bottom: 3em;
+    margin-top: 0em;
+    width: 25rem;
   }
 `
 const SmallImage1 = styled.img`
   width: 31%;
   margin-left: 5rem;
   margin-top: 2rem;
+  @media (max-width: ${theme.tablet}) {
+    margin-left: 4rem;
+  }
 `
 const SmallImage2 = styled.img`
-  width: 31%;
-  margin-left: 4.5rem;
+  width: 28%;
+  margin-left: 5rem;
   margin-top: 2rem;
+  @media (max-width: ${theme.tablet}) {
+    margin-left: 4rem;
+  }
 `
 
 const Container = styled.div`
@@ -50,11 +59,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 20rem;
-  width: 16rem;
-  padding-right: 0rem;
+  height: 25rem;
+  width: 25rem;
+  padding-right: 1rem;
   @media (max-width: ${theme.mobile}) {
-    height: 20em;
+    width: 22rem;
+    height: 25em;
+    
   }
 `
 
@@ -68,22 +79,22 @@ const VerticalBox = styled.div`
 const SmartTitle1 = styled.div`
   font-weight: bold;
   font-size: 25px;
-  margin-left: 1em;
+  margin-left: 2em;
   margin-top: 3em;
   margin-bottom: 0.5em;
 `
 const SmartTitle2 = styled.div`
   font-weight: bold;
   font-size: 25px;
-  margin-left: 1em;
-  margin-top: 2em;
+  margin-left: 2em;
+  margin-top: 1.5em;
   margin-bottom: 0.5em;
 `
 
 const SmartLiner = styled.div`
-  width: auto;
+  width: 8rem;
   height: 4px;
-  margin-left: 1.4em;
+  margin-left: 3em;
   background: rgb(8, 77, 161);
   background: linear-gradient(
     90deg,
@@ -94,51 +105,61 @@ const SmartLiner = styled.div`
 `
 
 const SmartDescription1 = styled.div`
-  margin-left: 2.4em;
+  margin-left: 3em;
   margin-right: 0em;
-  font-size: 10px;
+  margin-top:1.5rem;
+  font-size: 16px;
   height: 8rem;
+  @media (max-width: ${theme.mobile}) {
+    margin-top:2rem;
+  }
+
 `
 
 const HorizontalBox = styled.div`
   display: flex;
   flex-direction: "row";
 `
-const Horizontal = styled.div`
-  display: flex;
-  flex-direction: row;
-  @media (max-width: ${theme.mobile}) {
-    flex-direction: column-reverse;
-  }
-`
+
 
 const Button = styled.button`
   background-color: white;
   border: none;
   border-radius: 5px;
   height: 45px;
+  width:120px;
   font-size: 18px;
   font-weight: bold;
+  padding-bottom:5px;
+  padding-left:8px;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+  
 `
 const ButtonContainer = styled.div`
   text-align: center;
   position: absolute;
+  
   bottom: 2rem;
-  left: 6rem;
+  left: 9rem;
   @media (max-width: ${theme.mobile}) {
     text-align: center;
+    bottom:2rem;
+    left: 8rem;
   }
 `
 
 const LinkContainer = styled.div`
   width: 100%;
   display: inline-block;
+  padding-top: 1rem;
 `
+
 
 // link hover effect
 const LabelA = styled.div`
-  padding: 5px;
+  margin-top: -0.5rem;
+  margin-left:3px;
+  margin-right:2px;
   position: relative;
   color: ${props => props.linkColor || "#2E50B9"};
   text-decoration: none;
@@ -196,8 +217,10 @@ function SmallCards(props) {
           <ButtonContainer>
             <Button>
               <LinkContainer>
+                <HorizontalBox>
                 <LabelA >Learn More</LabelA>
                 <Arrow linkColor="#2E50B9" />
+                </HorizontalBox>
               </LinkContainer>
             </Button>
           </ButtonContainer>
@@ -220,8 +243,10 @@ function SmallCards(props) {
           <ButtonContainer>
             <Button>
               <LinkContainer>
+              <HorizontalBox>
                 <LabelA >Learn More</LabelA>
                 <Arrow linkColor="#2E50B9" />
+                </HorizontalBox>
               </LinkContainer>
             </Button>
           </ButtonContainer>

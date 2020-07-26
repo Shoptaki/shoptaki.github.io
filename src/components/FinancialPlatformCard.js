@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../theme/GlobalStyles"
 
+
 import TitleLiner from "../components/TitleLiner"
 import greenIcon from "../images/products_verified.svg"
 import financialImage from "../images/products_financial.png"
@@ -29,6 +30,7 @@ const Box = styled.div`
     margin-left: 0rem;
   }
 `;
+
 
 const Container = styled.div`
   overflow: hidden;
@@ -62,6 +64,7 @@ const BenefitsDescriptions = styled.div`
 `
 const AdditionalDescription = styled.div`
   margin-top: 2.5em;
+  margin-right: 2.4em;
 `
 const GreenIcon = styled.img`
   width: 1.2rem;
