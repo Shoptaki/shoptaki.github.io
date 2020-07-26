@@ -6,10 +6,12 @@ import productShow from "../images/products_smartID.png";
 import greenIcon from "../images/products_verified.svg"
 import TitleLiner from "../components/TitleLiner"
 
+
 const Box = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
+  box-align: center;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
   margin: 5rem auto;
@@ -24,7 +26,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: "row";
   position: relative;
-  
   padding: 3rem 3rem;
 `
 
@@ -56,7 +57,6 @@ const ProductImage = styled.img`
   height: 30rem;
 
   @media (max-width: ${theme.tablet}) {
-    margin: auto;
     margin-top: 2.5em;
   }
 `
