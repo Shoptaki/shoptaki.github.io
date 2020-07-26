@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-import TitleLiner from "../components/TitleLiner"
+import TitleLiner from "../components/titleliner.jsx"
 import upperbg from "../images/upper_background.svg"
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ position: absolute;
   
 z-index: -1;
 background-image: url(${upperbg});
-top: 100vh;
+top: 40rem;
 text-align: center;
 width: 100%;
 padding: 3rem 3rem;
@@ -18,9 +18,8 @@ height: 100%;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box; 
-
-@media (min-width: ${theme.mobile}) {
-  top: 44rem;
+@media (max-width: ${theme.tablet}){
+    padding: 0;
 }
 `;
 const UniversalBenefitsContainer = styled.div`
@@ -28,8 +27,11 @@ const UniversalBenefitsContainer = styled.div`
   margin: 5em;
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  @media (max-width: ${theme.mobile}){
-    margin: 0;
+  height: 23rem;
+  @media (max-width: ${theme.tablet}){
+    margin: 5em 0 0 0;
+    height: auto;
+    padding: 2.5em 1em;
   }
 `;
 
@@ -42,7 +44,7 @@ padding-bottom: 1em;
 const TextContainer = styled.div`
 display: flex;
 flex-direction: row;
-@media (max-width: ${theme.mobile}){
+@media (max-width: ${theme.tablet}){
     flex-direction: column;
   }
 `;
@@ -51,6 +53,9 @@ const InnerContainer = styled.ul`
 text-align: left;
 padding-right: 3em;
 margin-bottom: 0;
+@media (max-width: ${theme.tablet}){}
+    padding-right: 1em;
+}
 `;
 const Pt = styled.li`
 list-style-position: outside;

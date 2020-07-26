@@ -4,7 +4,7 @@ import autonomous from "../images/homepage_autonomy.png";
 import efficiency from "../images/homepage_clock.png";
 import security from "../images/homepage_security.png";
 import { theme } from "../theme/GlobalStyles.js"
-import TitleLiner from "./titleliner"
+import TitleLiner from "./titleliner.jsx"
 
 const HeaderTitle = styled.div`
   text-align: center;

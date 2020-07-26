@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "../theme/GlobalStyles"
 
 
-import TitleLiner from "../components/TitleLiner"
+import TitleLiner from "../components/titleliner.jsx"
 import greenIcon from "../images/products_verified.svg"
 import financialImage from "../images/products_financial.png"
 import lowerbg from "../images/lower_background.svg"
@@ -13,7 +13,7 @@ background-image: url(${lowerbg});
 height: 50rem;
 position: absolute;
 z-index: -1;
-top: 150rem;
+top: 180rem;
 left: 0;
 width: 100%;
 
