@@ -7,13 +7,14 @@ import CustomLink from "../components/customlink.jsx"
 import TitleLiner from "../components/titleliner.jsx"
 
 const SmallCard = styled.div`
-  padding-left: 12%;
-  padding-right: 12%;
+  // padding-left: 12%;
+  // padding-right: 12%;
   padding-top: 30rem;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   flex-basis: 10%;
 
   @media (max-width: ${theme.tablet}) {
@@ -27,7 +28,7 @@ const SmallCard = styled.div`
 const SmallBox = styled.div`
   background-color: white;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  margin: 5em 0;
+  margin: 5em 4em;
   width: 27rem;
   padding: 3rem;
   display: flex;

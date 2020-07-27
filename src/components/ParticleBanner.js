@@ -11,6 +11,7 @@ const ParticalContainer= styled.div`
     left: 0;  
     bottom:100rem;     
     width: 100%;
+    z-index: -1;
 `
 
 
@@ -29,7 +30,7 @@ function SmartchainBanner() {
       
           particles: {
             number: {
-              value: 150,
+              value: 135,
               density: {
                 enable: true,
                 value_area: 1803.4120608655228
