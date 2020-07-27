@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-//import { BrowserRouter as Router} from "react-router-dom";
 import SmartchainBanner from "./ParticleBanner";
 
 const Container = styled.div`
