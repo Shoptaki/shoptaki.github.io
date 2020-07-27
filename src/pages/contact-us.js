@@ -21,8 +21,11 @@ const MainDiv = styled.div `
    @media (max-width: ${theme.tablet}) {
     margin-left: 400px;
   }
+   @media (max-width: 1024px) {
+    margin-left: 360px;
+  }
    @media (max-width: 800px) {
-    margin-left: 300px;
+    margin-left: 250px;
   }
   @media (max-width: 650px) {
     margin-left: 200px;
@@ -80,8 +83,11 @@ const ContactLabel = styled.label `
   @media (max-width: ${theme.tablet}) {
     margin-left: 450px;
   }
+   @media (max-width: 1024px) {
+    margin-left: 410px;
+  }
    @media (max-width: 800px) {
-    margin-left: 350px;
+    margin-left: 300px;
   }
   @media (max-width: 650px) {
     margin-left: 250px;
