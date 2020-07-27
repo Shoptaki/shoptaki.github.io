@@ -55,10 +55,10 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-const CustomLink = ({ to, displayText, linkColor, fontSize, arrow }) => (
+const CustomLink = ({ to, displayText, linkColor, fontSize, arrow, clickHandler }) => (
   <LinkContainer>
    
-      <Label to={to} linkColor={linkColor} fontSize={fontSize}>
+      <Label to={to} linkColor={linkColor} fontSize={fontSize} onClick={clickHandler}>
         {displayText}
       </Label>
     
@@ -78,7 +78,7 @@ Arrow.defaultProps = {
 }
 
 CustomLink.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string,
   displayText: PropTypes.string.isRequired,
   linkColor: PropTypes.string,
   fontSize: PropTypes.string,

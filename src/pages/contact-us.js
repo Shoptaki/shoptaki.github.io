@@ -3,15 +3,14 @@ import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
-import SmartchainBanner from "../components/particleComponent";
+import SmartchainBanner from "../components/ParticleBanner";
 import styled from "styled-components";
-import REACT_APP_MAILCHIMP_URL from "../env";
 import {theme} from "../theme/GlobalStyles"
 
 
 
 const MainDiv = styled.div `
-   textAlign: center;
+   text-align: center;
    align-items: center; 
    display: flex;
    margin-left: 700px;
@@ -45,13 +44,14 @@ const Input = styled.input `
 
 const Select = styled.select `
   margin-right: auto;
-   margin-left: auto;
-   border-radius: 10px;
-   width: 300px;
-   height: 30px;
+  margin-left: auto;
+  border-radius: 10px;
+  width: 300px;
+  height: 30px;
+
    @media (max-width: 376px) {
-    width: 200px
-    margin-left: 0px
+    width: 200px;
+    margin-left: 0px;
   }
 `
 
@@ -250,7 +250,7 @@ class Contact extends React.Component {
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
     // const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
-    const path = `${REACT_APP_MAILCHIMP_URL}&${values}`;
+    const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;

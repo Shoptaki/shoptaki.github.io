@@ -53,12 +53,14 @@ const InnerContainer = styled.ul`
 text-align: left;
 padding-right: 3em;
 margin-bottom: 0;
-@media (max-width: ${theme.tablet}){}
-    padding-right: 1em;
-}
+
+    @media (max-width: ${theme.tablet}) {
+        padding-right: 1em;
+    }
 `;
+
 const Pt = styled.li`
-list-style-position: outside;
+  list-style-position: outside;
 `
 const UniversalBenefits = (props) => (
     <Container>

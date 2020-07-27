@@ -6,22 +6,49 @@ import upperbg from "../images/upper_background.svg"
 import { theme } from "../theme/GlobalStyles"
 
 const Container = styled.div`
+  --size: ${props => props.homepage ? '711px' : '48rem'};
+  --size-t: ${props => props.homepage ? '60rem' : '48rem'};
+  --size-m: ${props => props.homepage ? '60rem' : '48rem'};
+
   position: absolute;
-  
-  z-index: -1;
-  background-image: url(${upperbg});
-  top: 100vh;
+  z-index: -3;
+  /* background-image: url(${upperbg}); */
+  background-color: ${theme.lightGray};
+  top: calc(var(--size) - 0.09719 * 100vw);
   text-align: center;
   width: 100%;
-  padding: 3rem 3rem;
-  height: 100%;
- 
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; 
+  height: 45rem;
+  
+  background: rgb(248,248,248);
+  background: linear-gradient(177deg, rgba(248,248,248,1) 85%, rgba(132,207,237,1) 94%, rgba(29,171,227,1) 100%);
+  transform: skewY(11deg);
 
-  @media (min-width: ${theme.mobile}) {
-    top: 44rem;
+  @media (max-width: ${theme.tablet}) {
+    top: calc(var(--size-t) - 0.09719 * 100vw); 
+    height: 36rem;
+  }
+
+  @media (max-width: ${theme.mobile}) {
+    top: calc(var(--size-m) - 0.09719 * 100vw); 
+    height: 36rem;
+  }
+`;
+
+const TextContainer = styled.div`
+  text-align: center;
+  transform: skewY(-11deg);
+  padding: 15vw 0;
+  margin: auto;
+  width: 50rem;
+
+  @media (max-width: ${theme.tablet}) {
+    
+    padding: 10rem 0;
+  }
+
+  @media (max-width: ${theme.mobile}) {
+    max-width: 65vw;
+    padding-top: ${props => props.homepage ? '10rem' : '8rem' };
   }
 `;
 
@@ -33,13 +60,14 @@ const Title = styled.h1`
   font-size: 2rem;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.mobile}) {
     font-size: 1.5rem;
   }
 
 `;
 
 const Description = styled.p`
+  margin: auto;
   margin-top: 1.5rem;
   max-width: 40rem;
   font-size: 1.2rem;
@@ -47,18 +75,19 @@ const Description = styled.p`
   
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.mobile}) {
     font-size: 0.9rem;
+    
   }
 `;
 
-const Slogan = ({ title, description, color }) => (
-  <Container>
-    <center>
+const Slogan = ({ title, description, color, homepage, paddingM }) => (
+  <Container homepage={homepage} paddingM={paddingM}>
+    <TextContainer>
       <Title>{title}</Title>
-      <TitleLiner color={color} size={"80vw"}/>
+      <TitleLiner color={color} size={"100%"}/>
       <Description>{description}</Description>
-    </center>
+    </TextContainer>
   </Container>
 )
 

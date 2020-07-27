@@ -29,7 +29,7 @@ const Container = styled.div`
   padding: 3rem 3rem;
 `
 
-const verticalBox = styled.div`
+const VerticalBox = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -90,11 +90,11 @@ const GreenIcon = styled.img`
   margin-right: 0.2rem;
 `
 
-function SmartIDCard() {
+const SmartIDCard = React.forwardRef((props, ref) => {
   return (
-    <Box id="smartBox">
+    <Box ref={ref}>
       <Container>
-        <verticalBox>
+        <VerticalBox>
           <SmartTitle>
             SmartID 
             <TitleLiner />
@@ -112,7 +112,7 @@ function SmartIDCard() {
           <Horizontal>
             <ProductImage src={productShow} alt="smartID"></ProductImage>
 
-            <verticalBox>
+            <VerticalBox>
               <BenefitsTitle>Benefits</BenefitsTitle>
               <BenefitsDescriptions>
                 <li>Platforms only have information while using site reducing risk
@@ -126,11 +126,12 @@ function SmartIDCard() {
                 More secure than a traditional SSO (single sign on)
               </AdditionalDescription>
 
-            </verticalBox>
+            </VerticalBox>
           </Horizontal>
-        </verticalBox>
+        </VerticalBox>
       </Container>
     </Box>
   )
-}
+})
+
 export default SmartIDCard
