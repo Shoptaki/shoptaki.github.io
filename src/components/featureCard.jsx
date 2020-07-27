@@ -108,8 +108,8 @@ const FeatureCard = () => {
     
     const mobileDescription = text[index].description;
 
-    const desktopCards = text.map( (item, index) => (
-        <DesktopCard>
+    const desktopCards = text.map( (item) => (
+        <DesktopCard key={item.title}>
             <h5>{item.title}</h5>
             <TitleLiner color="blue" />
             <p style={{paddingTop: "2rem"}}>{item.description}</p>

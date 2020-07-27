@@ -10,6 +10,9 @@ export const theme = {
     logoDarkBlue: '#084DA1',
     logoLightBlue: '#0E99D3',
 
+    gradientBlue: '#1DA7E3',
+    lightGray: '#F8F8F8',
+
     fontDarkBlue: '#1071BB',
     fontLightBlue: '#3F9CE5',
     fontBlueGray: '#8EB4D0',
@@ -58,6 +61,11 @@ export const GlobalStyles = createGlobalStyle`
         user-select: none;
         outline: none;
     }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
 
     body {
         font-family: 'Myriad Pro Regular', sans-serif;

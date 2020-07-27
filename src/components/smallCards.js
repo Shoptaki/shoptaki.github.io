@@ -176,7 +176,8 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-function SmallCards(props) {
+function SmallCards({ scrollHandler }) {
+  
   return (
     <SmallCard>
       <SmallBox>
@@ -196,7 +197,7 @@ function SmallCards(props) {
           <ButtonContainer>
             <Button>
               <LinkContainer>
-                <LabelA >Learn More</LabelA>
+                <LabelA onClick={() => scrollHandler("SID")} >Learn More</LabelA>
                 <Arrow linkColor="#2E50B9" />
               </LinkContainer>
             </Button>
@@ -220,7 +221,7 @@ function SmallCards(props) {
           <ButtonContainer>
             <Button>
               <LinkContainer>
-                <LabelA >Learn More</LabelA>
+                <LabelA onClick={() => scrollHandler("FPC")} >Learn More</LabelA>
                 <Arrow linkColor="#2E50B9" />
               </LinkContainer>
             </Button>

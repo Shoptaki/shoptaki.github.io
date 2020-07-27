@@ -21,13 +21,13 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: 80rem;
   background-color: white;
-
+  overflow: hidden;
   
 
   width: 100%;
   display: inline-block;
   page-break-after: always;
-  overflow: hidden;
+  
 
   /* include padding into the layout */
   -webkit-box-sizing: border-box;
@@ -89,7 +89,7 @@ const ImageContainer = styled.div`
     width: 30rem;
     height: 30rem;
     float: left;
-    margin-bottom: 10rem;
+    //margin-bottom: 10rem;
   }
 
 

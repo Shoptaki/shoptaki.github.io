@@ -12,7 +12,6 @@ extend({ OrbitControls })
 const Sphere = ( {back, pointerOver, pointerOut } ) => {
   const texture = useMemo(() => new THREE.TextureLoader().load(world_png), [])
 
-
   return (
     
       <mesh
@@ -20,7 +19,7 @@ const Sphere = ( {back, pointerOver, pointerOut } ) => {
         visible 
         position={[0, 0.25, 0]} 
         castShadow 
-        onClick={ pointerOver }
+        
         onPointerOver={ pointerOver }
         
       >

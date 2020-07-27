@@ -2,14 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
 //import { BrowserRouter as Router} from "react-router-dom";
-import SmartchainBanner from "./particleComponent";
+import SmartchainBanner from "./ParticleBanner";
 
 const Container = styled.div`
   padding: 0 0 0 0;
-  height: 36rem;
+  height: 40rem;
   width: 100%;
   page-break-after: always; 
-  
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     height: 48.5rem;
@@ -115,13 +114,13 @@ const RegularText = styled.p`
     regulartext,
   }) => (
     <Container>
-          <SmartchainBanner />
-             <TextContainer> 
-                <Title>{title}</Title>
-                <Subtitle>{subtitle}</Subtitle>
-                <Description>{description}</Description>
-                <RegularText>{regulartext}</RegularText>      
-             </TextContainer>
+      <SmartchainBanner />
+      <TextContainer> 
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+        <Description>{description}</Description>
+        <RegularText>{regulartext}</RegularText>      
+      </TextContainer>
     </Container>
   )
   

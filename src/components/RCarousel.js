@@ -35,16 +35,18 @@ const Container = styled.div`
     border-radius:25px;
     max-width: 70%;
     margin: auto;
-    margin-top: 15rem;
+    margin-top: 20rem;
     min-height: 30vw;
     margin-bottom: 10rem;
     background-color: white;
+    z-index: 2;
 
     .control-dots {
         position: static;
     }
 
-    @media (max-width: ${theme.tablet}) {
+    @media (max-width: ${theme.mobile}) {
+        margin-top: 18rem;
         min-height: 33vw;
         width: 80%; 
     }
@@ -52,7 +54,7 @@ const Container = styled.div`
     @media (max-width: ${theme.phone}) {
         min-width: 100%;
         margin-left: 0rem;
-        margin-top: 18rem;
+        margin-top: 20rem;
         margin-bottom: 5rem;
         float: right;
         min-height: 38rem;

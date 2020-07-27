@@ -98,9 +98,9 @@ const FinancialImage = styled.img`
     padding-bottom: 1.5rem;
   }
 `
-function FinancialPlatformCard(props) {
+const FinancialPlatformCard = React.forwardRef((props, ref) => {
   return (
-    <Box id="financialBox">
+    <Box ref={ref} id="financialBox">
       <Container>
         <verticalBox>
           <SmartTitle>Financial Platform</SmartTitle>
@@ -139,5 +139,6 @@ function FinancialPlatformCard(props) {
       </Container>
     </Box>
   )
-}
-export default FinancialPlatformCard
+})
+
+export default FinancialPlatformCard;

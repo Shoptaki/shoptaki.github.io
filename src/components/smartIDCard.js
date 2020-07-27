@@ -123,9 +123,9 @@ const GreenIcon = styled.img`
   }
 `
 
-function SmartIDCard(props) {
+const SmartIDCard = React.forwardRef((props, ref) => {
   return (
-    <Box id="smartBox">
+    <Box ref={ref}>
       <Container>
         <verticalBox>
           <SmartTitle>SmartID</SmartTitle>
@@ -167,5 +167,6 @@ function SmartIDCard(props) {
       </Container>
     </Box>
   )
-}
+})
+
 export default SmartIDCard

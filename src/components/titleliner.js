@@ -13,7 +13,8 @@ const BlueLine = styled.div`
 `
 const OrangeLine = styled.div`
     max-width: 26rem;
-    width: ${props => props.size || "auto"};
+    width: 100%;
+    width: ${props => props.size || "100%"};
     height: 4px;
     margin: auto;
     background: rgb(255,255,255);
