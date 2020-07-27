@@ -11,14 +11,7 @@ const ParticalContainer= styled.div`
     left: 0;  
     bottom:100rem;     
     width: 100%;
-    z-index: -1;
-    
-    /* height: 50rem; */
-    @media (max-width: ${theme.mobile}) {
-      /* height: 500rem; */
-      
-  }
-`;
+`
 
 
 function SmartchainBanner() {
