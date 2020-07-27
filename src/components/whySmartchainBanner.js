@@ -40,7 +40,7 @@ const Title = styled.h1`
   flex-wrap: wrap;
   @media (max-width: ${theme.mobile}) {
     flex-wrap: wrap;
-    margin-top: 10rem;
+    margin-top: ${props => props.display ? "10rem" : "2rem"};
     width: 100%;
     font-size: 2rem;
     padding-right: 3rem;
@@ -104,7 +104,7 @@ const RegularText = styled.p`
     overflow-wrap: break-word;
     word-wrap: break-word;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: -1rem;
   }
   `
 
@@ -117,7 +117,7 @@ const RegularText = styled.p`
     <Container>
           <SmartchainBanner />
              <TextContainer> 
-                <Title>{title}</Title>
+                <Title display={title}>{title}</Title>
                 <Subtitle>{subtitle}</Subtitle>
                 <Description>{description}</Description>
                 <RegularText>{regulartext}</RegularText>      
