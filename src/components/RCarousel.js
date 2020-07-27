@@ -68,7 +68,7 @@ const SlideContainer = styled.div`
     background-color: white;
     height: 100%;
 
-    @media (max-width: ${theme.phone}) {
+    @media (max-width: ${theme.mobile}) {
         flex-direction: column-reverse; 
     }
 `;
@@ -86,7 +86,7 @@ const TextContainer = styled.div`
         padding: 2rem 0rem 3.5rem 2rem;
     }
 
-    @media (max-width: ${theme.phone}) {
+    @media (max-width: ${theme.mobile}) {
         width: 100%;
         padding: 3rem 3rem 0rem 3rem;
 
@@ -104,7 +104,7 @@ const ImageContainer = styled.div`
         padding: 6vw;
     }
 
-    @media (max-width: ${theme.phone}) {
+    @media (max-width: ${theme.mobile}) {
         width: 70%;
         padding: 3rem 0rem 0rem;
         margin-left: 15%;

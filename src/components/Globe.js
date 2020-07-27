@@ -9,7 +9,7 @@ extend({ OrbitControls })
 
 
 
-const Sphere = ( {back, pointerOver, pointerOut } ) => {
+const Sphere = ( {back, pointerOver } ) => {
   const texture = useMemo(() => new THREE.TextureLoader().load(world_png), [])
 
   return (
@@ -87,7 +87,7 @@ const Globe = () => {
           <Controls rotate={hovered}/>
           
           <Sphere />
-          <Sphere back  pointerOver={pointerOver} pointerOut={pointerOut} />
+          <Sphere back  pointerOver={pointerOver} />
           <Light brightness={10} color={"white"} />
         </Canvas>
       )}

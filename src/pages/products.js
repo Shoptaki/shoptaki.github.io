@@ -5,6 +5,7 @@ import SmartIDCard from "../components/smartIDCard"
 import FinancialPlatformCard from "../components/FinancialPlatformCard"
 import SmallCards from "../components/smallCards"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
+import UniversalBenefits from "../components/UniversalBenefits.jsx"
 
 const Products = () => {
     const SIDCRef = useRef();
@@ -23,12 +24,12 @@ const Products = () => {
     return (
         <Layout>
             <SEO title="Why Smartchain?" />
-            
             <WhySmartchainBanner 
-                description = "Pioneering the Data Singularity"
-                regulartext = "A secure and competitive global system for data"
+                title = "Pioneering the Data Singularity"
+                description = "A secure and competitive global system for data"
             />
 
+            <UniversalBenefits />
             <SmallCards scrollHandler={scrollHandler} />
             <SmartIDCard  ref={SIDCRef} />
             <FinancialPlatformCard ref={FPCRef} />
