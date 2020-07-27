@@ -19,10 +19,7 @@ const Container = styled.div`
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
-<<<<<<< HEAD
-=======
   background-color: white;
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
 
   width: 100%;
   display: inline-block;
@@ -51,17 +48,10 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   float: left;
-<<<<<<< HEAD
-  flexdirection: column;
-  // flex: 1;
-  padding: 0 6rem 0 8rem;
-  width: 60%;
-=======
   flex-flow: nowrap column;
   /* flex: 1; */
   padding: 2rem 3rem 0 2rem;
   width: 100%;
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -118,15 +108,6 @@ const Subtitle = styled.h2`
   // -moz-hyphens: auto;
   // hyphens: auto;
 
-<<<<<<< HEAD
-  /* To add hyphens to break word at last*/
-  // -webkit-hyphens: auto;
-  // -ms-hyphens: auto;
-  // -moz-hyphens: auto;
-  // hyphens: auto;
-
-=======
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
   @media (max-width: ${theme.mobile}) {
     overflow-wrap: break-word;
     word-wrap: break-word;

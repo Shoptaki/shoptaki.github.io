@@ -77,8 +77,4 @@ function Contact() {
 
   )
 }
-<<<<<<< HEAD
 export default Contact;
-=======
-export default Contact;
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294

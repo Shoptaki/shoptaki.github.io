@@ -31,12 +31,8 @@ const Label = styled(Link)`
     transform-origin: 100% 50%;
     transition: transform 0.5s ease-in-out 0s;
   }
-<<<<<<< HEAD
-  &:hover::after {
-=======
   &&:hover::after {
     color: 'black' !important;
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
     transform: scaleX(1);
     transform-origin: 0% 0%;
   }
@@ -77,11 +73,7 @@ Arrow.propTypes = {
   linkColor: PropTypes.string,
 }
 Arrow.defaultProps = {
-<<<<<<< HEAD
-  linkColor: "black",
-=======
   linkColor: '',
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
 }
 
 CustomLink.propTypes = {
@@ -92,12 +84,7 @@ CustomLink.propTypes = {
 }
 
 CustomLink.defaultProps = {
-<<<<<<< HEAD
-  linkColor: "black",
-  fontSize: "16px",
-=======
   linkColor: '',
->>>>>>> d088ba2f52fc85bdb2d733dc5c48c929c2a99294
 }
 
 export default CustomLink
