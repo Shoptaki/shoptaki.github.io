@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Img from "gatsby-image"
 import { theme } from "../theme/GlobalStyles"
-import productShow from "../images/ProductImage.svg";
-import greenIcon from "../images/greenicon.svg"
-import underlinerBlue from "../images/underliner-blue.svg"
+import productShow from "../images/products_smartID.png";
+import greenIcon from "../images/products_verified.svg"
+import TitleLiner from "../components/titleliner.jsx"
+
 
 const Box = styled.div`
   display: flex;
-  flex-direction: 'row';
-  background-color:white;
+  flex-direction: row;
+  background-color: white;
+  box-align: center;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
-  margin: auto;
-  margin-top:20em;
-  margin-bottom:10em;
-
+  margin: 0 auto 5rem auto;
   @media (max-width: ${theme.mobile}) {
     width: 100%;
     margin-left: 0rem;
@@ -25,111 +24,114 @@ const Box = styled.div`
 const Container = styled.div`
   overflow: hidden;
   display: flex;
-  flex-direction: 'row';
+  flex-direction: "row";
   position: relative;
-  height:50rem;
-  @media (max-width: ${theme.mobile}) {
+  padding: 3rem 3rem;
+`
+
+const VerticalBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const SmartTitle = styled.div`
+  font-weight: bold;
+  font-size: 25px;
+`
+const SmartDescription = styled.div`
+  margin-top: 2rem;
+`
+const Boldword = styled.p`
+  font-family: 'Myriad Pro Semibold';
+  display: inline;
+`
+const Horizontal = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: ${theme.tablet}) {
     flex-direction: column-reverse;
   }
 `
-
-
-const SmartTitle = styled.div`
-    font-weight:bold;
-    font-size:25px;
-    margin-left:1.8em;
-    margin-top:3em;
-    margin-bottom:0.5em;
-`
-
-
-const SmartLiner = styled.img`
-    width:300px;
-    margin-left: 1.3em;
-`
-
-
-const verticalBox=styled.div`
-    display: flex;
-    flex-direction: 'column';
-`
-const SmartDescription1=styled.div`
-    margin-left:2.4em;
-    
-`
-const Boldword=styled.div`
-    font-weight:bold;
-    display:inline;
-    margin-right:0.3em;
-`
-const SmartDescription2=styled.div`
-    margin-left:2.4em;
-    margin-top:1em;
-`
-const HorizontalBox = styled.div`
-   display: flex;
-   flex-direction: 'row';
-`
 const ProductImage = styled.img`
-   margin-top:2rem;
-   margin-left:3em;
-   height:30rem;
-   width:20rem;
+  margin: 2rem 2rem;
+  height: 30rem;
+
+  @media (max-width: ${theme.tablet}) {
+    margin: 2.5em auto;
+    // width: 35%;
+
+  }
 `
 const BenefitsTitle = styled.div`
-   margin-top:4rem;
+  margin-top: 8rem;
+  font-family: 'Myriad Pro Semibold';
+  @media (max-width: ${theme.tablet}) {
+    margin-left: 2rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: ${theme.mobile}) {
+    margin-left: 0;
+  }
 `
 const BenefitsDescriptions = styled.div`
-    margin-top:1rem;
+  margin: 1em 2.4em 0em 0em;
+  @media (max-width: ${theme.tablet}) {
+    margin-left: 2rem;
+  }
+  @media (max-width: ${theme.mobile}) {
+    margin-left: 0;
+  }
 `
 const AdditionalDescription = styled.div`
-    margin-top:3rem;
+  margin-top: 2.5em;
 `
 const GreenIcon = styled.img`
-    margin-top:2.9rem;
-    width:5%;
-    margin-right:0.2rem;
+  width: 1.2rem;
+  margin-right: 0.2rem;
 `
 
-function SmartIDCard(props) {
-
+const SmartIDCard = React.forwardRef((props, ref) => {
   return (
-      <Box >
-        <Container >
-          <verticalBox>
-            <SmartTitle>SmartID</SmartTitle>
-            <SmartLiner  src={underlinerBlue}></SmartLiner>
-            <SmartDescription1><Boldword>SmartID is a digital passport</Boldword>to authenticate users quickly while minimizing data hacks, 
-identity theft and data redundancy.</SmartDescription1>
-<SmartDescription2>SmartID will be used to verify the identity of users across an assortment of platforms. </SmartDescription2>
+    <Box ref={ref}>
+      <Container>
+        <VerticalBox>
+          <SmartTitle>
+            SmartID 
+            <TitleLiner />
+          </SmartTitle>
           
-          <HorizontalBox>
-          <ProductImage src={productShow}></ProductImage>
-          <verticalBox>
-         <BenefitsTitle>Benefits</BenefitsTitle>
-         <BenefitsDescriptions>- Platforms only have information while using site reducing risk of hacking </BenefitsDescriptions>
-         <BenefitsDescriptions>- Eliminates need for traditional login systems</BenefitsDescriptions>
-         <BenefitsDescriptions>- Users can control what information each platform can see
-        </BenefitsDescriptions>
-       
-        <HorizontalBox>
-        <GreenIcon src={greenIcon}></GreenIcon>
-        <AdditionalDescription>More secure than a traditional SSO (single sign on)</AdditionalDescription>
-        </HorizontalBox>
-        <AdditionalDescription>Content to add:</AdditionalDescription>
+          <SmartDescription>
+            <p><Boldword>SmartID is a digital passport </Boldword>to authenticate
+            users quickly while minimizing data hacks, identity theft and data
+            redundancy.</p>
+      
+            <p>SmartID will be used to verify the identity of users across an
+            assortment of platforms.</p>
+          </SmartDescription>
 
-        <BenefitsDescriptions>Identity profiling from KYC, Credit Risk, Fraud risk, etc..</BenefitsDescriptions>
-        </verticalBox>
-         </HorizontalBox>
-          </verticalBox>
-          
-         
+          <Horizontal>
+            <ProductImage src={productShow} alt="smartID"></ProductImage>
 
-        </Container>
+            <VerticalBox>
+              <BenefitsTitle>Benefits</BenefitsTitle>
+              <BenefitsDescriptions>
+                <li>Platforms only have information while using site reducing risk
+                of hacking</li>
+                <li>Eliminates need for traditional login systems</li>
+                <li>Users can control what information each platform can see</li>
+              </BenefitsDescriptions>
+  
+              <AdditionalDescription>
+                <GreenIcon src={greenIcon}></GreenIcon>
+                More secure than a traditional SSO (single sign on)
+              </AdditionalDescription>
 
-     
+            </VerticalBox>
+          </Horizontal>
+        </VerticalBox>
+      </Container>
+    </Box>
+  )
+})
 
-      </Box>
-          )
-          }
-          export default SmartIDCard
+export default SmartIDCard

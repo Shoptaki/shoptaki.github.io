@@ -1,26 +1,39 @@
-import Layout from "../components/layout"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import SEO from "../components/seo"
 import Bubbles from "../components/bubble"
-import styled from "styled-components"
-import Header from "../components/header"
-import { useStaticQuery, graphql } from "gatsby"
+import Layout from "../components/layout"
+import { theme } from "../theme/GlobalStyles"
+import UsecaseCard from "../components/UsecaseCard"
 
+const UseCases = () => {
+  const query = `(max-width: ${theme.tablet})`
+  const [checkMobile, setCheckMobile] = useState({
+    matches: window.matchMedia(query).matches,
+  })
 
+  useEffect(() => {
+    //add listener to screen change
+    const handler = e => setCheckMobile({ matches: e.matches })
+    window.matchMedia(query).addListener(handler)
+  })
+  return (
+    <div>
+      {checkMobile.matches ? (
+        <Layout>
+          <SEO title="Use Cases" />
+          {/* mobile: display card view */}
+          <UsecaseCard />
+        </Layout>
+      ) : (
+        <Layout cancelFooter="true">
+          {/* no footer for animation page */}
+          <SEO title="Use Cases" />
+          {/* laptop: display animation */}
+          <Bubbles />
+        </Layout>
+      )}
+    </div>
+  )
+}
 
-const Container = styled.div`
-  max-width: 1200px;
-  max-height: 600px;
-`
-const IndexPage = () => (
-  <Container>
-    <SEO title="Use cases" />
-      {/* <Header
-        siteTitle={data.site.siteMetadata.title}
-        menuLinks={data.site.siteMetadata.menuLinks}
-      /> */}
-    <Bubbles />
-  </Container>
-)
-
-export default IndexPage
+export default UseCases

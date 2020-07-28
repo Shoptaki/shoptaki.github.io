@@ -1,15 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Banner from "../components/banner"
-import Slogan from "../components/slogan"
-import CardAndHeader from "../components/cardAndHeader"
-import ControlledCarousel from "../components/carousel"
+import Banner from "../components/HomepageBanner"
+
+import Slogan from "../components/Slogan.jsx"
+import Recognize from "../components/RecognizedSection.jsx"
+import Contact from "../components/ContactUsSection.jsx"
+import CardSection from "../components/CardSection.jsx"
+
+import RCarousel from "../components/RCarousel"
+
 import { theme } from "../theme/GlobalStyles.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Recognize from "../components/recognize"
+
 
 const IndexPage = () => (
   <Layout>
@@ -27,8 +31,10 @@ const IndexPage = () => (
       title="Take Control. Work Smarter. Enjoy Success. "
       description="We provide a source of collaborative AI solutions for users to make smarter choices and simplify global interactions."
       color="orange"
+      homepage
     />
 
+    {/*
     <ControlledCarousel
       link1="/products"
       link2="/use-cases"
@@ -36,11 +42,14 @@ const IndexPage = () => (
       linkText="Read More"
       linkColor={theme.fontBlueGray}
     />
-
-
-    <CardAndHeader />
+    */
+    }
+    <RCarousel />
+    <CardSection />
     <Recognize />
+    <Contact />
   </Layout>
+  
 )
 
 export default IndexPage

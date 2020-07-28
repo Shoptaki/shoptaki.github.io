@@ -1,131 +1,10 @@
 import React, { useEffect, useRef, useState, useInterval } from "react"
-import { Keyframes, config, animated } from "react-spring/renderprops"
-import { useSpring, Spring, animated as ani } from "react-spring"
-import delay from "delay"
-import { useGesture } from "react-with-gesture"
-import clamp from "lodash-es/clamp"
-
+import { motion, useCycle } from "framer-motion"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import smartid from "../images/smartid.svg"
-import blockchain from "../images/blockchain.svg"
-import placeholder from "../images/placeholder.svg"
-
-//data for nodes
-const data = [
-  {
-    name: "A",
-    icon: smartid,
-    size: 42,
-    x: 10,
-    color: "yellow",
-    url: "url(#A)",
-    title: "Smart ID",
-    description: "description here",
-  },
-  {
-    name: "B",
-    icon: blockchain,
-    size: 40,
-    x: 20,
-    color: "#FFA000",
-    url: "url(#B)",
-    title: "Financial Platform",
-    description: "description here",
-  },
-  {
-    name: "C",
-    icon: placeholder,
-    size: 10,
-    x: 30,
-    color: "#FFB300",
-    url: "url(#C)",
-    title: "Health system",
-    description: "coming soon",
-  },
-  {
-    name: "D",
-    icon: placeholder,
-    size: 20,
-    x: 40,
-    color: "#FFECB3",
-    url: "url(#D)",
-    title: "Education",
-    description: "coming soon",
-  },
-  {
-    name: "E",
-    icon: placeholder,
-    size: 18,
-    x: 50,
-    color: "#00ACC1",
-    url: "url(#E)",
-    title: "Title here",
-    description: "coming soon",
-  },
-  {
-    name: "F",
-    icon: placeholder,
-    size: 22,
-    x: 60,
-    color: "#CDDC39",
-    url: "url(#F)",
-    title: "Title here",
-    description: "coming soon",
-  },
-  {
-    name: "G",
-    icon: placeholder,
-    size: 8,
-    x: 70,
-    color: "#607D8B",
-    url: "url(#G)",
-    title: "Title here",
-    description: "coming soon",
-  },
-  {
-    name: "H",
-    icon: placeholder,
-    size: 24,
-    x: 80,
-    color: "#FFA000",
-    url: "url(#H)",
-    title: "Title here",
-    description: "coming soon",
-  },
-  {
-    name: "I",
-    icon: placeholder,
-    size: 27,
-    x: 90,
-    color: "#FFA000",
-    url: "url(#I)",
-    title: "Title here",
-    description: "coming soon",
-  },
-]
-
-//pattern element in each svg(node)
-const Pattern = ({ picPath, patternID }) => (
-  <pattern
-    id={patternID}
-    x="0%"
-    y="0%"
-    height="100%"
-    width="100%"
-    viewBox="65 15 150 150"
-  >
-    <image x="0%" y="0%" width="512" height="512" xlinkHref={picPath} />
-  </pattern>
-)
-
-Pattern.propTypes = {
-  picPath: PropTypes.string.isRequired,
-  patternID: PropTypes.string,
-}
-Pattern.defaultProps = {
-  patternID: placeholder,
-}
+import bubbledata from "../components/bubbledata"
+import range from "lodash-es/range"
+import "./bubblestyle.css"
 
 const Container = styled.div`
   width: "900px";
@@ -134,1045 +13,706 @@ const Container = styled.div`
   justifycontent: "center";
   alignitems: "center";
   overflow: "hidden";
-  background: "aquamarine";
   padding: 10;
 `
 
-const ContentA = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
+const tagContainer = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.3,
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
   },
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 70, delay: 0 },
-        delay: 10,
-        left: 800,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 70, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentB = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(3000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 70, delay: 0 },
-        delay: 10,
-        left: 820,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 70, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentC = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
+}
 
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(6000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 80, delay: 0 },
-        delay: 10,
-        left: 850,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 80, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
+const tag = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
   },
-})
-const ContentD = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
+}
 
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(9000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 90, delay: 0 },
-        delay: 10,
-        left: 860,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 90, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentE = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
+const Pattern = ({ picPath, patternID, descr }) => (
+  <pattern
+    id={patternID}
+    x="0%"
+    y="0%"
+    height="100%"
+    width="100%"
+    viewBox="-4 -4 25 25"
+  >
+    <image
+      alt={descr}
+      x="0%"
+      y="0%"
+      width="17"
+      height="17"
+      xlinkHref={picPath}
+    />
+  </pattern>
+)
 
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(12000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 100, delay: 0 },
-        delay: 10,
-        left: 850,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 100, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentF = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
+Pattern.propTypes = {
+  picPath: PropTypes.string.isRequired,
+  patternID: PropTypes.string,
+  descr: PropTypes.string,
+}
+Pattern.defaultProps = {
+  patternID: "",
+  descr: "",
+}
 
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(15000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 50, delay: 0 },
-        delay: 10,
-        left: 800,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 50, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentG = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
-
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(18000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 50, delay: 0 },
-        delay: 10,
-        left: 800,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 50, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentH = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
-
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(21000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 50, delay: 0 },
-        delay: 10,
-        left: 800,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 50, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
-const ContentI = Keyframes.Spring({
-  highlight: {
-    from: { scale: 1 },
-    to: { scale: 0, opacity: 0 },
-  },
-
-  open: async next => {
-    // None of this will cause React to render, the component renders only once :-)
-    while (true) {
-      await delay(24000)
-      await next({
-        from: { opacity: 0 },
-        opacity: 1,
-      })
-      await next({
-        from: { left: 50, delay: 0 },
-        delay: 10,
-        left: 800,
-        config: config.molasses,
-      })
-      next({
-        from: { top: 100, delay: 0 },
-        top: 550,
-        delay: 10,
-        config: config.molasses,
-      })
-      await delay(2000) // don't wait for the animation above to finish, go to the next one in 2s
-      await next({ left: 50, config: config.molasses, delay: 10 })
-      await next({
-        top: 100,
-        delay: 10,
-        config: config.molasses,
-      })
-      await next({
-        width: 120,
-        height: 120,
-        delay: 10,
-        config: config.molasses,
-      })
-    }
-  },
-})
+const Node = ({ node }) => (
+  <motion.svg
+    width={2 * node.size + 6}
+    height={2 * node.size + 6}
+    drag
+    dragConstraints={{
+      top: -50,
+      left: -50,
+      right: 50,
+      bottom: 50,
+    }}
+    variants={itemAnimation}
+    custom={node.id}
+    initial={"inactive"}
+    animate={"active"}
+    key={node.id}
+    style={{
+      borderRadius: "50%",
+      cursor: "pointer",
+      marginLeft: node.left,
+      marginTop: node.top,
+      position: "absolute",
+    }}
+  >
+    <defs>
+      <Pattern patternID={node.name} picPath={node.icon} descr={node.title} />
+    </defs>
+    <g>
+      <motion.circle
+        id={node.name}
+        cx={node.size + 3}
+        cy={node.size + 3}
+        r={node.size}
+        fill={node.url}
+        stroke={node.color}
+        style={{ strokeWidth: 3 }}
+      />
+    </g>
+  </motion.svg>
+)
 
 Node.propTypes = {
-  name: PropTypes.string,
-  icon: PropTypes.string,
-  size: PropTypes.string,
-  pic: PropTypes.string,
-  color: PropTypes.string,
+  node: PropTypes.any,
 }
-const Bubbles = () => {
-  const [centerNode, setCenterNode] = useState(0)
-  const [isStart, setIsStart] = useState(false)
-  // function toggle(() => setIsStart(k => ("start"))
+Node.defaultProps = {
+  node: null,
+}
 
-  const [stateA, toggleA] = useState(false)
-  function focusA() {
-    setCenterNode(data[0])
-    toggleA(true)
+const itemAnimation = {
+  inactive: { y: 0 },
+  active: custom => ({
+    y: [0, 20, 0, 20, 0, 20, 0],
+    transition: {
+      delay: custom * 0.5,
+      loop: Infinity,
+      type: "spring",
+      duration: 8,
+      stiffness: 2,
+    },
+  }),
+}
 
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
-  }
-  const [stateB, toggleB] = useState(false)
-  function focusB() {
-    setCenterNode(data[1])
-    toggleB(true)
-    toggleA(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
-  }
-  const [stateC, toggleC] = useState(false)
-  function focusC() {
-    setCenterNode(data[2])
-    toggleC(true)
-    toggleA(false)
-    toggleB(false)
+function Bubbles() {
+  //selected node that will go to the center
+  const [centerNode, setCenterNode] = useState(null)
 
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
+  //animation for all floating nodes
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.01,
+        type: "spring",
+        duration: 1,
+        stiffness: 2,
+      },
+    },
   }
-  const [stateD, toggleD] = useState(false)
-  function focusD() {
-    setCenterNode(data[3])
-    toggleD(true)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
 
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
+  const randomContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.01,
+        type: "spring",
+        duration: 1,
+        stiffness: 2,
+      },
+    },
   }
-  const [stateE, toggleE] = useState(false)
-  function focusE() {
-    setCenterNode(data[4])
-    toggleE(true)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
+  const randomItem = {
+    inactive: { y: 0 },
+    active: custom => ({
+      y: [0, 20, 0, 20, 0, 20, 0],
+      transition: {
+        delay: custom,
+        loop: Infinity,
+        type: "spring",
+        duration: 12,
+        stiffness: 4,
+      },
+    }),
+  }
 
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
-  }
-  const [stateF, toggleF] = useState(false)
-  function focusF() {
-    setCenterNode(data[5])
-    toggleF(true)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
+  const randomData = range(15)
+  const [s1, cycleS1] = useCycle(1, 0)
+  const [s2, cycleS2] = useCycle(1, 0)
+  const [s3, cycleS3] = useCycle(1, 0)
+  const [s4, cycleS4] = useCycle(1, 0)
+  const [s5, cycleS5] = useCycle(1, 0)
+  const [s6, cycleS6] = useCycle(1, 0)
 
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
-  }
-  const [stateG, toggleG] = useState(false)
-  function focusG() {
-    setCenterNode(data[6])
-    toggleG(true)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
+  const [c, cycleC] = useCycle(0, 1)
 
-    toggleH(false)
-    toggleI(false)
-  }
-  const [stateH, toggleH] = useState(false)
-  function focusH() {
-    setCenterNode(data[7])
-    toggleH(true)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
+  function selectA() {
+    //set scale of the select node to 0
+    cycleS1()
 
-    toggleI(false)
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[0])
   }
-  const [stateI, toggleI] = useState(false)
-  function focusI() {
-    setCenterNode(data[8])
-    toggleI(true)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-  }
-  function backToNormal() {
-    setCenterNode(0)
-    toggleA(false)
-    toggleB(false)
-    toggleC(false)
-    toggleD(false)
-    toggleE(false)
-    toggleF(false)
-    toggleG(false)
-    toggleH(false)
-    toggleI(false)
-  }
-  const [hoverA, isHoverA] = useState(false)
-  // const [bindA, { widthA }] = useMeasure()
-  // const propsA = useSpring({ width: open ? width : 0 }, { height: open ? width : 0 })
-  const [{ xyA }, setA] = useSpring(() => ({ xyA: [0, 0] }))
+  function selectB() {
+    //set scale of the select node to 0
+    cycleS2()
 
-  const bindA = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setA({
-      xyA: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyB }, setB] = useSpring(() => ({ xyB: [0, 0] }))
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[1])
+  }
+  function selectC() {
+    //set scale of the select node to 0
+    cycleS3()
 
-  const bindB = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setB({
-      xyB: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyC }, setC] = useSpring(() => ({ xyC: [0, 0] }))
-  const bindC = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setC({
-      xyC: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyD }, setD] = useSpring(() => ({ xyD: [0, 0] }))
-  const bindD = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setD({
-      xyD: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyE }, setE] = useSpring(() => ({ xyE: [0, 0] }))
-  const bindE = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setE({
-      xyE: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyF }, setF] = useSpring(() => ({ xyF: [0, 0] }))
-  const bindF = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setF({
-      xyF: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyG }, setG] = useSpring(() => ({ xyG: [0, 0] }))
-  const bindG = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setG({
-      xyG: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyH }, setH] = useSpring(() => ({ xyH: [0, 0] }))
-  const bindH = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setH({
-      xyH: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
-  const [{ xyI }, setI] = useSpring(() => ({ xyI: [0, 0] }))
-  const bindI = useGesture(({ down, delta, velocity }) => {
-    velocity = clamp(velocity, 1, 8)
-    setI({
-      xyI: down ? delta : [0, 0],
-      config: { mass: velocity, tension: 500 * velocity, friction: 50 },
-    })
-  })
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[2])
+  }
+  function selectD() {
+    //set scale of the select node to 0
+    cycleS4()
+
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[3])
+  }
+  function selectE() {
+    //set scale of the select node to 0
+    cycleS5()
+
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[4])
+  }
+  function selectF() {
+    //set scale of the select node to 0
+    cycleS6()
+
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[5])
+  }
+  function cancelCenter() {
+    setCenterNode(null)
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    cycleC()
+  }
+
+  //for button shadow
+
+  function sideSelect(node) {
+    setCenterNode(node)
+    if (c === 0) {
+      cycleC()
+    }
+    if (node === bubbledata[0]) {
+      if (s1 === 1) {
+        cycleS1()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
+    }
+    if (node === bubbledata[1]) {
+      if (s2 === 1) {
+        cycleS2()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
+    }
+    if (node === bubbledata[2]) {
+      if (s3 === 1) {
+        cycleS3()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
+    }
+    if (node === bubbledata[3]) {
+      if (s4 === 1) {
+        cycleS4()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
+    }
+    if (node === bubbledata[4]) {
+      if (s5 === 1) {
+        cycleS5()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
+    }
+    if (node === bubbledata[5]) {
+      if (s6 === 1) {
+        cycleS6()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+    }
+  }
   return (
     <Container>
-      <ContentA state={stateA ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindA()}
-            style={{
-              transform: xyA.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusA}
-              style={{
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[0].name} picPath={data[0].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[0].name}
-                  cx="45"
-                  cy="50"
-                  r={data[0].size}
-                  fill={data[0].url}
-                  stroke={data[0].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentA>
-
-      <ContentB state={stateB ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindB()}
-            style={{
-              transform: xyB.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusB}
-              style={{
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[1].name} picPath={data[1].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[1].name}
-                  cx="45"
-                  cy="50"
-                  r={data[1].size}
-                  fill={data[1].url}
-                  stroke={data[1].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentB>
-      <ContentC state={stateC ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindC()}
-            style={{
-              transform: xyC.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusC}
-              style={{
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[2].name} picPath={data[2].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[2].name}
-                  cx="45"
-                  cy="50"
-                  r={data[2].size}
-                  fill={data[2].url}
-                  stroke={data[2].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentC>
-      <ContentD state={stateD ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindD()}
-            style={{
-              transform: xyD.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusD}
-              style={{
-                // transform: x.interpolate(
-                //   { range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1],
-                //     output: [0, 5, 6,7,8,9, 10, 12, 15]})
-                //   .interpolate(x => `translate3d(${x}%,0,0)`),
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[3].name} picPath={data[3].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[3].name}
-                  cx="45"
-                  cy="50"
-                  r={data[3].size}
-                  fill={data[3].url}
-                  stroke={data[3].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentD>
-      <ContentE state={stateE ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindE()}
-            style={{
-              transform: xyE.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusE}
-              style={{
-                // transform: x.interpolate(
-                //   { range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1],
-                //     output: [0, 5, 6,7,8,9, 10, 12, 15]})
-                //   .interpolate(x => `translate3d(${x}%,0,0)`),
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[4].name} picPath={data[4].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[4].name}
-                  cx="45"
-                  cy="50"
-                  r={data[4].size}
-                  fill={data[4].url}
-                  stroke={data[4].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentE>
-      <ContentF state={stateF ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindF()}
-            style={{
-              transform: xyF.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusF}
-              style={{
-                // transform: x.interpolate(
-                //   { range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1],
-                //     output: [0, 5, 6,7,8,9, 10, 12, 15]})
-                //   .interpolate(x => `translate3d(${x}%,0,0)`),
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[5].name} picPath={data[5].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[5].name}
-                  cx="45"
-                  cy="50"
-                  r={data[5].size}
-                  fill={data[5].url}
-                  stroke={data[5].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentF>
-      <ContentG state={stateG ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindG()}
-            style={{
-              transform: xyG.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusG}
-              style={{
-                // transform: x.interpolate(
-                //   { range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1],
-                //     output: [0, 5, 6,7,8,9, 10, 12, 15]})
-                //   .interpolate(x => `translate3d(${x}%,0,0)`),
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[6].name} picPath={data[6].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[6].name}
-                  cx="45"
-                  cy="50"
-                  r={data[6].size}
-                  fill={data[6].url}
-                  stroke={data[6].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentG>
-      <ContentH state={stateH ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindH()}
-            style={{
-              transform: xyH.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusH}
-              style={{
-                // transform: x.interpolate(
-                //   { range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1],
-                //     output: [0, 5, 6,7,8,9, 10, 12, 15]})
-                //   .interpolate(x => `translate3d(${x}%,0,0)`),
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[7].name} picPath={data[7].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[7].name}
-                  cx="45"
-                  cy="50"
-                  r={data[7].size}
-                  fill={data[7].url}
-                  stroke={data[7].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentH>
-
-      <ContentI state={stateI ? "highlight" : "open"} native>
-        {props => (
-          <ani.div
-            width="160px"
-            height="150px"
-            {...bindI()}
-            style={{
-              transform: xyI.interpolate(
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
-            <animated.svg
-              width="160px"
-              height="150px"
-              onClick={focusI}
-              style={{
-                // transform: x.interpolate(
-                //   { range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1],
-                //     output: [0, 5, 6,7,8,9, 10, 12, 15]})
-                //   .interpolate(x => `translate3d(${x}%,0,0)`),
-                position: "absolute",
-                ...props,
-              }}
-            >
-              <defs>
-                <Pattern patternID={data[8].name} picPath={data[8].icon} />
-              </defs>
-              <animated.g>
-                <animated.circle
-                  id={data[8].name}
-                  cx="45"
-                  cy="50"
-                  r={data[8].size}
-                  fill={data[8].url}
-                  stroke={data[8].color}
-                  stroke-width="4"
-                />
-              </animated.g>
-            </animated.svg>
-          </ani.div>
-        )}
-      </ContentI>
-      <animated.svg
-        marginTop="200px"
-        width="500px"
-        height="500px"
-        onClick={backToNormal}
-        style={{
-          position: "absolute",
-          opacity: 1,
-          marginTop: "120px",
-          marginLeft: "200px",
-        }}
+      <h1
+      style={{
+        position: "absolute",
+        marginTop: "60px",
+        marginLeft: "200px",}}
+        class="title"
       >
-        <defs>
-          <Pattern patternID="focus" picPath="" />
-        </defs>
-        <animated.g>
-          <animated.circle
-            cx="220"
-            cy="220"
-            r="200"
-            fill="url(#focus)"
-            stroke={centerNode.color}
-            stroke-width="12"
-          ></animated.circle>
-        </animated.g>
-      </animated.svg>
-      {/* <Spring to={{ opacity: centerNode === 0 ? 0 : 1 }}>
-        {styles => (
-          <animated.div
-          style={{
-            ...styles
-          }}
-          > */}
-      <animated.div
-        style={{
-          position: "absolute",
-          marginTop: "180px",
-          marginLeft: "330px",
-        }}
+        Use Cases
+      </h1>
+      <motion.div
+        variants={tagContainer}
+        class="tagContainer"
+        initial="hidden"
+        animate="visible"
       >
-        <img src={centerNode.icon} width="150px" />
-        <div
-          style={{
-            position: "absolute",
-            textAlign: "center",
-            top: "50",
-            left: "420",
-          }}
-        ></div>
-        <h2>{centerNode.title}</h2>
-        <p>{centerNode.description}</p>
-        {/* <a href="/">View Details </a> */}
-      </animated.div>
-      {/* )}
-      </Spring> */}
+        {bubbledata.map(node => (
+          <motion.div
+            key={node.id}
+            variants={tag}
+            onTap={() => sideSelect(node)}
+          >
+            {node.title}
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.div
+        variants={randomContainer}
+        initial={"hidden"}
+        animate={"visible"}
+        style={{ position: "absolute", marginLeft: "300px", marginTop: "100px"}}
+      >
+        {randomData.map(node => (
+          <motion.svg
+            width={Math.abs(Math.sin(node)) * 20 + 20}
+            height={Math.abs(Math.sin(node)) * 20 + 20}
+            variants={randomItem}
+            custom={node}
+            initial={"inactive"}
+            animate={"active"}
+            key={node}
+            style={{
+              zIndex: 0,
+              borderRadius: "50%",
+              marginLeft: node * 42 + 250,
+              marginTop:
+                310 -
+                Math.sqrt(340 * 340 - (node * 45 - 350) * (node * 45 - 300)),
+              position: "absolute",
+            }}
+          >
+            <g>
+              <motion.circle
+                cx={Math.abs(Math.sin(node)) * 10 + 10}
+                cy={Math.abs(Math.sin(node)) * 10 + 10}
+                r={Math.abs(Math.sin(node)) * 10 + 7}
+                fill="transparent"
+                stroke="#BDBDBD"
+                style={{ strokeWidth: 3 }}
+              />
+            </g>
+          </motion.svg>
+        ))}
+      </motion.div>
+      <motion.div
+        variants={randomContainer}
+        initial={"hidden"}
+        animate={"visible"}
+        style={{ position: "absolute", marginLeft: "300px", marginTop: "100px"}}
+      >
+        {randomData.map(node => (
+          <motion.svg
+            width={Math.abs(Math.sin(node)) * 20 + 20}
+            height={Math.abs(Math.sin(node)) * 20 + 20}
+            variants={randomItem}
+            custom={node}
+            initial={"inactive"}
+            animate={"active"}
+            key={node}
+            style={{
+              zIndex: 0,
+              borderRadius: "50%",
+              marginLeft: node * 42 + 250,
+              marginTop:
+                530 +
+                Math.sqrt(340 * 340 - (node * 45 - 340) * (node * 45 - 340)) -
+                350,
+              position: "absolute",
+            }}
+          >
+            <g>
+              <motion.circle
+                cx={Math.abs(Math.sin(node)) * 10 + 10}
+                cy={Math.abs(Math.sin(node)) * 10 + 10}
+                r={Math.abs(Math.sin(node)) * 10 + 7}
+                fill="transparent"
+                stroke="#BDBDBD"
+                style={{ strokeWidth: 3 }}
+              />
+            </g>
+          </motion.svg>
+        ))}
+      </motion.div>
+      <motion.div
+        variants={container}
+        initial={"hidden"}
+        animate={"visible"}
+        style={{ position: "absolute", marginLeft: "300px", marginTop: "100px" }}
+      >
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s1 }}
+          onTap={selectA}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[0]} />
+        </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s2 }}
+          onTap={selectB}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[1]} />
+        </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s3 }}
+          onTap={selectC}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[2]} />
+        </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s4 }}
+          onTap={selectD}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[3]} />
+        </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s5 }}
+          onTap={selectE}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[4]} />
+        </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s6 }}
+          onTap={selectF}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[5]} />
+        </motion.div>
+      </motion.div>
+
+      {centerNode && (
+        <motion.div
+          style={{ borderRadius: "50%", marginLeft: "300px",marginTop: "100px", position: "absolute", }}
+          onTap={cancelCenter}
+          className="center">
+          <motion.svg
+            width="500px"
+            height="500px"
+            animate={{ scale: c }}
+            onTap={cancelCenter}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              opacity: 1,
+              marginTop: "60px",
+              marginLeft: "350px",
+              borderRadius: "50%",
+            }}
+          >
+            <defs>
+              <Pattern patternID="focus" picPath="" />
+            </defs>
+            <motion.g>
+              <motion.circle
+                cx="220"
+                cy="220"
+                r="200"
+                fill="white"
+                stroke={centerNode.color}
+                style={{ strokeWidth: 5 }}
+              />
+            </motion.g>
+          </motion.svg>
+          <motion.div
+            animate={{ opacity: c }}
+            onTap={cancelCenter}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              marginTop: "100px",
+              marginLeft: "420px",
+              textAlign: "center",
+              width: "300px",
+            }}
+          >
+            <img src={centerNode.icon} width="90px" height="90px" />
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+              }}
+            >
+              <h3 maxWidth="100rem">{centerNode.title}</h3>
+              <p color="grey" maxWidth="100rem" style={{ marginTop: "30px" }}>
+                {centerNode.description}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </Container>
   )
 }
