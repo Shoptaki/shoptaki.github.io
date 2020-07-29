@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
 import logoImage from "../images/logo_horizontal.png";
-import CustomLink from "./customlink.jsx"
 import {theme} from "../theme/GlobalStyles"
 
 const Container = styled.header`
@@ -79,7 +78,7 @@ const HamburgerDiv = styled.div`
   text-align: right;  
   width: 100%;
   display: none;
-  
+
   @media (max-width: ${theme.tablet}) {
     display: block;
   }
@@ -165,6 +164,7 @@ const Header = ({siteTitle, menuLinks}) => {
                 <DropdownContent>
                   <NavLink
                     to={aboutLink.link}
+                    
                   >{aboutLink.title}</NavLink>
                 </DropdownContent>
             </Tab>

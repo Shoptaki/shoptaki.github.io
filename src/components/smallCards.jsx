@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
-import passportImage from "../images/passport.svg"
-import bankImage from "../images/bank.png"
-import CustomLink from "../components/customlink.jsx"
-import TitleLiner from "../components/titleliner.jsx"
+import passportImage from "../images/products_passport.svg"
+import bankImage from "../images/products_bank.png"
+import CustomLink from "./customlink.jsx"
+import TitleLiner from "./titleliner.jsx"
 
 const SmallCard = styled.div`
   padding-top: 30rem;
@@ -16,10 +16,13 @@ const SmallCard = styled.div`
   flex-basis: 10%;
 
   @media (max-width: ${theme.tablet}) {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: ${theme.mobile}) {
+    padding-top: 25rem;
   }
 `
 
@@ -80,13 +83,8 @@ const Button = styled.button`
     outline: none;
     user-select: none;
   }
-
-  &:hover {
-    transition: all 0.5s ease-in-out;
-    transform: scale(1.1);
-  }
   
-`;
+`
 
 function SmallCards( {scrollHandler} ) {
   return (

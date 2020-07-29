@@ -34,16 +34,6 @@ const IndexPage = () => (
       homepage
     />
 
-    {/*
-    <ControlledCarousel
-      link1="/products"
-      link2="/use-cases"
-      link3="/why-smartchain"
-      linkText="Read More"
-      linkColor={theme.fontBlueGray}
-    />
-    */
-    }
     <RCarousel />
     <CardSection />
     <Recognize />

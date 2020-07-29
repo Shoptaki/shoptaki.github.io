@@ -44,6 +44,12 @@ padding-bottom: 1em;
 const TextContainer = styled.div`
 display: flex;
 flex-direction: row;
+font-size: 1.2rem;
+
+@media (max-width: 1290px){
+    font-size: 1rem;
+  }
+  
 @media (max-width: ${theme.tablet}){
     flex-direction: column;
   }
@@ -81,7 +87,7 @@ const UniversalBenefits = (props) => (
                 Distributed Learning over multiple nodes
                 </Pt>
                 <Pt>
-                Collabortive Ai analazying and automating different types of tasks/proccess
+                Collabortive AI analazying and automating different types of tasks/proccess
                 </Pt>
             </InnerContainer>
             <InnerContainer>

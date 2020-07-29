@@ -70,7 +70,7 @@ const ListUnstyled=styled.ul`
         line-height: 0.5em;
     }
 `
-const List =styled(Link)`
+const List = styled(Link)`
     color: grey;
     font-size: 18px;
     line-height: 1em;
@@ -146,7 +146,7 @@ const FooterLinks = [
           subLinks: [
             {
               title: "What is Smartchain?",
-              link: "/What-is-smartchain"
+              link: "/why-smartchain"
             }
           ]
         },

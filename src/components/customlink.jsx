@@ -55,10 +55,10 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-const CustomLink = ({ to, displayText, linkColor, fontSize, arrow, clickHandler }) => (
+const CustomLink = React.forwardRef(({ to, displayText, linkColor, fontSize, arrow, clickHandler }, ref) => (
   <LinkContainer>
    
-      <Label to={to} linkColor={linkColor} fontSize={fontSize} onClick={clickHandler}>
+      <Label ref={ref} to={to} linkColor={linkColor} fontSize={fontSize} onClick={clickHandler}>
         {displayText}
       </Label>
     
@@ -68,7 +68,7 @@ const CustomLink = ({ to, displayText, linkColor, fontSize, arrow, clickHandler 
       
     ) : null}
   </LinkContainer>
-)
+))
 
 Arrow.propTypes = {
   linkColor: PropTypes.string,

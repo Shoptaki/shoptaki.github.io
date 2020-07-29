@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { theme } from "../theme/GlobalStyles"
 import productShow from "../images/products_smartID.png";
@@ -40,7 +40,7 @@ const SmartTitle = styled.div`
 const SmartDescription = styled.div`
   margin-top: 2rem;
 `
-const Boldword = styled.p`
+const Boldword = styled.span`
   font-family: 'Myriad Pro Semibold';
   display: inline;
 `
@@ -57,8 +57,6 @@ const ProductImage = styled.img`
 
   @media (max-width: ${theme.tablet}) {
     margin: 2.5em auto;
-    // width: 35%;
-
   }
 `
 const BenefitsTitle = styled.div`

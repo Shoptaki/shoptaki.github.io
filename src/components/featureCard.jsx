@@ -74,6 +74,11 @@ const TextBox = styled.div`
 `
 const Text = styled.p`
     padding: 1rem 2rem;
+
+    @media (max-width: 350px) {
+        font-size: 4vw;
+    }
+
 `
 const FeatureCard = () => {
     const text = [
@@ -93,7 +98,7 @@ const FeatureCard = () => {
 
     const [index, setIndex] = useState(0);
     const defaultState = text.map((item, index) => (index === 0 ? true : false));
-    const [isActive, setIsActive] = useState(defaultState);
+    const isActive = useState(defaultState);
 
     const mobileNumbers = text.map( (item, index) => (
         <MobileCard  
@@ -121,7 +126,7 @@ const FeatureCard = () => {
                 <MobileDiv>
                     <Box>
                         <Title>What are our features?</Title>
-                        <TitleLiner color="orange" size="16rem"/>
+                        <TitleLiner color="orange" size="80%"/>
                         {mobileNumbers}
                         <TextBox>
                             <Text>{mobileDescription}</Text>

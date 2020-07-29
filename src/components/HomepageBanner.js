@@ -91,7 +91,6 @@ const ImageContainer = styled.div`
     float: left;
   }
 
-
 `
 
 const Title = styled.h1`
