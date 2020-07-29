@@ -4,64 +4,81 @@ import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
-import SmartchainBanner from "../components/particleComponent";
+import SmartchainBanner from "../components/ParticleBanner.jsx";
 import styled from "styled-components";
-//import REACT_APP_MAILCHIMP_URL from "../env";
+import {theme} from "../theme/GlobalStyles"
 
 
+
+const MainDiv = styled.div `
+   text-align: left;
+   align-items: center;
+   justify-content: center; 
+   display: flex;
+`
 const Input = styled.input `
   width: 300px;
+  height: 30px;
+  padding: 0 8px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 10px;
+  border: 1px solid #666;
+  &:focus { 
+    box-shadow: 0 0 8px ${theme.fontLightBlue};
+  }
 `
 
 const Select = styled.select `
-  margin-right: auto;
-   margin-left: auto;
-   border-radius: 10px;
-   width: 300px;
-   height: 30px;
+  width: 300px;
+  height: 30px;
+  padding: 0 8px;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #666;
+  &:focus { 
+    box-shadow: 0 0 8px ${theme.fontLightBlue};
+  }
 `
 
 const TextArea = styled.textarea `
   width: 300px;
+  padding: 0 8px;
+  margin-bottom: 8px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 10px;
+  border: 1px solid #666;
+  &:focus { 
+    box-shadow: 0 0 8px ${theme.fontLightBlue};
+  }
 `
 const Button = styled.button `
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #3F9CE5;
+  display: flex;
+  margin: 20px auto;
+  padding: 5px 10px;
+  background-color: ${theme.fontLightBlue};
+  border: 1px solid ${theme.fontLightBlue};
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  &:hover {
+    background-color: ${theme.fontDarkBlue};
+    border: 1px solid ${theme.fontDarkBlue};
+    transition: all 0.2s ease-in-out;
+  }
 `
 
 const ContactLabel = styled.label `
   font-weight: bold; 
   font-size: 45px;
-  color: #3F9CE5;
+  color: ${theme.fontLightBlue};
+  justify-content: center;
+  display: flex;
+  padding-top: 30px;
 `
 
-const NameLabel = styled.label `
-  margin-right: 250px;
-`
-
-const EmailLabel = styled.label `
-  margin-right: 200px;
-`
-
-const IndustryLabel = styled.label `
-  margin-right: 230px;
-`
-
-const CompanyLabel = styled.label `
-  margin-right: 230px;
-`
-
-const MessageLabel = styled.label `
-  margin-right: 240px;
+const Label = styled.label `
+  margin-top: 10px;
+  margin-bottom: 1px;
 `
 
 class Contact extends React.Component {
@@ -94,7 +111,6 @@ class Contact extends React.Component {
       this.captchaDemo.reset();
     }
   }
-
   verifyCallback(response) {
     if (response) {
       this.setState({
@@ -111,32 +127,34 @@ class Contact extends React.Component {
     return (
       <Layout>
         <SmartchainBanner />
-        <div className="App" style={{textAlign: "center", alignItems: "center"}}>
-          <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
+        <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
+        <MainDiv>
+
           <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
 
-            <div className="form-group">
-              <NameLabel htmlFor="name"> Name </NameLabel>
+            <div>
+              <Label htmlFor="name"> Name </Label>
 
               <Input type="text" value={this.state.name}
                      onChange={({ target }) => this.setState({ ['name']: target.value })}/>
             </div>
 
-            <div className="form-group">
-              <EmailLabel htmlFor="exampleInputEmail1">Email Address</EmailLabel>
+            <div>
+              <Label htmlFor="exampleInputEmail1">Email Address</Label>
 
               <Input type="email" aria-describedby="emailHelp" value={this.state.email}
                      onChange={({ target }) => this.setState({ ['email']: target.value })}
               />
             </div>
 
-            <div className="mc-field-group">
-              <IndustryLabel htmlFor="industry">Industry</IndustryLabel>
-              <div></div>
+            <div>
+              <Label htmlFor="industry">Industry</Label>
+              
               <Select
                 name="industry"
                 id="mce-INDUSTRY"
                 onChange={({ target }) => this.setState({ ['industry']: target.value })}>
+                
                 <option value=""></option>
                 <option value="banks">Banks/Financial institutes</option>
                 <option value="Government">Government</option>
@@ -146,19 +164,19 @@ class Contact extends React.Component {
               </Select>
             </div>
 
-            <div className="form-group">
-              <CompanyLabel htmlFor="company">Company</CompanyLabel>
-              <Input type="text" className="form-control" aria-describedby="companyName" value={this.state.company}
+            <div>
+              <Label htmlFor="company">Company</Label>
+              <Input type="text" aria-describedby="companyName" value={this.state.company}
                      onChange={({ target }) => this.setState({ ['companyName']: target.value })}/>
             </div>
 
-            <div className="form-group">
-              <MessageLabel htmlFor="message">Message</MessageLabel>
-              <TextArea className="form-control" rows="10" value={this.state.message}
+            <div>
+              <Label htmlFor="message">Message</Label>
+              <TextArea rows="10" value={this.state.message}
                         onChange={({ target }) => this.setState({ ['message']: target.value })}/>
             </div>
 
-            <div style={{marginLeft: 810}}>
+            <div>
               <Recaptcha
                 sitekey="6Ld0ELAZAAAAACu7fyKy2htAhJQCCbH71rO1k7g1"
                 render="explicit"
@@ -170,20 +188,20 @@ class Contact extends React.Component {
             <Button
                     disabled={status === "sending" || status === "success"}
                     type="submit"
-                    className="btn btn-primary"> Submit
+                    > Submit
             </Button>
 
-            <div className='msg-alert'>
+            <div>
               {status === "sending" && <p >Sending</p>}
               {status === "success" && <p>Thank you for contacting!</p>}
               {status === "duplicate" && <p>Too many subscribe attempts for this email address</p>}
               {status === "empty" && <p>You must write an e-mail.</p>}
-              {status === "error" && <p>An unexpected internal error has occurred.</p>}
+              {status === "error" && <p>Enter a valid email address</p>}
             </div>
 
           </form>
           <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
-        </div>
+        </MainDiv>
 
       </Layout>
     );

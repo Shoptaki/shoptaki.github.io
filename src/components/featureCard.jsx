@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import styled from "styled-components"
-import TitleLiner from "./TitleLiner"
+import TitleLiner from "./titleliner.jsx"
 import lowerbg from "../images/lower_background.svg"
 import { theme } from "../theme/GlobalStyles.js"
 
@@ -93,7 +93,7 @@ const FeatureCard = () => {
 
     const [index, setIndex] = useState(0);
     const defaultState = text.map((item, index) => (index === 0 ? true : false));
-    const [isActive, setIsActive] = useState(defaultState);
+    const isActive = useState(defaultState);
 
     const mobileNumbers = text.map( (item, index) => (
         <MobileCard  
@@ -108,8 +108,8 @@ const FeatureCard = () => {
     
     const mobileDescription = text[index].description;
 
-    const desktopCards = text.map( (item, index) => (
-        <DesktopCard>
+    const desktopCards = text.map( (item) => (
+        <DesktopCard key={item.title}>
             <h5>{item.title}</h5>
             <TitleLiner color="blue" />
             <p style={{paddingTop: "2rem"}}>{item.description}</p>

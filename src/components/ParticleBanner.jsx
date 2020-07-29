@@ -11,13 +11,8 @@ const ParticalContainer= styled.div`
     left: 0;  
     bottom:100rem;     
     width: 100%;
-    z-index: -2;
-    /* height: 50rem; */
-    @media (max-width: ${theme.mobile}) {
-      /* height: 500rem; */
-      
-  }
-`;
+    z-index: -1;
+`
 
 
 function SmartchainBanner() {
@@ -29,12 +24,13 @@ function SmartchainBanner() {
     <ParticalContainer>
      
       <Particles
-        height={width < theme.phone ? '48.5rem' : '36rem'}
+        height={width < theme.phone ? '48.5rem' : '40rem'}
+        style={{backgroundColor: 'white'}}
         params={{
       
           particles: {
             number: {
-              value: 110,
+              value: 135,
               density: {
                 enable: true,
                 value_area: 1803.4120608655228

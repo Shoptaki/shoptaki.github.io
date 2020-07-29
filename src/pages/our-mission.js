@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
-import UniversalBenefits from '../components/UniversalBenefits';
+
 
 const Mission = () => (
     <Layout>
@@ -11,8 +11,14 @@ const Mission = () => (
         <WhySmartchainBanner 
         description = "Our Mission"
         regulartext = "At Shoptaki, we are taking the concept of blockchain to the next level, which will revolutionize the way we handle data and harness the power of A.I. We believe that people have the right to own their data - in a future where everything is connected, streamlined, and autonomous. The belief that technology can benefit humanity, not replace it, is at the core of Shoptaki. Here at Shoptaki, our mission is to help make the world a better, more efficient, and safer place for all."
+        
         />
+<<<<<<< HEAD
         <UniversalBenefits/>
+=======
+       
+
+>>>>>>> 808f9c1701ad4b76262ce5cebb59cdb452080407
 
     </Layout>
 )

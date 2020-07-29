@@ -31,6 +31,7 @@ const IndexPage = () => (
       title="Take Control. Work Smarter. Enjoy Success. "
       description="We provide a source of collaborative AI solutions for users to make smarter choices and simplify global interactions."
       color="orange"
+      homepage
     />
 
     {/*

@@ -97,7 +97,7 @@ a colored underline of title, with gradient color
 1. import it
 
 ```
-import TitleLiner from "../components/titleliner"
+import TitleLiner from "../components/titleliner.jsx"
 ```
 
 2. create the component

@@ -4,7 +4,7 @@ import autonomous from "../images/homepage_autonomy.png";
 import efficiency from "../images/homepage_clock.png";
 import security from "../images/homepage_security.png";
 import { theme } from "../theme/GlobalStyles.js"
-import TitleLiner from "./titleliner"
+import TitleLiner from "./titleliner.jsx"
 
 const HeaderTitle = styled.div`
   text-align: center;
@@ -108,7 +108,7 @@ const Efficiency = () => (
 
 const Security = () => (
   <div>
-    <CardContainer style={{"margin-right": "50px"}}>
+    <CardContainer style={{"marginRight": "50px"}}>
     <div>
       <img src={security} alt="Quantum Secure" />
       <TitleContainer><h2>SECURITY</h2></TitleContainer>

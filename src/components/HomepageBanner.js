@@ -10,22 +10,24 @@ import { theme } from "../theme/GlobalStyles.js"
 
 const Container = styled.div`
   display: flex;
-  background-image: url(${mobileGraphics});
+  background-image: url(${mobileGraphics}); 
+  
   flex-direction: column;
   padding-left: 4rem;
-
+  
   /* Full height */
-  height: 95vh;
+  height: 100%;
   background-position: left bottom;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 80rem;
   background-color: white;
-
+  overflow: hidden;
   
 
   width: 100%;
   display: inline-block;
   page-break-after: always;
+  
 
   /* include padding into the layout */
   -webkit-box-sizing: border-box;
@@ -34,22 +36,21 @@ const Container = styled.div`
 
 
   /* for tablet and desktop */
-  @media (min-width: ${theme.mobile}) {
-    background-image: url(${graphics});
-    background-size: auto;
+  @media (min-width: ${theme.tablet}) {
+    background-image: url(${graphics}); 
+    background-size: 80rem;
     flex-direction: row;
     height: 40rem;
     padding: 2rem 0 0 3rem;
   }
 
-`
+`;
 
 const TextContainer = styled.div`
   float: left;
   flex-flow: nowrap column;
   /* flex: 1; */
   padding: 2rem 3rem 0 2rem;
-  width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -60,21 +61,38 @@ const TextContainer = styled.div`
     padding: 0 3rem 0 6rem;
   }
   @media (min-width: ${theme.tablet}) {
-    width: 60%;
+    
   }
 `
 //to hold globe in home page
 const ImageContainer = styled.div`
   float: right;
-  margin-top: 10rem;
-  #canvas:focus {
-    outline: none;
+  margin-top: 2rem;
+  width: 50vw;
+  height: 36rem;
+  overflow: hidden;
+
+  @media (max-width: ${theme.desktop}) {
+    width: 40vw;
+    height: 26rem;
+    
+  }
+
+  @media (max-width: ${theme.tablet}) {
+    width: 30rem;
+    height: 30rem;
+    float: left;
+    
   }
 
   @media (max-width: ${theme.mobile}) {
-    
-    margin-top: 10rem;
+    width: 30rem;
+    height: 30rem;
+    float: left;
+    //margin-bottom: 10rem;
   }
+
+
 `
 
 const Title = styled.h1`
@@ -142,6 +160,7 @@ const Banner = ({
   linkSize,
 }) => (
   <Container>
+    
     <TextContainer>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
@@ -156,9 +175,12 @@ const Banner = ({
       />
 
     </TextContainer>
+    
     <ImageContainer>
-      <Globe id="globe" />
+    <Globe />
     </ImageContainer>
+    
+   
   </Container>
 )
 
