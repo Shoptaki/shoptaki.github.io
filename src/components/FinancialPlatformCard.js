@@ -88,7 +88,7 @@ const FinancialPlatformCard = React.forwardRef((props, ref) => {
             
             <Description>
               <p>Finance Smartchain ID allows for transactional communication to be
-              secure by being decentralized.</p>
+              secure by being a hybrid structure of centralized and decentralized systems.</p>
               <p>Smartchain tracks data across different ecosystems to prevent fraud
               and automate certain processes.</p>
             </Description>
