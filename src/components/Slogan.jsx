@@ -81,8 +81,8 @@ const Description = styled.p`
   }
 `;
 
-const Slogan = ({ title, description, color, homepage, paddingM }) => (
-  <Container homepage={homepage} paddingM={paddingM}>
+const Slogan = ({ title, description, color, homepage }) => (
+  <Container homepage={homepage}>
     <TextContainer>
       <Title>{title}</Title>
       <TitleLiner color={color} size={"100%"}/>

@@ -36,9 +36,9 @@ const UniversalBenefitsContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-font-size: 2em;
-text-align: left;
-padding-bottom: 1em;
+    font-size: 2em;
+    text-align: left;
+    padding-bottom: 1em;
 `;
 
 const TextContainer = styled.div`
