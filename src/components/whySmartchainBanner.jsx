@@ -18,7 +18,6 @@ const TextContainer = styled.div`
   padding-left:8rem;
   padding-right:5rem;
   padding-bottom:5rem;  
-  width: 100%;
   height: 100%;
   @media (max-width: ${theme.mobile}) {
     padding: 0 3rem;
@@ -27,7 +26,6 @@ const TextContainer = styled.div`
 
 const Title = styled.h1`
   margin-top:10rem;
-  width: 100%;
   font-weight: bold;
   font-size: 2rem;
   color: #8EB4D0;
