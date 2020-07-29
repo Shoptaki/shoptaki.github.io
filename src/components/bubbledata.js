@@ -4,6 +4,8 @@ import mfg from "../images/usecase-icons/mfg.png"
 import business from "../images/usecase-icons/business.png"
 import medical from "../images/usecase-icons/medical.png"
 import travel from "../images/usecase-icons/travel.png"
+import auto from "../images/usecase-icons/automotive.png"
+import tele from "../images/usecase-icons/tele.png"
 
 export default [
   {
@@ -16,8 +18,8 @@ export default [
     x: 10,
     color: "#FFEE58",
     url: "url(#A)",
-    title: "Financial Services",
-    description: "We provide financial market speculation, fraud & AML detection, and faster transaction & application fullfilment (loans, insurance, etc.)",
+    title: "Financial Industry",
+    description: "Fraud & AML detection, Financial investigation, KYC, Financial market predictions, Faster and secure remittance, Application fulfillment (Loans, insurance, etc..), Compliance, reporting, and much more!",
   },
   {
     id: 2,
@@ -30,7 +32,7 @@ export default [
     color: "#D32F2F",
     url: "url(#B)",
     title: "Ad Tech",
-    description: "For advertising, we're eminent in customer profiling, data management & governance, and focused-marketing strategies.",
+    description: "Customer profiling, Data management and governance, and Market analytics",
   },
   {
     id: 3,
@@ -43,33 +45,33 @@ export default [
     color: "#FFCC80",
     url: "url(#C)",
     title: "Supply Chain / Manufacturing",
-    description: "Our business covers Planning & Optimization, and Resource Optimization, which satisfies Fault-tolerance & Maitenance, etc. ",
+    description: "Supply chain optimization, Resource optimization, Trade financing, and much more!",
   },
   {
     id: 4,
     name: "D",
     icon: business,
-    left: 820,
-    top: 200,
+    left: 780,
+    top: 130,
     size: 40,
     x: 40,
     color: "#F48FB1",
     url: "url(#D)",
     title: "Business",
-    description: "What you can get for your own business are, safe and efficient Global Trade, Business Health, Tax & Cash Flow Optimization, and Employee & Customer Profiling.",
+    description: "Be able to do safe and efficient global trade, get holisitic overview of your business health, Tax & cash flow optimization, and Employee & customer profiling",
   },
   {
     id: 5,
     name: "E",
     icon: medical,
     left: 790,
-    top: 310,
+    top: 240,
     size: 40,
     x: 50,
     color: "#AED581",
     url: "url(#E)",
     title: "Medical",
-    description: "Our services are Omni-present Medical Records & Accountability, Data Governance & Analysis and Predictive Analysis, etc., for medical industries.",
+    description: " Secure transfer of Medical records and keeping accountability, Data governance & analysis, predictive analysis In patients health and infections, etc.",
   },
   {
     id: 6,
@@ -82,6 +84,32 @@ export default [
     color: "#00ACC1",
     url: "url(#F)",
     title: "Travel",
-    description: "For travel angencies and companies, we provide Identity Management, International Wallet Access and Localized Customer Services, etc.",
+    description: "Provide identity management and universal ID, international wallet access, asset tracking, and much more.",
+  },
+  {
+    id: 7,
+    name: "G",
+    icon: auto,
+    left: 340,
+    top: 360,
+    size: 40,
+    x: 60,
+    color: "#C4E0E5",
+    url: "url(#G)",
+    title: "Automotive",
+    description: "Autonomous Vehicles communicate with each other to ensure safety, enhance security for vehicles, and much more.",
+  },
+  {
+    id: 8,
+    name: "H",
+    icon: tele,
+    left: 690,
+    top: 400,
+    size: 40,
+    x: 60,
+    color: "#d9a7c7",
+    url: "url(#H)",
+    title: "Telecommunication",
+    description: "Encrypted communication especially for emergency response, Optimized mesh networks, Self-contained ecosystems, etc.",
   },
 ]

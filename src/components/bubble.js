@@ -182,13 +182,17 @@ function Bubbles() {
   const [s4, cycleS4] = useCycle(1, 0)
   const [s5, cycleS5] = useCycle(1, 0)
   const [s6, cycleS6] = useCycle(1, 0)
+  const [s7, cycleS7] = useCycle(1, 0)
+  const [s8, cycleS8] = useCycle(1, 0)
 
   const [c, cycleC] = useCycle(0, 1)
 
   function selectA() {
     //set scale of the select node to 0
-    cycleS1()
-
+    if(s1 === 1){
+      cycleS1()
+    }
+    
     //set the scale of the center Node's svg outline to 5, opacity of the text to 1
     if (c === 0) {
       cycleC()
@@ -207,14 +211,22 @@ function Bubbles() {
     }
     if (s6 === 0) {
       cycleS6()
+    }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8 === 0) {
+      cycleS8()
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[0])
   }
   function selectB() {
     //set scale of the select node to 0
-    cycleS2()
-
+    if(s2 === 1){
+      cycleS2()
+    }
+    
     //set the scale of the center Node's svg outline to 5, opacity of the text to 1
     if (c === 0) {
       cycleC()
@@ -233,14 +245,22 @@ function Bubbles() {
     }
     if (s6 === 0) {
       cycleS6()
+    }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8 === 0) {
+      cycleS8()
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[1])
   }
   function selectC() {
     //set scale of the select node to 0
-    cycleS3()
-
+    if(s3 === 1){
+      cycleS3()
+    }
+    
     //set the scale of the center Node's svg outline to 5, opacity of the text to 1
     if (c === 0) {
       cycleC()
@@ -259,14 +279,22 @@ function Bubbles() {
     }
     if (s6 === 0) {
       cycleS6()
+    }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8 === 0) {
+      cycleS8()
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[2])
   }
   function selectD() {
     //set scale of the select node to 0
-    cycleS4()
-
+    if(s4 === 1){
+      cycleS4()
+    }
+    
     //set the scale of the center Node's svg outline to 5, opacity of the text to 1
     if (c === 0) {
       cycleC()
@@ -285,14 +313,21 @@ function Bubbles() {
     }
     if (s6 === 0) {
       cycleS6()
+    }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8 === 0) {
+      cycleS8()
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[3])
   }
   function selectE() {
     //set scale of the select node to 0
-    cycleS5()
-
+    if(s5 === 1){
+      cycleS5()
+    }
     //set the scale of the center Node's svg outline to 5, opacity of the text to 1
     if (c === 0) {
       cycleC()
@@ -312,13 +347,20 @@ function Bubbles() {
     if (s6 === 0) {
       cycleS6()
     }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8 === 0) {
+      cycleS8()
+    }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[4])
   }
   function selectF() {
     //set scale of the select node to 0
-    cycleS6()
-
+    if(s6 === 1){
+      cycleS6()
+    }
     //set the scale of the center Node's svg outline to 5, opacity of the text to 1
     if (c === 0) {
       cycleC()
@@ -338,8 +380,80 @@ function Bubbles() {
     if (s1 === 0) {
       cycleS1()
     }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8=== 0) {
+      cycleS8()
+    }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[5])
+  }
+  function selectG() {
+    //set scale of the select node to 0
+    if(s7 === 1){
+      cycleS7()
+    }
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s6 === 0) {
+      cycleS6()
+    }
+    if (s8=== 0) {
+      cycleS8()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[6])
+  }
+  function selectH() {
+    //set scale of the select node to 0
+    if(s8 === 1){
+      cycleS8()
+    }
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
+    if (s2 === 0) {
+      cycleS2()
+    }
+    if (s3 === 0) {
+      cycleS3()
+    }
+    if (s4 === 0) {
+      cycleS4()
+    }
+    if (s5 === 0) {
+      cycleS5()
+    }
+    if (s1 === 0) {
+      cycleS1()
+    }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s6=== 0) {
+      cycleS6()
+    }
+    //set the centerNode to selectNode
+    setCenterNode(bubbledata[7])
   }
   function cancelCenter() {
     setCenterNode(null)
@@ -361,11 +475,16 @@ function Bubbles() {
     if (s6 === 0) {
       cycleS6()
     }
+    if (s7 === 0) {
+      cycleS7()
+    }
+    if (s8 === 0) {
+      cycleS8()
+    }
     cycleC()
   }
 
-  //for button shadow
-
+  
   function sideSelect(node) {
     setCenterNode(node)
     if (c === 0) {
@@ -390,6 +509,12 @@ function Bubbles() {
       if (s6 === 0) {
         cycleS6()
       }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s8 === 0) {
+        cycleS8()
+      }
     }
     if (node === bubbledata[1]) {
       if (s2 === 1) {
@@ -409,6 +534,12 @@ function Bubbles() {
       }
       if (s6 === 0) {
         cycleS6()
+      }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s8 === 0) {
+        cycleS8()
       }
     }
     if (node === bubbledata[2]) {
@@ -430,6 +561,12 @@ function Bubbles() {
       if (s6 === 0) {
         cycleS6()
       }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s8 === 0) {
+        cycleS8()
+      }
     }
     if (node === bubbledata[3]) {
       if (s4 === 1) {
@@ -449,6 +586,12 @@ function Bubbles() {
       }
       if (s6 === 0) {
         cycleS6()
+      }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s8 === 0) {
+        cycleS8()
       }
     }
     if (node === bubbledata[4]) {
@@ -470,6 +613,12 @@ function Bubbles() {
       if (s6 === 0) {
         cycleS6()
       }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s8 === 0) {
+        cycleS8()
+      }
     }
     if (node === bubbledata[5]) {
       if (s6 === 1) {
@@ -490,6 +639,64 @@ function Bubbles() {
       if (s5 === 0) {
         cycleS5()
       }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s8 === 0) {
+        cycleS8()
+      }
+    }
+    if (node === bubbledata[6]) {
+      if (s7 === 1) {
+        cycleS7()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
+      if (s8 === 0) {
+        cycleS8()
+      }
+    }
+    if (node === bubbledata[7]) {
+      if (s8 === 1) {
+        cycleS8()
+      }
+      if (s2 === 0) {
+        cycleS2()
+      }
+      if (s3 === 0) {
+        cycleS3()
+      }
+      if (s4 === 0) {
+        cycleS4()
+      }
+      if (s1 === 0) {
+        cycleS1()
+      }
+      if (s5 === 0) {
+        cycleS5()
+      }
+      if (s7 === 0) {
+        cycleS7()
+      }
+      if (s6 === 0) {
+        cycleS6()
+      }
     }
   }
   return (
@@ -497,11 +704,11 @@ function Bubbles() {
       <h1
       style={{
         position: "absolute",
-        marginTop: "60px",
-        marginLeft: "200px",}}
+        marginTop: "40px",
+        marginLeft: "68px",}}
         class="title"
       >
-        Use Cases
+        Potential possibilities with the Smartchain
       </h1>
       <motion.div
         variants={tagContainer}
@@ -519,12 +726,11 @@ function Bubbles() {
           </motion.div>
         ))}
       </motion.div>
-
       <motion.div
         variants={randomContainer}
         initial={"hidden"}
         animate={"visible"}
-        style={{ position: "absolute", marginLeft: "300px", marginTop: "100px"}}
+        style={{ position: "absolute", marginLeft: "450px", marginTop: "100px"}}
       >
         {randomData.map(node => (
           <motion.svg
@@ -562,7 +768,7 @@ function Bubbles() {
         variants={randomContainer}
         initial={"hidden"}
         animate={"visible"}
-        style={{ position: "absolute", marginLeft: "300px", marginTop: "100px"}}
+        style={{ position: "absolute", marginLeft: "450px", marginTop: "100px"}}
       >
         {randomData.map(node => (
           <motion.svg
@@ -601,7 +807,7 @@ function Bubbles() {
         variants={container}
         initial={"hidden"}
         animate={"visible"}
-        style={{ position: "absolute", marginLeft: "300px", marginTop: "100px" }}
+        style={{ position: "absolute", marginLeft: "450px", marginTop: "100px" }}
       >
         <motion.div
           style={{ borderRadius: "50%" }}
@@ -651,11 +857,27 @@ function Bubbles() {
         >
           <Node node={bubbledata[5]} />
         </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s7 }}
+          onTap={selectG}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[6]} />
+        </motion.div>
+        <motion.div
+          style={{ borderRadius: "50%" }}
+          animate={{ scale: s8 }}
+          onTap={selectH}
+          whileHover={{ scale: 1.1, zIndex: 1 }}
+        >
+          <Node node={bubbledata[7]} />
+        </motion.div>
       </motion.div>
 
       {centerNode && (
         <motion.div
-          style={{ borderRadius: "50%", marginLeft: "300px",marginTop: "100px", position: "absolute", }}
+          style={{ borderRadius: "50%", marginLeft: "450px",marginTop: "100px", position: "absolute", }}
           onTap={cancelCenter}
           className="center">
           <motion.svg
@@ -692,13 +914,13 @@ function Bubbles() {
             style={{
               cursor: "pointer",
               position: "absolute",
-              marginTop: "100px",
+              marginTop: "120px",
               marginLeft: "420px",
               textAlign: "center",
               width: "300px",
             }}
           >
-            <img src={centerNode.icon} width="90px" height="90px" />
+            <img src={centerNode.icon} width="80px" height="80px" />
             <div
               style={{
                 textAlign: "center",

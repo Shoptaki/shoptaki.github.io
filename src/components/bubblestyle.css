@@ -1,22 +1,25 @@
 .title {
-  
   background: linear-gradient(90deg, #f5bc1f 0%, #2d7fdb 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .tagContainer {
     position: absolute;
-    width: 320px;
+    width: 640px;
     height: 240px;
-    margin-top: 100px;
-    margin-left: 150px;
+    margin-top: 180px;
+    margin-left: 3rem;
+    display: flex;
+    flex-basis: 10%;
+    flex-wrap: wrap;
   }
   .tagContainer > div {
     cursor: pointer;
     position: relative;
-    width: 320px;
+    width: 280px;
     height: 70px;
     margin-top: 20px;
+    margin-left: 20px;;
     overflow: visible;
     pointer-events: auto;
     transform-origin: 50% 50% 0px;
@@ -24,7 +27,7 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
     color: white;
     line-height: 70px;
-    padding-left: 32px;
+    padding-left: 25px;
     font-size: 14.5px;
     font-weight: bold;
     background: lightblue;
@@ -32,40 +35,52 @@
   }
   
   .tagContainer > div:nth-child(1) {
-    background: linear-gradient(135deg, #f5bc1f 0%, #FFFFFF 100%);
+    background: linear-gradient(90deg, #f5bc1f 0%, #FFFFFF 100%);
   }
   .tagContainer > div:nth-child(1):hover {
     background: linear-gradient(135deg, #c09a33 0%, #d6d4d4 100%);
   }
   .tagContainer > div:nth-child(2) {
-    background: linear-gradient(135deg, #FDC830 0%, #f08a46 100%);
+    background: linear-gradient(90deg, #4cc2ec 0%, #FFFFFF 100%);
   }
   .tagContainer > div:nth-child(2):hover{
     background: linear-gradient(135deg, #c99e27 0%, #c45f2c 100%);
   }
   .tagContainer > div:nth-child(3) {
-    background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%);
+    background: linear-gradient(135deg, #FDC830 0%, #eea849 100%);
   }
   .tagContainer > div:nth-child(3):hover {
     background: linear-gradient(135deg, #c99328 0%, #cc3d16 100%);
   }
   
   .tagContainer > div:nth-child(4) {
-    background: linear-gradient(135deg, #0b5091 0%, #1CB5E0 100%);
+    background: linear-gradient(135deg, #00B4DB 0%, #59e3fc 100%);
   }
   .tagContainer > div:nth-child(4):hover{
     background: linear-gradient(135deg, #093f72 0%, #168fb1 100%);
   }
   
   .tagContainer > div:nth-child(5) {
-    background: linear-gradient(135deg, #6DD5FA 0%, #1CB5E0 100%);
+    background: linear-gradient(135deg, #f48b45 0%, #eea849 100%);
   }
   .tagContainer > div:nth-child(5):hover {
     background: linear-gradient(135deg, #59adcc 0%, #168fb1 100%);
   }
   .tagContainer > div:nth-child(6) {
-    background: linear-gradient(135deg, #4cc2ec 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
   }
   .tagContainer > div:nth-child(6):hover {
     background: linear-gradient(135deg, #54a3c0 0%, #bbb9b9 100%);
+  }
+  .tagContainer > div:nth-child(7) {
+    background: linear-gradient(150deg, #f59758 0%, #fc4a1a 100%);
+  }
+  .tagContainer > div:nth-child(7):hover {
+    background: linear-gradient(135deg, #54a3c0 0%, #bbb9b9 100%);
+  }
+  .tagContainer > div:nth-child(8) {
+    background: linear-gradient(135deg, #0b5091 0%, #1CB5E0 100%);
+  }
+  .tagContainer > div:nth-child(8):h5over {
+    background: linear-gradient(13deg, #54a3c0 0%, #bbb9b9 100%);
   }

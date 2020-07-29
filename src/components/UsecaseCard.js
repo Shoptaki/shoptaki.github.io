@@ -45,21 +45,29 @@ const Title = styled.div`
   flex-wrap: wrap;
   font-weight: bold;
   font-size: 25px;
-  margin-top: 1rem;
-  margin-bottom: 0.5em;
+  margin-top: 2rem;
 `
-
 const Description = styled.div`
-  margin-top: 1rem;
   font-size: 16px;
-  height: 8rem;
+  max-height: 8rem;
+  margin-top: 1rem;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-
-  @media (max-width: ${theme.mobile}) {
-    margin-top: 2rem;
+`
+const ContentContainer = styled.div`
+  max-height: 25rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  @media (max-width: ${theme.tablet}) {
+    width: 18rem;
+  }
+  @media (max-width: ${theme.phone}) {
+    width: 18rem;
   }
 `
 const CardContainer = styled.div`
@@ -72,6 +80,7 @@ const CardContainer = styled.div`
   margin-left: 2rem;
   margin-top: 2rem;
   padding: 2rem;
+  padding-top: 0rem;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   @media (max-width: ${theme.tablet}) {
     margin-left: 1rem;
@@ -87,31 +96,31 @@ const LineBreaker = styled.div`
   flex-basis: 100%;
   height: 0;
 `
+const PageTitle = styled.h1`
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  @media (max-width: ${theme.tablet}) {
+    margin-top: 0rem;
+    text-align: center;
+  }
+`
 const Item = ({ node }) => (
   <CardContainer>
-    <img src={node.icon} width="90px" height="90px" marginTop="5rem" />
-    <LineBreaker />
-    <Title>{node.title}</Title>
-    <Description>{node.description}</Description>
+    <ContentContainer>
+      <img src={node.icon} width="80px" height="80px" />
+      <LineBreaker />
+      <Title>{node.title}</Title>
+      <Description>{node.description}</Description>
+    </ContentContainer>
   </CardContainer>
 )
 
 Item.propTypes = {
   node: PropTypes.any.isRequired,
 }
-
-const PageTitle = styled.h1`
-  margin-top: 3rem;
-  //margin-left: 15rem;
-  white-space: nowrap;
-  @media (max-width: ${theme.tablet}) {
-    margin-top: 0rem;
-    text-align: center;
-  }
-`
 const UsecaseCard = () => (
   <PageContainer>
-    <PageTitle>Use Cases</PageTitle>
+    <PageTitle>Potential possibilities with the Smartchain</PageTitle>
     <Container>
       {bubbledata.map(node => (
         <Item node={node} />

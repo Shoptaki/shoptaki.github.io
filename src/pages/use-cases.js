@@ -20,14 +20,14 @@ const UseCases = () => {
     <div>
       {checkMobile.matches ? (
         <Layout>
-          <SEO title="Use Cases" />
+          <SEO title="Potential possibilities with the Smartchain" />
           {/* mobile: display card view */}
           <UsecaseCard />
         </Layout>
       ) : (
         <Layout cancelFooter="true">
           {/* no footer for animation page */}
-          <SEO title="Use Cases" />
+          <SEO title="Potential possibilities with the Smartchain" />
           {/* laptop: display animation */}
           <Bubbles />
         </Layout>
