@@ -16,9 +16,9 @@ export default [
     top: 250,
     size: 42,
     x: 10,
-    color: "#FFEE58",
+    color: "#F3F9A7",
     url: "url(#A)",
-    title: "Financial Industry",
+    title: "FinTech",
     description: "Fraud & AML detection, Financial investigation, KYC, Financial market predictions, Faster and secure remittance, Application fulfillment (Loans, insurance, etc..), Compliance, reporting, and much more!",
   },
   {
@@ -58,7 +58,7 @@ export default [
     color: "#F48FB1",
     url: "url(#D)",
     title: "Business",
-    description: "Be able to do safe and efficient global trade, get holisitic overview of your business health, Tax & cash flow optimization, and Employee & customer profiling",
+    description: "Be able to do safe and efficient global trade, achieve holisitic overview of your business health, Tax & cash flow optimization, and Employee & customer profiling",
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ export default [
     color: "#AED581",
     url: "url(#E)",
     title: "Medical",
-    description: " Secure transfer of Medical records and keeping accountability, Data governance & analysis, predictive analysis In patients health and infections, etc.",
+    description: "Secure transfer of Medical records and keeping accountability, Data governance & analysis, predictive analysis In patients health and infections, etc.",
   },
   {
     id: 6,

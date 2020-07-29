@@ -120,7 +120,7 @@ Item.propTypes = {
 }
 const UsecaseCard = () => (
   <PageContainer>
-    <PageTitle>Potential possibilities with the Smartchain</PageTitle>
+    <PageTitle>Possibilities are endless with Smartchain</PageTitle>
     <Container>
       {bubbledata.map(node => (
         <Item node={node} />

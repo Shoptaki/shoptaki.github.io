@@ -705,10 +705,10 @@ function Bubbles() {
       style={{
         position: "absolute",
         marginTop: "40px",
-        marginLeft: "68px",}}
+        marginLeft: "3.2rem",}}
         class="title"
       >
-        Potential possibilities with the Smartchain
+        Possibilities are endless with Smartchain
       </h1>
       <motion.div
         variants={tagContainer}
