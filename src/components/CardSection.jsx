@@ -108,7 +108,7 @@ const Efficiency = () => (
 
 const Security = () => (
   <div>
-    <CardContainer style={{"marginRight": "50px"}}>
+    <CardContainer>
     <div>
       <img src={security} alt="Quantum Secure" />
       <TitleContainer><h2>SECURITY</h2></TitleContainer>

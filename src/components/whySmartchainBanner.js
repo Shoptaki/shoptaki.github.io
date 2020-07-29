@@ -114,12 +114,12 @@ const RegularText = styled.p`
   }) => (
     <Container>
       <SmartchainBanner />
-        <TextContainer> 
-            <Title display={title}>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
-            <Description>{description}</Description>
-            <RegularText>{regulartext}</RegularText>      
-        </TextContainer>
+      <TextContainer> 
+          <Title display={title}>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <Description>{description}</Description>
+          <RegularText>{regulartext}</RegularText>      
+      </TextContainer>
     </Container>
   )
   

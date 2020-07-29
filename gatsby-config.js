@@ -36,7 +36,10 @@ module.exports = {
           }
         ]
       }, 
-      
+      {
+        title: "Contact Us",
+        link: "/contact-us"
+      }
 
     ],
 

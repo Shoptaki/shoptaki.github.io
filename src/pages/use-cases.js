@@ -18,7 +18,7 @@ const UseCases = () => (
         siteTitle={data.site.siteMetadata.title}
         menuLinks={data.site.siteMetadata.menuLinks}
       /> */}
-    <Bubbles />
+    
   </Container>
 )
 

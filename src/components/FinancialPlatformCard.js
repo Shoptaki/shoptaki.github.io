@@ -13,7 +13,7 @@ background-image: url(${lowerbg});
 height: 50rem;
 position: absolute;
 z-index: -1;
-top: 180rem;
+top: 185rem;
 left: 0;
 width: 100%;
 

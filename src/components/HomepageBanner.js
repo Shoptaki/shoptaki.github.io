@@ -89,7 +89,6 @@ const ImageContainer = styled.div`
     width: 30rem;
     height: 30rem;
     float: left;
-    //margin-bottom: 10rem;
   }
 
 

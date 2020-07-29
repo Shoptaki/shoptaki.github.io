@@ -5,7 +5,7 @@ import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
 import SmartchainBanner from "../components/ParticleBanner";
 import styled from "styled-components";
-import {theme} from "../theme/GlobalStyles"
+import { theme } from "../theme/GlobalStyles"
 
 
 
@@ -37,8 +37,8 @@ const Input = styled.input `
   margin-right: auto;
   border-radius: 10px;
    @media (max-width: 376px) {
-    width: 200px
-    margin-left: 0px
+    width: 200px;
+    margin-left: 0px;
   }
 `
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Particles from "react-particles-js";
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
@@ -18,8 +18,8 @@ const ParticalContainer= styled.div`
 function SmartchainBanner() {
     const [width, setWidth] = useState(window.innerWidth)
 
-    window.onresize = () => setWidth(window.innerWidth)
-
+    useEffect(() => window.onresize = () => setWidth(window.innerWidth))
+  
     return (
     <ParticalContainer>
      
@@ -37,7 +37,7 @@ function SmartchainBanner() {
               }
             },
             color: {
-              value: "#8EB4D0"
+              value: "#88CFE0"
             },
             shape: {
               type: "circle",

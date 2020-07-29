@@ -44,8 +44,23 @@ const Tab = styled.div`
   font-weight: bold;
   &:hover ${DropdownContent} {
     display: block;
+    
+  }
+
+  &:hover {
+    color: ${theme.fontDarkBlue};
   }
 `
+const NavLink = styled(Link)`
+  color: black;
+  padding-left: 5px;
+  width: 100%;
+  display: inline-block;
+  &:hover {
+    color: ${theme.fontDarkBlue};
+  }
+`;
+
 const ContactLink = styled(Link)`
   border: solid;
   border-color: ${theme.fontDarkBlue};
@@ -53,16 +68,18 @@ const ContactLink = styled(Link)`
   border-width: 2px;
   padding: 10px;
   color: #000;
+
   &:hover {
     background-color: ${theme.fontDarkBlue};
     color: #fff;
-    transition: all 0.2s ease-in-out ;
+    transition: all 0.3s ease-in-out ;
   }
 `
 const HamburgerDiv = styled.div`
   text-align: right;  
   width: 100%;
   display: none;
+  
   @media (max-width: ${theme.tablet}) {
     display: block;
   }
@@ -146,35 +163,27 @@ const Header = ({siteTitle, menuLinks}) => {
             <Tab>
                 About Us
                 <DropdownContent>
-                  <CustomLink
+                  <NavLink
                     to={aboutLink.link}
-                    displayText={aboutLink.title}
-                    linkColor="black"
-                  />
+                  >{aboutLink.title}</NavLink>
                 </DropdownContent>
             </Tab>
 
             <Tab>
-                <CustomLink 
+                <NavLink 
                   to={smartchainLink.link}
-                  displayText={smartchainLink.title}
-                  linkColor="black"
-                />
+                >{smartchainLink.title}</NavLink>
             </Tab>
 
             <Tab>
                   Our Solution
                   <DropdownContent>
-                    <CustomLink
+                    <NavLink
                       to={usecaseLink.link}
-                      displayText={usecaseLink.title}
-                      linkColor="black"
-                    />
-                    <CustomLink
+                    >{usecaseLink.title}</NavLink>
+                    <NavLink
                       to={productsLink.link}
-                      displayText={productsLink.title}
-                      linkColor="black"
-                    />
+                    >{productsLink.title}</NavLink>
                   </DropdownContent>
             </Tab>
 

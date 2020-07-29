@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Img from "gatsby-image"
 import { theme } from "../theme/GlobalStyles"
 import productShow from "../images/products_smartID.png";
 import greenIcon from "../images/products_verified.svg"
