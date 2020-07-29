@@ -35,6 +35,7 @@ const SmallBox = styled.div`
   @media (max-width: ${theme.tablet}) {
     margin-bottom: 3em;
     margin-top: 0em;
+    width: auto;
   }
 `
 const SmallImage = styled.img`
@@ -68,7 +69,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   height: 45px;
-  width: 120px;
+  width: 125px;
   font-size: 18px;
   font-weight: bold;
   padding-bottom:5px;

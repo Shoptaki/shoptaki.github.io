@@ -27,7 +27,7 @@ const UniversalBenefitsContainer = styled.div`
   margin: 5em;
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  height: 23rem;
+  height: 18rem;
   @media (max-width: ${theme.tablet}){
     margin: 5em 0 0 0;
     height: auto;
@@ -51,9 +51,9 @@ flex-direction: row;
 
 const InnerContainer = styled.ul`
 text-align: left;
-padding-right: 3em;
+padding-right: 1.5em;
 margin-bottom: 0;
-
+margin-top: 0;
     @media (max-width: ${theme.tablet}) {
         padding-right: 1em;
     }
@@ -61,6 +61,7 @@ margin-bottom: 0;
 
 const Pt = styled.li`
   list-style-position: outside;
+  padding-bottom: 1rem;
 `
 const UniversalBenefits = (props) => (
     <Container>
