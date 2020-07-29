@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useInterval } from "react"
 import { motion, useCycle } from "framer-motion"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import bubbledata from "../components/bubbledata"
+import bubbledata from "./bubbledata"
 import range from "lodash-es/range"
 import "./bubblestyle.css"
 

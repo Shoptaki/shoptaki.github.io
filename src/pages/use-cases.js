@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import SEO from "../components/seo"
-import Bubbles from "../components/bubble"
+import Bubbles from "../components/bubble.jsx"
 import Layout from "../components/layout"
 import { theme } from "../theme/GlobalStyles"
-import UsecaseCard from "../components/UsecaseCard"
+import UsecaseCard from "../components/UsecaseCard.jsx"
 
 const UseCases = () => {
   const query = `(max-width: ${theme.tablet})`

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { theme } from "../theme/GlobalStyles"
 
-import bubbledata from "../components/bubbledata"
+import bubbledata from "./bubbledata"
 
 const PageContainer = styled.div`
   height: 100%;

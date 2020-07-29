@@ -28,7 +28,7 @@ const Logo = styled.img`
 const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  top: 3.7rem;
+  top: 3.3rem;
   font-size: 1rem;
   font-weight: normal;
   width: 8rem;
@@ -53,6 +53,7 @@ const ContactLink = styled(Link)`
   border-width: 2px;
   padding: 10px;
   color: #000;
+  text-decoration: none;
   &:hover {
     background-color: ${theme.fontDarkBlue};
     color: #fff;
@@ -74,6 +75,7 @@ const MobileLink = styled(Link)`
   justify-content: center;
   border-bottom: 1px solid #dfdfdf;
   padding: 1rem;
+  text-decoration: none;
   &:last-child {
     border-bottom: none;
   }
@@ -169,11 +171,14 @@ const Header = ({siteTitle, menuLinks}) => {
                       to={usecaseLink.link}
                       displayText={usecaseLink.title}
                       linkColor="black"
+                      
                     />
+                    
                     <CustomLink
                       to={productsLink.link}
                       displayText={productsLink.title}
                       linkColor="black"
+                      
                     />
                   </DropdownContent>
             </Tab>
