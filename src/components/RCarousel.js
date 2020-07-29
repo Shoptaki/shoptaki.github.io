@@ -133,10 +133,6 @@ const Subtext = styled.p`
   }
 `;
 
-const LinkContainer = styled.div`
-
-`;
-
 const Dots = styled.li`
   height: 15px;
   width: 15px;
@@ -161,16 +157,19 @@ const slideData =
   [
     {
       name: "What We Offer",
+      linkText: "View our current products",
       link: "/products",
       type: "Smartchain offers a hybrid infrastructure for public and private ledgers which allows for both centralized as well as decentralized models within its processes.",
     },
     {
       name: "Our Potential",
+      linkText: "View our use cases",
       link: "/use-cases",
       type: "Smartchain can be integrated into existing cloud distributions and act as a bridge between densely connected  networks.",
     },
     {
       name: "How It Works",
+      linkText: "Why Smartchain?",
       link: "/why-smartchain",
       type: "Smartchain combines AI and DL technologies to securely facilitate digital transfers across multiple industries.",
     },
@@ -231,7 +230,7 @@ const RCarousel = () => {
                             <Subtext>{slide.type}</Subtext>
                             <CustomLink
                                 to={slide.link}
-                                displayText={"Read More"}
+                                displayText={slide.linkText}
                                 linkColor={theme.fontBlueGray}
                                 fontSize={"1.2rem"}
                                 arrow

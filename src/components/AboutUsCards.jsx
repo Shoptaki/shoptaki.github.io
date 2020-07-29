@@ -44,7 +44,7 @@ const HeadImageContainer = styled.div`
   }
 `;
 const HeaderTitle = styled.div`
-  font-family: "Myriad Pro Light";
+  font-weight: "Myriad Pro Light";
   font-size: 1.75em;
 `;
 const RowContainer = styled.div`

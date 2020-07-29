@@ -154,7 +154,7 @@ const Header = ({siteTitle, menuLinks}) => {
       <Container>
         
         <HomeButton to="/">           
-            <Logo src={logoImage}/>
+            <Logo src={logoImage} alt="Shoptaki Logo" />
         </HomeButton>
         
         <MenuDiv >  

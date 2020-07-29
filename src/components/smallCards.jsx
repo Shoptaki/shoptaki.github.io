@@ -71,7 +71,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   height: 45px;
-  width: 120px;
+  max-width: 140px;
   font-size: 18px;
   font-weight: bold;
   padding-bottom:5px;
@@ -104,7 +104,7 @@ function SmallCards( {scrollHandler} ) {
             <Button onClick={() => scrollHandler("SID")}>
               <CustomLink
                 clickHandler={e =>  e.preventDefault() }
-                displayText="Learn More"
+                displayText="Smart ID"
                 linkColor="#2E50B9"
                 arrow
               />  
@@ -127,7 +127,7 @@ function SmallCards( {scrollHandler} ) {
           <Button onClick={() => scrollHandler("FPC")}>
             <CustomLink
               clickHandler={e => e.preventDefault()}
-              displayText="Learn More"
+              displayText="Financial App"
               linkColor="#2E50B9"
               arrow
             />  

@@ -110,7 +110,7 @@ const Security = () => (
   <div>
     <CardContainer>
     <div>
-      <img src={security} alt="Quantum Secure" />
+      <img src={security} alt="Quantum Secure System" />
       <TitleContainer><h2>SECURITY</h2></TitleContainer>
       <TextContainer>Ensure safe and future-proof data transactions 
         using quantum resistant cryptography.</TextContainer>
