@@ -28,7 +28,7 @@ const Logo = styled.img`
 const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  top: 3.7rem;
+  top: 3.3rem;
   font-size: 1rem;
   font-weight: normal;
   width: 8rem;
