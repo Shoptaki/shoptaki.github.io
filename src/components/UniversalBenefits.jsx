@@ -81,7 +81,7 @@ const UniversalBenefits = (props) => (
                 Distributed Learning over multiple nodes
                 </Pt>
                 <Pt>
-                Collabortive Ai analazying and automating different types of tasks/proccess
+                Collabortive AI analazying and automating different types of tasks/proccess
                 </Pt>
             </InnerContainer>
             <InnerContainer>

@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
-import SmartchainBanner from "../components/ParticleBanner";
+import SmartchainBanner from "../components/ParticleBanner.jsx";
 import styled from "styled-components";
 import {theme} from "../theme/GlobalStyles"
 
