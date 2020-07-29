@@ -9,14 +9,13 @@ import financialImage from "../images/products_financial.png"
 import lowerbg from "../images/lower_background.svg"
 
 const Bg = styled.div`
-background-image: url(${lowerbg});
-height: 50rem;
-position: absolute;
-z-index: -1;
-top: 180rem;
-left: 0;
-width: 100%;
-
+  background-image: url(${lowerbg});
+  height: 50rem;
+  position: absolute;
+  z-index: -1;
+  top: 180rem;
+  left: 0;
+  width: 100%;
 `
 const Box = styled.div`
   display: flex;

@@ -93,7 +93,7 @@ const FeatureCard = () => {
 
     const [index, setIndex] = useState(0);
     const defaultState = text.map((item, index) => (index === 0 ? true : false));
-    const [isActive, setIsActive] = useState(defaultState);
+    const isActive = useState(defaultState);
 
     const mobileNumbers = text.map( (item, index) => (
         <MobileCard  
