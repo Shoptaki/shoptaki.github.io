@@ -110,7 +110,7 @@ const FeatureCard = () => {
 
     const desktopCards = text.map( (item) => (
         <DesktopCard key={item.title}>
-            <h5>{item.title}</h5>
+            <p>{item.title}</p>
             <TitleLiner color="blue" />
             <p style={{paddingTop: "2rem"}}>{item.description}</p>
         </DesktopCard>
