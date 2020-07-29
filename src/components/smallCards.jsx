@@ -1,14 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
-import passportImage from "../images/passport.svg"
-import bankImage from "../images/bank.png"
-import CustomLink from "../components/customlink.jsx"
-import TitleLiner from "../components/titleliner.jsx"
+import passportImage from "../images/products_passport.svg"
+import bankImage from "../images/products_bank.png"
+import CustomLink from "./customlink.jsx"
+import TitleLiner from "./titleliner.jsx"
 
 const SmallCard = styled.div`
-  // padding-left: 12%;
-  // padding-right: 12%;
   padding-top: 30rem;
   width: 100%;
   display: flex;
@@ -43,11 +41,6 @@ const SmallImage = styled.img`
   height: 7rem;
   margin-left: 2rem;
   
-`
-
-const VerticalBox = styled.div`
-  display: flex;
-  flex-direction: column;
 `
 
 const SmartTitle = styled.div`
