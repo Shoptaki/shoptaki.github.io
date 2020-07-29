@@ -15,7 +15,6 @@ const Container = styled.div`
   overflow: "hidden";
   padding: 10;
 `
-
 const tagContainer = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -28,7 +27,6 @@ const tagContainer = {
     },
   },
 }
-
 const tag = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -36,7 +34,6 @@ const tag = {
     opacity: 1,
   },
 }
-
 const Pattern = ({ picPath, patternID, descr }) => (
   <pattern
     id={patternID}
@@ -56,7 +53,6 @@ const Pattern = ({ picPath, patternID, descr }) => (
     />
   </pattern>
 )
-
 Pattern.propTypes = {
   picPath: PropTypes.string.isRequired,
   patternID: PropTypes.string,
@@ -192,11 +188,6 @@ function Bubbles() {
     if(s1 === 1){
       cycleS1()
     }
-    
-    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
-    if (c === 0) {
-      cycleC()
-    }
     if (s2 === 0) {
       cycleS2()
     }
@@ -220,16 +211,15 @@ function Bubbles() {
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[0])
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
   }
   function selectB() {
     //set scale of the select node to 0
     if(s2 === 1){
       cycleS2()
-    }
-    
-    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
-    if (c === 0) {
-      cycleC()
     }
     if (s1 === 0) {
       cycleS1()
@@ -254,6 +244,10 @@ function Bubbles() {
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[1])
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
   }
   function selectC() {
     //set scale of the select node to 0
@@ -261,10 +255,7 @@ function Bubbles() {
       cycleS3()
     }
     
-    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
-    if (c === 0) {
-      cycleC()
-    }
+    
     if (s1 === 0) {
       cycleS1()
     }
@@ -288,6 +279,10 @@ function Bubbles() {
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[2])
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
   }
   function selectD() {
     //set scale of the select node to 0
@@ -328,10 +323,7 @@ function Bubbles() {
     if(s5 === 1){
       cycleS5()
     }
-    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
-    if (c === 0) {
-      cycleC()
-    }
+    
     if (s2 === 0) {
       cycleS2()
     }
@@ -355,6 +347,10 @@ function Bubbles() {
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[4])
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
   }
   function selectF() {
     //set scale of the select node to 0
@@ -394,10 +390,7 @@ function Bubbles() {
     if(s7 === 1){
       cycleS7()
     }
-    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
-    if (c === 0) {
-      cycleC()
-    }
+    
     if (s2 === 0) {
       cycleS2()
     }
@@ -421,15 +414,15 @@ function Bubbles() {
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[6])
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
   }
   function selectH() {
     //set scale of the select node to 0
     if(s8 === 1){
       cycleS8()
-    }
-    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
-    if (c === 0) {
-      cycleC()
     }
     if (s2 === 0) {
       cycleS2()
@@ -454,9 +447,12 @@ function Bubbles() {
     }
     //set the centerNode to selectNode
     setCenterNode(bubbledata[7])
+    //set the scale of the center Node's svg outline to 5, opacity of the text to 1
+    if (c === 0) {
+      cycleC()
+    }
   }
-  function cancelCenter() {
-    setCenterNode(null)
+  function cancelCenter() { 
     if (s1 === 0) {
       cycleS1()
     }
@@ -481,10 +477,11 @@ function Bubbles() {
     if (s8 === 0) {
       cycleS8()
     }
-    cycleC()
+    if(c === 1){
+      cycleC()
+    }
+    setCenterNode(null)
   }
-
-  
   function sideSelect(node) {
     setCenterNode(node)
     if (c === 0) {
@@ -699,12 +696,17 @@ function Bubbles() {
       }
     }
   }
+  
+  useEffect(() => {
+    selectA()
+  }, []);
+
   return (
     <Container>
       <h1
       style={{
         position: "absolute",
-        marginTop: "40px",
+        marginTop: "5rem",
         marginLeft: "3.2rem",}}
         class="title"
       >
@@ -927,8 +929,8 @@ function Bubbles() {
                 marginTop: "20px",
               }}
             >
-              <h3 maxWidth="100rem">{centerNode.title}</h3>
-              <p color="grey" maxWidth="100rem" style={{ marginTop: "30px" }}>
+              <h2 maxWidth="100rem">{centerNode.title}</h2>
+              <p color="grey" maxWidth="100rem" style={{ marginTop: "30px", lineHeight: 1.6, }}>
                 {centerNode.description}
               </p>
             </div>

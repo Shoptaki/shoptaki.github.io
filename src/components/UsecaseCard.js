@@ -51,6 +51,7 @@ const Description = styled.div`
   font-size: 16px;
   max-height: 8rem;
   margin-top: 1rem;
+  line-height: 1.6;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -64,15 +65,15 @@ const ContentContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   @media (max-width: ${theme.tablet}) {
-    width: 18rem;
+    width: 15rem;
   }
   @media (max-width: ${theme.phone}) {
-    width: 18rem;
+    width: 15rem;
   }
 `
 const CardContainer = styled.div`
-  width: 20rem;
-  height: 25rem;
+  width: 28rem;
+  height: 23rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,12 +85,12 @@ const CardContainer = styled.div`
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   @media (max-width: ${theme.tablet}) {
     margin-left: 1rem;
-    width: 18rem;
+    width: 15rem;
   }
 
   @media (max-width: ${theme.phone}) {
     margin-left: 0rem;
-    width: 18rem;
+    width: 14rem;
   }
 `
 const LineBreaker = styled.div`

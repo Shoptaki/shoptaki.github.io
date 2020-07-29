@@ -5,7 +5,7 @@
 }
 .tagContainer {
   position: absolute;
-  width: 640px;
+  width: 660px;
   height: 240px;
   margin-top: 180px;
   margin-left: 2rem;
@@ -16,7 +16,7 @@
 .tagContainer > div {
   cursor: pointer;
   position: relative;
-  width: 280px;
+  width: 262px;
   height: 70px;
   margin-top: 20px;
   margin-left: 20px;
@@ -27,8 +27,8 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
   color: white;
   line-height: 70px;
-  padding-left: 25px;
-  font-size: 14.5px;
+  padding-left: 23px;
+  font-size: 15.5px;
   font-weight: bold;
   background: lightblue;
   letter-spacing: 2px;
