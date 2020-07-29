@@ -57,7 +57,7 @@ const RowContainer = styled.div`
   @media (max-width: ${theme.mobile}){
     padding: 2.5em;
     margin: 2em auto;
-    width: 90%;
+    width: auto;
     background-color: #fff;
     box-shadow: 0.2rem 0.2rem 0.5rem #999999;
     flex-direction: column;

@@ -27,7 +27,7 @@ const Logo = styled.img`
 const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  top: 3.7rem;
+  top: 3.3rem;
   font-size: 1rem;
   font-weight: normal;
   width: 8rem;
@@ -55,6 +55,7 @@ const NavLink = styled(Link)`
   padding-left: 5px;
   width: 100%;
   display: inline-block;
+  text-decoration: none;
   &:hover {
     color: ${theme.fontDarkBlue};
   }
@@ -67,7 +68,7 @@ const ContactLink = styled(Link)`
   border-width: 2px;
   padding: 10px;
   color: #000;
-
+  text-decoration: none;
   &:hover {
     background-color: ${theme.fontDarkBlue};
     color: #fff;
@@ -90,6 +91,7 @@ const MobileLink = styled(Link)`
   justify-content: center;
   border-bottom: 1px solid #dfdfdf;
   padding: 1rem;
+  text-decoration: none;
   &:last-child {
     border-bottom: none;
   }
@@ -179,6 +181,7 @@ const Header = ({siteTitle, menuLinks}) => {
                   Our Solution
                   <DropdownContent>
                     <NavLink
+                      style={{paddingBottom: '5px'}}
                       to={usecaseLink.link}
                     >{usecaseLink.title}</NavLink>
                     <NavLink

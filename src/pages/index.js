@@ -12,7 +12,7 @@ import CardSection from "../components/CardSection.jsx"
 import RCarousel from "../components/RCarousel"
 
 import { theme } from "../theme/GlobalStyles.js"
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const IndexPage = () => (

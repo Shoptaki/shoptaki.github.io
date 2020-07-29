@@ -15,10 +15,10 @@ const Container = styled.div`
 `
 
 const TextContainer = styled.div`
+  max-width: 100%;
   padding-left:8rem;
   padding-right:5rem;
   padding-bottom:5rem;  
-  width: 100%;
   height: 100%;
   @media (max-width: ${theme.mobile}) {
     padding: 0 3rem;
