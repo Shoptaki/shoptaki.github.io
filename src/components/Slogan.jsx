@@ -72,7 +72,7 @@ const Description = styled.p`
   max-width: 40rem;
   font-size: 1.2rem;
   white-space: normal;
-  
+  line-height: 1.8;
   flex-wrap: wrap;
 
   @media (max-width: ${theme.mobile}) {
