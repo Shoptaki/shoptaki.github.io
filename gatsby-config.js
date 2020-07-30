@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteURL: 'https://www.shoptaki.com',
     title: `Shoptaki`,
     description: `At Shoptaki, we are committed to bringing the best distributed AI solutions to simplify global transactions.`,
     author: `Asnee Fernando`,
@@ -45,6 +46,7 @@ module.exports = {
 
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

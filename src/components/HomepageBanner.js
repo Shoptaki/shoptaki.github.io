@@ -154,7 +154,7 @@ const Banner = ({
   description,
   link,
   linkText,
-  linkColor,
+  linkcolor,
   linkSize,
 }) => (
   <Container>
@@ -167,7 +167,7 @@ const Banner = ({
       <CustomLink
         to={link}
         displayText={linkText}
-        linkColor={linkColor}
+        linkcolor={linkcolor}
         fontSize={linkSize}
         arrow
       />
@@ -188,7 +188,7 @@ Banner.propTypes = {
   description: PropTypes.string,
   link: PropTypes.string,
   linkText: PropTypes.string,
-  linkColor: PropTypes.string,
+  linkcolor: PropTypes.string,
   linkSize: PropTypes.string,
 }
 
@@ -197,7 +197,7 @@ Banner.defaultProps = {
   description: ``,
   link: ``,
   linkText: ``,
-  linkColor: `#8eb4d0`,
+  linkcolor: `#8eb4d0`,
   linkSize: `16px`,
 }
 

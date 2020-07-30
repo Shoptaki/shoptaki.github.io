@@ -123,7 +123,7 @@ const FooterBottom =styled.div`
     line-height: 0em;
     margin-top: 65px;
     margin-bottom:15px;
-    font-size: 15px;
+    font-size: 20px;
     @media (max-width: ${theme.mobile}){
         margin: 0px;
         padding: 0px;

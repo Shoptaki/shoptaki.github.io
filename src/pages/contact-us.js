@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
@@ -258,3 +259,4 @@ class Contact extends React.Component {
 
 export default Contact;
 
+*/

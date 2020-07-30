@@ -24,7 +24,7 @@ const Container = styled.div`
   box-sizing: border-box;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, cancelFooter }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -52,7 +52,8 @@ const Layout = ({ children }) => {
       <Container>
         <main>{children}</main>
       </Container>
-      <Footer />
+      {cancelFooter ? null :  <Footer />}
+     
     </>
   )
 }

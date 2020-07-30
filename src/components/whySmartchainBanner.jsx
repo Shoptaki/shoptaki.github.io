@@ -27,7 +27,6 @@ const TextContainer = styled.div`
 
 const Title = styled.h1`
   margin-top:10rem;
-  width: 100%;
   font-weight: bold;
   font-size: 2rem;
   color: #8EB4D0;
@@ -68,7 +67,7 @@ const Description = styled.p`
 
 const RegularText = styled.p`
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #000000;
   margin-top:-0.2em;
   line-height:1.5em;

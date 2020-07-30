@@ -59,6 +59,7 @@ const TitleContainer = styled.div`
   width: 70%;
   flex-wrap: nowrap;
   justify-content: center;
+  font-size: 18px;
   margin-top: 1rem;
   margin-bottom: 0.2rem;
 `;

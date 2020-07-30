@@ -38,6 +38,7 @@ const SmallBox = styled.div`
   @media (max-width: ${theme.tablet}) {
     margin-bottom: 3em;
     margin-top: 0em;
+    width: auto;
   }
 `
 const SmallImage = styled.img`
@@ -105,7 +106,7 @@ function SmallCards( {scrollHandler} ) {
               <CustomLink
                 clickHandler={e =>  e.preventDefault() }
                 displayText="Smart ID"
-                linkColor="#2E50B9"
+                linkcolor="#2E50B9"
                 arrow
               />  
             </Button>
@@ -128,7 +129,7 @@ function SmallCards( {scrollHandler} ) {
             <CustomLink
               clickHandler={e => e.preventDefault()}
               displayText="Financial App"
-              linkColor="#2E50B9"
+              linkcolor="#2E50B9"
               arrow
             />  
           </Button>

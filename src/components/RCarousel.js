@@ -231,7 +231,7 @@ const RCarousel = () => {
                             <CustomLink
                                 to={slide.link}
                                 displayText={slide.linkText}
-                                linkColor={theme.fontBlueGray}
+                                linkcolor={theme.fontBlueGray}
                                 fontSize={"1.2rem"}
                                 arrow
                                     />

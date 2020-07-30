@@ -37,6 +37,7 @@ const DesktopCard = styled.div`
     background-color: #fff;
     text-align: left;
     padding: 2rem 2rem;
+    font-size: 1.1rem;
 `
 // Mobile Styles
 const MobileDiv = styled.div`
@@ -60,6 +61,7 @@ const Number = styled.p`
     font-weight: bold;
     padding-right: 2rem;
     color: ${theme.fontDarkBlue};
+    margin: 1rem 0;
 `
 const Box = styled.div`
     background-color: #fff;

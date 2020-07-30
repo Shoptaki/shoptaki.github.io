@@ -68,7 +68,7 @@ function Contact() {
               ref={ref}
               to={"/contact-us"}
               displayText={"Contact Us"}
-              linkColor={"#2E50B9"}
+              linkcolor={"#2E50B9"}
               arrow
             />
         </Button>
@@ -77,5 +77,4 @@ function Contact() {
 
   )
 }
-
 export default Contact;
