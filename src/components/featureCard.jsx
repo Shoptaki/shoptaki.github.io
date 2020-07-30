@@ -70,15 +70,16 @@ const Box = styled.div`
 `
 const TextBox = styled.div`
     box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-    height: 12rem;
+    height: 18rem;
     display: flex;
     align-items: center;
 `
 const Text = styled.p`
-    padding: 1rem 2rem;
+    padding: 1rem 1.3rem;
+    line-height: 1.5;
 
     @media (max-width: 350px) {
-        font-size: 4vw;
+        font-size: 4vw
     }
 
 `
@@ -117,9 +118,9 @@ const FeatureCard = () => {
 
     const desktopCards = text.map( (item) => (
         <DesktopCard key={item.title}>
-            <p>{item.title}</p>
+            <h3>{item.title}</h3>
             <TitleLiner color="blue" />
-            <p style={{paddingTop: "2rem"}}>{item.description}</p>
+            <p style={{paddingTop: "2rem", lineHeight: 1.6,}}>{item.description}</p>
         </DesktopCard>
     ))
     return (

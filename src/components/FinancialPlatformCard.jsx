@@ -77,6 +77,7 @@ const FinancialImage = styled.img`
 `
 const Pt = styled.li`
   list-style-position: outside;
+  line-height: 2;
 `
 const FinancialPlatformCard = React.forwardRef((props, ref) => {
   return (
@@ -91,9 +92,9 @@ const FinancialPlatformCard = React.forwardRef((props, ref) => {
             </Title>
             
             <Description>
-              <p>Finance Smartchain ID allows for transactional communication to be
+              <p style={{lineHeight: 1.6,}}>Finance Smartchain ID allows for transactional communication to be
               secure by being a hybrid structure of centralized and decentralized systems.</p>
-              <p>Smartchain tracks data across different ecosystems to prevent fraud
+              <p style={{lineHeight: 1.6,}}>Smartchain tracks data across different ecosystems to prevent fraud
               and automate certain processes.</p>
             </Description>
 

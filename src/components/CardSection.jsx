@@ -50,6 +50,7 @@ const CardContainer = styled.div`
 const TextContainer = styled.div`
   margin: auto;
   width: 62%;
+  line-height: 1.5;
   font-size: 1.2em;
 `;
 

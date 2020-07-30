@@ -31,6 +31,7 @@ const Title = styled.h1`
   font-size: 2rem;
   color: #8EB4D0;
   display: inline-block;
+  line-height:1.5em;
   @media (max-width: ${theme.mobile}) {
     margin-top: ${props => props.display ? "10rem" : "2rem"};
     width: 100%;
@@ -43,6 +44,7 @@ const Subtitle = styled.h2`
   width: 100%;
   color: #3F9CE5;
   display: inline-block;
+  line-height:1.5em;
   @media (max-width: ${theme.mobile}) {
     max-width: 22rem;
     font-size: 2rem;
@@ -54,7 +56,7 @@ const Description = styled.p`
   font-weight: bold;
   font-size: 2rem;
   color: #1071BB;
-  margin-top:-0.2em;
+  // margin-top:-0.2em;
   line-height:1.5em;
   margin-bottom: 2em;
 
@@ -62,6 +64,7 @@ const Description = styled.p`
   @media (max-width: ${theme.mobile}) {
     max-width: ${theme.mobile};
     margin-top: 2rem;
+    line-height: 1.8;
   }
 `
 

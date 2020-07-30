@@ -115,8 +115,8 @@ const DifferentiateCard = () => {
 
     const text = textItems.map((item, i) => (
         <TextContainer key={i} >
-            <p>{item.title}</p>
-            <p>{item.description}</p>
+            <h3>{item.title}</h3>
+            <p style={{lineHeight: 1.6,}}>{item.description}</p>
         </TextContainer>
     ));
     

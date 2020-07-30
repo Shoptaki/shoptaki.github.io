@@ -77,7 +77,7 @@ const BenefitsDescriptions = styled.ul`
   }
 `
 const AdditionalDescription = styled.div`
-  margin-top: 2.5em;
+  margin-top: 2.4em;
 `
 const GreenIcon = styled.img`
   width: 1.2rem;
@@ -85,6 +85,7 @@ const GreenIcon = styled.img`
 `
 const Pt = styled.li`
   list-style-position: outside;
+  line-height: 2;
 `
 
 const SmartIDCard = React.forwardRef((props, ref) => {
@@ -98,11 +99,11 @@ const SmartIDCard = React.forwardRef((props, ref) => {
           </SmartTitle>
           
           <SmartDescription>
-            <p><Boldword>SmartID is a digital passport </Boldword>to authenticate
+            <p style={{lineHeight: 1.6,}}><Boldword>SmartID is a digital passport </Boldword>to authenticate
             users quickly while minimizing data hacks, identity theft and data
             redundancy.</p>
       
-            <p>SmartID will be used to verify the identity of users across an
+            <p style={{lineHeight: 1.6,}}>SmartID will be used to verify the identity of users across an
             assortment of platforms.</p>
           </SmartDescription>
 
@@ -120,7 +121,7 @@ const SmartIDCard = React.forwardRef((props, ref) => {
   
               <AdditionalDescription>
                 <GreenIcon src={greenIcon}></GreenIcon>
-                More secure than a traditional SSO (single sign on)
+               More secure than a traditional SSO (single sign on)
               </AdditionalDescription>
 
             </VerticalBox>
