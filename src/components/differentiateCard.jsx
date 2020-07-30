@@ -128,11 +128,11 @@ const DifferentiateCard = () => {
                 <TitleLiner color="blue" style={{maxWidth: "16rem"}} size={"80%"}/>
             </Title>
             
-            <DesktopImg>{images[1]}</DesktopImg>
+            <DesktopImg>{images[3]}</DesktopImg>
             <DesktopText>{text}</DesktopText>
 
             <MobileItem>{images[0]}{text[0]}</MobileItem>
-            <MobileItem>{images[3]}{text[1]}</MobileItem>
+            <MobileItem>{images[1]}{text[1]}</MobileItem>
             <MobileItem>{images[2]}{text[2]}</MobileItem>
 
             

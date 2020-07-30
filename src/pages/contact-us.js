@@ -5,6 +5,7 @@ import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
 import SmartchainBanner from "../components/ParticleBanner.jsx";
 import styled from "styled-components";
+import SEO from "../components/seo.js";
 import { theme } from "../theme/GlobalStyles"
 
 
@@ -128,11 +129,12 @@ class Contact extends React.Component {
   recaptchaLoaded() {
     console.log('Captcha Loaded');
   }
-
+  //Add form labels 
   render() {
     const { status } = this.state;
     return (
       <Layout>
+        <SEO title="Contact Us" />
         <SmartchainBanner />
         <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
         <MainDiv>
@@ -226,7 +228,6 @@ class Contact extends React.Component {
       `industry=${encodeURIComponent(this.state['industry'])}&` +
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
-    // const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
     const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
