@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
 import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
-import SmartchainBanner from "../components/particleComponent";
+import WhySmartchainBanner from "../components/ParticleBanner"
 import styled from "styled-components";
 import REACT_APP_MAILCHIMP_URL from "../env";
 import {theme} from "../theme/GlobalStyles"
@@ -15,17 +15,15 @@ const MainDiv = styled.div `
    align-items: center; 
    display: flex;
    margin-left: 700px;
+   padding-bottom: 100px;
    @media (max-width: 1400px) {
     margin-left: 500px;
   }
    @media (max-width: ${theme.tablet}) {
     margin-left: 400px;
   }
-   @media (max-width: 1024px) {
-    margin-left: 360px;
-  }
    @media (max-width: 800px) {
-    margin-left: 250px;
+    margin-left: 300px;
   }
   @media (max-width: 650px) {
     margin-left: 200px;
@@ -83,11 +81,8 @@ const ContactLabel = styled.label `
   @media (max-width: ${theme.tablet}) {
     margin-left: 450px;
   }
-   @media (max-width: 1024px) {
-    margin-left: 410px;
-  }
    @media (max-width: 800px) {
-    margin-left: 300px;
+    margin-left: 350px;
   }
   @media (max-width: 650px) {
     margin-left: 250px;
@@ -163,7 +158,7 @@ class Contact extends React.Component {
     const { status } = this.state;
     return (
       <Layout>
-        <SmartchainBanner />
+        <WhySmartchainBanner />
         <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
         <MainDiv className="App">
 
@@ -227,7 +222,7 @@ class Contact extends React.Component {
                     className="btn btn-primary"> Submit
             </Button>
 
-            <div className='msg-alert'>
+            <div className='msg-alert' style={{marginLeft: 50}}>
               {status === "sending" && <p >Sending</p>}
               {status === "success" && <p>Thank you for contacting!</p>}
               {status === "duplicate" && <p>Too many subscribe attempts for this email address</p>}
@@ -238,7 +233,6 @@ class Contact extends React.Component {
           </form>
           <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
         </MainDiv>
-
       </Layout>
     );
   }

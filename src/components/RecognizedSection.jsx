@@ -19,8 +19,8 @@ const Recog = styled.div`
     @media (max-width: ${theme.mobile}){
         padding-top: 0em;
     }
+`;
 
-`
 
 const RecogContainer= styled.div`
     height: 350px;

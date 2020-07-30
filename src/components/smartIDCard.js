@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import { theme } from "../theme/GlobalStyles"
 import productShow from "../images/products_smartID.png";
 import greenIcon from "../images/products_verified.svg"
-import TitleLiner from "../components/TitleLiner"
+import TitleLiner from "../components/titleliner.jsx"
 
 
 const Box = styled.div`
@@ -14,7 +14,7 @@ const Box = styled.div`
   box-align: center;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   width: 50rem;
-  margin: 5rem auto;
+  margin: 0 auto 5rem auto;
   @media (max-width: ${theme.mobile}) {
     width: 100%;
     margin-left: 0rem;
@@ -29,7 +29,7 @@ const Container = styled.div`
   padding: 3rem 3rem;
 `
 
-const verticalBox = styled.div`
+const VerticalBox = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -57,7 +57,9 @@ const ProductImage = styled.img`
   height: 30rem;
 
   @media (max-width: ${theme.tablet}) {
-    margin-top: 2.5em;
+    margin: 2.5em auto;
+    // width: 35%;
+
   }
 `
 const BenefitsTitle = styled.div`
@@ -88,11 +90,11 @@ const GreenIcon = styled.img`
   margin-right: 0.2rem;
 `
 
-function SmartIDCard() {
+const SmartIDCard = React.forwardRef((props, ref) => {
   return (
-    <Box id="smartBox">
+    <Box ref={ref}>
       <Container>
-        <verticalBox>
+        <VerticalBox>
           <SmartTitle>
             SmartID 
             <TitleLiner />
@@ -110,7 +112,7 @@ function SmartIDCard() {
           <Horizontal>
             <ProductImage src={productShow} alt="smartID"></ProductImage>
 
-            <verticalBox>
+            <VerticalBox>
               <BenefitsTitle>Benefits</BenefitsTitle>
               <BenefitsDescriptions>
                 <li>Platforms only have information while using site reducing risk
@@ -124,11 +126,12 @@ function SmartIDCard() {
                 More secure than a traditional SSO (single sign on)
               </AdditionalDescription>
 
-            </verticalBox>
+            </VerticalBox>
           </Horizontal>
-        </verticalBox>
+        </VerticalBox>
       </Container>
     </Box>
   )
-}
+})
+
 export default SmartIDCard

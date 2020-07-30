@@ -3,11 +3,21 @@ import styled from "styled-components";
 import { theme } from "../theme/GlobalStyles"
 
 
-import TitleLiner from "../components/TitleLiner"
+import TitleLiner from "../components/titleliner.jsx"
 import greenIcon from "../images/products_verified.svg"
 import financialImage from "../images/products_financial.png"
+import lowerbg from "../images/lower_background.svg"
 
+const Bg = styled.div`
+background-image: url(${lowerbg});
+height: 50rem;
+position: absolute;
+z-index: -1;
+top: 180rem;
+left: 0;
+width: 100%;
 
+`
 const Box = styled.div`
   display: flex;
   flex-direction: row;
@@ -64,44 +74,50 @@ const FinancialImage = styled.img`
   width: 100%;
   margin-top: 2.5em;
 `
-function FinancialPlatformCard() {
+const FinancialPlatformCard = React.forwardRef((props, ref) => {
   return (
-    <Box id="financialBox">
-      <Container>
-     
-          <Title>
-            Financial Platform
-            <TitleLiner />
-          </Title>
-          
-          <Description>
-            <p>Finance Smartchain ID allows for transactional communication to be
-            secure by being decentralized.</p>
-            <p>Smartchain tracks data across different ecosystems to prevent fraud
-            and automate certain processes.</p>
-          </Description>
+    <>
+    <Bg />
+      <Box ref={ref} id="financialBox">
+        <Container>
+      
+            <Title>
+              Financial Platform
+              <TitleLiner />
+            </Title>
+            
+            <Description>
+              <p>Finance Smartchain ID allows for transactional communication to be
+              secure by being decentralized.</p>
+              <p>Smartchain tracks data across different ecosystems to prevent fraud
+              and automate certain processes.</p>
+            </Description>
 
-          <BenefitsTitle>Benefits</BenefitsTitle>
-          <BenefitsDescriptions>
-            <li>Limit Volume of Data </li>
-            <li>Reduce Redundancy</li>
-            <li>Verify Validity of Users</li>
-            <li>Streamline transactions while automating KYC, AML, and regulation
-              and compliance.</li>
-            <li>Embeds each transaction with the SmartID to track transaction
-              origins, prevent money laundering, etc…</li>
-          </BenefitsDescriptions>
+            <BenefitsTitle>Benefits</BenefitsTitle>
+            <BenefitsDescriptions>
+              <li>Limit Volume of Data </li>
+              <li>Reduce Redundancy</li>
+              <li>Verify Validity of Users</li>
+              <li>Streamline transactions while automating KYC, AML, and regulation
+                and compliance.</li>
+              <li>Embeds each transaction with the SmartID to track transaction
+                origins, prevent money laundering, etc…</li>
+            </BenefitsDescriptions>
 
-          <AdditionalDescription>
-            <GreenIcon src={greenIcon}></GreenIcon>
-            More secure than a traditional SSO (single sign on)
-          </AdditionalDescription>
+            <AdditionalDescription>
+              <GreenIcon src={greenIcon}></GreenIcon>
+              More secure than a traditional SSO (single sign on)
+            </AdditionalDescription>
 
-          <FinancialImage src={financialImage} alt="financialPlatform"></FinancialImage>
+            <FinancialImage src={financialImage} alt="financialPlatform"></FinancialImage>
 
-   
-      </Container>
-    </Box>
+    
+        </Container>
+      
+      </Box>  
+    </>
+
   )
-}
-export default FinancialPlatformCard
+})
+
+export default FinancialPlatformCard;

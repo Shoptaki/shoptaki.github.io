@@ -1,15 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-//import { BrowserRouter as Router} from "react-router-dom";
-import SmartchainBanner from "./particleComponent";
+import SmartchainBanner from "./ParticleBanner";
 
 const Container = styled.div`
   padding: 0 0 0 0;
-  height: 36rem;
+  height: 40rem;
   width: 100%;
   page-break-after: always; 
-  
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     height: 48.5rem;
@@ -40,7 +38,7 @@ const Title = styled.h1`
   flex-wrap: wrap;
   @media (max-width: ${theme.mobile}) {
     flex-wrap: wrap;
-    margin-top: 10rem;
+    margin-top: ${props => props.display ? "10rem" : "2rem"};
     width: 100%;
     font-size: 2rem;
     padding-right: 3rem;
@@ -104,7 +102,7 @@ const RegularText = styled.p`
     overflow-wrap: break-word;
     word-wrap: break-word;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: -1rem;
   }
   `
 
@@ -115,13 +113,13 @@ const RegularText = styled.p`
     regulartext,
   }) => (
     <Container>
-          <SmartchainBanner />
-             <TextContainer> 
-                <Title>{title}</Title>
-                <Subtitle>{subtitle}</Subtitle>
-                <Description>{description}</Description>
-                <RegularText>{regulartext}</RegularText>      
-             </TextContainer>
+      <SmartchainBanner />
+        <TextContainer> 
+            <Title display={title}>{title}</Title>
+            <Subtitle>{subtitle}</Subtitle>
+            <Description>{description}</Description>
+            <RegularText>{regulartext}</RegularText>      
+        </TextContainer>
     </Container>
   )
   

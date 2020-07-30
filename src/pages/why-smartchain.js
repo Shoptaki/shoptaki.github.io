@@ -18,15 +18,16 @@ const WhySmartchain = () => (
      
         <SEO title="Why Smartchain?" />
         <WhySmartchainBanner 
-        title = "We are not blockchain."
-        subtitle = "We are the future."
-        description = "We are a system where collaborative AI meets quantum resistance security."
+            title = "We are not blockchain."
+            subtitle = "We are the future."
+            description = "We are a system where collaborative AI meets quantum resistance security."
         />
 
         <Slogan
             title="What is Smartchain?"
             description="Smartchain is a completely new type of technology. In the form of a multipurpose ecosystem, it revolutionizes concepts of blockchain with the help of collaborative artificial intelligence to bridge the gaps in effective management and implementation."
             color="orange"
+            paddingM={"5rem"}
         />
 
         <AboutUsCards />

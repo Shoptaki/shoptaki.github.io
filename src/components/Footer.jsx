@@ -182,12 +182,12 @@ function Footer () {
         <Container>        
         <Row> 
         {
-            FooterLinks.map(column =>
-                <Box>
+            FooterLinks.map((column, i) =>
+                <Box key={i}>
                     <Title>{column.title}</Title>
                     {
                         column.subLinks.map(link =>
-                            <ListUnstyled>
+                            <ListUnstyled key={link.title}>
                                 <li ><List to={link.link}>{link.title}</List></li> 
                             </ListUnstyled>
 

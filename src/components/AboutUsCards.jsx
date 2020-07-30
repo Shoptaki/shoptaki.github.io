@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import TitleLiner from "./titleliner"
+import TitleLiner from "./titleliner.jsx"
 import {theme} from "../theme/GlobalStyles.js"
 import cloudImage from "../images/whysmartchain_cloud.png"
 import head from "../images/whysmartchain_head.png"
