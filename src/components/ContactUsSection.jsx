@@ -37,6 +37,8 @@ const Button = styled.button`
     font-size:18px;
     font-weight:bold;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
 
     &:focus {
       outline: none;
