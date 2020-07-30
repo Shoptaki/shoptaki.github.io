@@ -56,6 +56,7 @@ const TextContainer = styled.div`
     float: left;
     text-align: left;
     padding: 1rem 1rem;
+    font-size: 1.1rem;
     @media (min-width: ${theme.tablet}) {
         width: 30%;
         text-align: center;

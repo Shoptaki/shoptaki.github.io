@@ -13,6 +13,7 @@ import RCarousel from "../components/RCarousel"
 import { theme } from "../theme/GlobalStyles.js"
 
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />

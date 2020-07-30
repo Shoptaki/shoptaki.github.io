@@ -54,9 +54,9 @@ const BenefitsTitle = styled.div`
     margin-left: 0rem;
   }
 `
-const BenefitsDescriptions = styled.div`
+const BenefitsDescriptions = styled.ul`
   margin-top: 0.5rem;
-  margin-left: 2rem;
+  margin-left: 0rem;
   @media (max-width: ${theme.mobile}) {
     margin-left: 0rem;
   }
@@ -72,6 +72,9 @@ const GreenIcon = styled.img`
 const FinancialImage = styled.img`
   width: 100%;
   margin-top: 2.5em;
+`
+const Pt = styled.li`
+  list-style-position: outside;
 `
 const FinancialPlatformCard = React.forwardRef((props, ref) => {
   return (
@@ -94,13 +97,13 @@ const FinancialPlatformCard = React.forwardRef((props, ref) => {
 
             <BenefitsTitle>Benefits</BenefitsTitle>
             <BenefitsDescriptions>
-              <li>Limit Volume of Data </li>
-              <li>Reduce Redundancy</li>
-              <li>Verify Validity of Users</li>
-              <li>Streamline transactions while automating KYC, AML, and regulation
-                and compliance.</li>
-              <li>Embeds each transaction with the SmartID to track transaction
-                origins, prevent money laundering, etc…</li>
+              <Pt>Limit Volume of Data </Pt>
+              <Pt>Reduce Redundancy</Pt>
+              <Pt>Verify Validity of Users</Pt>
+              <Pt>Streamline transactions while automating KYC, AML, and regulation
+                and compliance.</Pt>
+              <Pt>Embeds each transaction with the SmartID to track transaction
+                origins, prevent money laundering, etc…</Pt>
             </BenefitsDescriptions>
 
             <AdditionalDescription>

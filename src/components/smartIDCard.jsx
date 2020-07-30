@@ -70,13 +70,10 @@ const BenefitsTitle = styled.div`
     margin-left: 0;
   }
 `
-const BenefitsDescriptions = styled.div`
-  margin: 1em 2.4em 0em 0em;
+const BenefitsDescriptions = styled.ul`
+  margin: 1em 2.4em 0em -1em;
   @media (max-width: ${theme.tablet}) {
-    margin-left: 2rem;
-  }
-  @media (max-width: ${theme.mobile}) {
-    margin-left: 0;
+    margin-left: 0rem;
   }
 `
 const AdditionalDescription = styled.div`
@@ -85,6 +82,9 @@ const AdditionalDescription = styled.div`
 const GreenIcon = styled.img`
   width: 1.2rem;
   margin-right: 0.2rem;
+`
+const Pt = styled.li`
+  list-style-position: outside;
 `
 
 const SmartIDCard = React.forwardRef((props, ref) => {
@@ -112,10 +112,10 @@ const SmartIDCard = React.forwardRef((props, ref) => {
             <VerticalBox>
               <BenefitsTitle>Benefits</BenefitsTitle>
               <BenefitsDescriptions>
-                <li>Platforms only have information while using site reducing risk
-                of hacking</li>
-                <li>Eliminates need for traditional login systems</li>
-                <li>Users can control what information each platform can see</li>
+                <Pt>Platforms only have information while using site reducing risk
+                of hacking</Pt>
+                <Pt>Eliminates need for traditional login systems</Pt>
+                <Pt>Users can control what information each platform can see</Pt>
               </BenefitsDescriptions>
   
               <AdditionalDescription>
