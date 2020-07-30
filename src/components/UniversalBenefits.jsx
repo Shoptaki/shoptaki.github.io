@@ -27,7 +27,7 @@ const UniversalBenefitsContainer = styled.div`
   margin: 5em;
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  height: 18rem;
+  height: 19rem;
   @media (max-width: ${theme.tablet}){
     margin: 5em 0 0 0;
     height: auto;
@@ -84,6 +84,9 @@ const UniversalBenefits = (props) => (
                 <Pt>
                 Collabortive AI analazying and automating different types of tasks/proccess
                 </Pt>
+                <Pt>
+                Homomorphic Encryption and Unlinkable PseudoID to enhance privacy and security
+                </Pt>
             </InnerContainer>
             <InnerContainer>
                 <Pt>
@@ -94,6 +97,9 @@ const UniversalBenefits = (props) => (
                 </Pt>
                 <Pt>
                 Accessibility and connectivity with other Blockchain ecosystems
+                </Pt>
+                <Pt>
+                SmartID can be used as identifiers for Individuals, Businesses, and systems
                 </Pt>
             </InnerContainer>
         </TextContainer>

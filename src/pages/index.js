@@ -20,7 +20,7 @@ const IndexPage = () => (
     <Banner
       title="Smartchain: "
       subtitle="The next evolution of distributed technology"
-      description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
+      description="We are unifying, securing, and automating data and processes in digital ecosystems."
       link="/why-smartchain"
       linkText="What is Smartchain?"
       linkColor={theme.fontBlueGray}
