@@ -108,7 +108,7 @@ const PageTitle = styled.h1`
 const Item = ({ node }) => (
   <CardContainer>
     <ContentContainer>
-      <img src={node.icon} width="80px" height="80px" />
+      <img src={node.icon} width="80px" height="80px" alt={node.title} />
       <LineBreaker />
       <Title>{node.title}</Title>
       <Description>{node.description}</Description>
@@ -123,8 +123,8 @@ const UsecaseCard = () => (
   <PageContainer>
     <PageTitle>Possibilities are endless with Smartchain</PageTitle>
     <Container>
-      {bubbledata.map(node => (
-        <Item node={node} />
+      {bubbledata.map((node, i) => (
+        <Item key={i} node={node} />
       ))}
     </Container>
   </PageContainer>

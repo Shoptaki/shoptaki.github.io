@@ -36,14 +36,20 @@ const UniversalBenefitsContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-font-size: 2em;
-text-align: left;
-padding-bottom: 1em;
+    font-size: 2em;
+    text-align: left;
+    padding-bottom: 1em;
 `;
 
 const TextContainer = styled.div`
 display: flex;
 flex-direction: row;
+font-size: 1.2rem;
+
+@media (max-width: 1290px){
+    font-size: 1rem;
+  }
+  
 @media (max-width: ${theme.tablet}){
     flex-direction: column;
   }

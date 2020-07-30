@@ -10,8 +10,8 @@ const Container = styled.div`
   width: "900px";
   height: "900px";
   display: "flex";
-  justifycontent: "center";
-  alignitems: "center";
+  justify-content: "center";
+  align-items: "center";
   overflow: "hidden";
   padding: 10;
 `

@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import SmartIDCard from "../components/smartIDCard.jsx"
 import FinancialPlatformCard from "../components/FinancialPlatformCard.jsx"
 import SmallCards from "../components/smallCards.jsx"
+import Contact from "../components/ContactUsSection.jsx"
 import WhySmartchainBanner from "../components/whySmartchainBanner"
 import UniversalBenefits from "../components/UniversalBenefits.jsx"
 
@@ -33,6 +34,8 @@ const Products = () => {
             <SmallCards scrollHandler={scrollHandler} />
             <SmartIDCard  ref={SIDCRef} />
             <FinancialPlatformCard ref={FPCRef} />
+            <Contact />
+            
         </Layout>
     )
 }

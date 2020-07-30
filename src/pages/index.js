@@ -23,7 +23,7 @@ const IndexPage = () => (
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/why-smartchain"
       linkText="What is Smartchain?"
-      linkColor={theme.fontBlueGray}
+      linkcolor={theme.fontBlueGray}
       linkSize="20px"
     />
     <Slogan
@@ -33,16 +33,6 @@ const IndexPage = () => (
       homepage
     />
 
-    {/*
-    <ControlledCarousel
-      link1="/products"
-      link2="/use-cases"
-      link3="/why-smartchain"
-      linkText="Read More"
-      linkColor={theme.fontBlueGray}
-    />
-    */
-    }
     <RCarousel />
     <CardSection />
     <Recognize />
