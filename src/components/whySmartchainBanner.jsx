@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
-import SmartchainBanner from "../components/ParticleBanner.jsx";
+import SmartchainBanner from "./ParticleBanner.jsx";
 
 const Container = styled.div`
   padding: 0 0 0 0;
@@ -15,6 +15,7 @@ const Container = styled.div`
 `
 
 const TextContainer = styled.div`
+  max-width: 100%;
   padding-left:8rem;
   padding-right:5rem;
   padding-bottom:5rem;  
@@ -66,7 +67,7 @@ const Description = styled.p`
 
 const RegularText = styled.p`
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #000000;
   margin-top:-0.2em;
   line-height:1.5em;
@@ -85,12 +86,12 @@ const RegularText = styled.p`
   }) => (
     <Container>
       <SmartchainBanner />
-        <TextContainer> 
-            <Title display={title}>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
-            <Description>{description}</Description>
-            <RegularText>{regulartext}</RegularText>      
-        </TextContainer>
+      <TextContainer> 
+          <Title display={title}>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <Description>{description}</Description>
+          <RegularText>{regulartext}</RegularText>      
+      </TextContainer>
     </Container>
   )
   

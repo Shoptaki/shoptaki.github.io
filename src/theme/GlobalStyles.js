@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import MyriadProRegular from "../static/fonts/myriad-pro/MYRIADPRO-REGULAR.woff";
 import MyriadProLight from "../static/fonts/myriad-pro/MyriadPro-Light.woff";
 import MyriadProSemiBold from "../static/fonts/myriad-pro/MYRIADPRO-SEMIBOLD.woff";
-import MyriadProBold from "../static/fonts/myriad-pro/MYRIADPRO-BOLD.woff";
 
 export const theme = {
     logoOrange: '#EC6908',
@@ -47,14 +46,6 @@ export const GlobalStyles = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: url(${MyriadProSemiBold}) format('woff');
-    }
-
-
-    @font-face {
-        font-family: 'Myriad Pro Bold';
-        font-style: normal;
-        font-weight: normal;
-        src: url(${MyriadProBold}) format('woff');
     }
 
     * {

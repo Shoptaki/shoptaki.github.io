@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from "styled-components"
 import CustomLink from "./customlink.jsx"
 import {theme} from "../theme/GlobalStyles.js"
@@ -37,6 +37,19 @@ const Button = styled.button`
     font-size:18px;
     font-weight:bold;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+
+    &:focus {
+      outline: none;
+      user-select: none;
+    }
+
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      transform: scale(1.1);
+    }
+  
 `
 const ButtonContainer=styled.div`
     text-align:center;
@@ -46,16 +59,18 @@ const ButtonContainer=styled.div`
 `;
 
 function Contact() {
+  const ref = useRef();
 
   return (
     <ContactContainer>
       <ContactTitle>Become part of the future.</ContactTitle>
       <ButtonContainer>
-        <Button>
+        <Button onClick={() => ref.current ? ref.current.click() : null }>
             <CustomLink
+              ref={ref}
               to={"/contact-us"}
               displayText={"Contact Us"}
-              linkColor={"#2E50B9"}
+              linkcolor={"#2E50B9"}
               arrow
             />
         </Button>

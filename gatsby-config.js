@@ -37,13 +37,15 @@ module.exports = {
           }
         ]
       }, 
-      
+      {
+        title: "Contact Us",
+        link: "/contact-us"
+      }
 
     ],
 
   },
   plugins: [
-    'gatsby-plugin-sitemap',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

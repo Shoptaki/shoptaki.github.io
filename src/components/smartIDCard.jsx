@@ -40,7 +40,7 @@ const SmartTitle = styled.div`
 const SmartDescription = styled.div`
   margin-top: 2rem;
 `
-const Boldword = styled.p`
+const Boldword = styled.span`
   font-family: 'Myriad Pro Semibold';
   display: inline;
 `

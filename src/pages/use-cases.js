@@ -7,15 +7,20 @@ import UsecaseCard from "../components/UsecaseCard.jsx"
 
 const UseCases = () => {
   const query = `(max-width: ${theme.tablet})`
+  const isBrowser = typeof window !== "undefined";
+
   const [checkMobile, setCheckMobile] = useState({
-    matches: window.matchMedia(query).matches,
+    matches: isBrowser ? window.matchMedia(query).matches : null
   })
 
   useEffect(() => {
     //add listener to screen change
     const handler = e => setCheckMobile({ matches: e.matches })
-    window.matchMedia(query).addListener(handler)
+
+    if (isBrowser)
+      window.matchMedia(query).addListener(handler)
   })
+  
   return (
     <div>
       {checkMobile.matches ? (
@@ -25,7 +30,7 @@ const UseCases = () => {
           <UsecaseCard />
         </Layout>
       ) : (
-        <Layout cancelFooter="true">
+        <Layout cancelFooter="false">
           {/* no footer for animation page */}
           <SEO title="Use Cases" />
           {/* laptop: display animation */}

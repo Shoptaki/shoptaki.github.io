@@ -1,4 +1,3 @@
-/*
 import React from "react";
 import Layout from "../components/layout";
 import Recaptcha from "react-recaptcha";
@@ -6,7 +5,8 @@ import { loadReCaptcha } from 'react-recaptcha-google';
 import jsonp from "jsonp"
 import SmartchainBanner from "../components/ParticleBanner.jsx";
 import styled from "styled-components";
-import {theme} from "../theme/GlobalStyles"
+import SEO from "../components/seo.js";
+import { theme } from "../theme/GlobalStyles"
 
 
 
@@ -15,6 +15,12 @@ const MainDiv = styled.div `
    align-items: center;
    justify-content: center; 
    display: flex;
+   height: 40rem;
+
+   div {
+     margin: 1.5rem 0;
+   }
+   
 `
 const Input = styled.input `
   width: 300px;
@@ -29,12 +35,13 @@ const Input = styled.input `
 `
 
 const Select = styled.select `
-  width: 300px;
+  width: 100%;
   height: 30px;
   padding: 0 8px;
   display: block;
   border-radius: 10px;
   border: 1px solid #666;
+  
   &:focus { 
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
@@ -53,7 +60,7 @@ const TextArea = styled.textarea `
 `
 const Button = styled.button `
   display: flex;
-  margin: 20px auto;
+  margin: 30px auto 5rem auto;
   padding: 5px 10px;
   background-color: ${theme.fontLightBlue};
   border: 1px solid ${theme.fontLightBlue};
@@ -74,6 +81,7 @@ const ContactLabel = styled.label `
   justify-content: center;
   display: flex;
   padding-top: 30px;
+  padding-bottom: 1.5rem;
 `
 
 const Label = styled.label `
@@ -121,11 +129,12 @@ class Contact extends React.Component {
   recaptchaLoaded() {
     console.log('Captcha Loaded');
   }
-
+  //Add form labels 
   render() {
     const { status } = this.state;
     return (
       <Layout>
+        <SEO title="Contact Us" />
         <SmartchainBanner />
         <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
         <MainDiv>
@@ -219,7 +228,6 @@ class Contact extends React.Component {
       `industry=${encodeURIComponent(this.state['industry'])}&` +
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
-    // const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
     const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
@@ -250,5 +258,3 @@ class Contact extends React.Component {
 }
 
 export default Contact;
-
-*/
