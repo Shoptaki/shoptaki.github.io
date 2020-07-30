@@ -6,7 +6,6 @@ import { Link } from "gatsby"
 const LinkContainer = styled.div`
   width: 100%;
   vertical-align: middle;
-  
 `
 
 // link hover effect
@@ -33,7 +32,7 @@ const Label = styled(Link)`
     transition: transform 0.5s ease-in-out 0s;
   }
   &&:hover::after {
-    color: 'black' !important;
+    color: "black" !important;
     transform: scaleX(1);
     transform-origin: 0% 0%;
   }
@@ -55,18 +54,25 @@ const Arrow = ({ linkColor }) => (
   </svg>
 )
 
-const CustomLink = ({ to, displayText, linkColor, fontSize, arrow, clickHandler }) => (
+const CustomLink = ({
+  to,
+  displayText,
+  linkColor,
+  fontSize,
+  arrow,
+  clickHandler,
+}) => (
   <LinkContainer>
-   
-      <Label to={to} linkColor={linkColor} fontSize={fontSize} onClick={clickHandler}>
-        {displayText}
-      </Label>
-    
-    {arrow ? (
-      
-        <Arrow linkColor={linkColor} />
-      
-    ) : null}
+    <Label
+      to={to}
+      linkColor={linkColor}
+      fontSize={fontSize}
+      onClick={clickHandler}
+    >
+      {displayText}
+    </Label>
+
+    {arrow ? <Arrow linkColor={linkColor} /> : null}
   </LinkContainer>
 )
 
