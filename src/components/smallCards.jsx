@@ -1,14 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
-import passportImage from "../images/passport.svg"
-import bankImage from "../images/bank.png"
-import CustomLink from "../components/customlink.jsx"
-import TitleLiner from "../components/titleliner.jsx"
+import passportImage from "../images/products_passport.svg"
+import bankImage from "../images/products_bank.png"
+import CustomLink from "./customlink.jsx"
+import TitleLiner from "./titleliner.jsx"
 
 const SmallCard = styled.div`
-  // padding-left: 12%;
-  // padding-right: 12%;
   padding-top: 30rem;
   width: 100%;
   display: flex;
@@ -18,10 +16,13 @@ const SmallCard = styled.div`
   flex-basis: 10%;
 
   @media (max-width: ${theme.tablet}) {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: ${theme.mobile}) {
+    padding-top: 25rem;
   }
 `
 
@@ -29,7 +30,7 @@ const SmallBox = styled.div`
   background-color: white;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   margin: 5em 4em;
-  width: 27rem;
+  max-width: 27rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -37,17 +38,13 @@ const SmallBox = styled.div`
   @media (max-width: ${theme.tablet}) {
     margin-bottom: 3em;
     margin-top: 0em;
+    width: auto;
   }
 `
 const SmallImage = styled.img`
   height: 7rem;
   margin-left: 2rem;
   
-`
-
-const VerticalBox = styled.div`
-  display: flex;
-  flex-direction: column;
 `
 
 const SmartTitle = styled.div`
@@ -75,17 +72,24 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   height: 45px;
-  width: 120px;
+  max-width: 145px;
   font-size: 18px;
   font-weight: bold;
   padding-bottom:5px;
   padding-left:8px;
   margin: auto;
-  box-shadow: 0.2rem 0.2rem 0.5rem #999999;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
 
   &:focus {
     outline: none;
     user-select: none;
+  }
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
   }
   
 `
@@ -108,8 +112,8 @@ function SmallCards( {scrollHandler} ) {
             <Button onClick={() => scrollHandler("SID")}>
               <CustomLink
                 clickHandler={e =>  e.preventDefault() }
-                displayText="Learn More"
-                linkColor="#2E50B9"
+                displayText="Smart ID"
+                linkcolor="#2E50B9"
                 arrow
               />  
             </Button>
@@ -131,8 +135,8 @@ function SmallCards( {scrollHandler} ) {
           <Button onClick={() => scrollHandler("FPC")}>
             <CustomLink
               clickHandler={e => e.preventDefault()}
-              displayText="Learn More"
-              linkColor="#2E50B9"
+              displayText="Financial App"
+              linkcolor="#2E50B9"
               arrow
             />  
           </Button>

@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteURL: 'https://www.shoptaki.com',
     title: `Shoptaki`,
     description: `At Shoptaki, we are committed to bringing the best distributed AI solutions to simplify global transactions.`,
     author: `Asnee Fernando`,
@@ -36,7 +37,10 @@ module.exports = {
           }
         ]
       }, 
-      
+      {
+        title: "Contact Us",
+        link: "/contact-us"
+      }
 
     ],
 

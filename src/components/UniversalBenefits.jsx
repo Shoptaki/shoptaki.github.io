@@ -27,7 +27,7 @@ const UniversalBenefitsContainer = styled.div`
   margin: 5em;
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  height: 23rem;
+  height: 18rem;
   @media (max-width: ${theme.tablet}){
     margin: 5em 0 0 0;
     height: auto;
@@ -36,14 +36,20 @@ const UniversalBenefitsContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-font-size: 2em;
-text-align: left;
-padding-bottom: 1em;
+    font-size: 2em;
+    text-align: left;
+    padding-bottom: 1em;
 `;
 
 const TextContainer = styled.div`
 display: flex;
 flex-direction: row;
+font-size: 1.2rem;
+
+@media (max-width: 1290px){
+    font-size: 1rem;
+  }
+  
 @media (max-width: ${theme.tablet}){
     flex-direction: column;
   }
@@ -51,9 +57,9 @@ flex-direction: row;
 
 const InnerContainer = styled.ul`
 text-align: left;
-padding-right: 3em;
+padding-right: 1.5em;
 margin-bottom: 0;
-
+margin-top: 0;
     @media (max-width: ${theme.tablet}) {
         padding-right: 1em;
     }
@@ -61,6 +67,7 @@ margin-bottom: 0;
 
 const Pt = styled.li`
   list-style-position: outside;
+  padding-bottom: 1rem;
 `
 const UniversalBenefits = (props) => (
     <Container>
@@ -81,7 +88,7 @@ const UniversalBenefits = (props) => (
                 Distributed Learning over multiple nodes
                 </Pt>
                 <Pt>
-                Collabortive Ai analazying and automating different types of tasks/proccess
+                Collabortive AI analazying and automating different types of tasks/proccess
                 </Pt>
             </InnerContainer>
             <InnerContainer>

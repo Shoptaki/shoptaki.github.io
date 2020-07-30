@@ -77,7 +77,8 @@ const Globe = () => {
   const pointerOver = e => setHover(true);
   const pointerOut = e => setHover(false)
 
-  document.body.addEventListener('mouseup', pointerOut)
+  if (isBrowser)
+    document.body.addEventListener('mouseup', pointerOut, { passive: true })
  
 
   return (

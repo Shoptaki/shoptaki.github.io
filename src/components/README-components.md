@@ -20,7 +20,7 @@ import CustomLink from "../components/customlink"
 ```
 const YourComponent = () => (
   <YourContainer>
-    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" fontSize="22px"/>
+    <CustomLink to="/" displayText="Learn More" linkcolor="#FFF" fontSize="22px"/>
   </YourContainer>
 )
 ```
@@ -28,7 +28,7 @@ const YourComponent = () => (
 ```
 const YourComponent = () => (
   <YourContainer>
-    <CustomLink to="/" displayText="Learn More" linkColor="#FFF" fontSize="22px" arrow/>
+    <CustomLink to="/" displayText="Learn More" linkcolor="#FFF" fontSize="22px" arrow/>
   </YourContainer>
 )
 ```
@@ -40,7 +40,7 @@ const YourComponent = () => (
 
 ###### Optional properties:
 
-- `linkColor`: the color of the text, the underline and the arrow! default color is black `#000000`
+- `linkcolor`: the color of the text, the underline and the arrow! default color is black `#000000`
 - `arrow`: don't need to pass specific value for it, just add `arrow`, then arrow svg will show on the right of your link component
 - `fontSize`: the font size of the link text, default size is `16px`
 
@@ -68,7 +68,7 @@ const YourComponent = () => (
       description="We are building a smart, secure, and adaptable gloabal ecosystem for distributing digital information."
       link="/"
       linkText="What is Smartchain?"
-      linkColor="#8EB4D0"
+      linkcolor="#8EB4D0"
       linkSize="22px"
     />
     </YourContainer>
@@ -85,7 +85,7 @@ const YourComponent = () => (
 - `description`: styled.p element, default is empty text, color is `#3f9ce5`
 - `link`: link url on the banner, default is empty text
 - `linkText`: text of the link on the banner, default is empty text
-- `linkColor`: the color of the text and the underline, default color is black `#000000`
+- `linkcolor`: the color of the text and the underline, default color is black `#000000`
 - `linkSize`: the size of link text, default is `16px`
 
 ## ✏️ TitleLiner

@@ -8,7 +8,7 @@ import { theme } from "../theme/GlobalStyles"
 const Container = styled.div`
   --size: ${props => props.homepage ? '711px' : '48rem'};
   --size-t: ${props => props.homepage ? '60rem' : '48rem'};
-  --size-m: ${props => props.homepage ? '60rem' : '48rem'};
+  --size-m: ${props => props.homepage ? '63rem' : '48rem'};
 
   position: absolute;
   z-index: -3;
@@ -81,8 +81,8 @@ const Description = styled.p`
   }
 `;
 
-const Slogan = ({ title, description, color, homepage, paddingM }) => (
-  <Container homepage={homepage} paddingM={paddingM}>
+const Slogan = ({ title, description, color, homepage }) => (
+  <Container homepage={homepage}>
     <TextContainer>
       <Title>{title}</Title>
       <TitleLiner color={color} size={"100%"}/>

@@ -110,13 +110,13 @@ function Recognize() {
                 <RecogTitle>Recognized By</RecogTitle>
                 <RecogImageBox>
                 <SubRecogImagebox>
-                    <RecogImage1 src={global_logo}/>
+                    <RecogImage1 src={global_logo} alt="Recognized by Global Startup Systems"/>
                 </SubRecogImagebox>
                 <SubRecogImagebox>
-                    <RecogImage2 src={remtech_logo}/>
+                    <RecogImage2 src={remtech_logo} alt="Recognized by Remtech Awards" />
                 </SubRecogImagebox>
                 <SubRecogImagebox>
-                    <RecogImage3 src={cc_logo}/>
+                    <RecogImage3 src={cc_logo} alt="Recognized by Currency Cloud" />
                 </SubRecogImagebox>
                 </RecogImageBox>
             </RecogContainer>

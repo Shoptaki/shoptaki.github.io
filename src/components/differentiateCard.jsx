@@ -56,6 +56,7 @@ const TextContainer = styled.div`
     float: left;
     text-align: left;
     padding: 1rem 1rem;
+    font-size: 1.1rem;
     @media (min-width: ${theme.tablet}) {
         width: 30%;
         text-align: center;
@@ -124,7 +125,7 @@ const DifferentiateCard = () => {
         <Box>
             <Title>
                 <h4>What Differentiates Smartchain?</h4>
-                <TitleLiner color="blue" size={"16rem"}/>
+                <TitleLiner color="blue" style={{maxWidth: "16rem"}} size={"80%"}/>
             </Title>
             
             <DesktopImg>{images[3]}</DesktopImg>

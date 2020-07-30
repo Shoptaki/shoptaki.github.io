@@ -70,7 +70,7 @@ const ListUnstyled=styled.ul`
         line-height: 0.5em;
     }
 `
-const List =styled(Link)`
+const List = styled(Link)`
     color: grey;
     font-size: 18px;
     line-height: 1em;
@@ -123,7 +123,7 @@ const FooterBottom =styled.div`
     line-height: 0em;
     margin-top: 65px;
     margin-bottom:15px;
-    font-size: 15px;
+    font-size: 20px;
     @media (max-width: ${theme.mobile}){
         margin: 0px;
         padding: 0px;
@@ -146,7 +146,7 @@ const FooterLinks = [
           subLinks: [
             {
               title: "What is Smartchain?",
-              link: "/What-is-smartchain"
+              link: "/why-smartchain"
             }
           ]
         },
@@ -202,15 +202,18 @@ function Footer () {
         <Icon>
         <Iconbox>
             <a href="https://www.facebook.com/shoptaki/" target="blank">
-            <Social className="social" src={facebookicon}></Social></a>
+                <Social className="social" src={facebookicon} alt="Shoptaki Facebook" />
+            </a>
         </Iconbox>
         <Iconbox>
             <a href="https://twitter.com/shoptaki?lang=en">
-            <Social className="social" src={twittericon}></Social></a>
+                <Social className="social" src={twittericon} alt="Shoptaki Twitter" />
+            </a>
         </Iconbox>
         <Iconbox>
             <a href="https://www.linkedin.com/company-beta/10899440?pathWildcard=10899440">
-            <Social className="social" src={linkedinicon}></Social></a>
+                <Social className="social" src={linkedinicon} alt="Shoptaki Linkedin" />
+            </a>
         </Iconbox>
         </Icon>
 

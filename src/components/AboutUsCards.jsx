@@ -44,7 +44,7 @@ const HeadImageContainer = styled.div`
   }
 `;
 const HeaderTitle = styled.div`
-  font-family: "Myriad Pro Light";
+  font-weight: "Myriad Pro Light";
   font-size: 1.75em;
 `;
 const RowContainer = styled.div`
@@ -57,7 +57,7 @@ const RowContainer = styled.div`
   @media (max-width: ${theme.mobile}){
     padding: 2.5em;
     margin: 2em auto;
-    width: 90%;
+    width: auto;
     background-color: #fff;
     box-shadow: 0.2rem 0.2rem 0.5rem #999999;
     flex-direction: column;
@@ -65,6 +65,7 @@ const RowContainer = styled.div`
 `;
 const Text = styled.p`
   padding-top: 2rem;
+  font-size: 1.1rem;
   @media (max-width: ${theme.mobile}){
     padding-top: 1.5em;
   }

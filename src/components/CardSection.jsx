@@ -59,6 +59,7 @@ const TitleContainer = styled.div`
   width: 70%;
   flex-wrap: nowrap;
   justify-content: center;
+  font-size: 18px;
   margin-top: 1rem;
   margin-bottom: 0.2rem;
 `;
@@ -108,9 +109,9 @@ const Efficiency = () => (
 
 const Security = () => (
   <div>
-    <CardContainer style={{"marginRight": "50px"}}>
+    <CardContainer>
     <div>
-      <img src={security} alt="Quantum Secure" />
+      <img src={security} alt="Quantum Secure System" />
       <TitleContainer><h2>SECURITY</h2></TitleContainer>
       <TextContainer>Ensure safe and future-proof data transactions 
         using quantum resistant cryptography.</TextContainer>
