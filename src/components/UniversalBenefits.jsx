@@ -22,6 +22,7 @@ box-sizing: border-box;
     padding: 0;
 }
 `;
+
 const UniversalBenefitsContainer = styled.div`
   padding: 2.5em;
   margin: 5em;

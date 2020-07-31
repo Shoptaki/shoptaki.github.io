@@ -12,7 +12,7 @@ const Container = styled.div`
     margin: auto;
     justify-content: center;
     text-align: center;
-    padding: 6rem 0rem;
+    padding: 5rem 0rem;
    
 `
 const Title = styled.h4`

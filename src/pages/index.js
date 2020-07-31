@@ -21,7 +21,7 @@ const IndexPage = () => (
       title="Smartchain: "
       subtitle="The next evolution of distributed technology"
       description="We are unifying, securing, and automating data and processes in digital ecosystems."
-      link="/why-smartchain"
+      link="/why-smartchain/"
       linkText="What is Smartchain?"
       linkcolor={theme.fontBlueGray}
       linkSize="20px"
