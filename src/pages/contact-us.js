@@ -15,13 +15,21 @@ const MainDiv = styled.div `
    align-items: center;
    justify-content: center; 
    display: flex;
-   height: 40rem;
+   height: 50rem;
 
    div {
-     margin: 1.5rem 0;
+     margin-top: 1.5rem;
    }
    
 `
+const AlertDiv = styled.div`
+  margin-top: 0;
+  margin: auto;
+  color: ${props => props.status === "success" ? theme.fontLightBlue : "red"};
+  font-size: 18px;
+  max-width: 100%;
+`;
+
 const Input = styled.input `
   width: 300px;
   height: 30px;
@@ -60,7 +68,7 @@ const TextArea = styled.textarea `
 `
 const Button = styled.button `
   display: flex;
-  margin: 30px auto 5rem auto;
+  margin: 20px auto 1.5rem auto;
   padding: 5px 10px;
   background-color: ${theme.fontLightBlue};
   border: 1px solid ${theme.fontLightBlue};
@@ -81,7 +89,6 @@ const ContactLabel = styled.label `
   justify-content: center;
   display: flex;
   padding-top: 30px;
-  padding-bottom: 1.5rem;
 `
 
 const Label = styled.label `
@@ -200,16 +207,16 @@ class Contact extends React.Component {
                     > Submit
             </Button>
 
-            <div>
-              {status === "sending" && <p >Sending</p>}
+            <AlertDiv status={status} >
+              {status === "sending" && <p >Sending...</p>}
               {status === "success" && <p>Thank you for contacting!</p>}
               {status === "duplicate" && <p>Too many subscribe attempts for this email address</p>}
               {status === "empty" && <p>You must write an e-mail.</p>}
               {status === "error" && <p>Enter a valid email address</p>}
-            </div>
-
+            </AlertDiv>
           </form>
           <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
+          
         </MainDiv>
 
       </Layout>

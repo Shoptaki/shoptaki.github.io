@@ -8,6 +8,7 @@ const Container = styled.div`
   height: 40rem;
   width: 100%;
   page-break-after: always; 
+
   @media (max-width: ${theme.mobile}) {
     flex-direction: column;
     height: 48.5rem;
@@ -35,7 +36,7 @@ const Title = styled.h1`
   @media (max-width: ${theme.mobile}) {
     margin-top: ${props => props.display ? "10rem" : "2rem"};
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-right: 3rem;
   }
 `
@@ -47,7 +48,7 @@ const Subtitle = styled.h2`
   line-height:1.5em;
   @media (max-width: ${theme.mobile}) {
     max-width: 22rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top:1em;
   }
 `
@@ -56,15 +57,15 @@ const Description = styled.p`
   font-weight: bold;
   font-size: 2rem;
   color: #1071BB;
-  // margin-top:-0.2em;
   line-height:1.5em;
   margin-bottom: 2em;
 
   display: inline-block;
   @media (max-width: ${theme.mobile}) {
     max-width: ${theme.mobile};
-    margin-top: 2rem;
+    margin-top: 1rem;
     line-height: 1.8;
+    font-size: 1.5rem;
   }
 `
 
@@ -74,10 +75,12 @@ const RegularText = styled.p`
   color: #000000;
   margin-top:-0.2em;
   line-height:1.5em;
+  padding-bottom: 0.2rem;
   display: inline-block;
   @media (max-width: ${theme.mobile}) {
     max-width: ${theme.mobile};
     margin-top: -1rem;
+    font-size: 1.2rem;
   }
   `
 

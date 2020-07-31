@@ -19,10 +19,11 @@ const SmallCard = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 40rem;
   }
 
   @media (max-width: ${theme.mobile}) {
-    padding-top: 25rem;
+    padding-top: 40rem;
   }
 `
 
