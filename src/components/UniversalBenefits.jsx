@@ -68,6 +68,7 @@ margin-top: 0;
 const Pt = styled.li`
   list-style-position: outside;
   padding-bottom: 1rem;
+  line-height: 1.6;
 `
 const UniversalBenefits = (props) => (
     <Container>

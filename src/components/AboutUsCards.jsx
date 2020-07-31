@@ -66,6 +66,7 @@ const RowContainer = styled.div`
 const Text = styled.p`
   padding-top: 2rem;
   font-size: 1.1rem;
+  line-height: 1.6;
   @media (max-width: ${theme.mobile}){
     padding-top: 1.5em;
   }

@@ -9,6 +9,9 @@ const Container = styled.header`
   padding: 1.45rem 1.0875rem;
   padding-bottom: 0;
   display: flex;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 `
 const MenuDiv = styled.div`
   text-align: right;  

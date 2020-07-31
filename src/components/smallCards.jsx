@@ -31,7 +31,7 @@ const SmallBox = styled.div`
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
   margin: 5em 4em;
   max-width: 27rem;
-  padding: 3rem;
+  padding: 3.5rem;
   display: flex;
   flex-direction: column;
   
@@ -59,6 +59,7 @@ const Description = styled.div`
   margin-top:1.5rem;
   font-size: 16px;
   height: 8rem;
+  line-height: 2.5;
   @media (max-width: ${theme.mobile}) {
     margin-top:2rem;
   }
