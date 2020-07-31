@@ -28,7 +28,7 @@ const UniversalBenefitsContainer = styled.div`
   margin: 5em;
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.5rem #999999;
-  height: 20rem;
+  height: 22rem;
   @media (max-width: ${theme.tablet}){
     margin: 5em 0 0 0;
     height: auto;

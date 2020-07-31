@@ -138,7 +138,7 @@ const Dots = styled.li`
   width: 15px;
   background-color: ${props => props.selected ? theme.fontLightBlue : "white"};
   border-radius: 50%;
-  border: 1px solid gainsboro;
+  border: 1px solid ${theme.fontLightBlue};
   display: inline-block;
   margin-right: 0.5rem;
   outline: none;
