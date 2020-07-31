@@ -11,7 +11,7 @@ const Mainfooter = styled.div`
     align-items: center;
     top:100%;
     font-size:.889rem;
-    position: sticky;
+    position: relative;
     left:0;
     bottom:0;
     right:0;
