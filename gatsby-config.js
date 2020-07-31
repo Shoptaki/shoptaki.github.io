@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteURL: 'https://www.shoptaki.com',
+    siteUrl: `https://www.shoptaki.com`,
     title: `Shoptaki`,
     description: `At Shoptaki, we are committed to bringing the best distributed AI solutions to simplify global transactions.`,
     author: `Asnee Fernando`,
@@ -11,7 +11,7 @@ module.exports = {
         subLinks: [
           {
             title: "Our Mission",
-            link: "/our-mission"
+            link: "/our-mission/"
           }
         ]
       },
@@ -20,7 +20,7 @@ module.exports = {
         subLinks: [
           {
             title: "Why Smartchain?",
-            link: "/why-smartchain"
+            link: "/why-smartchain/"
           }
         ]
       },
@@ -29,23 +29,54 @@ module.exports = {
         subLinks: [
           {
             title: "Use Cases",
-            link: "/use-cases"
+            link: "/use-cases/"
           },
           {
             title: "Products",
-            link: "/products"
+            link: "/products/"
           }
         ]
       }, 
       {
         title: "Contact Us",
-        link: "/contact-us"
+        link: "/contact-us/"
       }
 
     ],
 
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }`,
+
+        resolveSiteUrl: ({site, allSitePage}) => {
+          //Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
+          return site.siteMetadata.siteUrl
+        },
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map(node => {
+            return {
+              url: `${site.siteMetadata.siteUrl}${node.path}`,
+              changefreq: `yearly`,
+              priority: 0.7,
+            }
+          })
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -77,6 +108,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

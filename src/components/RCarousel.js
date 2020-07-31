@@ -158,19 +158,19 @@ const slideData =
     {
       name: "What We Offer",
       linkText: "View our current products",
-      link: "/products",
+      link: "/products/",
       type: "Smartchain offers a hybrid infrastructure for public and private ledgers which allows for both centralized as well as decentralized models within its processes.",
     },
     {
       name: "Our Potential",
       linkText: "View our use cases",
-      link: "/use-cases",
+      link: "/use-cases/",
       type: "Smartchain can be integrated into existing cloud distributions and act as a bridge between densely connected  networks.",
     },
     {
       name: "How It Works",
       linkText: "Why Smartchain?",
-      link: "/why-smartchain",
+      link: "/why-smartchain/",
       type: "Smartchain combines AI and DL technologies to securely facilitate digital transfers across multiple industries.",
     },
   ]

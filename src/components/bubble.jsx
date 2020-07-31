@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useInterval } from "react"
+import React, { useEffect, useState } from "react"
 import { motion, useCycle } from "framer-motion"
 import styled from "styled-components"
 import PropTypes from "prop-types"

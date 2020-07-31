@@ -44,11 +44,6 @@ function SmartchainBanner() {
               type: "circle",
               polygon: {
                 nb_sides: 4
-              },
-              image: {
-                src: "img/github.svg",
-                width: 100,
-                height: 100
               }
             },
             opacity: {
