@@ -68,7 +68,7 @@ function Contact() {
         <Button onClick={() => ref.current ? ref.current.click() : null }>
             <CustomLink
               ref={ref}
-              to={"/contact-us"}
+              to={"/contact-us/"}
               displayText={"Contact Us"}
               linkcolor={"#2E50B9"}
               arrow

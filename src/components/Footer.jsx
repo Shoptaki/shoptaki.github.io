@@ -137,7 +137,7 @@ const FooterLinks = [
           subLinks: [
             {
               title: "Our Mission",
-              link: "/our-mission"
+              link: "/our-mission/"
             }
           ]
         },
@@ -146,7 +146,7 @@ const FooterLinks = [
           subLinks: [
             {
               title: "What is Smartchain?",
-              link: "/why-smartchain"
+              link: "/why-smartchain/"
             }
           ]
         },
@@ -155,11 +155,11 @@ const FooterLinks = [
           subLinks: [
             {
               title: "Use Cases",
-              link: "/use-cases"
+              link: "/use-cases/"
             },
             {
               title: "Products",
-              link: "/products"
+              link: "/products/"
             }
           ]
         }, 
@@ -168,7 +168,7 @@ const FooterLinks = [
             subLinks: [
               {
                 title: "Contact Us",
-                link: "/contact-us"
+                link: "/contact-us/"
               }
             ]
           }, 

@@ -194,7 +194,7 @@ const Header = ({siteTitle, menuLinks}) => {
             </Tab>
 
             <Tab>
-                <ContactLink to="/contact-us">
+                <ContactLink to="/contact-us/">
                   Contact Us
                 </ContactLink>
             </Tab>
@@ -213,7 +213,7 @@ const Header = ({siteTitle, menuLinks}) => {
                   <MobileLink to={smartchainLink.link}> {smartchainLink.title} </MobileLink>
                   <MobileLink to={usecaseLink.link}> {usecaseLink.title} </MobileLink>
                   <MobileLink to={productsLink.link}> {productsLink.title} </MobileLink>
-                  <MobileLink to="/contact-us"> Contact Us </MobileLink>
+                  <MobileLink to="/contact-us/"> Contact Us </MobileLink>
                 </MobileContainer>
 
         </HamburgerDiv>
