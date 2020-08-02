@@ -40,6 +40,7 @@ const SmallBox = styled.div`
     margin-bottom: 3em;
     margin-top: 0em;
     width: auto;
+    height: 26rem;
   }
 `
 const SmallImage = styled.img`
