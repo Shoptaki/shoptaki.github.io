@@ -13,7 +13,7 @@ const Bg = styled.div`
   height: 50rem;
   position: absolute;
   z-index: -1;
-  top: 190rem;
+  top: 200rem;
   left: 0;
   width: 100%;
 `
