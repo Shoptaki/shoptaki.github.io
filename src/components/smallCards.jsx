@@ -35,6 +35,7 @@ const SmallBox = styled.div`
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
+  height: 21.5rem;
   
   @media (max-width: ${theme.tablet}) {
     margin-bottom: 3em;
@@ -80,7 +81,7 @@ const Button = styled.button`
   font-weight: bold;
   padding-bottom:5px;
   padding-left:8px;
-  margin: auto;
+  margin: auto auto 0 auto;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   transition: all 0.5s ease-in-out;
   transform: scale(1);
