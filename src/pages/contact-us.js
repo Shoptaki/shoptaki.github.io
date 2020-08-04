@@ -37,6 +37,10 @@ const Input = styled.input `
   display: block;
   border-radius: 10px;
   border: 1px solid #666;
+  -webkit-user-select: text;
+  -moz-user-select: text; 
+  -ms-user-select: text;
+  user-select: text;
   &:focus { 
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
@@ -49,7 +53,6 @@ const Select = styled.select `
   display: block;
   border-radius: 10px;
   border: 1px solid #666;
-  
   &:focus { 
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
@@ -62,6 +65,10 @@ const TextArea = styled.textarea `
   display: block;
   border-radius: 10px;
   border: 1px solid #666;
+  -webkit-user-select: text;
+  -moz-user-select: text; 
+  -ms-user-select: text;
+  user-select: text;
   &:focus { 
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
