@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles"
 import passportImage from "../images/products_passport.svg"
 import bankImage from "../images/products_bank.png"
-import CustomLink from "./customlink.jsx"
+import CustomLink from "./CustomLink.jsx"
 import TitleLiner from "./titleliner.jsx"
 
 const SmallCard = styled.div`

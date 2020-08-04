@@ -235,7 +235,7 @@ class Contact extends React.Component {
       `industry=${encodeURIComponent(this.state['industry'])}&` +
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
-    const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
+    const path = `${process.env.GATSBY_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;

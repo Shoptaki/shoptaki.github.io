@@ -73,3 +73,4 @@ yarn-error.log
 .vscode/
 .idea
 .=2.8.0
+.public.zip
