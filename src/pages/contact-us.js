@@ -27,7 +27,7 @@ const AlertDiv = styled.div`
   margin: auto;
   color: ${props => props.status === "success" ? theme.fontLightBlue : "red"};
   font-size: 18px;
-  max-width: 100%;
+  max-width: 300px;
 `;
 
 const Input = styled.input `
@@ -253,7 +253,7 @@ class Contact extends React.Component {
   sendData(url) {
     this.setState({ status: "sending" });
 
-    console.log("URL: " + url);
+    
 
 
     jsonp(url, { param: "c" }, (err, data) => {
