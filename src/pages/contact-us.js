@@ -27,7 +27,7 @@ const AlertDiv = styled.div`
   margin: auto;
   color: ${props => props.status === "success" ? theme.fontLightBlue : "red"};
   font-size: 18px;
-  max-width: 100%;
+  max-width: 300px;
 `;
 
 const Input = styled.input `
@@ -242,7 +242,7 @@ class Contact extends React.Component {
       `industry=${encodeURIComponent(this.state['industry'])}&` +
       `company=${encodeURIComponent(this.state['companyName'])}&` +
       `message=${encodeURIComponent(this.state['message'])}`
-    const path = `${process.env.REACT_APP_MAILCHIMP_URL}&${values}`;
+    const path = `${process.env.GATSBY_MAILCHIMP_URL}&${values}`;
 
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;
@@ -253,7 +253,7 @@ class Contact extends React.Component {
   sendData(url) {
     this.setState({ status: "sending" });
 
-    console.log("URL: " + url);
+    
 
 
     jsonp(url, { param: "c" }, (err, data) => {

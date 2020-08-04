@@ -7,7 +7,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 import Img from "gatsby-image";
 import { theme } from "../theme/GlobalStyles";
-import CustomLink from "./CustomLink";
+import CustomLink from "./CustomLink.jsx";
 
 const getConfigurableProps = () => ({
     showArrows: false,
@@ -18,7 +18,7 @@ const getConfigurableProps = () => ({
     useKeyboardArrows: false,
     autoPlay: true,
     stopOnHover: true,
-    swipeable: true,
+    swipeable: false,
     dynamicHeight: false,
     emulateTouch: true,
     selectedItem: 0,

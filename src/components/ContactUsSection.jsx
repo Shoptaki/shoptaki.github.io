@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import styled from "styled-components"
-import CustomLink from "./customlink.jsx"
+import CustomLink from "./CustomLink.jsx"
 import {theme} from "../theme/GlobalStyles.js"
 
 const ContactContainer= styled.div`
