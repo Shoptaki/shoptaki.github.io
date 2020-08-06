@@ -84,3 +84,20 @@
 .tagContainer > div:nth-child(8):hover {
   background: linear-gradient(135deg, #083b6b 0%, #158fb1 100%);
 }
+
+.phone {
+  width: 300px;
+  height: 30px;
+  padding: 0 8px;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #666;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  
+}
+.phone:focus {
+  box-shadow: 0 0 8px #3f9ce5;
+}

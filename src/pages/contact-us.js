@@ -1,36 +1,35 @@
-import React from "react";
-import Layout from "../components/layout";
-import Recaptcha from "react-recaptcha";
-import { loadReCaptcha } from 'react-recaptcha-google';
+import React, { useState } from "react"
+import Layout from "../components/layout"
+import Recaptcha from "react-recaptcha"
+import { loadReCaptcha } from "react-recaptcha-google"
 import jsonp from "jsonp"
-import SmartchainBanner from "../components/ParticleBanner.jsx";
-import styled from "styled-components";
-import SEO from "../components/seo.js";
+import SmartchainBanner from "../components/ParticleBanner.jsx"
+import styled from "styled-components"
+import SEO from "../components/seo.js"
 import { theme } from "../theme/GlobalStyles"
+import NumberFormat from 'react-number-format';
+import "../components/bubblestyle.css"
 
+const MainDiv = styled.div`
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 50rem;
 
-
-const MainDiv = styled.div `
-   text-align: left;
-   align-items: center;
-   justify-content: center; 
-   display: flex;
-   height: 50rem;
-
-   div {
-     margin-top: 1.5rem;
-   }
-   
+  div {
+    margin-top: 1.5rem;
+  }
 `
 const AlertDiv = styled.div`
   margin-top: 0;
   margin: auto;
-  color: ${props => props.status === "success" ? theme.fontLightBlue : "red"};
+  color: ${props => (props.status === "success" ? theme.fontLightBlue : "red")};
   font-size: 18px;
   max-width: 300px;
-`;
+`
 
-const Input = styled.input `
+const Input = styled.input`
   width: 300px;
   height: 30px;
   padding: 0 8px;
@@ -38,27 +37,27 @@ const Input = styled.input `
   border-radius: 10px;
   border: 1px solid #666;
   -webkit-user-select: text;
-  -moz-user-select: text; 
+  -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
-  &:focus { 
+  &:focus {
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
 `
 
-const Select = styled.select `
+const Select = styled.select`
   width: 100%;
   height: 30px;
   padding: 0 8px;
   display: block;
   border-radius: 10px;
   border: 1px solid #666;
-  &:focus { 
+  &:focus {
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
 `
 
-const TextArea = styled.textarea `
+const TextArea = styled.textarea`
   width: 300px;
   padding: 0 8px;
   margin-bottom: 8px;
@@ -66,14 +65,14 @@ const TextArea = styled.textarea `
   border-radius: 10px;
   border: 1px solid #666;
   -webkit-user-select: text;
-  -moz-user-select: text; 
+  -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
-  &:focus { 
+  &:focus {
     box-shadow: 0 0 8px ${theme.fontLightBlue};
   }
 `
-const Button = styled.button `
+const Button = styled.button`
   display: flex;
   margin: 20px auto 1.5rem auto;
   padding: 5px 10px;
@@ -89,8 +88,8 @@ const Button = styled.button `
   }
 `
 
-const ContactLabel = styled.label `
-  font-weight: bold; 
+const ContactLabel = styled.label`
+  font-weight: bold;
   font-size: 45px;
   color: ${theme.fontLightBlue};
   justify-content: center;
@@ -98,7 +97,7 @@ const ContactLabel = styled.label `
   padding-top: 30px;
 `
 
-const Label = styled.label `
+const Label = styled.label`
   margin-top: 10px;
   margin-bottom: 1px;
 `
@@ -107,77 +106,108 @@ class Contact extends React.Component {
   captchaDemo
 
   constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
-    this.verifyCallback = this.verifyCallback.bind(this);
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this)
+    this.verifyCallback = this.verifyCallback.bind(this)
     this.state = {
-      name: '',
-      email: '',
-      industry: '',
-      companyName: '',
-      message: '',
-      isVerified: false
+      name: "",
+      email: "",
+      phone: "",
+      industry: "",
+      companyName: "",
+      message: "",
+      isVerified: false,
     }
   }
 
   componentDidMount() {
-    loadReCaptcha();
+    loadReCaptcha()
     if (this.captchaDemo) {
       console.log("started, just a second...")
-      this.captchaDemo.reset();
+      this.captchaDemo.reset()
     }
   }
   onLoadRecaptcha() {
     if (this.captchaDemo) {
-      this.captchaDemo.reset();
+      this.captchaDemo.reset()
     }
   }
   verifyCallback(response) {
     if (response) {
       this.setState({
-        isVerified: true
-      });
+        isVerified: true,
+      })
     }
   }
   recaptchaLoaded() {
-    console.log('Captcha Loaded');
+    console.log("Captcha Loaded")
   }
-  //Add form labels 
+
+  //Add form labels
   render() {
-    const { status } = this.state;
+    const { status } = this.state
+
     return (
       <Layout>
         <SEO title="Contact Us" />
         <SmartchainBanner />
         <ContactLabel htmlFor="Contact Us"> Contact Us </ContactLabel>
         <MainDiv>
-
-          <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-
+          <form
+            id="contact-form"
+            onSubmit={this.handleSubmit.bind(this)}
+            method="POST"
+          >
             <div>
               <Label htmlFor="name"> Name </Label>
 
-              <Input type="text" value={this.state.name}
-                     onChange={({ target }) => this.setState({ ['name']: target.value })}/>
+              <Input
+                type="text"
+                value={this.state.name}
+                onChange={({ target }) =>
+                  this.setState({ ["name"]: target.value })
+                }
+              />
             </div>
 
             <div>
               <Label htmlFor="exampleInputEmail1">Email Address</Label>
 
-              <Input type="email" aria-describedby="emailHelp" value={this.state.email}
-                     onChange={({ target }) => this.setState({ ['email']: target.value })}
+              <Input
+                type="email"
+                aria-describedby="emailHelp"
+                value={this.state.email}
+                onChange={({ target }) =>
+                  this.setState({ ["email"]: target.value })
+                }
+              />
+            </div>
+            <div>
+              <Label htmlFor="phone">Phone Number</Label>
+
+              <NumberFormat
+                class="phone"
+                format="+1 (###) ###-####" 
+                mask="_"
+                value={this.state.phone}
+                onValueChange={(values) => {
+                  const {formattedValue, value} = values;       
+                  this.setState({phone: formattedValue})
+                }}
               />
             </div>
 
             <div>
               <Label htmlFor="industry">Industry</Label>
-              
+
               <Select
                 name="industry"
                 id="mce-INDUSTRY"
-                onChange={({ target }) => this.setState({ ['industry']: target.value })}>
-                
+                onChange={({ target }) =>
+                  this.setState({ ["industry"]: target.value })
+                }
+              >
                 <option value=""></option>
                 <option value="banks">Banks/Financial institutes</option>
                 <option value="Government">Government</option>
@@ -189,14 +219,25 @@ class Contact extends React.Component {
 
             <div>
               <Label htmlFor="company">Company</Label>
-              <Input type="text" aria-describedby="companyName" value={this.state.company}
-                     onChange={({ target }) => this.setState({ ['companyName']: target.value })}/>
+              <Input
+                type="text"
+                aria-describedby="companyName"
+                value={this.state.company}
+                onChange={({ target }) =>
+                  this.setState({ ["companyName"]: target.value })
+                }
+              />
             </div>
 
             <div>
               <Label htmlFor="message">Message</Label>
-              <TextArea rows="10" value={this.state.message}
-                        onChange={({ target }) => this.setState({ ['message']: target.value })}/>
+              <TextArea
+                rows="10"
+                value={this.state.message}
+                onChange={({ target }) =>
+                  this.setState({ ["message"]: target.value })
+                }
+              />
             </div>
 
             <div>
@@ -209,66 +250,72 @@ class Contact extends React.Component {
             </div>
 
             <Button
-                    disabled={status === "sending" || status === "success"}
-                    type="submit"
-                    > Submit
+              disabled={status === "sending" || status === "success"}
+              type="submit"
+            >
+              {" "}
+              Submit
             </Button>
 
-            <AlertDiv status={status} >
-              {status === "sending" && <p >Sending...</p>}
+            <AlertDiv status={status}>
+              {status === "sending" && <p>Sending...</p>}
               {status === "success" && <p>Thank you for contacting!</p>}
-              {status === "duplicate" && <p>Too many subscribe attempts for this email address</p>}
+              {status === "duplicate" && (
+                <p>Too many subscribe attempts for this email address</p>
+              )}
               {status === "empty" && <p>You must write an e-mail.</p>}
               {status === "error" && <p>Enter a valid email address</p>}
             </AlertDiv>
           </form>
-          <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer> </script>
-          
+          <script
+            src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async
+            defer
+          >
+            {" "}
+          </script>
         </MainDiv>
-
       </Layout>
-    );
+    )
   }
-
 
   handleSubmit(event) {
     if (this.state.isVerified) {
     } else {
-      alert('Please verify you are human.')
+      alert("Please verify you are human.")
     }
-    event.preventDefault();
-    const values = `name=${encodeURIComponent(this.state['name'])}&` +
-      `EMAIL=${encodeURIComponent(this.state['email'])}&` +
-      `industry=${encodeURIComponent(this.state['industry'])}&` +
-      `company=${encodeURIComponent(this.state['companyName'])}&` +
-      `message=${encodeURIComponent(this.state['message'])}`
-    const path = `${process.env.GATSBY_MAILCHIMP_URL}&${values}`;
+    event.preventDefault()
+    const values =
+      `name=${encodeURIComponent(this.state["name"])}&` +
+      `EMAIL=${encodeURIComponent(this.state["email"])}&` +
+      `phone=${encodeURIComponent(this.state["phone"])}&` +
+      `industry=${encodeURIComponent(this.state["industry"])}&` +
+      `company=${encodeURIComponent(this.state["companyName"])}&` +
+      `message=${encodeURIComponent(this.state["message"])}`
+    const path = `${process.env.GATSBY_MAILCHIMP_URL}&${values}`
 
-    const url = path.replace('/post?', '/post-json?');
-    const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;
-    const email = this.state['email'];
-    (!regex.test(email)) ? this.setState({ status: "empty" }) : this.sendData(url);
-  };
+    const url = path.replace("/post?", "/post-json?")
+    const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/
+    const email = this.state["email"]
+    !regex.test(email) ? this.setState({ status: "empty" }) : this.sendData(url)
+  }
 
   sendData(url) {
-    this.setState({ status: "sending" });
-
-    
-
+    this.setState({ status: "sending" })
 
     jsonp(url, { param: "c" }, (err, data) => {
       if (data.msg.includes("already subscribed")) {
-        this.setState({ status: 'duplicate' });
+        this.setState({ status: "duplicate" })
       } else if (err) {
-        console.log(err);
-        this.setState({ status: 'error' });
-      } else if (data.result !== 'success') {
-        this.setState({ status: 'error' });
+        console.log(err)
+        this.setState({ status: "error" })
+      } else if (data.result !== "success") {
+        this.setState({ status: "error" })
       } else {
-        this.setState({ status: 'success' });
-      };
-    });
+        this.setState({ status: "success" })
+      }
+    })
   }
 }
 
-export default Contact;
+export default Contact
