@@ -211,7 +211,7 @@ function Footer () {
             </a>
         </Iconbox>
         <Iconbox>
-            <a href="https://www.linkedin.com/company-beta/10899440?pathWildcard=10899440">
+            <a href="https://www.linkedin.com/company/shoptaki/">
                 <Social className="social" src={linkedinicon} alt="Shoptaki Linkedin" />
             </a>
         </Iconbox>
