@@ -6,7 +6,7 @@ import upperbg from "../images/upper_background.svg"
 
 const Container = styled.div`
 position: absolute;
-  
+
 z-index: -1;
 background-image: url(${upperbg});
 top: 40rem;
@@ -19,6 +19,7 @@ height: 100%;
 -moz-box-sizing: border-box;
 box-sizing: border-box; 
 @media (max-width: ${theme.tablet}){
+    margin-top: 3rem;
     padding: 0;
 }
 `;
