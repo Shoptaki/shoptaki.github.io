@@ -76,7 +76,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   height: 45px;
-  max-width: 145px;
+  max-width: 160px;
   font-size: 18px;
   font-weight: bold;
   padding-bottom:5px;
