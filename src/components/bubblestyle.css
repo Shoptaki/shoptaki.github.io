@@ -96,8 +96,11 @@
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
-  
+
 }
 .phone:focus {
   box-shadow: 0 0 8px #3f9ce5;
+}
+.asterisk {
+  color:red;
 }

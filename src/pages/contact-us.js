@@ -117,6 +117,7 @@ class Contact extends React.Component {
       industry: "",
       companyName: "",
       message: "",
+      gToken: "",
       isVerified: false,
     }
   }
@@ -134,8 +135,10 @@ class Contact extends React.Component {
     }
   }
   verifyCallback(response) {
+    console.log(response)
     if (response) {
       this.setState({
+        gToken: response,
         isVerified: true,
       })
     }
@@ -160,11 +163,13 @@ class Contact extends React.Component {
             method="POST"
           >
             <div>
-              <Label htmlFor="name"> Name </Label>
+              <Label htmlFor="name"> Name <span className="asterisk">*</span></Label>
 
               <Input
                 type="text"
+                required
                 value={this.state.name}
+                required
                 onChange={({ target }) =>
                   this.setState({ ["name"]: target.value })
                 }
@@ -172,10 +177,11 @@ class Contact extends React.Component {
             </div>
 
             <div>
-              <Label htmlFor="exampleInputEmail1">Email Address</Label>
+              <Label htmlFor="exampleInputEmail1">Email Address <span className="asterisk">*</span></Label>
 
               <Input
                 type="email"
+                required
                 aria-describedby="emailHelp"
                 value={this.state.email}
                 onChange={({ target }) =>
@@ -184,43 +190,50 @@ class Contact extends React.Component {
               />
             </div>
             <div>
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">Phone Number <span className="asterisk">*</span></Label>
 
               <NumberFormat
-                class="phone"
-                format="+1 (###) ###-####" 
+                className="phone"
+                format="+## (###) ###-####"
                 mask="_"
+                required
                 value={this.state.phone}
                 onValueChange={(values) => {
-                  const {formattedValue, value} = values;       
+                  const {formattedValue, value} = values;
                   this.setState({phone: formattedValue})
                 }}
               />
             </div>
 
             <div>
-              <Label htmlFor="industry">Industry</Label>
+              <Label htmlFor="industry">Industry <span className="asterisk">*</span></Label>
 
               <Select
                 name="industry"
                 id="mce-INDUSTRY"
+                required
                 onChange={({ target }) =>
                   this.setState({ ["industry"]: target.value })
                 }
               >
                 <option value=""></option>
-                <option value="banks">Banks/Financial institutes</option>
+                <option value="Banks/Financial institutes">Banks/Financial institutes</option>
                 <option value="Government">Government</option>
                 <option value="Investors">Investors</option>
                 <option value="Freight forwarders">Freight Forwarders</option>
+                <option value="Developers">Developers</option>
+                <option value="Medical">Medical</option>
+                <option value="Supplychain">Supplychain</option>
+                <option value="Telecommunication">Telecommunication</option>
                 <option value="Other">Other</option>
               </Select>
             </div>
 
             <div>
-              <Label htmlFor="company">Company</Label>
+              <Label htmlFor="company">Company <span className="asterisk">*</span></Label>
               <Input
                 type="text"
+                required
                 aria-describedby="companyName"
                 value={this.state.company}
                 onChange={({ target }) =>
@@ -230,9 +243,10 @@ class Contact extends React.Component {
             </div>
 
             <div>
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">Message <span className="asterisk">*</span></Label>
               <TextArea
                 rows="10"
+                required
                 value={this.state.message}
                 onChange={({ target }) =>
                   this.setState({ ["message"]: target.value })
@@ -263,8 +277,8 @@ class Contact extends React.Component {
               {status === "duplicate" && (
                 <p>Too many subscribe attempts for this email address</p>
               )}
-              {status === "empty" && <p>You must write an e-mail.</p>}
-              {status === "error" && <p>Enter a valid email address</p>}
+              {status === "empty" && <p>Please fill in the required fields.</p>}
+              {status === "error" && <p>Something went wrong.</p>}
             </AlertDiv>
           </form>
           <script
@@ -278,21 +292,22 @@ class Contact extends React.Component {
       </Layout>
     )
   }
-
   handleSubmit(event) {
     if (this.state.isVerified) {
     } else {
       alert("Please verify you are human.")
     }
+    console.log(this.state)
     event.preventDefault()
     const values =
-      `name=${encodeURIComponent(this.state["name"])}&` +
+      `MMERGE2=${encodeURIComponent(this.state["name"])}&` +
       `EMAIL=${encodeURIComponent(this.state["email"])}&` +
-      `phone=${encodeURIComponent(this.state["phone"])}&` +
-      `industry=${encodeURIComponent(this.state["industry"])}&` +
-      `company=${encodeURIComponent(this.state["companyName"])}&` +
-      `message=${encodeURIComponent(this.state["message"])}`
-    const path = `${process.env.GATSBY_MAILCHIMP_URL}&${values}`
+      `PHONE=${encodeURIComponent(this.state["phone"])}&` +
+      `MMERGE3=${encodeURIComponent(this.state["industry"])}&` +
+      `MMERGE1=${encodeURIComponent(this.state["companyName"])}&` +
+      `MMERGE5=${encodeURIComponent(this.state["message"])}&` +
+      `g-recaptcha-response=${encodeURIComponent(this.state["gToken"])}`
+    const path = `${`https://shoptaki.us13.list-manage.com/subscribe/post?u=e0abab3d3f816eda09311a04a&amp;id=a1bdc98947`}&${values}`
 
     const url = path.replace("/post?", "/post-json?")
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/
