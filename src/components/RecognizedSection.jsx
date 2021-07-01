@@ -2,6 +2,8 @@ import React from "react"
 import global_logo from "../images/homepage_global_logo.svg"
 import remtech_logo from "../images/homepage_remtech_logo.svg"
 import cc_logo from "../images/homepage_cc_logo.svg"
+import oracle_logo from "../images/homepage_oracle_logo.svg"
+import nvidia_logo from "../images/homepage_nvidia_logo.svg"
 import styled from "styled-components"
 import { theme } from "../theme/GlobalStyles.js"
 import lowerbg from "../images/lower_background.svg"
@@ -101,6 +103,29 @@ const RecogImage3=styled.img`
         margin-left:-6%;
     }
     
+`
+
+const RecogImage4=styled.img`
+    width: 45%;
+    margin-top:-2.5%;
+    padding-bottom:0em;
+    @media (max-width: ${theme.mobile}){
+        width: 40%;
+        margin-top: 5em;
+        padding-bottom:0;
+        margin-left:-6%;
+    }
+`
+const RecogImage5=styled.img`
+    width: 45%;
+    margin-top:-2.5%;
+    padding-bottom:0em;
+    @media (max-width: ${theme.mobile}){
+        width: 40%;
+        margin-top: 5em;
+        padding-bottom:0;
+        margin-left:-6%;
+    }
 `;
 
 function Recognize() {
@@ -117,6 +142,12 @@ function Recognize() {
                 </SubRecogImagebox>
                 <SubRecogImagebox>
                     <RecogImage3 src={cc_logo} alt="Recognized by Currency Cloud" />
+                </SubRecogImagebox>
+                <SubRecogImagebox>
+                    <RecogImage4 src={oracle_logo} alt="Recognized by Oracle" />
+                </SubRecogImagebox>
+                <SubRecogImagebox>
+                    <RecogImage5 src={nvidia_logo} alt="Recognized by Nvidia" />
                 </SubRecogImagebox>
                 </RecogImageBox>
             </RecogContainer>

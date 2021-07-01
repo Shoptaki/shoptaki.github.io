@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
+import PhoneInput from "react-phone-number-input"
 import Recaptcha from "react-recaptcha"
 import { loadReCaptcha } from "react-recaptcha-google"
 import jsonp from "jsonp"
@@ -7,8 +8,9 @@ import SmartchainBanner from "../components/ParticleBanner.jsx"
 import styled from "styled-components"
 import SEO from "../components/seo.js"
 import { theme } from "../theme/GlobalStyles"
-import NumberFormat from 'react-number-format';
 import "../components/bubblestyle.css"
+import 'react-phone-number-input/style.css'
+
 
 const MainDiv = styled.div`
   text-align: left;
@@ -110,6 +112,7 @@ class Contact extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this)
     this.verifyCallback = this.verifyCallback.bind(this)
+    this.onPhoneInputChange = this.onPhoneInputChange.bind(this)
     this.state = {
       name: "",
       email: "",
@@ -118,6 +121,7 @@ class Contact extends React.Component {
       companyName: "",
       message: "",
       gToken: "",
+      phoneInputValue: "",
       isVerified: false,
     }
   }
@@ -147,6 +151,19 @@ class Contact extends React.Component {
     console.log("Captcha Loaded")
   }
 
+  onPhoneInputChange(v) {
+    this.setState({phoneInputValue: v})  
+  }  
+
+  renderPhoneInput() {
+    return (
+      <PhoneInput
+        placeholder = "Enter phone number"
+        value = {this.phoneInputValue}
+        onChange = {this.onPhoneInputChange}
+      /> 
+    )
+  }
   //Add form labels
   render() {
     const { status } = this.state
@@ -191,18 +208,7 @@ class Contact extends React.Component {
             </div>
             <div>
               <Label htmlFor="phone">Phone Number <span className="asterisk">*</span></Label>
-
-              <NumberFormat
-                className="phone"
-                format="+## (###) ###-####"
-                mask="_"
-                required
-                value={this.state.phone}
-                onValueChange={(values) => {
-                  const {formattedValue, value} = values;
-                  this.setState({phone: formattedValue})
-                }}
-              />
+                {this.renderPhoneInput()}
             </div>
 
             <div>
