@@ -9,7 +9,7 @@ import styled from "styled-components"
 import SEO from "../components/seo.js"
 import { theme } from "../theme/GlobalStyles"
 import "../components/bubblestyle.css"
-import 'react-phone-number-input/style.css'
+import '../components/phonestyle.css'
 
 
 const MainDiv = styled.div`
