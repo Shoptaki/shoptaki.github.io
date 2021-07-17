@@ -158,6 +158,7 @@ class Contact extends React.Component {
   renderPhoneInput() {
     return (
       <PhoneInput
+        defaultCountry = "US"
         placeholder = "Enter phone number"
         value = {this.phoneInputValue}
         onChange = {this.onPhoneInputChange}
