@@ -121,7 +121,6 @@ class Contact extends React.Component {
       companyName: "",
       message: "",
       gToken: "",
-      phoneInputValue: "",
       isVerified: false,
     }
   }
@@ -152,7 +151,7 @@ class Contact extends React.Component {
   }
 
   onPhoneInputChange(v) {
-    this.setState({phoneInputValue: v})  
+    this.setState({phone: v})  
   }  
 
   renderPhoneInput() {
@@ -160,7 +159,7 @@ class Contact extends React.Component {
       <PhoneInput
         defaultCountry = "US"
         placeholder = "Enter phone number"
-        value = {this.phoneInputValue}
+        value = {this.phone}
         onChange = {this.onPhoneInputChange}
       /> 
     )
