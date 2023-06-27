@@ -26,6 +26,16 @@ module.exports = {
         ]
       },
       {
+        title: "Services",
+        subLinks: [
+          {
+            title:"",
+            link:"/service/"
+          }
+        ]
+      },
+      
+      {
         title: "Smartchain",
         subLinks: [
           {

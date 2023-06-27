@@ -109,6 +109,7 @@ const MobileContainer = styled.div`
   max-height: ${props => props.showMenu ? "50rem" : "0"};
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   overflow: hidden;
+  z-index: 2;
   transition: max-height 0.5s ease-in-out; 
   @media (max-width: ${theme.phone}) {
     left: 4%;
@@ -142,17 +143,21 @@ const Header = ({siteTitle, menuLinks}) => {
       link: menuLinks[0].subLinks[0].link,
       title: menuLinks[0].subLinks[0].title
     }
-    const smartchainLink =  {
+    const service = {
       link: menuLinks[1].subLinks[0].link,
       title: menuLinks[1].title
+    }
+    const smartchainLink =  {
+      link: menuLinks[2].subLinks[0].link,
+      title: menuLinks[2].title
     }  
     const usecaseLink = {
-      link: menuLinks[2].subLinks[0].link,
-      title: menuLinks[2].subLinks[0].title
+      link: menuLinks[3].subLinks[0].link,
+      title: menuLinks[3].subLinks[0].title
     } 
     const productsLink = {
-      link: menuLinks[2].subLinks[1].link,
-      title: menuLinks[2].subLinks[1].title
+      link: menuLinks[3].subLinks[1].link,
+      title: menuLinks[3].subLinks[1].title
     }
 
     return (
@@ -172,6 +177,12 @@ const Header = ({siteTitle, menuLinks}) => {
                     
                   >{aboutLink.title}</NavLink>
                 </DropdownContent>
+            </Tab>
+
+            <Tab>
+            <NavLink 
+                  to={service.link}
+                >{service.title}</NavLink>
             </Tab>
 
             <Tab>
