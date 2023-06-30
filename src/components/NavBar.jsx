@@ -221,6 +221,7 @@ const Header = ({siteTitle, menuLinks}) => {
                 <MobileContainer showMenu={showMenu}>
                   <MobileLink to="/"> Home </MobileLink>
                   <MobileLink to={aboutLink.link}> {aboutLink.title} </MobileLink>
+                  <MobileLink to={service.link}> {service.title} </MobileLink>
                   <MobileLink to={smartchainLink.link}> {smartchainLink.title} </MobileLink>
                   <MobileLink to={usecaseLink.link}> {usecaseLink.title} </MobileLink>
                   <MobileLink to={productsLink.link}> {productsLink.title} </MobileLink>

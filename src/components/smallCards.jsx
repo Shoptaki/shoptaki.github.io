@@ -117,7 +117,7 @@ const ComingSoonLabel = styled.div`
   position: absolute;
   text-align: center;
   padding: 10px 0;
-  background: #b10000;
+  background: #084DA1;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -137,7 +137,7 @@ const FisrtCorner = styled.div`
   height: 0;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
-  border-top: 50px solid #800000;
+  border-top: 50px solid #173e6c;
   position: absolute;
   top: 0%;
   width: 185px;
@@ -148,7 +148,7 @@ const SecondCorner = styled.div`
 	height: 0;
 	border-left: 33px solid transparent;
 	border-right: 26px solid transparent;
-	border-bottom: 38px solid #800000;
+	border-bottom: 38px solid #173e6c;
   position: absolute;
   bottom: 0%;
   left: 0;

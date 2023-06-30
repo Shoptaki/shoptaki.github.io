@@ -6,7 +6,8 @@ import mobile from '../images/service/mobile.jpg';
 import hireDedicatedDevelopers from '../images/service/hireDedicatedDevelopers.jpg';
 import ai from '../images/service/ai.jpg';
 import iot from '../images/service/iot.jpg';
-import ui from '../images/service/uiux.jpg'
+import ui from '../images/service/uiux.jpg';
+import securityIdentitySystem from '../images/service/securityIdentitySystem.jpg';
 import webDeveloper from '../images/service/webDeveloper.jpg'
 import styled from "styled-components";
 
@@ -18,6 +19,11 @@ const serviceData = [
         image: ai,
         title: "AI & ML",
         discribe: "AI (Artificial Intelligence) and ML (Machine Learning) are technologies that enable machines to perform tasks that typically require human intelligence. AI refers to the broader concept of machines simulating human intelligence, while ML focuses on algorithms that allow machines to learn from data and improve performance over time. These technologies have applications in various fields, including automation, data analysis, pattern recognition, and decision-making."
+    },
+    {
+        image: securityIdentitySystem,
+        title: "Security & Identity System",
+        discribe: "Introducing our new service, the Security and Identity System, powered by smartchain technology. With this cutting-edge solution, we offer robust security measures and advanced identity management capabilities for your organization. Our smartchain technology ensures tamper-proof and transparent record-keeping, safeguarding sensitive data and preventing unauthorized access. Seamlessly integrate this system into your existing infrastructure to enhance protection against cyber threats and streamline identity verification processes. Trust in our Security and Identity System to fortify your digital assets and provide peace of mind to your stakeholders."
     },
     {
         image: iot,
