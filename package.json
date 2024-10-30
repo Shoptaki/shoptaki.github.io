@@ -4,6 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "homepage": "https://github.com/Shoptaki/website",
   "dependencies": {
     "acorn": "^6.4.1",
     "babel-plugin-styled-components": "^1.10.7",
@@ -42,6 +43,7 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "prettier": "2.0.5",
     "react-animejs": "^0.5.4",
     "resize-observer-polyfill": "^1.5.1"
@@ -57,7 +59,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "predeploy": "gatsby build",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
